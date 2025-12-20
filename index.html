@@ -19,17 +19,23 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
-    :root{--bg-color:#f7f6ff;--surface-color:#fff;--primary-color:#7c3aed;--primary-light:#a78bfa;--primary-glow:rgba(124,58,237,.15);--success-color:#10b981;--danger-color:#ef4444;--secondary-color:#64748b;--warning-color:#f59e0b;--warning-glow:rgba(245,158,11,.2);--text-dark:#0f172a;--text-light:#475569;--border-color:rgba(226,232,240,1);--radius-md:12px;--radius-lg:16px;--shadow-sm:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);--shadow-md:0 10px 15px -3px rgba(0,0,0,.07),0 4px 6px -4px rgba(0,0,0,.07);--transition-fast:.2s ease;--transition-slow:.4s cubic-bezier(.25,1,.5,1)}[data-theme=dark]{--bg-color:#12122c;--surface-color:#1a1a27;--primary-color:#8b5cf6;--primary-light:#a78bfa;--primary-glow:rgba(139,92,246,.2);--text-dark:#f1f5f9;--text-light:#94a3b8;--border-color:rgba(51,65,85,.6);--warning-color:#facc15;--warning-glow:rgba(250,204,21,.2)}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast)}.hidden{display:none!important}.permission-hidden{display:none!important}.app-shell{max-width:1000px;margin:2rem auto;padding:1rem;display:none}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding:0 .5rem}.header h1{display:flex;align-items:center;gap:.8rem;font-size:1.8rem;font-weight:700;color:var(--text-dark);cursor:pointer}.header h1 i{color:var(--primary-color)}.header-actions{display:flex;gap:.5rem}.header-btn{width:45px;height:45px;border-radius:50%;background:var(--surface-color);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition-fast)}.header-btn:hover{border-color:var(--primary-color);transform:translateY(-2px)}#notification-bell-container{position:relative;}#notification-count{position:absolute;top:-5px;right:-8px;background-color:var(--danger-color);color:white;border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);}.card{background:var(--surface-color);padding:2rem;border-radius:var(--radius-lg);border:1px solid var(--border-color);margin-bottom:2rem;box-shadow:var(--shadow-md)}.view{display:none}.view.active{display:block;animation:slideUpFadeIn .5s cubic-bezier(.16,1,.3,1) forwards}@keyframes slideUpFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.search-options{display:flex;flex-wrap:wrap;border-radius:12px;margin-bottom:1.5rem;overflow:hidden;background:var(--bg-color);padding:.25rem}.search-option-btn{flex:1;min-width:80px;padding:.75rem;border:none;background:transparent;cursor:pointer;font-size:.95rem;font-weight:600;color:var(--text-light);transition:all var(--transition-fast);border-radius:9px;display:flex;align-items:center;justify-content:center;gap:.5rem}.search-option-btn.active{background:var(--surface-color);color:var(--primary-color);box-shadow:var(--shadow-sm)}.search-panel{display:none}.search-panel.active{display:block}input,select,textarea{width:100%;padding:.9rem;font-size:1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-color);color:var(--text-dark);transition:all var(--transition-fast)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}label{margin-bottom:.5rem;display:block;font-weight:500;color:var(--text-light)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;border-radius:12px;border:none;color:#fff;transition:all var(--transition-fast);margin-top:1rem;position:relative;overflow:hidden}.btn i{margin-right:.5rem}.btn:disabled{opacity:.6;cursor:not-allowed}.btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-primary{background:linear-gradient(90deg,#6d28d9,#8b5cf6);box-shadow:0 4px 20px -5px var(--primary-glow)}.btn-success{background:linear-gradient(90deg,#10b981,#34d399);box-shadow:0 4px 20px -5px rgba(16,185,129,.5)}.btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:2px solid var(--border-color);}.btn-secondary:hover{border-color:var(--secondary-color);background:rgba(100,116,139,.05)}.btn-secondary-outline {background:transparent;color:var(--text-light);font-weight:600;border:2px solid var(--border-color);}.btn-secondary-outline:hover {border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow);}.btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:2px solid var(--danger-color)}.btn-cancel:hover{background:var(--danger-color);color:#fff}
-    .fab-container{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:1rem}
-    .fab{width:60px;height:60px;border-radius:50%;color:#fff;border:none;box-shadow:var(--shadow-md);display:flex;align-items:center;justify-content:center;font-size:1.8rem;cursor:pointer;transition:all var(--transition-fast)}
-    .fab-add{background:linear-gradient(45deg,var(--primary-light),var(--primary-color))}
-    .fab-add:hover{transform:scale(1.1) rotate(90deg);box-shadow:0 10px 25px -5px var(--primary-color)}
-    .fab-summary{background:var(--secondary-color);width:50px;height:50px;font-size:1.5rem}
-    .fab-summary:hover{transform:scale(1.1);background:var(--text-dark)}
-    .fab-list{background:#0d9488;width:50px;height:50px;font-size:1.5rem}
-    .fab-list:hover{transform:scale(1.1);background:#14b8a6}
-    .fab-objects {background: #f59e0b; width: 50px; height: 50px; font-size: 1.5rem;}
-    .fab-objects:hover {transform: scale(1.1); background: #d97706;}
+    :root{--bg-color:#f7f6ff;--surface-color:#fff;--primary-color:#7c3aed;--primary-light:#a78bfa;--primary-glow:rgba(124,58,237,.15);--success-color:#10b981;--danger-color:#ef4444;--secondary-color:#64748b;--warning-color:#f59e0b;--warning-glow:rgba(245,158,11,.2);--text-dark:#0f172a;--text-light:#475569;--border-color:rgba(226,232,240,1);--radius-md:12px;--radius-lg:16px;--shadow-sm:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);--shadow-md:0 10px 15px -3px rgba(0,0,0,.07),0 4px 6px -4px rgba(0,0,0,.07);--transition-fast:.2s ease;--transition-slow:.4s cubic-bezier(.25,1,.5,1)}[data-theme=dark]{--bg-color:#12122c;--surface-color:#1a1a27;--primary-color:#8b5cf6;--primary-light:#a78bfa;--primary-glow:rgba(139,92,246,.2);--text-dark:#f1f5f9;--text-light:#94a3b8;--border-color:rgba(51,65,85,.6);--warning-color:#facc15;--warning-glow:rgba(250,204,21,.2)}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast)}.hidden{display:none!important}.permission-hidden{display:none!important}.app-shell{max-width:1000px;margin:2rem auto;padding:1rem;display:none}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding:0 .5rem}.header h1{display:flex;align-items:center;gap:.8rem;font-size:1.8rem;font-weight:700;color:var(--text-dark);cursor:pointer}.header h1 i{color:var(--primary-color)}.header-actions{display:flex;gap:.5rem}.header-btn{width:45px;height:45px;border-radius:50%;background:var(--surface-color);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition-fast)}.header-btn:hover{border-color:var(--primary-color);transform:translateY(-2px)}#notification-bell-container{position:relative;}#notification-count{position:absolute;top:-5px;right:-8px;background-color:var(--danger-color);color:white;border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);}.card{background:var(--surface-color);padding:2rem;border-radius:var(--radius-lg);border:1px solid var(--border-color);margin-bottom:2rem;box-shadow:var(--shadow-md)}.view{display:none}.view.active{display:block;animation:slideUpFadeIn .5s cubic-bezier(.16,1,.3,1) forwards}@keyframes slideUpFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.search-options{display:flex;flex-wrap:wrap;border-radius:16px;margin-bottom:1.5rem;overflow:hidden;background:linear-gradient(135deg,rgba(124,58,237,0.05),rgba(6,182,212,0.05));padding:0.35rem;border:1px solid rgba(124,58,237,0.1)}.search-option-btn{flex:1;min-width:80px;padding:.85rem;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--text-light);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);border-radius:12px;display:flex;align-items:center;justify-content:center;gap:.5rem}.search-option-btn:hover{color:var(--primary-color);background:rgba(124,58,237,0.08)}.search-option-btn.active{background:linear-gradient(135deg,var(--primary-color),#8b5cf6);color:white;box-shadow:0 4px 15px rgba(124,58,237,0.3)}.search-option-btn.active i{color:white}.search-panel{display:none;animation:fadeSlideUp 0.3s ease}.search-panel.active{display:block}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}input,select,textarea{width:100%;padding:.9rem;font-size:1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-color);color:var(--text-dark);transition:all var(--transition-fast)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}label{margin-bottom:.5rem;display:block;font-weight:500;color:var(--text-light)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;border-radius:12px;border:none;color:#fff;transition:all var(--transition-fast);margin-top:1rem;position:relative;overflow:hidden}.btn i{margin-right:.5rem}.btn:disabled{opacity:.6;cursor:not-allowed}.btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-primary{background:linear-gradient(90deg,#6d28d9,#8b5cf6);box-shadow:0 4px 20px -5px var(--primary-glow)}.btn-success{background:linear-gradient(90deg,#10b981,#34d399);box-shadow:0 4px 20px -5px rgba(16,185,129,.5)}.btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:2px solid var(--border-color);}.btn-secondary:hover{border-color:var(--secondary-color);background:rgba(100,116,139,.05)}.btn-secondary-outline {background:transparent;color:var(--text-light);font-weight:600;border:2px solid var(--border-color);}.btn-secondary-outline:hover {border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow);}.btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:2px solid var(--danger-color)}.btn-cancel:hover{background:var(--danger-color);color:#fff}
+    .fab-container{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0.75rem;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:0.75rem 1.25rem;border-radius:35px;border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(0,0,0,0.15)}
+    .fab{width:52px;height:52px;border-radius:50%;color:#fff;border:none;box-shadow:0 4px 15px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden}
+    .fab::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(255,255,255,0.2),transparent);opacity:0;transition:opacity 0.3s}
+    .fab:hover::before{opacity:1}
+    .fab-add{background:linear-gradient(135deg,#7c3aed,#a78bfa);width:60px;height:60px;font-size:1.6rem}
+    .fab-add:hover{transform:scale(1.15) rotate(90deg);box-shadow:0 8px 25px rgba(124,58,237,0.5)}
+    .fab-summary{background:linear-gradient(135deg,#64748b,#94a3b8)}
+    .fab-summary:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(100,116,139,0.4)}
+    .fab-list{background:linear-gradient(135deg,#0d9488,#14b8a6)}
+    .fab-list:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(13,148,136,0.4)}
+    .fab-objects {background:linear-gradient(135deg,#f59e0b,#fbbf24)}
+    .fab-objects:hover {transform:scale(1.1);box-shadow:0 6px 20px rgba(245,158,11,0.4)}
+    .fab-ai{background:linear-gradient(135deg,#ec4899,#f472b6)}
+    .fab-ai:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(236,72,153,0.4)}
+    .fab-analytics{background:linear-gradient(135deg,#3b82f6,#60a5fa)}
+    .fab-analytics:hover{transform:scale(1.1);box-shadow:0 6px 20px rgba(59,130,246,0.4)}
     .result-card{display:flex;gap:1.5rem;align-items:flex-start;background:var(--surface-color);padding:1.5rem;border:1px solid var(--border-color);border-radius:var(--radius-lg);margin-bottom:1.5rem;box-shadow:var(--shadow-sm);transition:all var(--transition-fast);position:relative}
     .result-card.archived { opacity: 0.6; background: var(--bg-color); }
     .result-card.archived .result-header h3 { text-decoration: line-through; }
@@ -248,7 +254,7 @@
     .section-title-text { flex: 1; text-align: left; }
     .chevron-icon { font-size: 0.85rem; color: var(--text-light); transition: transform 0.3s ease; }
     .extra-section-header.active .chevron-icon { color: white; }
-    .extra-section-content { padding: 1.25rem; border-top: 1px solid var(--border-color); display: none; animation: slideDown 0.3s ease; }
+    .extra-section-content { padding: 1.25rem; border: 2px solid rgba(124,58,237,0.1); border-top: none; border-radius: 0 0 16px 16px; display: none; animation: slideDown 0.3s ease; background: var(--surface-color); }
     .extra-section.active .extra-section-content { display: block; }
     @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     .mini-card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.5rem; }
@@ -262,21 +268,49 @@
     body[data-user-role="inspector"] .inspector-only-section { display: block; }
     
     /* ZAMONAVIY FORMA STILLARI */
-    .form-step-title { font-size: 1.1rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-glow); display: flex; align-items: center; gap: 0.5rem; }
-    .form-step-title i { font-size: 1.2rem; }
+    .form-step-title { font-size: 1.15rem; font-weight: 700; color: var(--primary-color); margin-bottom: 1.25rem; padding-bottom: 0.75rem; border-bottom: 2px solid var(--primary-glow); display: flex; align-items: center; gap: 0.5rem; background: linear-gradient(90deg, rgba(124,58,237,0.08), transparent); padding: 0.75rem 1rem; border-radius: 10px; }
+    .form-step-title i { font-size: 1.2rem; background: linear-gradient(135deg, var(--primary-color), #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     .form-step { padding: 0.5rem 0; }
-    .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; display: block; }
-    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.85rem 1rem; border: 1px solid var(--border-color); border-radius: 10px; font-size: 0.95rem; background: var(--bg-color); color: var(--text-dark); transition: all 0.2s ease; }
-    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px var(--primary-glow); outline: none; }
+    .form-group label { font-size: 0.85rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.4rem; }
+    .form-group label i { color: var(--primary-color); font-size: 0.9rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.9rem 1rem; border: 2px solid var(--border-color); border-radius: 12px; font-size: 0.95rem; background: var(--bg-color); color: var(--text-dark); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .form-group input:hover, .form-group select:hover { border-color: rgba(124,58,237,0.4); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--primary-color); box-shadow: 0 0 0 4px var(--primary-glow), 0 4px 12px rgba(124,58,237,0.15); outline: none; transform: translateY(-1px); }
     .form-group input::placeholder { color: var(--text-light); opacity: 0.6; }
-    .photo-preview-container { width: 100px; height: 100px; border-radius: 50%; border: 3px dashed var(--border-color); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; background: var(--bg-color); transition: all 0.3s; }
-    .photo-preview-container:hover { border-color: var(--primary-color); }
+    .form-group select { cursor: pointer; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%237c3aed' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 0.75rem center; background-size: 1.5rem; -webkit-appearance: none; -moz-appearance: none; appearance: none; padding-right: 2.5rem; }
+    .form-group select option { padding: 0.5rem; }
+    .photo-preview-container { width: 120px; height: 120px; border-radius: 50%; border: 3px dashed var(--primary-color); margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; overflow: hidden; background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(6,182,212,0.05)); transition: all 0.3s; box-shadow: 0 4px 20px rgba(124,58,237,0.1); }
+    .photo-preview-container:hover { border-color: var(--primary-light); transform: scale(1.05); box-shadow: 0 8px 30px rgba(124,58,237,0.2); }
     .photo-preview-container img { width: 100%; height: 100%; object-fit: cover; }
-    #take-photo-btn { display: block; margin: 0 auto 1.5rem; }
+    #take-photo-btn { display: block; margin: 0 auto 1.5rem; background: linear-gradient(135deg, #06b6d4, #0891b2); border: none; color: white; padding: 0.75rem 1.5rem; border-radius: 25px; font-weight: 600; cursor: pointer; transition: all 0.3s; box-shadow: 0 4px 15px rgba(6,182,212,0.3); }
+    #take-photo-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(6,182,212,0.4); }
     .form-row { margin-bottom: 0.5rem; }
-    .btn { border-radius: 10px; font-weight: 600; padding: 0.9rem 1.5rem; transition: all 0.2s; }
-    .btn-primary { background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-light) 100%); border: none; box-shadow: 0 4px 15px rgba(124,58,237,0.3); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124,58,237,0.4); }
+    .btn { border-radius: 12px; font-weight: 600; padding: 0.9rem 1.5rem; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+    .btn-primary { background: linear-gradient(135deg, var(--primary-color) 0%, #8b5cf6 50%, #06b6d4 100%); border: none; box-shadow: 0 4px 15px rgba(124,58,237,0.3); background-size: 200% 200%; animation: gradientShift 3s ease infinite; }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(124,58,237,0.4); }
+    @keyframes gradientShift { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    /* Kengaytiriluvchi bo'limlar uchun zamonaviy stil */
+    .extra-section { margin-bottom: 1rem; border-radius: 16px; overflow: hidden; box-shadow: 0 2px 12px rgba(0,0,0,0.06); transition: all 0.3s; }
+    .extra-section:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+    .extra-section-header { background: linear-gradient(135deg, rgba(124,58,237,0.08), rgba(6,182,212,0.08)); padding: 1rem 1.25rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; border: 2px solid rgba(124,58,237,0.15); border-radius: 16px; transition: all 0.3s; }
+    .extra-section-header:hover { background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(6,182,212,0.12)); border-color: rgba(124,58,237,0.3); }
+    .extra-section.active .extra-section-header { background: linear-gradient(135deg, #7c3aed, #8b5cf6); border-color: #7c3aed; border-radius: 16px 16px 0 0; }
+    .extra-section.active .extra-section-header span, .extra-section.active .extra-section-header .section-title-text { color: white; }
+    .extra-section.active .section-icon { background: rgba(255,255,255,0.2) !important; }
+    .extra-section.active .section-icon i { color: white !important; background: none !important; -webkit-text-fill-color: white !important; }
+    .extra-section-header span { font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 0.6rem; }
+    .extra-section-header i:first-child { font-size: 1.1rem; background: linear-gradient(135deg, var(--primary-color), #06b6d4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    .extra-section-header i:last-child { transition: transform 0.3s; color: var(--primary-color); }
+    .extra-section.active .extra-section-header i:last-child { transform: rotate(180deg); color: white; }
+    /* Aqlli kiritish - dublikat bildirishnomasi */
+    .smart-alert { background: linear-gradient(135deg, #fef3c7, #fde68a); border: 2px solid #f59e0b; border-radius: 12px; padding: 0.75rem 1rem; margin-top: 0.5rem; display: none; animation: slideDown 0.3s ease; }
+    .smart-alert.danger { background: linear-gradient(135deg, #fee2e2, #fecaca); border-color: #ef4444; }
+    .smart-alert.info { background: linear-gradient(135deg, #dbeafe, #bfdbfe); border-color: #3b82f6; }
+    .smart-alert.success { background: linear-gradient(135deg, #d1fae5, #a7f3d0); border-color: #10b981; }
+    .smart-alert-icon { font-size: 1.1rem; margin-right: 0.5rem; }
+    .smart-alert-text { font-size: 0.85rem; font-weight: 500; }
+    .smart-alert-link { color: var(--primary-color); cursor: pointer; text-decoration: underline; font-weight: 600; }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
@@ -406,7 +440,7 @@
             </div>
             <button type="button" class="btn btn-secondary" id="take-photo-btn" style="margin-top:0;"><i class="fas fa-camera"></i> Rasmga Olish</button>
             <div class="form-row"><div class="form-group"><label>F.I.O.</label><input name="fio" class="js-alpha-input js-transliterate" required></div><div class="form-group"><label>Hujjat turi</label><select name="hujjat_turi" class="js-hujjat-turi" required><option value="" selected disabled>Tanlang...</option><option value="Pasport">Pasport</option><option value="Metrka">Metrka</option><option value="Chet el fuqarosi">Chet el fuqarosi</option></select></div></div>
-            <div class="form-row conditional-field js-passport-fields"><div class="form-group"><label>Pasport seriyasi va raqami</label><div class="passport-inputs"><input name="passport_series" placeholder="AA" maxlength="2" class="js-alpha-upper-input"><input name="passport_number" placeholder="1234567" maxlength="7" inputmode="numeric" class="js-numeric-input"></div></div><div class="form-group"><label>JSHSHIR (14 ta raqam)</label><input name="jshshir" maxlength="14" inputmode="numeric" class="js-numeric-input"></div><div class="form-group full-width"><label>Tug'ilgan sana</label><input name="dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
+            <div class="form-row conditional-field js-passport-fields"><div class="form-group"><label><i class="fas fa-id-card"></i> Pasport seriyasi va raqami</label><div class="passport-inputs"><input name="passport_series" placeholder="AA" maxlength="2" class="js-alpha-upper-input"><input name="passport_number" placeholder="1234567" maxlength="7" inputmode="numeric" class="js-numeric-input"></div></div><div class="form-group"><label><i class="fas fa-fingerprint"></i> JSHSHIR (14 ta raqam)</label><input name="jshshir" id="main-jshshir-input" maxlength="14" inputmode="numeric" class="js-numeric-input" placeholder="31234567890123"></div><div class="form-group full-width"><label><i class="fas fa-calendar-alt"></i> Tug'ilgan sana</label><input name="dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
             <div class="form-row conditional-field js-metrka-fields"><div class="form-group full-width"><label>Guvohnoma seriyasi va raqami</label><div class="metrka-input-group"><select name="metrka_series" class="js-metrka-series"></select><input name="metrka_number" maxlength="8" inputmode="numeric" class="js-numeric-input"></div></div><div class="form-group full-width"><label>Tug'ilgan sana</label><input name="metrka_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
             <div class="form-row conditional-field js-chet-el-fields"><div class="form-group"><label>Davlat</label><input name="chet_el_davlati" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Pasport seriya va raqami</label><input name="chet_el_pasport"></div><div class="form-group full-width"><label>Tug'ilgan sana</label><input name="chet_el_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
             <div class="form-row"><div class="form-group"><label>Jinsi</label><select name="jinsi" required><option value="" disabled selected>Tanlang...</option><option value="Erkak">Erkak</option><option value="Ayol">Ayol</option></select></div><div class="form-group"><label>Telefon (9 raqam)</label><input name="telefon_number" maxlength="9" class="js-numeric-input" placeholder="901234567" inputmode="numeric" required></div></div>
@@ -524,6 +558,128 @@
              <div class="form-row full-width conditional-field js-study-details"><div class="form-group"><label class="js-oqish-joyi-label">O'qish joyi</label><input name="oqish_joyi" class="js-transliterate"></div><div class="form-group"><label class="js-kursi-sinfi-label">Kursi/Sinfi</label><input name="kursi_sinfi" inputmode="numeric"></div></div>
              <div class="form-group full-width conditional-field js-bogcha-details"><label>Bog'cha nomi yoki raqami</label><input name="bogcha_nomi" class="js-transliterate"></div>
              <div class="form-group full-width conditional-field js-disability-group"><label>Nogironlik guruhi</label><select name="disabilityGroup"><option value="" disabled selected>Tanlang...</option><option>1-guruh</option><option>2-guruh</option><option>3-guruh</option><option>Bolalikdan nogiron</option></select></div>
+             
+             <!-- ISHSIZ UCHUN QOSHIMCHA MA'LUMOTLAR -->
+             <div class="form-row full-width conditional-field js-unemployed-details" style="display: none;">
+               <div class="form-group">
+                   <label><i class="fas fa-graduation-cap" style="color: #8b5cf6;"></i> Ma'lumoti</label>
+                   <select name="malumoti" class="js-education-level">
+                       <option value="">Tanlang...</option>
+                       <option value="Oliy">Oliy</option>
+                       <option value="O'rta-maxsus">O'rta-maxsus</option>
+                       <option value="O'rta">O'rta</option>
+                       <option value="Boshlang'ich">Boshlang'ich</option>
+                       <option value="To'liqsiz o'rta">To'liqsiz o'rta</option>
+                   </select>
+               </div>
+               <div class="form-group">
+                   <label><i class="fas fa-briefcase" style="color: #10b981;"></i> Qanday ishda ishlamoqchi</label>
+                   <select name="ishlash_yonalishi" class="js-job-category">
+                       <option value="">Ish yo'nalishini tanlang...</option>
+                       <optgroup label="🏗️ Qurilish va Ta'mirlash">
+                           <option value="Qurilishchi">Qurilishchi</option>
+                           <option value="Elektrik">Elektrik</option>
+                           <option value="Santexnik">Santexnik</option>
+                           <option value="Suvokchi">Suvokchi</option>
+                           <option value="Bo'yoqchi">Bo'yoqchi</option>
+                           <option value="Duradgor">Duradgor / Yog'ochchi</option>
+                           <option value="Payvandchi">Payvandchi</option>
+                           <option value="Chinakchi">G'ishtchi / Chinakchi</option>
+                           <option value="Plitachi">Plitachi / Kofechi</option>
+                           <option value="Konditsioner ustasi">Konditsioner ustasi</option>
+                       </optgroup>
+                       <optgroup label="🚗 Transport va Haydovchilik">
+                           <option value="Yengil avtomobil haydovchisi">Yengil avtomobil haydovchisi</option>
+                           <option value="Yuk mashinasi haydovchisi">Yuk mashinasi haydovchisi</option>
+                           <option value="Avtobus haydovchisi">Avtobus haydovchisi</option>
+                           <option value="Taksi haydovchisi">Taksi haydovchisi</option>
+                           <option value="Kuryer">Kuryer / Yetkazib beruvchi</option>
+                           <option value="Traktor haydovchisi">Traktor haydovchisi</option>
+                           <option value="Ekskavator operatori">Ekskavator operatori</option>
+                       </optgroup>
+                       <optgroup label="🏭 Ishlab chiqarish">
+                           <option value="Ishchi">Oddiy ishchi</option>
+                           <option value="Operator">Mashina operatori</option>
+                           <option value="Omborchi">Omborchi / Yuklovchi</option>
+                           <option value="Qadoqlovchi">Qadoqlovchi</option>
+                           <option value="Tokar">Tokar / Frezerchi</option>
+                           <option value="Slesar">Slesar / Mexanik</option>
+                       </optgroup>
+                       <optgroup label="🍳 Oshxona va Oziq-ovqat">
+                           <option value="Oshpaz">Oshpaz</option>
+                           <option value="Oshpaz yordamchisi">Oshpaz yordamchisi</option>
+                           <option value="Ofitsiant">Ofitsiant</option>
+                           <option value="Barmen">Barmen</option>
+                           <option value="Novvoy">Novvoy / Non pishiruvchi</option>
+                           <option value="Qandolat ustasi">Qandolat ustasi</option>
+                       </optgroup>
+                       <optgroup label="🧵 Tikuvchilik va To'qimachilik">
+                           <option value="Tikuvchi">Tikuvchi</option>
+                           <option value="Kesuvchi">Kesuvchi / Bichovchi</option>
+                           <option value="Andozachi">Andozachi</option>
+                           <option value="Kashtachi">Kashtachi</option>
+                           <option value="Trikotaj tikuvchisi">Trikotaj tikuvchisi</option>
+                       </optgroup>
+                       <optgroup label="💇 Go'zallik xizmatlari">
+                           <option value="Sartarosh erkaklar">Sartarosh (erkaklar)</option>
+                           <option value="Sartarosh ayollar">Sartarosh (ayollar)</option>
+                           <option value="Kosmetolog">Kosmetolog</option>
+                           <option value="Manikurchi">Manikurchi / Pedikurchi</option>
+                           <option value="Vizajist">Vizajist</option>
+                           <option value="Massajist">Massajist</option>
+                       </optgroup>
+                       <optgroup label="🏢 Ofis va Xizmat">
+                           <option value="Buxgalter">Buxgalter</option>
+                           <option value="Kotiba">Kotiba / Ofis-menejer</option>
+                           <option value="Kassir">Kassir</option>
+                           <option value="Sotuvchi">Sotuvchi / Konsultant</option>
+                           <option value="Menejer">Menejer</option>
+                           <option value="Qo'riqchi">Qo'riqchi / Xavfsizlik</option>
+                           <option value="Farrosh">Farrosh / Tozalagich</option>
+                           <option value="Administrator">Administrator</option>
+                       </optgroup>
+                       <optgroup label="💻 IT va Texnologiya">
+                           <option value="Dasturchi">Dasturchi / Programmer</option>
+                           <option value="Veb-dizayner">Veb-dizayner</option>
+                           <option value="Grafik dizayner">Grafik dizayner</option>
+                           <option value="SMM mutaxassisi">SMM mutaxassisi</option>
+                           <option value="Kompyuter ustasi">Kompyuter ustasi</option>
+                           <option value="Videograf">Videograf / Videomontajchi</option>
+                           <option value="Fotograf">Fotograf</option>
+                       </optgroup>
+                       <optgroup label="🏥 Tibbiyot va Salomatlik">
+                           <option value="Hamshira">Hamshira</option>
+                           <option value="Tibbiy xodim">Tibbiy xodim</option>
+                           <option value="Farmatsevt">Farmatsevt</option>
+                           <option value="Laborant">Laborant</option>
+                           <option value="Enaga">Enaga / Parvarish</option>
+                       </optgroup>
+                       <optgroup label="🎓 Ta'lim">
+                           <option value="O'qituvchi">O'qituvchi</option>
+                           <option value="Tarbiyachi">Tarbiyachi</option>
+                           <option value="Repetitor">Repetitor</option>
+                           <option value="Til o'rgatuvchi">Til o'rgatuvchi</option>
+                       </optgroup>
+                       <optgroup label="🌾 Qishloq xo'jaligi">
+                           <option value="Dehqon">Dehqon / Fermer</option>
+                           <option value="Bog'bon">Bog'bon</option>
+                           <option value="Chorvador">Chorvador</option>
+                           <option value="Veterinar">Veterinar</option>
+                       </optgroup>
+                       <optgroup label="🔧 Texnik xizmatlar">
+                           <option value="Avtomexanik">Avtomexanik / Avtomaster</option>
+                           <option value="Telefon ustasi">Telefon ustasi</option>
+                           <option value="Maishiy texnika ustasi">Maishiy texnika ustasi</option>
+                           <option value="Lift ustasi">Lift ustasi</option>
+                       </optgroup>
+                       <optgroup label="📦 Boshqa">
+                           <option value="Istalgan ish">Istalgan ish</option>
+                           <option value="Boshqa">Boshqa</option>
+                       </optgroup>
+                   </select>
+               </div>
+             </div>
+             
              <div class="form-row full-width conditional-field js-migration-details"><div class="form-group"><label>Qaysi davlatda</label><input name="migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Ketgan sanasi</label><input name="migration_duration" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10"></div></div>
              <div class="form-row full-width conditional-field js-returned-migration-details"><div class="form-group"><label>Qaysi davlatdan qaytgan</label><input name="returned_migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Qachon qaytgan</label><input name="returned_migration_date" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10" inputmode="numeric"></div><div class="form-group"><label>Hozirgi holati</label><select name="returned_migration_current_status" class="js-employment-status-sub" data-optional="true"></select></div></div>
             <div class="form-group full-width conditional-field js-toifa-turi inspector-only-section">
@@ -986,8 +1142,6 @@
             <label><i class="fas fa-hand-holding-usd" style="color: #10b981;"></i> Kambag'allik va Nafaqa</label>
             <select name="moddiy_yordam" data-optional="true">
                 <option value="">Tanlang...</option>
-                <option value="Temir daftar (A'zo)">Temir daftar (A'zo)</option>
-                <option value="Temir daftar (Nomzod)">Temir daftar (Kiritish kerak)</option>
                 <option value="Bola puli oladi">Bola puli oladi</option>
                 <option value="Nafaqa oladi">Moddiy yordam/Nafaqa oladi</option>
                 <option value="Yo'q" selected>Yo'q</option>
@@ -1019,21 +1173,112 @@
           <div class="form-row conditional-field js-metrka-fields"><div class="form-group full-width"><label>Guvohnoma seriyasi va raqami</label><div class="metrka-input-group"><select name="metrka_series" class="js-metrka-series"></select><input name="metrka_number" maxlength="8" inputmode="numeric" class="js-numeric-input"></div></div><div class="form-group"><label>Tug'ilgan sana</label><input name="metrka_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
           <div class="form-row conditional-field js-chet-el-fields">
                 <div class="form-group">
-                    <label>Davlat</label>
-                    <!-- Mana shu yerda o'zgarish bo'ldi -->
-                    <input name="chet_el_davlati" class="js-alpha-input js-transliterate" list="davlatlar-royhati">
-                    <datalist id="davlatlar-royhati">
-                        <!-- Davlatlar bu yerga JavaScript orqali qo'shiladi -->
-                    </datalist>
+                    <label><i class="fas fa-globe" style="color: #3b82f6;"></i> Davlat</label>
+                    <select name="chet_el_davlati" class="js-country-select">
+                        <option value="">Davlatni tanlang...</option>
+                        <optgroup label="MDH davlatlari">
+                            <option value="Rossiya">🇷🇺 Rossiya</option>
+                            <option value="Qozog'iston">🇰🇿 Qozog'iston</option>
+                            <option value="Qirg'iziston">🇰🇬 Qirg'iziston</option>
+                            <option value="Tojikiston">🇹🇯 Tojikiston</option>
+                            <option value="Turkmaniston">🇹🇲 Turkmaniston</option>
+                            <option value="Ozarbayjon">🇦🇿 Ozarbayjon</option>
+                            <option value="Armaniston">🇦🇲 Armaniston</option>
+                            <option value="Gruziya">🇬🇪 Gruziya</option>
+                            <option value="Belarus">🇧🇾 Belarus</option>
+                            <option value="Ukraina">🇺🇦 Ukraina</option>
+                            <option value="Moldova">🇲🇩 Moldova</option>
+                        </optgroup>
+                        <optgroup label="Osiyo">
+                            <option value="Xitoy">🇨🇳 Xitoy</option>
+                            <option value="Hindiston">🇮🇳 Hindiston</option>
+                            <option value="Pokiston">🇵🇰 Pokiston</option>
+                            <option value="Afg'oniston">🇦🇫 Afg'oniston</option>
+                            <option value="Eron">🇮🇷 Eron</option>
+                            <option value="Turkiya">🇹🇷 Turkiya</option>
+                            <option value="Saudiya Arabistoni">🇸🇦 Saudiya Arabistoni</option>
+                            <option value="BAA">🇦🇪 Birlashgan Arab Amirliklari</option>
+                            <option value="Qator">🇶🇦 Qator</option>
+                            <option value="Kuvayt">🇰🇼 Kuvayt</option>
+                            <option value="Iroq">🇮🇶 Iroq</option>
+                            <option value="Isroil">🇮🇱 Isroil</option>
+                            <option value="Yaponiya">🇯🇵 Yaponiya</option>
+                            <option value="Janubiy Koreya">🇰🇷 Janubiy Koreya</option>
+                            <option value="Malayziya">🇲🇾 Malayziya</option>
+                            <option value="Singapur">🇸🇬 Singapur</option>
+                            <option value="Tailand">🇹🇭 Tailand</option>
+                            <option value="Vetnam">🇻🇳 Vetnam</option>
+                            <option value="Indoneziya">🇮🇩 Indoneziya</option>
+                            <option value="Filippin">🇵🇭 Filippin</option>
+                            <option value="Bangladesh">🇧🇩 Bangladesh</option>
+                            <option value="Nepal">🇳🇵 Nepal</option>
+                            <option value="Shri-Lanka">🇱🇰 Shri-Lanka</option>
+                        </optgroup>
+                        <optgroup label="Yevropa">
+                            <option value="Germaniya">🇩🇪 Germaniya</option>
+                            <option value="Fransiya">🇫🇷 Fransiya</option>
+                            <option value="Buyuk Britaniya">🇬🇧 Buyuk Britaniya</option>
+                            <option value="Italiya">🇮🇹 Italiya</option>
+                            <option value="Ispaniya">🇪🇸 Ispaniya</option>
+                            <option value="Polsha">🇵🇱 Polsha</option>
+                            <option value="Niderlandiya">🇳🇱 Niderlandiya</option>
+                            <option value="Belgiya">🇧🇪 Belgiya</option>
+                            <option value="Shveytsariya">🇨🇭 Shveytsariya</option>
+                            <option value="Avstriya">🇦🇹 Avstriya</option>
+                            <option value="Chexiya">🇨🇿 Chexiya</option>
+                            <option value="Vengriya">🇭🇺 Vengriya</option>
+                            <option value="Ruminiya">🇷🇴 Ruminiya</option>
+                            <option value="Bolgariya">🇧🇬 Bolgariya</option>
+                            <option value="Serbiya">🇷🇸 Serbiya</option>
+                            <option value="Xorvatiya">🇭🇷 Xorvatiya</option>
+                            <option value="Gretsiya">🇬🇷 Gretsiya</option>
+                            <option value="Portugaliya">🇵🇹 Portugaliya</option>
+                            <option value="Shvetsiya">🇸🇪 Shvetsiya</option>
+                            <option value="Norvegiya">🇳🇴 Norvegiya</option>
+                            <option value="Daniya">🇩🇰 Daniya</option>
+                            <option value="Finlyandiya">🇫🇮 Finlyandiya</option>
+                            <option value="Latviya">🇱🇻 Latviya</option>
+                            <option value="Litva">🇱🇹 Litva</option>
+                            <option value="Estoniya">🇪🇪 Estoniya</option>
+                        </optgroup>
+                        <optgroup label="Amerika">
+                            <option value="AQSH">🇺🇸 Amerika Qo'shma Shtatlari</option>
+                            <option value="Kanada">🇨🇦 Kanada</option>
+                            <option value="Meksika">🇲🇽 Meksika</option>
+                            <option value="Braziliya">🇧🇷 Braziliya</option>
+                            <option value="Argentina">🇦🇷 Argentina</option>
+                            <option value="Chili">🇨🇱 Chili</option>
+                            <option value="Kolumbiya">🇨🇴 Kolumbiya</option>
+                            <option value="Peru">🇵🇪 Peru</option>
+                            <option value="Venesuela">🇻🇪 Venesuela</option>
+                            <option value="Kuba">🇨🇺 Kuba</option>
+                        </optgroup>
+                        <optgroup label="Afrika">
+                            <option value="Misr">🇪🇬 Misr</option>
+                            <option value="Marokash">🇲🇦 Marokash</option>
+                            <option value="Jazoir">🇩🇿 Jazoir</option>
+                            <option value="Tunis">🇹🇳 Tunis</option>
+                            <option value="Liviya">🇱🇾 Liviya</option>
+                            <option value="Janubiy Afrika">🇿🇦 Janubiy Afrika</option>
+                            <option value="Nigeriya">🇳🇬 Nigeriya</option>
+                            <option value="Keniya">🇰🇪 Keniya</option>
+                            <option value="Efiopiya">🇪🇹 Efiopiya</option>
+                        </optgroup>
+                        <optgroup label="Okeaniya">
+                            <option value="Avstraliya">🇦🇺 Avstraliya</option>
+                            <option value="Yangi Zelandiya">🇳🇿 Yangi Zelandiya</option>
+                        </optgroup>
+                    </select>
                 </div>
                 <div class="form-group">
-                    <label>Pasport seriya va raqami</label>
-                    <input name="chet_el_pasport">
+                    <label><i class="fas fa-passport" style="color: #8b5cf6;"></i> Pasport seriya va raqami</label>
+                    <input name="chet_el_pasport" placeholder="Xorijiy pasport">
                 </div>
                 <div class="form-group full-width">
-                    <label>Tug'ilgan sana</label>
+                    <label><i class="fas fa-calendar-alt" style="color: #f59e0b;"></i> Tug'ilgan sana</label>
                     <input name="chet_el_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric">
                 </div>
+          </div>
           <div class="form-row"><div class="form-group full-width"><label>Bandlik holati</label>
             <select name="employmentStatus" class="js-employment-status" required>
                 <option value="" disabled selected>Tanlang...</option>
@@ -1054,6 +1299,128 @@
             </select>
           </div>
           <div class="form-row full-width conditional-field js-study-details"><div class="form-group"><label class="js-oqish-joyi-label">O'qish joyi</label><input name="oqish_joyi" class="js-transliterate"></div><div class="form-group"><label class="js-kursi-sinfi-label">Kursi/Sinfi</label><input name="kursi_sinfi" inputmode="numeric"></div></div><div class="form-group full-width conditional-field js-employment-details"><label>Ish joyi</label><input name="employmentDetails" class="js-transliterate"></div><div class="form-group full-width conditional-field js-bogcha-details"><label>Bog'cha nomi yoki raqami</label><input name="bogcha_nomi" class="js-transliterate"></div><div class="form-group full-width conditional-field js-disability-group"><label>Nogironlik guruhi</label><select name="disabilityGroup"><option value="" disabled selected>Tanlang...</option><option>1-guruh</option><option>2-guruh</option><option>3-guruh</option><option>Bolalikdan nogiron</option></select></div>
+          
+          <!-- ISHSIZ UCHUN QOSHIMCHA MA'LUMOTLAR -->
+          <div class="form-row full-width conditional-field js-unemployed-details" style="display: none;">
+            <div class="form-group">
+                <label><i class="fas fa-graduation-cap" style="color: #8b5cf6;"></i> Ma'lumoti</label>
+                <select name="malumoti" class="js-education-level">
+                    <option value="">Tanlang...</option>
+                    <option value="Oliy">Oliy</option>
+                    <option value="O'rta-maxsus">O'rta-maxsus</option>
+                    <option value="O'rta">O'rta</option>
+                    <option value="Boshlang'ich">Boshlang'ich</option>
+                    <option value="To'liqsiz o'rta">To'liqsiz o'rta</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label><i class="fas fa-briefcase" style="color: #10b981;"></i> Qanday ishda ishlamoqchi</label>
+                <select name="ishlash_yonalishi" class="js-job-category">
+                    <option value="">Ish yo'nalishini tanlang...</option>
+                    <optgroup label="🏗️ Qurilish va Ta'mirlash">
+                        <option value="Qurilishchi">Qurilishchi</option>
+                        <option value="Elektrik">Elektrik</option>
+                        <option value="Santexnik">Santexnik</option>
+                        <option value="Suvokchi">Suvokchi</option>
+                        <option value="Bo'yoqchi">Bo'yoqchi</option>
+                        <option value="Duradgor">Duradgor / Yog'ochchi</option>
+                        <option value="Payvandchi">Payvandchi</option>
+                        <option value="Chinakchi">G'ishtchi / Chinakchi</option>
+                        <option value="Plitachi">Plitachi / Kofechi</option>
+                        <option value="Konditsioner ustasi">Konditsioner ustasi</option>
+                    </optgroup>
+                    <optgroup label="🚗 Transport va Haydovchilik">
+                        <option value="Yengil avtomobil haydovchisi">Yengil avtomobil haydovchisi</option>
+                        <option value="Yuk mashinasi haydovchisi">Yuk mashinasi haydovchisi</option>
+                        <option value="Avtobus haydovchisi">Avtobus haydovchisi</option>
+                        <option value="Taksi haydovchisi">Taksi haydovchisi</option>
+                        <option value="Kuryer">Kuryer / Yetkazib beruvchi</option>
+                        <option value="Traktor haydovchisi">Traktor haydovchisi</option>
+                        <option value="Ekskavator operatori">Ekskavator operatori</option>
+                    </optgroup>
+                    <optgroup label="🏭 Ishlab chiqarish">
+                        <option value="Ishchi">Oddiy ishchi</option>
+                        <option value="Operator">Mashina operatori</option>
+                        <option value="Omborchi">Omborchi / Yuklovchi</option>
+                        <option value="Qadoqlovchi">Qadoqlovchi</option>
+                        <option value="Tokar">Tokar / Frezerchi</option>
+                        <option value="Slesar">Slesar / Mexanik</option>
+                    </optgroup>
+                    <optgroup label="🍳 Oshxona va Oziq-ovqat">
+                        <option value="Oshpaz">Oshpaz</option>
+                        <option value="Oshpaz yordamchisi">Oshpaz yordamchisi</option>
+                        <option value="Ofitsiant">Ofitsiant</option>
+                        <option value="Barmen">Barmen</option>
+                        <option value="Novvoy">Novvoy / Non pishiruvchi</option>
+                        <option value="Qandolat ustasi">Qandolat ustasi</option>
+                    </optgroup>
+                    <optgroup label="🧵 Tikuvchilik va To'qimachilik">
+                        <option value="Tikuvchi">Tikuvchi</option>
+                        <option value="Kesuvchi">Kesuvchi / Bichovchi</option>
+                        <option value="Andozachi">Andozachi</option>
+                        <option value="Kashtachi">Kashtachi</option>
+                        <option value="Trikotaj tikuvchisi">Trikotaj tikuvchisi</option>
+                    </optgroup>
+                    <optgroup label="💇 Go'zallik xizmatlari">
+                        <option value="Sartarosh erkaklar">Sartarosh (erkaklar)</option>
+                        <option value="Sartarosh ayollar">Sartarosh (ayollar)</option>
+                        <option value="Kosmetolog">Kosmetolog</option>
+                        <option value="Manikurchi">Manikurchi / Pedikurchi</option>
+                        <option value="Vizajist">Vizajist</option>
+                        <option value="Massajist">Massajist</option>
+                    </optgroup>
+                    <optgroup label="🏢 Ofis va Xizmat">
+                        <option value="Buxgalter">Buxgalter</option>
+                        <option value="Kotiba">Kotiba / Ofis-menejer</option>
+                        <option value="Kassir">Kassir</option>
+                        <option value="Sotuvchi">Sotuvchi / Konsultant</option>
+                        <option value="Menejer">Menejer</option>
+                        <option value="Qo'riqchi">Qo'riqchi / Xavfsizlik</option>
+                        <option value="Farrosh">Farrosh / Tozalagich</option>
+                        <option value="Administrator">Administrator</option>
+                    </optgroup>
+                    <optgroup label="💻 IT va Texnologiya">
+                        <option value="Dasturchi">Dasturchi / Programmer</option>
+                        <option value="Veb-dizayner">Veb-dizayner</option>
+                        <option value="Grafik dizayner">Grafik dizayner</option>
+                        <option value="SMM mutaxassisi">SMM mutaxassisi</option>
+                        <option value="Kompyuter ustasi">Kompyuter ustasi</option>
+                        <option value="Videograf">Videograf / Videomontajchi</option>
+                        <option value="Fotograf">Fotograf</option>
+                    </optgroup>
+                    <optgroup label="🏥 Tibbiyot va Salomatlik">
+                        <option value="Hamshira">Hamshira</option>
+                        <option value="Tibbiy xodim">Tibbiy xodim</option>
+                        <option value="Farmatsevt">Farmatsevt</option>
+                        <option value="Laborant">Laborant</option>
+                        <option value="Enaga">Enaga / Parvarish</option>
+                    </optgroup>
+                    <optgroup label="🎓 Ta'lim">
+                        <option value="O'qituvchi">O'qituvchi</option>
+                        <option value="Tarbiyachi">Tarbiyachi</option>
+                        <option value="Repetitor">Repetitor</option>
+                        <option value="Til o'rgatuvchi">Til o'rgatuvchi</option>
+                    </optgroup>
+                    <optgroup label="🌾 Qishloq xo'jaligi">
+                        <option value="Dehqon">Dehqon / Fermer</option>
+                        <option value="Bog'bon">Bog'bon</option>
+                        <option value="Chorvador">Chorvador</option>
+                        <option value="Veterinar">Veterinar</option>
+                    </optgroup>
+                    <optgroup label="🔧 Texnik xizmatlar">
+                        <option value="Avtomexanik">Avtomexanik / Avtomaster</option>
+                        <option value="Telefon ustasi">Telefon ustasi</option>
+                        <option value="Maishiy texnika ustasi">Maishiy texnika ustasi</option>
+                        <option value="Lift ustasi">Lift ustasi</option>
+                    </optgroup>
+                    <optgroup label="📦 Boshqa">
+                        <option value="Istalgan ish">Istalgan ish</option>
+                        <option value="Boshqa">Boshqa</option>
+                    </optgroup>
+                </select>
+            </div>
+          </div>
+          
           <div class="form-row full-width conditional-field js-migration-details"><div class="form-group"><label>Qaysi davlatda</label><input name="migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Ketgan sanasi</label><input name="migration_duration" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10"></div></div>
           <div class="form-row full-width conditional-field js-returned-migration-details"><div class="form-group"><label>Qaysi davlatdan qaytgan</label><input name="returned_migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Qachon qaytgan</label><input name="returned_migration_date" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10" inputmode="numeric"></div>
           <div class="form-group"><label>Hozirgi holati</label><select name="returned_migration_current_status" class="js-employment-status-sub" data-optional="true"></select></div></div>
@@ -1262,6 +1629,36 @@
                 <i class="fas fa-user-slash" style="font-size: 1.25rem; color: #f97316; margin-bottom: 0.5rem;"></i>
                 <div style="font-size: 1.5rem; font-weight: 700;" id="stat-ishlovchi-yoq">0</div>
                 <div style="font-size: 0.75rem; color: var(--text-light);">Ishlovchi yo'q</div>
+              </div>
+            </div>
+            
+            <!-- IJTIMOIY DAFTARLAR VA MODDIY YORDAM -->
+            <h4 style="margin: 1rem 0 0.75rem; color: #ec4899;"><i class="fas fa-book-open"></i> Ijtimoiy Daftarlar va Moddiy Yordam</h4>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; margin-bottom: 1.5rem;">
+              <div class="summary-stat-card" data-category="ayollar-daftari" style="background: linear-gradient(135deg, #db2777 0%, #ec4899 100%); color: white; padding: 1rem; border-radius: 10px; text-align: center; cursor: pointer;">
+                <i class="fas fa-female" style="font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                <div style="font-size: 1.5rem; font-weight: 700;" id="stat-ayollar-daftari">0</div>
+                <div style="font-size: 0.75rem; opacity: 0.9;">Ayollar daftari</div>
+              </div>
+              <div class="summary-stat-card" data-category="yoshlar-daftari" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); color: white; padding: 1rem; border-radius: 10px; text-align: center; cursor: pointer;">
+                <i class="fas fa-user-graduate" style="font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                <div style="font-size: 1.5rem; font-weight: 700;" id="stat-yoshlar-daftari">0</div>
+                <div style="font-size: 0.75rem; opacity: 0.9;">Yoshlar daftari</div>
+              </div>
+              <div class="summary-stat-card" data-category="moddiy-yordam" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 1rem; border-radius: 10px; text-align: center; cursor: pointer;">
+                <i class="fas fa-hand-holding-usd" style="font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                <div style="font-size: 1.5rem; font-weight: 700;" id="stat-moddiy-yordam">0</div>
+                <div style="font-size: 0.75rem; opacity: 0.9;">Moddiy yordam</div>
+              </div>
+              <div class="summary-stat-card" data-category="neet" style="background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%); color: white; padding: 1rem; border-radius: 10px; text-align: center; cursor: pointer;">
+                <i class="fas fa-exclamation-triangle" style="font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                <div style="font-size: 1.5rem; font-weight: 700;" id="stat-neet">0</div>
+                <div style="font-size: 0.75rem; opacity: 0.9;">NEET yoshlar</div>
+              </div>
+              <div class="summary-stat-card" data-category="xavfli" style="background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%); color: white; padding: 1rem; border-radius: 10px; text-align: center; cursor: pointer;">
+                <i class="fas fa-shield-alt" style="font-size: 1.25rem; margin-bottom: 0.5rem;"></i>
+                <div style="font-size: 1.5rem; font-weight: 700;" id="stat-xavfli">0</div>
+                <div style="font-size: 0.75rem; opacity: 0.9;">Xavfli fuqarolar</div>
               </div>
             </div>
             
@@ -1474,6 +1871,38 @@
             <button class="btn btn-secondary" id="export-employment-excel" style="width: auto; margin: 0; padding: 0.5rem 1rem;"><i class="fas fa-download"></i> Excel</button>
           </div>
           <div id="employment-cards-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem;"></div>
+        </div>
+        
+        <!-- IJTIMOIY DAFTARLAR VA MODDIY YORDAM -->
+        <div style="background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 12px; padding: 1.25rem; margin-top: 1.5rem;">
+          <h4 style="margin: 0 0 1rem 0;"><i class="fas fa-book-open" style="color: #ec4899;"></i> Ijtimoiy Daftarlar va Moddiy Yordam</h4>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;">
+            <div class="analytics-top-card" onclick="showCategoryDetail('ayollar-daftari')" style="background: linear-gradient(135deg, #db2777 0%, #ec4899 100%); color: white; padding: 1rem; border-radius: 12px; text-align: center; cursor: pointer; box-shadow: 0 4px 15px rgba(219,39,119,0.3); transition: all 0.3s;">
+              <i class="fas fa-female" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+              <div style="font-size: 1.8rem; font-weight: 700;" id="analytics-ayollar-daftari">0</div>
+              <div style="font-size: 0.8rem; opacity: 0.9;">Ayollar daftari</div>
+            </div>
+            <div class="analytics-top-card" onclick="showCategoryDetail('yoshlar-daftari')" style="background: linear-gradient(135deg, #7c3aed 0%, #8b5cf6 100%); color: white; padding: 1rem; border-radius: 12px; text-align: center; cursor: pointer; box-shadow: 0 4px 15px rgba(124,58,237,0.3); transition: all 0.3s;">
+              <i class="fas fa-user-graduate" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+              <div style="font-size: 1.8rem; font-weight: 700;" id="analytics-yoshlar-daftari">0</div>
+              <div style="font-size: 0.8rem; opacity: 0.9;">Yoshlar daftari</div>
+            </div>
+            <div class="analytics-top-card" onclick="showCategoryDetail('moddiy-yordam')" style="background: linear-gradient(135deg, #059669 0%, #10b981 100%); color: white; padding: 1rem; border-radius: 12px; text-align: center; cursor: pointer; box-shadow: 0 4px 15px rgba(5,150,105,0.3); transition: all 0.3s;">
+              <i class="fas fa-hand-holding-usd" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+              <div style="font-size: 1.8rem; font-weight: 700;" id="analytics-moddiy-yordam">0</div>
+              <div style="font-size: 0.8rem; opacity: 0.9;">Moddiy yordam</div>
+            </div>
+            <div class="analytics-top-card" onclick="showCategoryDetail('migrants')" style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: 1rem; border-radius: 12px; text-align: center; cursor: pointer; box-shadow: 0 4px 15px rgba(2,132,199,0.3); transition: all 0.3s;">
+              <i class="fas fa-plane-departure" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+              <div style="font-size: 1.8rem; font-weight: 700;" id="analytics-migrants">0</div>
+              <div style="font-size: 0.8rem; opacity: 0.9;">Migrantlar</div>
+            </div>
+            <div class="analytics-top-card" onclick="showCategoryDetail('disabled')" style="background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%); color: white; padding: 1rem; border-radius: 12px; text-align: center; cursor: pointer; box-shadow: 0 4px 15px rgba(8,145,178,0.3); transition: all 0.3s;">
+              <i class="fas fa-wheelchair" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+              <div style="font-size: 1.8rem; font-weight: 700;" id="analytics-disabled">0</div>
+              <div style="font-size: 0.8rem; opacity: 0.9;">Nogironlar</div>
+            </div>
+          </div>
         </div>
         
         <button class="btn btn-secondary" style="width: auto; margin-top: 1rem;" onclick="document.getElementById('analytics-modal').style.display='none'; showScreen('search-view');"><i class="fas fa-arrow-left"></i> Orqaga</button>
@@ -1955,6 +2384,16 @@ const showScreen=(id)=>{
   }
   if (previousScreenStack[previousScreenStack.length - 1] !== id) {
       previousScreenStack.push(id);
+  }
+  // FAB tugmalarni yashirish/ko'rsatish
+  const fabContainer = document.querySelector('.fab-container');
+  if (fabContainer) {
+      const hideOnScreens = ['add-view', 'add-family-modal', 'details-modal', 'camera-modal', 'signature-modal'];
+      if (hideOnScreens.includes(id)) {
+          fabContainer.style.display = 'none';
+      } else {
+          fabContainer.style.display = 'flex';
+      }
   }
 };
 const goBack = () => {
@@ -2867,6 +3306,28 @@ function calculateAndDisplaySummary() {
             inspectorSection.style.display = 'none';
         }
     }
+    
+    // IJTIMOIY DAFTARLAR STATISTIKASI
+    const ayollarDaftariStat = d.filter(p => p.ayollar_daftari === "Ro'yxatda turadi" || p.ayollar_daftari === "Ro'yxatga olish kerak").length;
+    const yoshlarDaftariStat = d.filter(p => p.yoshlar_daftari === "Ro'yxatda turadi" || p.yoshlar_daftari === "Ro'yxatga olish kerak").length;
+    const moddiyYordamStat = d.filter(p => p.moddiy_yordam === 'Bola puli oladi' || p.moddiy_yordam === 'Nafaqa oladi').length;
+    const neetStat = d.filter(p => {
+        const age = getAge(p.dob);
+        const isNeetAge = age >= 18 && age <= 30;
+        const isUnemployed = p.employmentStatus === 'Ishsiz' || !p.employmentStatus;
+        const isNotStudent = p.employmentStatus !== "Talaba/O'quvchi" && p.employmentStatus !== "Talaba" && p.employmentStatus !== "Maktab o'quchisi";
+        return isNeetAge && isUnemployed && isNotStudent;
+    }).length;
+    const xavfliStat = d.filter(p => {
+        const risk = calculateRiskScore(p);
+        return risk.level === 'YUQORI XAVF' || risk.level === "O'rta xavf";
+    }).length;
+    
+    if(document.getElementById('stat-ayollar-daftari')) document.getElementById('stat-ayollar-daftari').textContent = ayollarDaftariStat;
+    if(document.getElementById('stat-yoshlar-daftari')) document.getElementById('stat-yoshlar-daftari').textContent = yoshlarDaftariStat;
+    if(document.getElementById('stat-moddiy-yordam')) document.getElementById('stat-moddiy-yordam').textContent = moddiyYordamStat;
+    if(document.getElementById('stat-neet')) document.getElementById('stat-neet').textContent = neetStat;
+    if(document.getElementById('stat-xavfli')) document.getElementById('stat-xavfli').textContent = xavfliStat;
 
     // Oynani ochish
     showScreen('summary-modal');
@@ -3794,13 +4255,14 @@ function setupEventListeners(){
       }
       else if (t.classList.contains('js-employment-status')) { 
         const s = t.value; 
-        ['.js-study-details', '.js-employment-details', '.js-bogcha-details', '.js-disability-group', '.js-migration-details', '.js-returned-migration-details'].forEach(sel => { const f = currentForm.querySelector(sel); if (f) f.style.display = 'none'; }); 
+        ['.js-study-details', '.js-employment-details', '.js-bogcha-details', '.js-disability-group', '.js-migration-details', '.js-returned-migration-details', '.js-unemployed-details'].forEach(sel => { const f = currentForm.querySelector(sel); if (f) f.style.display = 'none'; }); 
         if (['Talaba', "Maktab o'quchisi"].includes(s)) toggle('.js-study-details', true); 
         else if (['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(s)) toggle('.js-employment-details', true); 
         else if (s === "Bog'cha") toggle('.js-bogcha-details', true); 
         else if (s === "Nogironligi bor") toggle('.js-disability-group', true); 
         else if (s === "Migratsiya") toggle('.js-migration-details', true); 
-        else if (s === "Migratsiyadan qaytgan") toggle('.js-returned-migration-details', true); 
+        else if (s === "Migratsiyadan qaytgan") toggle('.js-returned-migration-details', true);
+        else if (s === "Ishsiz") toggle('.js-unemployed-details', true);
       }
       // ══════════ YANGI BO'LIMLAR UCHUN HANDLERLAR ══════════
       else if (t.classList.contains('js-sudlanganlik')) {
@@ -5017,6 +5479,7 @@ const APARTMENT_BUILDINGS = {
     '8': { name: '8-dom', total: 42 },
     '9': { name: '9-dom', total: 42 },
     '10': { name: '10-dom', total: 42 },
+    'lermontov10': { name: 'Lermontov 10-dom', total: 15 },
     '11': { name: '11-dom', total: 42 },
     '12': { name: '12-dom', total: 42 },
     '13': { name: '13-dom', total: 42 },
@@ -5349,22 +5812,63 @@ function loadMapMarkers(filter) {
         });
         
         if (filter === 'unemployed' && infoContainer) {
+            // Kategoriyalarga ajratish
+            const erkaklar = ishsizlar.filter(p => p.jinsi === 'Erkak');
+            const ayollar = ishsizlar.filter(p => p.jinsi === 'Ayol');
+            const yoshlar = ishsizlar.filter(p => { const age = getAge(p.dob); return age >= 18 && age <= 30; });
+            
             infoContainer.style.display = 'block';
             infoContainer.innerHTML = `
                 <div style="background: var(--surface-color); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
-                    <h4 style="margin: 0 0 1rem 0; color: var(--danger-color);"><i class="fas fa-user-times"></i> Ishsizlar: ${ishsizlar.length} kishi</h4>
-                    <div style="max-height: 180px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
-                        ${ishsizlar.slice(0, 30).map(p => `
-                            <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--bg-color); border-radius: 8px;">
-                                <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                                    ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: var(--primary-color);"></i>'}
-                                </div>
-                                <div style="min-width: 0;">
-                                    <div style="font-weight: 600; font-size: 0.85rem;">${p.fio || ''}</div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light);">${getAge(p.dob) || '?'} yosh</div>
-                                </div>
+                    <h4 style="margin: 0 0 1rem 0; color: #ef4444;"><i class="fas fa-user-times"></i> Ishsizlar: ${ishsizlar.length} kishi</h4>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(59,130,246,0.3);">👨 Erkaklar: ${erkaklar.length}</span>
+                        <span style="background: linear-gradient(135deg, #ec4899, #f472b6); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(236,72,153,0.3);">👩 Ayollar: ${ayollar.length}</span>
+                        <span style="background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(245,158,11,0.3);">⚡ Yoshlar (18-30): ${yoshlar.length}</span>
+                    </div>
+                    
+                    <!-- ERKAKLAR -->
+                    <div style="margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-male"></i> Erkaklar (${erkaklar.length})
+                        </div>
+                        <div style="max-height: 120px; overflow-y: auto; background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
+                                ${erkaklar.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #60a5fa); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #3b82f6;">${getAge(p.dob) || '?'} yosh</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
-                        `).join('')}
+                        </div>
+                    </div>
+                    
+                    <!-- AYOLLAR -->
+                    <div>
+                        <div style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-female"></i> Ayollar (${ayollar.length})
+                        </div>
+                        <div style="max-height: 120px; overflow-y: auto; background: rgba(236,72,153,0.05); border: 1px solid rgba(236,72,153,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
+                                ${ayollar.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #ec4899;">${getAge(p.dob) || '?'} yosh</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
@@ -5399,18 +5903,34 @@ function loadMapMarkers(filter) {
         });
         
         if (filter === 'renters' && infoContainer) {
+            // Manzillar bo'yicha guruhlash va saralash
+            const sortedAddresses = Object.entries(byAddress).sort((a, b) => b[1].length - a[1].length);
+            
             infoContainer.style.display = 'block';
             infoContainer.innerHTML = `
                 <div style="background: var(--surface-color); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
                     <h4 style="margin: 0 0 1rem 0; color: #ec4899;"><i class="fas fa-key"></i> Ijarachilar: ${ijarachilar.length} kishi (${Object.keys(byAddress).length} manzilda)</h4>
-                    <div style="max-height: 180px; overflow-y: auto;">
-                        ${Object.entries(byAddress).map(([addr, people]) => `
-                            <div style="background: var(--bg-color); border-radius: 8px; padding: 0.75rem; margin-bottom: 0.5rem;">
-                                <div style="font-weight: 600; color: var(--primary-color); margin-bottom: 0.5rem;">
-                                    📍 ${addr} <span style="background: #ec4899; color: white; padding: 0.15rem 0.4rem; border-radius: 8px; font-size: 0.75rem;">${people.length}</span>
+                    <div style="max-height: 400px; overflow-y: auto;">
+                        ${sortedAddresses.map(([addr, people]) => `
+                            <div style="margin-bottom: 1rem;">
+                                <div style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600; display: flex; justify-content: space-between; align-items: center;">
+                                    <span><i class="fas fa-map-marker-alt"></i> ${addr}</span>
+                                    <span style="background: white; color: #ec4899; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.85rem;">${people.length}</span>
                                 </div>
-                                <div style="display: flex; flex-wrap: wrap; gap: 0.25rem;">
-                                    ${people.map(p => `<span style="font-size: 0.8rem; background: var(--surface-color); padding: 0.25rem 0.5rem; border-radius: 4px;">${p.fio || ''}</span>`).join('')}
+                                <div style="background: rgba(236,72,153,0.05); border: 1px solid rgba(236,72,153,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                                    <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
+                                        ${people.map(p => `
+                                            <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                                <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                                    ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                                </div>
+                                                <div style="min-width: 0; overflow: hidden;">
+                                                    <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                                    <div style="font-size: 0.7rem; color: #ec4899;">Ijarachi</div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
                                 </div>
                             </div>
                         `).join('')}
@@ -5454,22 +5974,75 @@ function loadMapMarkers(filter) {
                 <div style="background: var(--surface-color); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
                     <h4 style="margin: 0 0 1rem 0; color: #10b981;"><i class="fas fa-briefcase"></i> Band fuqarolar: ${bandlar.length} kishi</h4>
                     <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
-                        <span style="background: #10b981; color: white; padding: 0.3rem 0.6rem; border-radius: 8px;">Rasmiy: ${rasmiy.length}</span>
-                        <span style="background: #f59e0b; color: white; padding: 0.3rem 0.6rem; border-radius: 8px;">Norasmiy: ${norasmiy.length}</span>
-                        <span style="background: #8b5cf6; color: white; padding: 0.3rem 0.6rem; border-radius: 8px;">Tadbirkor: ${tadbirkor.length}</span>
+                        <span style="background: linear-gradient(135deg, #10b981, #34d399); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(16,185,129,0.3);">✓ Rasmiy: ${rasmiy.length}</span>
+                        <span style="background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(245,158,11,0.3);">⚡ Norasmiy: ${norasmiy.length}</span>
+                        <span style="background: linear-gradient(135deg, #8b5cf6, #a78bfa); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(139,92,246,0.3);">🏪 Tadbirkor: ${tadbirkor.length}</span>
                     </div>
-                    <div style="max-height: 180px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
-                        ${bandlar.slice(0, 30).map(p => `
-                            <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--bg-color); border-radius: 8px;">
-                                <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                                    ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: var(--primary-color);"></i>'}
-                                </div>
-                                <div style="min-width: 0;">
-                                    <div style="font-weight: 600; font-size: 0.85rem;">${p.fio || ''}</div>
-                                    <div style="font-size: 0.75rem; color: var(--text-light);">${p.employmentStatus || ''}</div>
-                                </div>
+                    
+                    <!-- RASMIY BAND -->
+                    <div style="margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-building"></i> Rasmiy bandlar (${rasmiy.length})
+                        </div>
+                        <div style="max-height: 150px; overflow-y: auto; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
+                                ${rasmiy.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #34d399); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #10b981;">Rasmiy band</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
-                        `).join('')}
+                        </div>
+                    </div>
+                    
+                    <!-- NORASMIY BAND -->
+                    <div style="margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-tools"></i> Norasmiy bandlar (${norasmiy.length})
+                        </div>
+                        <div style="max-height: 150px; overflow-y: auto; background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
+                                ${norasmiy.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #f59e0b;">Norasmiy band</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- TADBIRKORLAR -->
+                    <div>
+                        <div style="background: linear-gradient(135deg, #8b5cf6, #7c3aed); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-store"></i> Tadbirkorlar (${tadbirkor.length})
+                        </div>
+                        <div style="max-height: 150px; overflow-y: auto; background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
+                                ${tadbirkor.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                        <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #a78bfa); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #8b5cf6;">Tadbirkor</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
                     </div>
                 </div>
             `;
@@ -5480,21 +6053,66 @@ function loadMapMarkers(filter) {
     function showFilterInfo(title, color, icon, list, extraInfo = '') {
         if (!infoContainer) return;
         infoContainer.style.display = 'block';
+        
+        // Kategoriyalarga ajratish
+        const erkaklar = list.filter(p => p.jinsi === 'Erkak');
+        const ayollar = list.filter(p => p.jinsi === 'Ayol');
+        
         infoContainer.innerHTML = `
             <div style="background: var(--surface-color); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
                 <h4 style="margin: 0 0 1rem 0; color: ${color};"><i class="fas fa-${icon}"></i> ${title}: ${list.length} kishi ${extraInfo}</h4>
-                <div style="max-height: 180px; overflow-y: auto; display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
-                    ${list.slice(0, 30).map(p => `
-                        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--bg-color); border-radius: 8px; cursor: pointer;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
-                            <div style="width: 35px; height: 35px; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center; overflow: hidden;">
-                                ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 35px; height: 35px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: var(--primary-color);"></i>'}
-                            </div>
-                            <div style="min-width: 0;">
-                                <div style="font-weight: 600; font-size: 0.85rem;">${p.fio || ''}</div>
-                                <div style="font-size: 0.75rem; color: var(--text-light);">${getAge(p.dob) || '?'} yosh</div>
+                <div style="display: flex; gap: 0.75rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                    <span style="background: linear-gradient(135deg, #3b82f6, #60a5fa); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">👨 Erkaklar: ${erkaklar.length}</span>
+                    <span style="background: linear-gradient(135deg, #ec4899, #f472b6); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; font-size: 0.85rem;">👩 Ayollar: ${ayollar.length}</span>
+                </div>
+                <div style="max-height: 350px; overflow-y: auto;">
+                    <!-- ERKAKLAR -->
+                    ${erkaklar.length > 0 ? `
+                    <div style="margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600; font-size: 0.9rem;">
+                            <i class="fas fa-male"></i> Erkaklar (${erkaklar.length})
+                        </div>
+                        <div style="background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem; max-height: 150px; overflow-y: auto;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
+                                ${erkaklar.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid #3b82f6;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                        <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #60a5fa); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 14px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #3b82f6;">${getAge(p.dob) || '?'} yosh ${p.employmentStatus ? '• ' + p.employmentStatus : ''}</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
                             </div>
                         </div>
-                    `).join('')}
+                    </div>
+                    ` : ''}
+                    
+                    <!-- AYOLLAR -->
+                    ${ayollar.length > 0 ? `
+                    <div>
+                        <div style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600; font-size: 0.9rem;">
+                            <i class="fas fa-female"></i> Ayollar (${ayollar.length})
+                        </div>
+                        <div style="background: rgba(236,72,153,0.05); border: 1px solid rgba(236,72,153,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem; max-height: 150px; overflow-y: auto;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
+                                ${ayollar.map(p => `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid #ec4899;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                        <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 14px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #ec4899;">${getAge(p.dob) || '?'} yosh ${p.employmentStatus ? '• ' + p.employmentStatus : ''}</div>
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    ` : ''}
                 </div>
             </div>
         `;
@@ -5545,7 +6163,71 @@ function loadMapMarkers(filter) {
             marker.bindPopup(`<strong>${p.fio || ''}</strong><br>📍 ${p.street || ''}<br>⚠️ ${risk.level} (${risk.score} ball)`);
             mapMarkers.push(marker);
         });
-        showFilterInfo('Yuqori xavfli fuqarolar', '#ef4444', 'shield-alt', xavflilar);
+        
+        // Kategoriyalarga ajratish
+        const yuqoriXavf = xavflilar.filter(p => calculateRiskScore(p).level === 'YUQORI XAVF');
+        const ortaXavf = xavflilar.filter(p => calculateRiskScore(p).level === "O'rta xavf");
+        
+        if (infoContainer) {
+            infoContainer.style.display = 'block';
+            infoContainer.innerHTML = `
+                <div style="background: var(--surface-color); padding: 1rem; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <h4 style="margin: 0 0 1rem 0; color: #ef4444;"><i class="fas fa-shield-alt"></i> Xavfli fuqarolar: ${xavflilar.length} kishi</h4>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+                        <span style="background: linear-gradient(135deg, #dc2626, #ef4444); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(220,38,38,0.3);">🔴 Yuqori xavf: ${yuqoriXavf.length}</span>
+                        <span style="background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; padding: 0.4rem 0.8rem; border-radius: 20px; font-weight: 600; box-shadow: 0 2px 8px rgba(245,158,11,0.3);">🟡 O'rta xavf: ${ortaXavf.length}</span>
+                    </div>
+                    
+                    <!-- YUQORI XAVF -->
+                    <div style="margin-bottom: 1rem;">
+                        <div style="background: linear-gradient(135deg, #dc2626, #b91c1c); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-exclamation-circle"></i> Yuqori xavf darajasi (${yuqoriXavf.length})
+                        </div>
+                        <div style="max-height: 150px; overflow-y: auto; background: rgba(220,38,38,0.05); border: 1px solid rgba(220,38,38,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
+                                ${yuqoriXavf.map(p => {
+                                    const risk = calculateRiskScore(p);
+                                    return `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border-left: 3px solid #dc2626;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                        <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #dc2626;">${risk.score} ball - ${risk.factors.slice(0, 2).join(', ')}</div>
+                                        </div>
+                                    </div>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- O'RTA XAVF -->
+                    <div>
+                        <div style="background: linear-gradient(135deg, #f59e0b, #d97706); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600;">
+                            <i class="fas fa-exclamation-triangle"></i> O'rta xavf darajasi (${ortaXavf.length})
+                        </div>
+                        <div style="max-height: 150px; overflow-y: auto; background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
+                            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
+                                ${ortaXavf.map(p => {
+                                    const risk = calculateRiskScore(p);
+                                    return `
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border-left: 3px solid #f59e0b;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                        <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
+                                            ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
+                                        </div>
+                                        <div style="min-width: 0; overflow: hidden;">
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-size: 0.7rem; color: #f59e0b;">${risk.score} ball - ${risk.factors.slice(0, 2).join(', ')}</div>
+                                        </div>
+                                    </div>`;
+                                }).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
     }
     
     // AYOLLAR DAFTARI
@@ -5729,6 +6411,25 @@ function initializeAnalytics() {
     } else if (inspectorSection) {
         inspectorSection.style.display = 'none';
     }
+    
+    // IJTIMOIY DAFTARLAR STATISTIKASI
+    const ayollarDaftari = baza.filter(p => p.ayollar_daftari === "Ro'yxatda turadi" || p.ayollar_daftari === "Ro'yxatga olish kerak").length;
+    const yoshlarDaftari = baza.filter(p => p.yoshlar_daftari === "Ro'yxatda turadi" || p.yoshlar_daftari === "Ro'yxatga olish kerak").length;
+    const moddiyYordam = baza.filter(p => p.moddiy_yordam === 'Bola puli oladi' || p.moddiy_yordam === 'Nafaqa oladi').length;
+    const migrantlar = baza.filter(p => p.employmentStatus === 'Migratsiya').length;
+    const nogironlar = baza.filter(p => p.employmentStatus === 'Nogironligi bor' || (p.disabilityGroup && p.disabilityGroup !== "Yo'q")).length;
+    
+    const ayollarDaftariEl = document.getElementById('analytics-ayollar-daftari');
+    const yoshlarDaftariEl = document.getElementById('analytics-yoshlar-daftari');
+    const moddiyYordamEl = document.getElementById('analytics-moddiy-yordam');
+    const migrantlarEl = document.getElementById('analytics-migrants');
+    const nogironlarEl = document.getElementById('analytics-disabled');
+    
+    if (ayollarDaftariEl) ayollarDaftariEl.textContent = ayollarDaftari;
+    if (yoshlarDaftariEl) yoshlarDaftariEl.textContent = yoshlarDaftari;
+    if (moddiyYordamEl) moddiyYordamEl.textContent = moddiyYordam;
+    if (migrantlarEl) migrantlarEl.textContent = migrantlar;
+    if (nogironlarEl) nogironlarEl.textContent = nogironlar;
     
     // Jinsi chart
     const genderCtx = document.getElementById('gender-chart')?.getContext('2d');
@@ -6091,6 +6792,34 @@ window.showCategoryDetail = function(category) {
         case 'jazodan-qaytgan':
             list = baza.filter(p => p.jazo_qaytgan_sana);
             title = 'Jazodan qaytganlar ro\'yxati';
+            break;
+        // IJTIMOIY DAFTARLAR KATEGORIYALARI
+        case 'ayollar-daftari':
+            list = baza.filter(p => p.ayollar_daftari === "Ro'yxatda turadi" || p.ayollar_daftari === "Ro'yxatga olish kerak");
+            title = 'Ayollar daftari a\'zolari';
+            break;
+        case 'yoshlar-daftari':
+            list = baza.filter(p => p.yoshlar_daftari === "Ro'yxatda turadi" || p.yoshlar_daftari === "Ro'yxatga olish kerak");
+            title = 'Yoshlar daftari a\'zolari';
+            break;
+        case 'moddiy-yordam':
+            list = baza.filter(p => p.moddiy_yordam === 'Bola puli oladi' || p.moddiy_yordam === 'Nafaqa oladi');
+            title = 'Moddiy yordam oluvchilar';
+            break;
+        case 'migrants':
+            list = baza.filter(p => p.employmentStatus === 'Migratsiya');
+            title = 'Migrantlar ro\'yxati';
+            break;
+        case 'disabled':
+            list = baza.filter(p => p.employmentStatus === 'Nogironligi bor' || (p.disabilityGroup && p.disabilityGroup !== "Yo'q"));
+            title = 'Nogironlar ro\'yxati';
+            break;
+        case 'xavfli':
+            list = baza.filter(p => {
+                const risk = calculateRiskScore(p);
+                return risk.level === 'YUQORI XAVF' || risk.level === "O'rta xavf";
+            });
+            title = 'Xavfli fuqarolar ro\'yxati';
             break;
         default:
             list = [];
@@ -7041,6 +7770,193 @@ const originalDisplayObjectStats = displayObjectStats;
 displayObjectStats = function() {
     originalDisplayObjectStats();
     setTimeout(initializeMap, 300);
+};
+
+// ========================================================== 
+// AQLLI MA'LUMOT KIRITISH TIZIMI (Smart Data Entry)
+// ========================================================== 
+
+// 1. JSHSHIR dublikat tekshiruvi (real-time)
+function setupSmartDataEntry() {
+    // JSHSHIR inputlari uchun listener
+    document.querySelectorAll('input[name="jshshir"]').forEach(input => {
+        // Eski alertni o'chirish
+        const existingAlert = input.parentElement.querySelector('.smart-alert');
+        if (existingAlert) existingAlert.remove();
+        
+        // Alert konteyner qo'shish
+        let alertDiv = document.createElement('div');
+        alertDiv.className = 'smart-alert';
+        alertDiv.style.display = 'none';
+        alertDiv.innerHTML = '<span class="smart-alert-icon">🔍</span><span class="smart-alert-text"></span>';
+        input.parentElement.appendChild(alertDiv);
+        
+        // Eski listener ni olib tashlash
+        const newInput = input.cloneNode(true);
+        input.parentNode.replaceChild(newInput, input);
+        
+        newInput.addEventListener('input', function() {
+            const jshshir = this.value.trim();
+            alertDiv.style.display = 'none';
+            
+            // Faqat 14 ta raqam kiritilganda tekshirish
+            if (jshshir.length === 14) {
+                // Hozir tahrirlanayotgan shaxsni chiqarib tashlash
+                const currentEditId = document.querySelector('input[name="update_unique_id"]')?.value;
+                const found = (activeCitizenDatabase || citizenDatabase || []).find(p => 
+                    String(p.jshshir || '') === jshshir && p.unique_id !== currentEditId
+                );
+                
+                if (found) {
+                    alertDiv.className = 'smart-alert';
+                    alertDiv.innerHTML = `
+                        <span class="smart-alert-icon">🔍</span>
+                        <span class="smart-alert-text">
+                            <strong>Diqqat!</strong> Bu JSHSHIR bazada mavjud: 
+                            <span class="smart-alert-link" onclick="showCitizenDetails(activeCitizenDatabase.find(p => p.jshshir === '${found.jshshir}'))">${found.fio || 'Noma\'lum'}</span>
+                        </span>
+                    `;
+                    alertDiv.style.display = 'block';
+                }
+            }
+        });
+    });
+    
+    // 2. Ijtimoiy holat tavsiyalari
+    document.querySelectorAll('select[name="socialStatus"]').forEach(select => {
+        select.addEventListener('change', function() {
+            const status = this.value;
+            const form = this.closest('form');
+            const jinsi = form?.querySelector('select[name="jinsi"]')?.value || 
+                         form?.querySelector('input[name="jinsi"]')?.value;
+            
+            let alertDiv = this.parentElement.querySelector('.smart-alert');
+            if (!alertDiv) {
+                alertDiv = document.createElement('div');
+                alertDiv.className = 'smart-alert info';
+                this.parentElement.appendChild(alertDiv);
+            }
+            
+            alertDiv.style.display = 'none';
+            
+            // Ayollar daftari tavsiyasi
+            if ((status === 'Ajrashgan' || status === 'Beva') && jinsi === 'Ayol') {
+                alertDiv.className = 'smart-alert info';
+                alertDiv.innerHTML = `
+                    <span class="smart-alert-icon">💡</span>
+                    <span class="smart-alert-text">
+                        <strong>Tavsiya:</strong> Bu fuqaroni <strong>"Ayollar daftari"</strong>ga nomzod sifatida ko'rib chiqing.
+                        <button type="button" onclick="this.closest('.smart-alert').style.display='none'; document.querySelector('select[name=\\'ayollar_daftari\\']').value='Ro\\'yxatga olish kerak';" 
+                                style="margin-left: 0.5rem; background: #3b82f6; color: white; border: none; padding: 0.25rem 0.5rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
+                            Ha, belgilash
+                        </button>
+                    </span>
+                `;
+                alertDiv.style.display = 'block';
+            }
+        });
+    });
+    
+    // 3. Bandlik holati - Yoshlar daftari tavsiyasi
+    document.querySelectorAll('select[name="employmentStatus"]').forEach(select => {
+        select.addEventListener('change', function() {
+            const status = this.value;
+            const form = this.closest('form');
+            const dobInput = form?.querySelector('input[name="dob"]');
+            const dob = dobInput?.value;
+            
+            let alertDiv = this.parentElement.querySelector('.smart-alert');
+            if (!alertDiv) {
+                alertDiv = document.createElement('div');
+                alertDiv.className = 'smart-alert info';
+                this.parentElement.appendChild(alertDiv);
+            }
+            
+            alertDiv.style.display = 'none';
+            
+            if (status === 'Ishsiz' && dob) {
+                const age = getAge(dob);
+                if (age >= 18 && age <= 30) {
+                    alertDiv.className = 'smart-alert';
+                    alertDiv.innerHTML = `
+                        <span class="smart-alert-icon">⚠️</span>
+                        <span class="smart-alert-text">
+                            <strong>NEET holati!</strong> Bu fuqaro 18-30 yosh oralig'ida va ishsiz. 
+                            <strong>"Yoshlar daftari"</strong>ga qo'shishni ko'rib chiqing.
+                            <button type="button" onclick="this.closest('.smart-alert').style.display='none'; document.querySelector('select[name=\\'yoshlar_daftari\\']').value='Ro\\'yxatga olish kerak';" 
+                                    style="margin-left: 0.5rem; background: #f59e0b; color: white; border: none; padding: 0.25rem 0.5rem; border-radius: 6px; cursor: pointer; font-size: 0.8rem;">
+                                Yoshlar daftariga
+                            </button>
+                        </span>
+                    `;
+                    alertDiv.style.display = 'block';
+                }
+            }
+        });
+    });
+    
+    // 4. Manzil bo'yicha ogohlantirish
+    document.querySelectorAll('select[name="apartment"]').forEach(select => {
+        select.addEventListener('change', function() {
+            const apartment = this.value;
+            if (!apartment) return;
+            
+            const baza = activeCitizenDatabase || citizenDatabase || [];
+            const sameAddressPeople = baza.filter(p => p.apartment === apartment);
+            
+            let alertDiv = this.parentElement.querySelector('.smart-alert');
+            if (!alertDiv) {
+                alertDiv = document.createElement('div');
+                alertDiv.className = 'smart-alert';
+                this.parentElement.appendChild(alertDiv);
+            }
+            
+            alertDiv.style.display = 'none';
+            
+            if (sameAddressPeople.length > 0) {
+                // Ijtimoiy muammoli oila bormi?
+                const hasIssue = sameAddressPeople.some(p => 
+                    p.izoh || p.moddiy_yordam === 'Nafaqa oladi' || p.moddiy_yordam === 'Bola puli oladi'
+                );
+                
+                if (hasIssue) {
+                    alertDiv.className = 'smart-alert danger';
+                    alertDiv.innerHTML = `
+                        <span class="smart-alert-icon">⚠️</span>
+                        <span class="smart-alert-text">
+                            <strong>Diqqat!</strong> Bu xonada ${sameAddressPeople.length} nafar fuqaro yashaydi va alohida e'tiborga muhtoj.
+                            Yangi fuqaroning ijtimoiy holatini sinchkovlik bilan o'rganing.
+                        </span>
+                    `;
+                    alertDiv.style.display = 'block';
+                } else if (sameAddressPeople.length >= 3) {
+                    alertDiv.className = 'smart-alert info';
+                    alertDiv.innerHTML = `
+                        <span class="smart-alert-icon">ℹ️</span>
+                        <span class="smart-alert-text">
+                            Bu xonada allaqachon <strong>${sameAddressPeople.length}</strong> nafar fuqaro ro'yxatdan o'tgan: 
+                            ${sameAddressPeople.slice(0, 3).map(p => p.fio?.split(' ')[0]).join(', ')}${sameAddressPeople.length > 3 ? '...' : ''}
+                        </span>
+                    `;
+                    alertDiv.style.display = 'block';
+                }
+            }
+        });
+    });
+}
+
+// Smart Data Entry ni ishga tushirish
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(setupSmartDataEntry, 500);
+});
+
+// Modal ochilganda ham setup qilish
+const originalShowScreen = showScreen;
+showScreen = function(screenName) {
+    originalShowScreen(screenName);
+    if (screenName === 'add-view' || screenName === 'add-family-modal') {
+        setTimeout(setupSmartDataEntry, 100);
+    }
 };
 
 </script>
