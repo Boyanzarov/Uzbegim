@@ -137,7 +137,10 @@
     #full-list-modal #full-list-search { background: rgba(0,0,0,0.3); border-color: rgba(0, 255, 255, 0.3); color: #e0e0e0; font-family: 'Fira Code', monospace; text-align: center; }
     #full-list-modal #full-list-search:focus { border-color: #00ffff; box-shadow: 0 0 10px rgba(0, 255, 255, 0.5); background: rgba(0,0,0,0.5); }
     #full-list-modal #full-list-table-container { max-width: 900px; width: 100%; margin: 0 auto; }
-    #full-list-modal .result-card { background: rgba(0, 255, 255, 0.07); border: 1px solid rgba(0, 255, 255, 0.1); border-left: 4px solid #00ffff; box-shadow: none; }
+    /* Full list modal - result cards */
+    #full-list-modal .result-card { background: var(--surface-color); border: 1px solid var(--border-color); border-left: 4px solid var(--primary-color); box-shadow: var(--shadow-sm); }
+    #full-list-modal .result-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    [data-theme=dark] #full-list-modal .result-card { background: rgba(0, 255, 255, 0.07); border: 1px solid rgba(0, 255, 255, 0.1); border-left: 4px solid #00ffff; box-shadow: none; }
     #full-list-modal .result-header h3 { color: #ffffff; }
     #full-list-modal .result-header .badge { background: rgba(0, 255, 255, 0.2); color: #00ffff; }
     #full-list-modal .result-table td:first-child { color: #a0a0a0; }
@@ -186,15 +189,26 @@
     #system-status.online { color: #10b981; border-color: rgba(16, 185, 129, 0.3); }
     #system-status.offline { color: #f59e0b; border-color: rgba(245, 158, 11, 0.3); }
     #quote-of-the-day { max-width: 280px; text-align: right; font-style: italic; line-height: 1.4; color: rgba(255, 255, 255, 0.4); }
-    #objects-stats-modal .modal-box { background: rgba(26, 26, 39, 0.95); border: 1px solid rgba(250, 204, 21, 0.4); box-shadow: 0 0 30px rgba(250, 204, 21, 0.2), inset 0 0 15px rgba(250, 204, 21, 0.1); color: #e0e0e0; }
-    #objects-stats-modal h3 { color: #facc15; text-shadow: 0 0 5px #facc15; }
-    #objects-stats-modal .modal-close-btn { color: rgba(250, 204, 21, 0.7); }
+    /* Objects Stats Modal - Light va Dark mode */
+    #objects-stats-modal .modal-box { background: var(--surface-color); border: 1px solid var(--border-color); }
+    #objects-stats-modal h3 { color: var(--primary-color); }
+    #objects-stats-modal h4 { color: var(--text-dark); }
+    #objects-stats-modal .modal-close-btn { color: var(--text-light); }
     #objects-stats-modal #add-new-object-btn { background: linear-gradient(90deg, #d97706, #f59e0b); box-shadow: 0 4px 20px -5px rgba(245,158,11,.5); }
-    #objects-stats-modal .summary-stat-card { background: rgba(250, 204, 21, 0.07); border-color: rgba(250, 204, 21, 0.2); }
-    #objects-stats-modal .summary-stat-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 5px 15px rgba(250, 204, 21, 0.1); }
-    #objects-stats-modal .summary-stat-card .icon { color: #facc15; }
-    #objects-stats-modal .summary-stat-card .number { color: #fff; }
-    #objects-stats-modal .summary-stat-card .label { color: #ccc; }
+    #objects-stats-modal .summary-stat-card { background: var(--surface-color); border: 1px solid var(--border-color); cursor: pointer; transition: all 0.3s ease; }
+    #objects-stats-modal .summary-stat-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: var(--shadow-md); border-color: var(--warning-color); }
+    #objects-stats-modal .summary-stat-card .icon { color: var(--warning-color); }
+    #objects-stats-modal .summary-stat-card .number { color: var(--text-dark); font-size: 2rem; font-weight: 700; }
+    #objects-stats-modal .summary-stat-card .label { color: var(--text-light); }
+    /* Dark mode */
+    [data-theme=dark] #objects-stats-modal .modal-box { background: rgba(26, 26, 39, 0.95); border: 1px solid rgba(250, 204, 21, 0.4); box-shadow: 0 0 30px rgba(250, 204, 21, 0.2), inset 0 0 15px rgba(250, 204, 21, 0.1); color: #e0e0e0; }
+    [data-theme=dark] #objects-stats-modal h3 { color: #facc15; text-shadow: 0 0 5px #facc15; }
+    [data-theme=dark] #objects-stats-modal .modal-close-btn { color: rgba(250, 204, 21, 0.7); }
+    [data-theme=dark] #objects-stats-modal .summary-stat-card { background: rgba(250, 204, 21, 0.07); border-color: rgba(250, 204, 21, 0.2); }
+    [data-theme=dark] #objects-stats-modal .summary-stat-card:hover { box-shadow: 0 5px 15px rgba(250, 204, 21, 0.1); }
+    [data-theme=dark] #objects-stats-modal .summary-stat-card .icon { color: #facc15; }
+    [data-theme=dark] #objects-stats-modal .summary-stat-card .number { color: #fff; }
+    [data-theme=dark] #objects-stats-modal .summary-stat-card .label { color: #ccc; }
     .object-result-card { background: rgba(0, 255, 255, 0.07); border: 1px solid rgba(0, 255, 255, 0.1); display: flex; align-items: center; gap: 1rem; padding: 1rem; border-radius: var(--radius-md); margin-bottom: 1rem; }
     .object-result-card .card-icon { font-size: 2rem; color: #00ffff; flex-shrink: 0; width: 40px; text-align: center; }
     .object-result-card .card-content h4 { margin: 0 0 0.25rem 0; color: #fff; font-size: 1.1rem; }
@@ -339,6 +353,47 @@
     /* Filter citizen cards */
     .filter-citizen-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
     [data-theme="dark"] .filter-citizen-card { background: var(--surface-color) !important; }
+    
+    /* ===== YANGI YIL BEZAKLARI ===== */
+    /* Qor animatsiyasi - Login screen uchun */
+    #snowfall-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: hidden; }
+    /* Global qor animatsiyasi - butun ilova uchun */
+    #global-snowfall { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden; }
+    .snowflake { position: absolute; color: #fff; font-size: 1rem; text-shadow: 0 0 5px rgba(255,255,255,0.8); animation: snowfall linear infinite; opacity: 0.8; }
+    [data-theme="light"] .snowflake { color: #a5b4fc; text-shadow: 0 0 5px rgba(99,102,241,0.5); }
+    @keyframes snowfall {
+        0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(110vh) translateX(100px) rotate(360deg); opacity: 0.3; }
+    }
+    
+    /* Yangi yil banner */
+    .new-year-banner { 
+        background: linear-gradient(135deg, #dc2626, #16a34a); 
+        color: white; 
+        padding: 0.6rem 1.5rem; 
+        border-radius: 30px; 
+        font-size: 0.95rem; 
+        font-weight: 700; 
+        margin-bottom: 1rem; 
+        display: inline-block;
+        animation: bannerGlow 2s ease-in-out infinite;
+        box-shadow: 0 0 20px rgba(220, 38, 38, 0.5);
+    }
+    .new-year-banner span { 
+        background: linear-gradient(90deg, #fbbf24, #fff, #fbbf24); 
+        -webkit-background-clip: text; 
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        animation: shimmer 3s linear infinite;
+    }
+    @keyframes bannerGlow {
+        0%, 100% { box-shadow: 0 0 20px rgba(220, 38, 38, 0.5), 0 0 40px rgba(22, 163, 74, 0.3); }
+        50% { box-shadow: 0 0 30px rgba(220, 38, 38, 0.8), 0 0 60px rgba(22, 163, 74, 0.5); }
+    }
+    @keyframes shimmer {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+    }
   </style>
 </head>
 <body>
@@ -348,8 +403,14 @@
       <div id="login-map-bg"></div>
       <!-- Mesh gradient animatsiya -->
       <div class="mesh-gradient"></div>
+      <!-- Qor animatsiyasi -->
+      <div id="snowfall-container"></div>
       
       <div class="login-box">
+          <!-- Yangi yil bezagi -->
+          <div class="new-year-banner">
+            🎄 <span>Yangi 2026-yil bilan!</span> 🎅
+          </div>
           <!-- Vaqtga qarab salom -->
           <div id="greeting-message" class="greeting-animated"></div>
           <h2>
@@ -392,6 +453,8 @@
           </div>
       </div>
   </div>
+  <!-- GLOBAL QOR ANIMATSIYASI -->
+  <div id="global-snowfall"></div>
   <div class="loader-overlay" id="loader-overlay"><div class="loader"></div></div>
   <div id="toast-notification"><i class="fas fa-check-circle"></i><span id="toast-message"></span></div>
   <div id="pdf-render-container"></div> 
@@ -2157,8 +2220,17 @@
             <button class="modal-close-btn js-back-to-previous-view"><i class="fas fa-times"></i></button>
             <h3>Ijtimoiy-Iqtisodiy Ob'ektlar va Xarita</h3>
             
-            <!-- XARITA BO'LIMI -->
-            <div style="margin: 1.5rem 0;">
+            <!-- 1. YANGI OB'EKT TUGMASI - BOSHIDA -->
+            <button id="add-new-object-btn" class="btn btn-primary" style="margin-top:1rem; margin-bottom: 1.5rem;"><i class="fas fa-plus-circle"></i> Yangi Ob'ekt Qo'shish</button>
+            
+            <!-- 2. OB'EKTLAR STATISTIKASI -->
+            <div id="objects-summary-grid" class="summary-grid">
+                <!-- Statistika bu yerga JS orqali chiziladi -->
+            </div>
+            
+            <!-- 3. XARITA BO'LIMI - PASTDA -->
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid var(--border-color);">
+              <h4 style="margin-bottom: 1rem; color: var(--primary-color);"><i class="fas fa-map-marked-alt"></i> Xarita</h4>
               <!-- 1-QATOR filtrlar -->
               <div id="map-filter-buttons" style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.75rem;">
                 <button type="button" class="map-filter-btn active" data-filter="all" style="background: linear-gradient(135deg, #64748b, #94a3b8); color: white; border: none; padding: 0.6rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-globe"></i> Barchasi</button>
@@ -2179,11 +2251,6 @@
               </div>
               <div id="map-container" style="height: 350px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem;"></div>
               <div id="map-info-container" style="display: none;"></div>
-            </div>
-            
-            <button id="add-new-object-btn" class="btn btn-primary" style="margin-top:0;"><i class="fas fa-plus-circle"></i> Yangi Ob'ekt Qo'shish</button>
-            <div id="objects-summary-grid" class="summary-grid">
-                <!-- Statistika bu yerga JS orqali chiziladi -->
             </div>
         </div>
     </div>
@@ -4972,6 +5039,36 @@ function updateGreeting() {
     
     greetingEl.innerHTML = `${emoji} <strong>${greeting}!</strong> ${motivation}`;
 }
+
+// Qor yog'ishi animatsiyasi
+function createSnowfall(containerId = 'snowfall-container') {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    
+    // Agar allaqachon qor bo'lsa, qayta yaratmaymiz
+    if (container.children.length > 0) return;
+    
+    const snowflakes = ['❄', '❅', '❆', '✻', '✼', '❉', '•'];
+    const snowCount = containerId === 'global-snowfall' ? 30 : 50; // Global uchun kamroq
+    
+    for (let i = 0; i < snowCount; i++) {
+        const snowflake = document.createElement('div');
+        snowflake.className = 'snowflake';
+        snowflake.innerHTML = snowflakes[Math.floor(Math.random() * snowflakes.length)];
+        snowflake.style.left = Math.random() * 100 + '%';
+        snowflake.style.fontSize = (Math.random() * 15 + 8) + 'px';
+        snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+        snowflake.style.animationDuration = (Math.random() * 5 + 5) + 's';
+        snowflake.style.animationDelay = (Math.random() * 5) + 's';
+        container.appendChild(snowflake);
+    }
+}
+
+// Global qorni yaratish
+function initGlobalSnowfall() {
+    createSnowfall('global-snowfall');
+}
+
 function checkSystemStatus() {
     const statusEl = document.getElementById('system-status');
     if (!statusEl) return;
@@ -5021,17 +5118,19 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
     updateClock();
     updateGreeting();
+    createSnowfall('snowfall-container'); // Login uchun qor
+    initGlobalSnowfall(); // Global qor - butun ilova uchun
     setInterval(updateClock, 1000);
     setInterval(updateGreeting, 60000); // Har daqiqada yangilash
     checkSystemStatus();
     window.addEventListener('online', checkSystemStatus);
     window.addEventListener('offline', checkSystemStatus);
     const quotes = [
-        "Mahalla obodligi - yurt obodligi.",
-        "Yaxshilik qil, suvga sol, suv bilmasa baliq bilar, baliq bilmasa Xoliq bilar.",
-        "Vatanga xizmat – oliy saodat.",
-        "Bir kun tuz ichgan joyingga qirq kun salom ber.",
-        "Bugungi ishni ertaga qoldirma."
+        "🎄 Yangi 2026-yil muborak bo'lsin!",
+        "✨ Yangi yilda barcha orzularingiz amalga oshsin!",
+        "🎅 Oilangizga baxt-saodat tilaymiz!",
+        "❄️ Qishki sovuqda ham dillaringiz iliq bo'lsin!",
+        "🎁 Yangi yil yangi umidlar olib kelsin!"
     ];
     document.getElementById('quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
     const savedTheme=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
@@ -5181,6 +5280,10 @@ async function saveObject() {
     updateLocalObjectDatabase(payload.object, payload.staff);
     showToast("Ob'ekt qurilmaga saqlandi!", 'success');
     resetAddObjectForm();
+    
+    // Ob'ektlar statistikasini yangilash
+    displayObjectStats();
+    
     goBack();
 
     // 2. Orqa fonda server bilan sinxronizatsiya
@@ -5275,56 +5378,162 @@ function getLocation() {
 }
 function displayObjectStats() {
     const grid = document.getElementById('objects-summary-grid');
+    if (!grid) return;
+    
+    // Debug
+    console.log('=== displayObjectStats ===');
+    console.log('socialObjectsDatabase:', socialObjectsDatabase);
+    console.log('Ob\'ektlar soni:', socialObjectsDatabase.length);
+    
     const totalObjects = socialObjectsDatabase.length;
     let totalJobs = socialObjectsDatabase.reduce((sum, obj) => sum + (Number(obj.officialStaff) || 0) + (Number(obj.selfEmployedStaff) || 0) + (Number(obj.unofficialStaff) || 0), 0);
     const undocumented = socialObjectsDatabase.filter(o => o.hasDocuments === 'Mavjud emas' || o.isSelfBuilt === 'Ha').length;
+    
     let html = `
-        <div class="summary-stat-card full-width" data-category="all-objects" style="grid-column: 1 / -1;">
-            <div class="icon"><i class="fas fa-building"></i></div><div class="number">${totalObjects}</div><div class="label">Jami Ob'ektlar</div>
-        </div>
-        <div class="summary-stat-card" data-category="total-jobs">
-            <div class="icon"><i class="fas fa-users-cog"></i></div><div class="number">${totalJobs}</div><div class="label">Jami Ish O'rinlari</div>
-        </div>
-        <div class="summary-stat-card" data-category="undocumented">
-            <div class="icon"><i class="fas fa-file-excel"></i></div><div class="number">${undocumented}</div><div class="label">Hujjatsiz/O'zboshimcha</div>
+        <div class="summary-stat-card full-width js-object-stat-card" data-category="all-objects" style="grid-column: 1 / -1; cursor: pointer;">
+            <div class="icon"><i class="fas fa-building"></i></div>
+            <div class="number">${totalObjects}</div>
+            <div class="label">Jami Ob'ektlar</div>
         </div>
     `;
-    for (const category in OBJECT_CATEGORIES) {
-        const count = socialObjectsDatabase.filter(o => o.mainCategory === category).length;
-        if(count > 0) {
-            html += `<div class="summary-stat-card" data-category="${category}"><div class="icon"><i class="fas ${OBJECT_CATEGORIES[category]}"></i></div><div class="number">${count}</div><div class="label">${category}</div></div>`;
+    
+    if (totalObjects > 0) {
+        html += `
+            <div class="summary-stat-card js-object-stat-card" data-category="total-jobs">
+                <div class="icon"><i class="fas fa-users-cog"></i></div>
+                <div class="number">${totalJobs}</div>
+                <div class="label">Jami Ish O'rinlari</div>
+            </div>
+            <div class="summary-stat-card js-object-stat-card" data-category="undocumented">
+                <div class="icon"><i class="fas fa-file-excel"></i></div>
+                <div class="number">${undocumented}</div>
+                <div class="label">Hujjatsiz/O'zboshimcha</div>
+            </div>
+        `;
+        
+        for (const category in OBJECT_CATEGORIES) {
+            const count = socialObjectsDatabase.filter(o => o.mainCategory === category).length;
+            if(count > 0) {
+                html += `<div class="summary-stat-card js-object-stat-card" data-category="${category}">
+                    <div class="icon"><i class="fas ${OBJECT_CATEGORIES[category]}"></i></div>
+                    <div class="number">${count}</div>
+                    <div class="label">${category}</div>
+                </div>`;
+            }
         }
     }
+    
     grid.innerHTML = html;
-    grid.querySelectorAll('.summary-stat-card').forEach(card => {
-        card.addEventListener('click', () => {
-            const category = card.dataset.category;
-            let list = [];
-            let title = card.querySelector('.label').textContent;
-            if(category === 'all-objects') {
-                list = socialObjectsDatabase;
-            } else if(category === 'total-jobs') {
-                return displayJobsReport();
-            } else if(category === 'undocumented') {
-                list = socialObjectsDatabase.filter(o => o.hasDocuments === 'Mavjud emas' || o.isSelfBuilt === 'Ha');
-            } else {
-                list = socialObjectsDatabase.filter(o => o.mainCategory === category);
-            }
-            displayObjectList(list, title);
-        });
-    });
     showScreen('objects-stats-modal');
 }
+
+// EVENT DELEGATION - Ob'ekt statistikasi kartochkalari uchun
+document.addEventListener('click', function(e) {
+    const card = e.target.closest('.js-object-stat-card');
+    if (!card) return;
+    
+    const category = card.dataset.category;
+    console.log('=== Ob\'ekt kategoriyasi bosildi ===');
+    console.log('Kategoriya:', category);
+    console.log('socialObjectsDatabase hozir:', socialObjectsDatabase);
+    console.log('Ob\'ektlar soni:', socialObjectsDatabase.length);
+    
+    let list = [];
+    let title = card.querySelector('.label').textContent;
+    
+    if(category === 'all-objects') {
+        // To'g'ridan-to'g'ri socialObjectsDatabase dan olish
+        list = socialObjectsDatabase.slice(); // Copy
+        title = 'Jami Ob\'ektlar';
+        console.log('all-objects tanlandi, list:', list);
+    } else if(category === 'total-jobs') {
+        displayJobsReport();
+        return;
+    } else if(category === 'undocumented') {
+        list = socialObjectsDatabase.filter(o => o.hasDocuments === 'Mavjud emas' || o.isSelfBuilt === 'Ha');
+    } else {
+        list = socialObjectsDatabase.filter(o => o.mainCategory === category);
+    }
+    
+    console.log('Tanlangan ro\'yxat:', list);
+    console.log('Ro\'yxat uzunligi:', list.length);
+    
+    if (list.length > 0) {
+        displayObjectList(list, title);
+    } else {
+        showToast('Bu kategoriyada ob\'ekt yo\'q', 'info');
+    }
+});
+
 function displayObjectList(list, title) {
+    console.log('=== displayObjectList boshlandi ===');
+    console.log('Kelgan list:', list);
+    console.log('List turi:', typeof list);
+    console.log('List Array mi:', Array.isArray(list));
+    console.log('List uzunligi:', list ? list.length : 'null');
+    
+    // List tekshirish
+    if (!list || !Array.isArray(list)) {
+        console.error('List noto\'g\'ri format!');
+        showToast('Ro\'yxat formati noto\'g\'ri', 'error');
+        return;
+    }
+    
+    if (list.length === 0) {
+        console.log('List bo\'sh');
+        showToast('Ro\'yxat bo\'sh', 'info');
+        return;
+    }
+    
     currentDisplayedList = list;
     currentListTitle = title;
-    DOM.fullListTitle.innerHTML = `${title} (<span>${list.length}</span>)`;
-    document.getElementById('export-list-csv').style.display = 'none';
-    document.getElementById('export-objects-csv').style.display = 'inline-flex';
+    
+    // DOM elementlarini olish
+    const modal = document.getElementById('full-list-modal');
+    const titleEl = document.getElementById('full-list-title');
+    const containerEl = document.getElementById('full-list-table-container');
+    const exportListBtn = document.getElementById('export-list-csv');
+    const exportObjBtn = document.getElementById('export-objects-csv');
+    
+    console.log('Modal:', modal);
+    console.log('Title element:', titleEl);
+    console.log('Container element:', containerEl);
+    
+    if (!modal || !titleEl || !containerEl) {
+        console.error('DOM elementlari topilmadi!');
+        return;
+    }
+    
+    // Sarlavha va tugmalarni sozlash
+    titleEl.innerHTML = `${title} (<span>${list.length}</span>)`;
+    if (exportListBtn) exportListBtn.style.display = 'none';
+    if (exportObjBtn) exportObjBtn.style.display = 'inline-flex';
+    
+    // HTML yaratish
     let html = `<button class="btn btn-secondary js-back-to-previous-view" style="width:auto; margin-bottom:1.5rem; margin-top:0;"><i class="fas fa-arrow-left"></i> Orqaga</button>`;
-    html += list.map(createObjectCardHTML).join('');
-    DOM.fullListTableContainer.innerHTML = html;
-    showScreen('full-list-modal');
+    
+    // Har bir ob'ekt uchun karta
+    for (let i = 0; i < list.length; i++) {
+        const obj = list[i];
+        console.log('Ob\'ekt yaratilmoqda #' + i + ':', obj);
+        
+        if (!obj) {
+            console.log('Ob\'ekt null yoki undefined');
+            continue;
+        }
+        
+        const cardHtml = createObjectCardHTML(obj);
+        html += cardHtml;
+    }
+    
+    console.log('Jami HTML yaratildi, uzunligi:', html.length);
+    
+    // Konteynerga qo'shish
+    containerEl.innerHTML = html;
+    
+    // Modalni ochish - to'g'ridan-to'g'ri
+    modal.style.display = 'flex';
+    console.log('Modal ochildi');
 }
 function displayJobsReport(){
     const title = "Ish O'rinlari Bo'yicha Hisobot";
@@ -5343,9 +5552,42 @@ function displayJobsReport(){
     showScreen('full-list-modal');
 }
 function createObjectCardHTML(obj) {
-    const director = objectStaffDatabase.find(s => s.objectId === obj.objectId && s.position === 'Direktor');
+    if (!obj) return '';
+    
+    const director = objectStaffDatabase ? objectStaffDatabase.find(s => s.objectId === obj.objectId && s.position === 'Direktor') : null;
     const totalStaff = (Number(obj.officialStaff) || 0) + (Number(obj.selfEmployedStaff) || 0) + (Number(obj.unofficialStaff) || 0);
-    return `<div class="result-card" data-object-id="${obj.objectId}"><div class="result-card-avatar">${obj.photoLink ? `<img src="https://lh3.googleusercontent.com/d/${obj.photoLink}" class="js-view-profile-pic" onerror="this.onerror=null; this.parentElement.innerHTML = '<div class=\\'avatar-placeholder-sm\\'><i class=\\'fas fa-store\\'></i></div>';">` : `<div class="avatar-placeholder-sm"><i class="fas fa-store"></i></div>`}</div><div class="result-card-content"><div class="result-header"><h3>${obj.objectName}</h3><span class="badge" style="background-color: var(--warning-glow); color: var(--warning-color);">${obj.specificType}</span></div><table class="result-table"><tr><td>Manzil</td><td>${obj.address}</td></tr><tr><td>Rahbar</td><td>${director ? director.fio : 'Kiritilmagan'}</td></tr><tr><td>Ishchilar soni</td><td>${totalStaff}</td></tr></table><div style="margin-top:1rem;"><button class="btn btn-secondary-outline js-object-details-btn" style="width:100%; margin-top:0;"><i class="fas fa-eye"></i> To'liq ma'lumot</button></div></div></div>`;
+    
+    // Rasm uchun photoLink yoki photoBase64
+    let photoHtml = '';
+    if (obj.photoLink) {
+        photoHtml = `<img src="https://lh3.googleusercontent.com/d/${obj.photoLink}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--primary-glow);" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div style="display:none;width:80px;height:80px;align-items:center;justify-content:center;background:var(--primary-glow);border-radius:50%;"><i class="fas fa-store" style="font-size:2rem;color:var(--primary-color);"></i></div>`;
+    } else if (obj.photoBase64) {
+        photoHtml = `<img src="${obj.photoBase64}" style="width:80px;height:80px;border-radius:50%;object-fit:cover;border:3px solid var(--primary-glow);">`;
+    } else {
+        photoHtml = `<div style="width:80px;height:80px;display:flex;align-items:center;justify-content:center;background:var(--primary-glow);border-radius:50%;"><i class="fas fa-store" style="font-size:2rem;color:var(--primary-color);"></i></div>`;
+    }
+    
+    return `
+    <div class="result-card" data-object-id="${obj.objectId}" style="display:flex !important;gap:1.5rem;align-items:flex-start;background:var(--surface-color);padding:1.5rem;border:1px solid var(--border-color);border-radius:12px;margin-bottom:1rem;border-left:4px solid #f59e0b;box-shadow:0 2px 8px rgba(0,0,0,0.1);">
+        <div style="flex-shrink:0;">
+            ${photoHtml}
+        </div>
+        <div style="flex-grow:1;min-width:0;">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;flex-wrap:wrap;gap:0.5rem;">
+                <h3 style="margin:0;font-size:1.25rem;color:var(--primary-color);font-weight:600;">${obj.objectName || 'Nomsiz ob\'ekt'}</h3>
+                <span style="background:rgba(245,158,11,0.15);color:#f59e0b;padding:4px 12px;border-radius:20px;font-size:.8rem;font-weight:600;">${obj.specificType || obj.mainCategory || 'Turi'}</span>
+            </div>
+            <table style="width:100%;border-collapse:collapse;font-size:.95rem;">
+                <tr><td style="padding:.5rem 0;color:var(--text-light);width:35%;">📍 Manzil</td><td style="font-weight:600;color:var(--text-dark);">${obj.address || 'Kiritilmagan'}</td></tr>
+                <tr><td style="padding:.5rem 0;color:var(--text-light);">👤 Rahbar</td><td style="font-weight:600;color:var(--text-dark);">${director ? director.fio : 'Kiritilmagan'}</td></tr>
+                <tr><td style="padding:.5rem 0;color:var(--text-light);">👥 Ishchilar</td><td style="font-weight:600;color:var(--text-dark);">${totalStaff} kishi</td></tr>
+            </table>
+            <div style="margin-top:1rem;">
+                <button class="btn btn-secondary-outline js-object-details-btn" style="width:100%;padding:0.6rem 1rem;border:1px solid var(--border-color);background:transparent;color:var(--text-dark);border-radius:8px;cursor:pointer;"><i class="fas fa-eye"></i> To'liq ma'lumot</button>
+            </div>
+        </div>
+    </div>`;
 }
 document.body.addEventListener('click', (e) => {
     if (e.target.closest('.js-object-details-btn')) {
@@ -5373,9 +5615,14 @@ function displayObjectDetails(objectId) {
     };
 
     // Faqat ICHKARISINI yangilaymiz, tashqi divning id'sini takrorlamaymiz
+    // Rasm uchun photoLink yoki photoBase64 ni tekshirish
+    const photoSrc = obj.photoLink 
+        ? `https://lh3.googleusercontent.com/d/${obj.photoLink}` 
+        : (obj.photoBase64 ? obj.photoBase64 : null);
+    
     let html = `
         <div class="profile-header">
-            ${obj.photoLink ? `<img src="https://lh3.googleusercontent.com/d/${obj.photoLink}" class="profile-pic js-view-profile-pic">` : ''}
+            ${photoSrc ? `<img src="${photoSrc}" class="profile-pic js-view-profile-pic">` : '<div class="avatar-placeholder" style="width: 140px; height: 140px; margin: 0 auto 1rem; border-radius: 50%; background: var(--primary-glow); display: flex; align-items: center; justify-content: center;"><i class="fas fa-store" style="font-size: 3rem; color: var(--primary-color);"></i></div>'}
             <div class="profile-name">${obj.objectName}</div>
         </div>
         <div class="section-title">Umumiy ma'lumotlar</div>
