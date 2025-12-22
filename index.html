@@ -2,10 +2,19 @@
 <html lang="uz" data-theme="light">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-  <title>O‘zbegim</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>O'zbegim MFY</title>
+  
+  <!-- PWA Meta Tags -->
   <meta name="mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="O'zbegim">
+  <meta name="application-name" content="O'zbegim MFY">
+  <meta name="theme-color" content="#7c3aed">
+  <meta name="msapplication-TileColor" content="#7c3aed">
+  <meta name="description" content="Mahalla fuqarolar yig'ini - Aholi va Tadbirkorlik ro'yxatga olish tizimi">
+  
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏘️</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Chart.js -->
@@ -19,7 +28,10 @@
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
-    :root{--bg-color:#f7f6ff;--surface-color:#fff;--primary-color:#7c3aed;--primary-light:#a78bfa;--primary-glow:rgba(124,58,237,.15);--success-color:#10b981;--danger-color:#ef4444;--secondary-color:#64748b;--warning-color:#f59e0b;--warning-glow:rgba(245,158,11,.2);--text-dark:#0f172a;--text-light:#475569;--border-color:rgba(226,232,240,1);--radius-md:12px;--radius-lg:16px;--shadow-sm:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);--shadow-md:0 10px 15px -3px rgba(0,0,0,.07),0 4px 6px -4px rgba(0,0,0,.07);--transition-fast:.2s ease;--transition-slow:.4s cubic-bezier(.25,1,.5,1)}[data-theme=dark]{--bg-color:#12122c;--surface-color:#1a1a27;--primary-color:#8b5cf6;--primary-light:#a78bfa;--primary-glow:rgba(139,92,246,.2);--text-dark:#f1f5f9;--text-light:#94a3b8;--border-color:rgba(51,65,85,.6);--warning-color:#facc15;--warning-glow:rgba(250,204,21,.2)}*{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast)}.hidden{display:none!important}.permission-hidden{display:none!important}.app-shell{max-width:1000px;margin:2rem auto;padding:1rem;display:none}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding:0 .5rem}.header h1{display:flex;align-items:center;gap:.8rem;font-size:1.8rem;font-weight:700;color:var(--text-dark);cursor:pointer}.header h1 i{color:var(--primary-color)}.header-actions{display:flex;gap:.5rem}.header-btn{width:45px;height:45px;border-radius:50%;background:var(--surface-color);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition-fast)}.header-btn:hover{border-color:var(--primary-color);transform:translateY(-2px)}#notification-bell-container{position:relative;}#notification-count{position:absolute;top:-5px;right:-8px;background-color:var(--danger-color);color:white;border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);}.card{background:var(--surface-color);padding:2rem;border-radius:var(--radius-lg);border:1px solid var(--border-color);margin-bottom:2rem;box-shadow:var(--shadow-md)}.view{display:none}.view.active{display:block;animation:slideUpFadeIn .5s cubic-bezier(.16,1,.3,1) forwards}@keyframes slideUpFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.search-options{display:flex;flex-wrap:wrap;border-radius:16px;margin-bottom:1.5rem;overflow:hidden;background:linear-gradient(135deg,rgba(124,58,237,0.05),rgba(6,182,212,0.05));padding:0.35rem;border:1px solid rgba(124,58,237,0.1)}.search-option-btn{flex:1;min-width:80px;padding:.85rem;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--text-light);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);border-radius:12px;display:flex;align-items:center;justify-content:center;gap:.5rem}.search-option-btn:hover{color:var(--primary-color);background:rgba(124,58,237,0.08)}.search-option-btn.active{background:linear-gradient(135deg,var(--primary-color),#8b5cf6);color:white;box-shadow:0 4px 15px rgba(124,58,237,0.3)}.search-option-btn.active i{color:white}.search-panel{display:none;animation:fadeSlideUp 0.3s ease}.search-panel.active{display:block}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}input,select,textarea{width:100%;padding:.9rem;font-size:1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-color);color:var(--text-dark);transition:all var(--transition-fast)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}label{margin-bottom:.5rem;display:block;font-weight:500;color:var(--text-light)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;border-radius:12px;border:none;color:#fff;transition:all var(--transition-fast);margin-top:1rem;position:relative;overflow:hidden}.btn i{margin-right:.5rem}.btn:disabled{opacity:.6;cursor:not-allowed}.btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-primary{background:linear-gradient(90deg,#6d28d9,#8b5cf6);box-shadow:0 4px 20px -5px var(--primary-glow)}.btn-success{background:linear-gradient(90deg,#10b981,#34d399);box-shadow:0 4px 20px -5px rgba(16,185,129,.5)}.btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:2px solid var(--border-color);}.btn-secondary:hover{border-color:var(--secondary-color);background:rgba(100,116,139,.05)}.btn-secondary-outline {background:transparent;color:var(--text-light);font-weight:600;border:2px solid var(--border-color);}.btn-secondary-outline:hover {border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow);}.btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:2px solid var(--danger-color)}.btn-cancel:hover{background:var(--danger-color);color:#fff}
+    :root{--bg-color:#f7f6ff;--surface-color:#fff;--primary-color:#7c3aed;--primary-light:#a78bfa;--primary-glow:rgba(124,58,237,.15);--success-color:#10b981;--danger-color:#ef4444;--secondary-color:#64748b;--warning-color:#f59e0b;--warning-glow:rgba(245,158,11,.2);--text-dark:#0f172a;--text-light:#475569;--border-color:rgba(226,232,240,1);--radius-md:12px;--radius-lg:16px;--shadow-sm:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);--shadow-md:0 10px 15px -3px rgba(0,0,0,.07),0 4px 6px -4px rgba(0,0,0,.07);--transition-fast:.2s ease;--transition-slow:.4s cubic-bezier(.25,1,.5,1)}
+    /* Dark Mode - Eye Comfort (ko'zni charchatmaydigan) */
+    [data-theme=dark]{--bg-color:#0f0f1a;--surface-color:#1a1a2e;--primary-color:#9d7cf6;--primary-light:#b8a4fa;--primary-glow:rgba(157,124,246,.2);--text-dark:#e8e6f0;--text-light:#a8a5b8;--border-color:rgba(80,75,100,.5);--warning-color:#fcd34d;--warning-glow:rgba(252,211,77,.2);--success-color:#34d399;--danger-color:#f87171;--secondary-color:#94a3b8}
+    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast);-webkit-tap-highlight-color:transparent}.hidden{display:none!important}.permission-hidden{display:none!important}.app-shell{max-width:1000px;margin:2rem auto;padding:1rem;display:none}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding:0 .5rem}.header h1{display:flex;align-items:center;gap:.8rem;font-size:1.8rem;font-weight:700;color:var(--text-dark);cursor:pointer}.header h1 i{color:var(--primary-color)}.header-actions{display:flex;gap:.5rem}.header-btn{width:45px;height:45px;border-radius:50%;background:var(--surface-color);border:1px solid var(--border-color);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition-fast)}.header-btn:hover{border-color:var(--primary-color);transform:translateY(-2px)}#notification-bell-container{position:relative;}#notification-count{position:absolute;top:-5px;right:-8px;background-color:var(--danger-color);color:white;border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);}.card{background:var(--surface-color);padding:2rem;border-radius:var(--radius-lg);border:1px solid var(--border-color);margin-bottom:2rem;box-shadow:var(--shadow-md)}.view{display:none}.view.active{display:block;animation:slideUpFadeIn .5s cubic-bezier(.16,1,.3,1) forwards}@keyframes slideUpFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}.search-options{display:flex;flex-wrap:wrap;border-radius:16px;margin-bottom:1.5rem;overflow:hidden;background:linear-gradient(135deg,rgba(124,58,237,0.05),rgba(6,182,212,0.05));padding:0.35rem;border:1px solid rgba(124,58,237,0.1)}.search-option-btn{flex:1;min-width:80px;padding:.85rem;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:600;color:var(--text-light);transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);border-radius:12px;display:flex;align-items:center;justify-content:center;gap:.5rem}.search-option-btn:hover{color:var(--primary-color);background:rgba(124,58,237,0.08)}.search-option-btn.active{background:linear-gradient(135deg,var(--primary-color),#8b5cf6);color:white;box-shadow:0 4px 15px rgba(124,58,237,0.3)}.search-option-btn.active i{color:white}.search-panel{display:none;animation:fadeSlideUp 0.3s ease}.search-panel.active{display:block}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}input,select,textarea{width:100%;padding:.9rem;font-size:1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-color);color:var(--text-dark);transition:all var(--transition-fast)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}label{margin-bottom:.5rem;display:block;font-weight:500;color:var(--text-light)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;border-radius:12px;border:none;color:#fff;transition:all var(--transition-fast);margin-top:1rem;position:relative;overflow:hidden}.btn i{margin-right:.5rem}.btn:disabled{opacity:.6;cursor:not-allowed}.btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-primary{background:linear-gradient(90deg,#6d28d9,#8b5cf6);box-shadow:0 4px 20px -5px var(--primary-glow)}.btn-success{background:linear-gradient(90deg,#10b981,#34d399);box-shadow:0 4px 20px -5px rgba(16,185,129,.5)}.btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:2px solid var(--border-color);}.btn-secondary:hover{border-color:var(--secondary-color);background:rgba(100,116,139,.05)}.btn-secondary-outline {background:transparent;color:var(--text-light);font-weight:600;border:2px solid var(--border-color);}.btn-secondary-outline:hover {border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow);}.btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:2px solid var(--danger-color)}.btn-cancel:hover{background:var(--danger-color);color:#fff}
     .fab-container{position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0.75rem;background:rgba(255,255,255,0.1);backdrop-filter:blur(10px);padding:0.75rem 1.25rem;border-radius:35px;border:1px solid rgba(255,255,255,0.2);box-shadow:0 8px 32px rgba(0,0,0,0.15)}
     .fab{width:52px;height:52px;border-radius:50%;color:#fff;border:none;box-shadow:0 4px 15px rgba(0,0,0,0.2);display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden}
     .fab::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(180deg,rgba(255,255,255,0.2),transparent);opacity:0;transition:opacity 0.3s}
@@ -46,7 +58,9 @@
     .result-card.incomplete-data { border-left: 4px solid var(--warning-color); background: var(--warning-glow); }
     .incomplete-warning { display: flex; align-items: center; gap: .5rem; background-color: var(--warning-glow); color: var(--warning-color); font-weight: 500; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 8px; margin-bottom: 1rem; }
     .result-card.main-person-card {border-left: 4px solid var(--primary-color);}.result-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}.result-header h3{margin:0;font-size:1.25rem;color:var(--primary-color);font-weight:600;}.result-header .badge{background:var(--primary-glow);color:var(--primary-color);padding:4px 12px;border-radius:20px;font-size:.8rem;font-weight:600}.result-header .badge.archived-badge { background: var(--secondary-color); color: #fff; }.result-table{width:100%;border-collapse:collapse;font-size:.95rem}.result-table td{padding:.75rem .25rem;border-bottom:1px solid var(--border-color)}.result-table tr:last-child td{border-bottom:none}.result-table td:first-child{font-weight:500;color:var(--text-light);width:40%;vertical-align:top}.result-table td:last-child{font-weight:600;color:var(--text-dark)}#address-family-suggestions { margin-top: 1rem; padding: 1.5rem; background-color: var(--bg-color); border-radius: var(--radius-lg); display: none; }#address-family-suggestions h6 { margin-bottom: 1rem; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; opacity: 0.8; }.suggestion-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem; }.suggestion-item:last-child { border-bottom: none; padding-bottom: 0;}.suggestion-item .btn { margin-top: 0; padding: 0.6rem 1.2rem; font-size: 0.9rem; flex-shrink: 0; width: 100%;}@media(min-width: 600px){ .suggestion-item .btn { width: auto; } }.suggestion-item-info { display: flex; flex-direction: column; }.suggestion-item-info span { font-weight: 600; color: var(--text-dark); }.suggestion-item-info small { color: var(--text-light); font-size: 0.9rem; }.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1rem}.summary-stat-card{background:var(--surface-color);border:1px solid var(--border-color);border-radius:12px;padding:1.25rem 1rem;text-align:center;transition:all var(--transition-fast);cursor:pointer}.summary-stat-card .icon{font-size:2rem;color:var(--primary-color);margin-bottom:.75rem}.summary-stat-card .number{font-size:2rem;font-weight:700;color:var(--text-dark)}.summary-stat-card .label{font-size:.9rem;font-weight:500;color:var(--text-light);margin-top:.25rem}.summary-stat-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-sm)}.summary-stat-card[data-category="shubhali"] .icon { color: var(--danger-color); }.summary-stat-card[data-category="problem"] .icon { color: var(--warning-color); }.summary-stat-card[data-category="toifadagilar"] .icon { color: #8b5cf6; }.summary-stat-card.restricted { opacity: 0.6; cursor: not-allowed; }.modal-overlay{position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.4);backdrop-filter:blur(8px);display:none;justify-content:center;align-items:center;animation:fadeIn .3s}.modal-box{background:var(--surface-color);border:1px solid var(--border-color);padding:2rem;border-radius:16px;width:90%;max-width:900px;text-align:left;animation:zoomIn .25s;box-shadow:var(--shadow-md);position:relative;max-height:90vh;overflow-y:auto}
-    #summary-modal .modal-box { padding: 1rem; display: flex; flex-direction: column; }
+    #summary-modal .modal-box { padding: 1rem; display: flex; flex-direction: column; max-height: 90vh; overflow-y: auto !important; }
+    #summary-modal #summary-content-wrapper { overflow-y: visible !important; }
+    #summary-modal #summary-grid-container { overflow-y: visible !important; }
     #family-modal .modal-box { max-width: 95%; width: 1000px; }
     #family-modal-content { max-height: 70vh; overflow-y: auto; padding-right: 1rem; margin-top: 1.5rem; }
     #family-modal-content .result-card { background-color: var(--bg-color); box-shadow: none; border-color: var(--primary-glow); }
@@ -137,17 +151,27 @@
     #full-list-modal .summary-stat-card { background: rgba(0, 255, 255, 0.07); border-color: rgba(0, 255, 255, 0.1); }
     #full-list-modal .summary-stat-card .number { color: #e0e0e0; }
     #full-list-modal .summary-stat-card .label { color: #a0a0a0; }
-    #login-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 10000; display: flex; justify-content: center; align-items: center; color: #fff; background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); transition: opacity .5s ease; overflow: hidden; }
-    #login-screen::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.1) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.08) 0%, transparent 70%); animation: bgFloat 20s ease-in-out infinite; pointer-events: none; }
+    #login-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 10000; display: flex; justify-content: center; align-items: center; color: #fff; background: #0a0a1a; transition: opacity .5s ease; overflow: hidden; }
+    /* Xarita fon (blur) - OpenStreetMap static */
+    #login-map-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://tile.openstreetmap.org/14/11526/5943.png'), url('https://tile.openstreetmap.org/14/11527/5943.png'), url('https://tile.openstreetmap.org/14/11526/5944.png'), url('https://tile.openstreetmap.org/14/11527/5944.png'), linear-gradient(135deg, #0a0a2e 0%, #1a1a3e 100%); background-size: 50% 50%, 50% 50%, 50% 50%, 50% 50%, cover; background-position: 0 0, 100% 0, 0 100%, 100% 100%, center; filter: blur(4px) brightness(0.25) saturate(0.7); opacity: 0.8; z-index: 0; }
+    /* Mesh Gradient Animation */
+    .mesh-gradient { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(124, 58, 237, 0.4) 0%, transparent 40%), linear-gradient(135deg, rgba(16, 185, 129, 0.3) 0%, transparent 40%), linear-gradient(225deg, rgba(236, 72, 153, 0.25) 0%, transparent 40%), linear-gradient(315deg, rgba(6, 182, 212, 0.35) 0%, transparent 40%); background-size: 200% 200%; animation: meshMove 12s ease-in-out infinite; z-index: 1; }
+    @keyframes meshMove { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+    #login-screen::before { content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle at 20% 80%, rgba(139, 92, 246, 0.2) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(16, 185, 129, 0.15) 0%, transparent 50%), radial-gradient(circle at 50% 50%, rgba(6, 182, 212, 0.1) 0%, transparent 70%); animation: bgFloat 20s ease-in-out infinite; pointer-events: none; z-index: 2; }
     @keyframes bgFloat { 0%, 100% { transform: translate(0, 0) rotate(0deg); } 33% { transform: translate(30px, -30px) rotate(5deg); } 66% { transform: translate(-20px, 20px) rotate(-5deg); } }
-    .login-box { position: relative; width: 90%; max-width: 520px; background: rgba(26, 26, 50, 0.7); border: 1px solid rgba(139, 92, 246, 0.25); border-radius: 24px; padding: 2.5rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 0 0 100px rgba(139, 92, 246, 0.1); backdrop-filter: blur(20px); text-align: center; z-index: 1; }
+    /* Glassmorphism Login Box */
+    .login-box { position: relative; width: 90%; max-width: 520px; background: rgba(15, 15, 35, 0.5); border: 1px solid rgba(139, 92, 246, 0.35); border-radius: 28px; padding: 2.5rem; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), 0 0 80px rgba(139, 92, 246, 0.2), inset 0 1px 1px rgba(255,255,255,0.1); backdrop-filter: blur(25px); -webkit-backdrop-filter: blur(25px); text-align: center; z-index: 10; }
+    /* Greeting Message */
+    .greeting-animated { font-size: 1.05rem; color: rgba(255,255,255,0.95); margin-bottom: 1.25rem; padding: 0.6rem 1.25rem; background: linear-gradient(135deg, rgba(124,58,237,0.35), rgba(16,185,129,0.25)); border-radius: 50px; display: inline-block; animation: greetingPulse 3s ease-in-out infinite; border: 1px solid rgba(255,255,255,0.1); }
+    @keyframes greetingPulse { 0%, 100% { transform: scale(1); box-shadow: 0 0 20px rgba(124,58,237,0.3); } 50% { transform: scale(1.02); box-shadow: 0 0 35px rgba(124,58,237,0.5); } }
     .login-box h2 { font-size: 2rem; margin-bottom: 0.5rem; color: #fff; display: flex; align-items: center; justify-content: center; gap: 0.75rem; }
-    .login-box h2 .logo-svg { color: #a78bfa; filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.5)); }
+    .login-box h2 .logo-svg { color: #a78bfa; filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.6)); animation: logoPulse 2s ease-in-out infinite; }
+    @keyframes logoPulse { 0%, 100% { filter: drop-shadow(0 0 15px rgba(167, 139, 250, 0.6)); transform: scale(1); } 50% { filter: drop-shadow(0 0 25px rgba(167, 139, 250, 0.9)); transform: scale(1.05); } }
     .login-box p { margin-bottom: 2rem; color: rgba(255, 255, 255, 0.5); font-weight: 500; font-size: 0.95rem; }
     #role-selection-view, #password-view { animation: fadeIn .4s ease; }
     #role-selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
-    .role-btn { background: rgba(139, 92, 246, 0.08); border: 1px solid rgba(139, 92, 246, 0.2); color: #fff; padding: 1rem 0.75rem; font-size: 0.9rem; font-weight: 600; border-radius: 12px; cursor: pointer; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; }
-    .role-btn:hover { background: rgba(139, 92, 246, 0.2); border-color: #a78bfa; transform: translateY(-3px); box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.5); }
+    .role-btn { background: rgba(139, 92, 246, 0.1); border: 1px solid rgba(139, 92, 246, 0.25); color: #fff; padding: 1rem 0.75rem; font-size: 0.9rem; font-weight: 600; border-radius: 14px; cursor: pointer; transition: all .3s cubic-bezier(0.4, 0, 0.2, 1); position: relative; overflow: hidden; backdrop-filter: blur(10px); }
+    .role-btn:hover { background: rgba(139, 92, 246, 0.25); border-color: #a78bfa; transform: translateY(-4px) scale(1.02); box-shadow: 0 15px 35px -10px rgba(139, 92, 246, 0.5); }
     #password-view { text-align: left; }
     #password-view #selected-role-display { background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(16, 185, 129, 0.1)); padding: .8rem 1.2rem; border-radius: 12px; margin-bottom: 1.5rem; font-weight: 600; text-align: center; border: 1px solid rgba(139, 92, 246, 0.3); }
     #password-view label { color: rgba(255, 255, 255, 0.8); font-size: 0.9rem; }
@@ -155,7 +179,7 @@
     #login-password-input:focus { background: rgba(0,0,0,0.5); border-color: #a78bfa; box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2), 0 0 30px rgba(139, 92, 246, 0.2); }
     #login-submit-btn { background: linear-gradient(135deg, #7c3aed, #a78bfa); border: none; font-size: 1rem; padding: 1rem; border-radius: 12px; font-weight: 700; letter-spacing: 0.5px; box-shadow: 0 10px 30px -10px rgba(124, 58, 237, 0.5); }
     #login-submit-btn:hover { transform: translateY(-2px); box-shadow: 0 15px 40px -10px rgba(124, 58, 237, 0.6); }
-    .login-footer-info { position: fixed; bottom: 20px; left: 20px; right: 20px; display: flex; justify-content: space-between; align-items: flex-end; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); pointer-events: none; z-index: 1; }
+    .login-footer-info { position: fixed; bottom: 20px; left: 20px; right: 20px; display: flex; justify-content: space-between; align-items: flex-end; font-family: 'Fira Code', monospace; font-size: 0.85rem; color: rgba(255, 255, 255, 0.5); pointer-events: none; z-index: 11; }
     #clock-display .time { font-size: 1.3rem; font-weight: 700; color: rgba(255, 255, 255, 0.9); text-shadow: 0 0 20px rgba(139, 92, 246, 0.5); }
     #clock-display .date { color: rgba(255, 255, 255, 0.5); margin-top: 2px; }
     #system-status { display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem 1rem; background: rgba(0,0,0,0.3); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); }
@@ -311,12 +335,23 @@
     .smart-alert-text { font-size: 0.85rem; font-weight: 500; }
     .smart-alert-link { color: var(--primary-color); cursor: pointer; text-decoration: underline; font-weight: 600; }
     @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    
+    /* Filter citizen cards */
+    .filter-citizen-card:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+    [data-theme="dark"] .filter-citizen-card { background: var(--surface-color) !important; }
   </style>
 </head>
 <body>
   <!-- YANGI KIRISH OYNASI -->
   <div id="login-screen">
+      <!-- Xarita fon (blur) -->
+      <div id="login-map-bg"></div>
+      <!-- Mesh gradient animatsiya -->
+      <div class="mesh-gradient"></div>
+      
       <div class="login-box">
+          <!-- Vaqtga qarab salom -->
+          <div id="greeting-message" class="greeting-animated"></div>
           <h2>
               <svg width="30" height="30" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
                   <circle cx="20" cy="7" r="7" fill="currentColor"></circle>
@@ -442,7 +477,54 @@
             <div class="form-row"><div class="form-group"><label>F.I.O.</label><input name="fio" class="js-alpha-input js-transliterate" required></div><div class="form-group"><label>Hujjat turi</label><select name="hujjat_turi" class="js-hujjat-turi" required><option value="" selected disabled>Tanlang...</option><option value="Pasport">Pasport</option><option value="Metrka">Metrka</option><option value="Chet el fuqarosi">Chet el fuqarosi</option></select></div></div>
             <div class="form-row conditional-field js-passport-fields"><div class="form-group"><label><i class="fas fa-id-card"></i> Pasport seriyasi va raqami</label><div class="passport-inputs"><input name="passport_series" placeholder="AA" maxlength="2" class="js-alpha-upper-input"><input name="passport_number" placeholder="1234567" maxlength="7" inputmode="numeric" class="js-numeric-input"></div></div><div class="form-group"><label><i class="fas fa-fingerprint"></i> JSHSHIR (14 ta raqam)</label><input name="jshshir" id="main-jshshir-input" maxlength="14" inputmode="numeric" class="js-numeric-input" placeholder="31234567890123"></div><div class="form-group full-width"><label><i class="fas fa-calendar-alt"></i> Tug'ilgan sana</label><input name="dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
             <div class="form-row conditional-field js-metrka-fields"><div class="form-group full-width"><label>Guvohnoma seriyasi va raqami</label><div class="metrka-input-group"><select name="metrka_series" class="js-metrka-series"></select><input name="metrka_number" maxlength="8" inputmode="numeric" class="js-numeric-input"></div></div><div class="form-group full-width"><label>Tug'ilgan sana</label><input name="metrka_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
-            <div class="form-row conditional-field js-chet-el-fields"><div class="form-group"><label>Davlat</label><input name="chet_el_davlati" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Pasport seriya va raqami</label><input name="chet_el_pasport"></div><div class="form-group full-width"><label>Tug'ilgan sana</label><input name="chet_el_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div></div>
+            <div class="form-row conditional-field js-chet-el-fields">
+              <div class="form-group">
+                <label><i class="fas fa-globe" style="color: #3b82f6;"></i> Davlat</label>
+                <select name="chet_el_davlati" class="js-country-select">
+                    <option value="">Davlatni tanlang...</option>
+                    <optgroup label="MDH davlatlari">
+                        <option value="Rossiya">🇷🇺 Rossiya</option>
+                        <option value="Qozog'iston">🇰🇿 Qozog'iston</option>
+                        <option value="Qirg'iziston">🇰🇬 Qirg'iziston</option>
+                        <option value="Tojikiston">🇹🇯 Tojikiston</option>
+                        <option value="Turkmaniston">🇹🇲 Turkmaniston</option>
+                        <option value="Ozarbayjon">🇦🇿 Ozarbayjon</option>
+                        <option value="Armaniston">🇦🇲 Armaniston</option>
+                        <option value="Gruziya">🇬🇪 Gruziya</option>
+                        <option value="Belarus">🇧🇾 Belarus</option>
+                        <option value="Ukraina">🇺🇦 Ukraina</option>
+                        <option value="Moldova">🇲🇩 Moldova</option>
+                    </optgroup>
+                    <optgroup label="Osiyo">
+                        <option value="Xitoy">🇨🇳 Xitoy</option>
+                        <option value="Hindiston">🇮🇳 Hindiston</option>
+                        <option value="Pokiston">🇵🇰 Pokiston</option>
+                        <option value="Afg'oniston">🇦🇫 Afg'oniston</option>
+                        <option value="Eron">🇮🇷 Eron</option>
+                        <option value="Turkiya">🇹🇷 Turkiya</option>
+                        <option value="Saudiya Arabistoni">🇸🇦 Saudiya Arabistoni</option>
+                        <option value="BAA">🇦🇪 Birlashgan Arab Amirliklari</option>
+                        <option value="Yaponiya">🇯🇵 Yaponiya</option>
+                        <option value="Janubiy Koreya">🇰🇷 Janubiy Koreya</option>
+                    </optgroup>
+                    <optgroup label="Yevropa">
+                        <option value="Germaniya">🇩🇪 Germaniya</option>
+                        <option value="Fransiya">🇫🇷 Fransiya</option>
+                        <option value="Buyuk Britaniya">🇬🇧 Buyuk Britaniya</option>
+                        <option value="Italiya">🇮🇹 Italiya</option>
+                        <option value="Ispaniya">🇪🇸 Ispaniya</option>
+                        <option value="Polsha">🇵🇱 Polsha</option>
+                    </optgroup>
+                    <optgroup label="Amerika">
+                        <option value="AQSH">🇺🇸 AQSH</option>
+                        <option value="Kanada">🇨🇦 Kanada</option>
+                        <option value="Braziliya">🇧🇷 Braziliya</option>
+                    </optgroup>
+                </select>
+              </div>
+              <div class="form-group"><label><i class="fas fa-passport" style="color: #8b5cf6;"></i> Pasport seriya va raqami</label><input name="chet_el_pasport"></div>
+              <div class="form-group full-width"><label><i class="fas fa-calendar-alt" style="color: #f59e0b;"></i> Tug'ilgan sana</label><input name="chet_el_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div>
+            </div>
             <div class="form-row"><div class="form-group"><label>Jinsi</label><select name="jinsi" required><option value="" disabled selected>Tanlang...</option><option value="Erkak">Erkak</option><option value="Ayol">Ayol</option></select></div><div class="form-group"><label>Telefon (9 raqam)</label><input name="telefon_number" maxlength="9" class="js-numeric-input" placeholder="901234567" inputmode="numeric" required></div></div>
             <div class="form-group full-width" style="display: none;"><label>Xatlovchi</label><select name="xatlovchi" id="xatlovchi-select" required><option value="" selected disabled>Tanlang...</option><option>MFY raisi</option><option>Yoshlar yetakchisi</option><option>Xotin qizlar faoli</option><option>Profilaktika inspektori</option><option>Xokim yordamchisi</option><option>Soliq hodimi</option><option>Ijtimoiy hodim</option><option>Javohir</option><option>Ruzimukhammed</option><option>Ravshanbek</option></select></div>
           </div>
@@ -677,6 +759,10 @@
                            <option value="Boshqa">Boshqa</option>
                        </optgroup>
                    </select>
+               </div>
+               <div class="form-group full-width conditional-field js-boshqa-ish-input" style="display: none;">
+                   <label><i class="fas fa-edit" style="color: #8b5cf6;"></i> Qanday ishda ishlamoqchi (yozing)</label>
+                   <input name="boshqa_ish_turi" class="js-transliterate" placeholder="Masalan: Mebelchi, Avtoelektrik...">
                </div>
              </div>
              
@@ -1419,6 +1505,10 @@
                     </optgroup>
                 </select>
             </div>
+            <div class="form-group full-width conditional-field js-boshqa-ish-input" style="display: none;">
+                <label><i class="fas fa-edit" style="color: #8b5cf6;"></i> Qanday ishda ishlamoqchi (yozing)</label>
+                <input name="boshqa_ish_turi" class="js-transliterate" placeholder="Masalan: Mebelchi, Avtoelektrik...">
+            </div>
           </div>
           
           <div class="form-row full-width conditional-field js-migration-details"><div class="form-group"><label>Qaysi davlatda</label><input name="migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Ketgan sanasi</label><input name="migration_duration" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10"></div></div>
@@ -1432,7 +1522,7 @@
 
     </main>
     <div class="fab-container">
-        <button id="fab-show-ai" class="fab fab-list" style="background:#8b5cf6;" title="AI Yordamchi"><i class="fas fa-robot"></i></button>
+        <button id="fab-show-ai" class="fab fab-list" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);" title="O'zbegim AI - Har qanday savol bering!"><i class="fas fa-brain"></i></button>
         <button id="fab-show-full-list" class="fab fab-list" title="Jami ro'yxat"><i class="fas fa-list-ul"></i></button>
         <button id="fab-show-objects" class="fab fab-objects" title="Ijtimoiy ob'ektlar va Xarita"><i class="fas fa-store-alt"></i></button>
         <button id="fab-show-summary" class="fab fab-summary" title="Aholi statistikasi"><i class="fas fa-chart-pie"></i></button>
@@ -1925,34 +2015,36 @@
 
     <!-- AI YORDAMCHI MODAL -->
     <div id="ai-chat-modal" class="modal-overlay">
-      <div class="modal-box" style="max-width: 550px; padding: 0; overflow: hidden;">
+      <div class="modal-box" style="max-width: 600px; padding: 0; overflow: hidden;">
         <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1rem 1.5rem; display: flex; align-items: center; gap: 1rem;">
           <div style="width: 50px; height: 50px; background: rgba(255,255,255,0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-            <i class="fas fa-robot"></i>
+            <i class="fas fa-brain"></i>
           </div>
           <div>
             <h4 style="margin: 0;">O'zbegim AI Yordamchi</h4>
-            <small style="opacity: 0.8;"><i class="fas fa-circle" style="color: #10b981; font-size: 0.6rem;"></i> Google Gemini AI</small>
+            <small style="opacity: 0.9;"><i class="fas fa-circle" style="color: #10b981; font-size: 0.6rem;"></i> OpenAI GPT-4o-mini</small>
           </div>
           <button class="modal-close-btn js-back-to-previous-view" style="position: static; margin-left: auto; color: white;"><i class="fas fa-times"></i></button>
         </div>
-        <div id="ai-chat-body" style="height: 400px; overflow-y: auto; padding: 1rem; background: var(--bg-color);">
+        <div id="ai-chat-body" style="height: 450px; overflow-y: auto; padding: 1rem; background: var(--bg-color);">
           <div class="ai-message" style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
             <div style="width: 35px; height: 35px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-              <i class="fas fa-robot" style="color: white; font-size: 0.9rem;"></i>
+              <i class="fas fa-brain" style="color: white; font-size: 0.9rem;"></i>
             </div>
             <div style="background: var(--surface-color); padding: 0.75rem 1rem; border-radius: 0 12px 12px 12px; max-width: 85%; box-shadow: var(--shadow-sm);">
-              Assalomu alaykum! 👋 Men Google Gemini AI yordamchisiman.<br><br>
-              <strong>Menga savol bering:</strong><br>
-              • "8 domda qaysi xonadonlar xatlovdan o'tmagan?"<br>
-              • "Nechta ishsiz bor?"<br>
-              • "Migrantlar ro'yxatini ber"<br>
-              • Yoki istalgan savol!
+              Assalomu alaykum! 👋 Men <strong>O'zbegim AI</strong> - haqiqiy sun'iy intellekt yordamchisiman.<br><br>
+              Men <strong>ChatGPT kabi</strong> ishlаyman - <strong>HAR QANDAY</strong> savolingizga javob bera olaman! 🚀<br><br>
+              <strong>Namuna savollar:</strong><br>
+              • "Mahalladagi ishsizlik muammosini qanday hal qilish mumkin?"<br>
+              • "NEET yoshlar ro'yxatini ber va tahlil qil"<br>
+              • "Yoshlar uchun qanday davlat dasturlari bor?"<br>
+              • "Biznesni qanday boshlash kerak?"<br>
+              • Yoki istalgan boshqa savol! 💬
             </div>
           </div>
         </div>
         <div style="padding: 1rem; background: var(--surface-color); border-top: 1px solid var(--border-color); display: flex; gap: 0.5rem;">
-          <input type="text" id="ai-chat-input" placeholder="Savolingizni yozing..." style="flex: 1; margin: 0; padding: 0.75rem 1rem;">
+          <input type="text" id="ai-chat-input" placeholder="Har qanday savol bering..." style="flex: 1; margin: 0; padding: 0.75rem 1rem;">
           <button id="ai-send-btn" class="btn btn-primary" style="width: auto; margin: 0; padding: 0.75rem 1.25rem;"><i class="fas fa-paper-plane" style="margin: 0;"></i></button>
         </div>
       </div>
@@ -2347,7 +2439,9 @@ objectDetailsModal: document.getElementById('object-details-modal'),
 staffDetailsModal: document.getElementById('staff-details-modal'),
 signatureModal: document.getElementById('signature-modal')
 };
-let citizenDatabase=[], activeCitizenDatabase = [], archivedCitizenDatabase = [], socialObjectsDatabase = [], objectStaffDatabase = [], headers=[],currentMainPersonUniqueId=null,currentStep=1, newCitizenData = {}, currentDisplayedList = [], currentListTitle = '', cameraStream = null, currentFacingMode = 'user', notifications = [], currentMeetingData = {}, currentCameraTarget = null, tempStaffList = [], signaturePad = null, currentSignatureFormId = null;
+let citizenDatabase=[], archivedCitizenDatabase = [], socialObjectsDatabase = [], objectStaffDatabase = [], headers=[],currentMainPersonUniqueId=null,currentStep=1, newCitizenData = {}, currentDisplayedList = [], currentListTitle = '', cameraStream = null, currentFacingMode = 'user', notifications = [], currentMeetingData = {}, currentCameraTarget = null, tempStaffList = [], signaturePad = null, currentSignatureFormId = null;
+var activeCitizenDatabase = []; // Global qilindi xarita uchun
+window.activeCitizenDatabase = activeCitizenDatabase; // Window ga ham qo'shildi
 let selectedRoleInfo = {};
 const totalSteps=3; 
 let dataReadyPromise = null;
@@ -2528,6 +2622,7 @@ async function fetchData(isManualRefresh = false, isSilent = false) {
             if (result.status === 'success') {
                 citizenDatabase = result.data.citizenDatabase || [];
                 activeCitizenDatabase = citizenDatabase.filter(p => p.arxiv_holati !== 'arxiv');
+                window.activeCitizenDatabase = activeCitizenDatabase;
                 archivedCitizenDatabase = citizenDatabase.filter(p => p.arxiv_holati === 'arxiv');
                 socialObjectsDatabase = result.data.socialObjectsDatabase || [];
                 objectStaffDatabase = result.data.objectStaffDatabase || [];
@@ -2562,6 +2657,7 @@ function loadDataFromCache() {
             const d = JSON.parse(cachedData);
             citizenDatabase = d.citizenDatabase || [];
             activeCitizenDatabase = citizenDatabase.filter(p => p.arxiv_holati !== 'arxiv');
+                window.activeCitizenDatabase = activeCitizenDatabase;
             archivedCitizenDatabase = citizenDatabase.filter(p => p.arxiv_holati === 'arxiv');
             socialObjectsDatabase = d.socialObjectsDatabase || [];
             objectStaffDatabase = d.objectStaffDatabase || [];
@@ -2609,6 +2705,7 @@ function updateLocalDatabase(updatedPersonData, isOptimistic = false) {
         citizenDatabase.unshift(updatedPersonData);
     }
     activeCitizenDatabase = citizenDatabase.filter(p => p.arxiv_holati !== 'arxiv');
+                window.activeCitizenDatabase = activeCitizenDatabase;
     archivedCitizenDatabase = citizenDatabase.filter(p => p.arxiv_holati === 'arxiv');
     localStorage.setItem('databases', JSON.stringify({ citizenDatabase, socialObjectsDatabase, objectStaffDatabase }));
 }
@@ -3311,12 +3408,14 @@ function calculateAndDisplaySummary() {
     const ayollarDaftariStat = d.filter(p => p.ayollar_daftari === "Ro'yxatda turadi" || p.ayollar_daftari === "Ro'yxatga olish kerak").length;
     const yoshlarDaftariStat = d.filter(p => p.yoshlar_daftari === "Ro'yxatda turadi" || p.yoshlar_daftari === "Ro'yxatga olish kerak").length;
     const moddiyYordamStat = d.filter(p => p.moddiy_yordam === 'Bola puli oladi' || p.moddiy_yordam === 'Nafaqa oladi').length;
+    
+    // NEET yoshlar - 18-30 yosh, ishlamaydi (Ishsiz, Uy bekasi, bo'sh), o'qimaydi
     const neetStat = d.filter(p => {
         const age = getAge(p.dob);
-        const isNeetAge = age >= 18 && age <= 30;
-        const isUnemployed = p.employmentStatus === 'Ishsiz' || !p.employmentStatus;
-        const isNotStudent = p.employmentStatus !== "Talaba/O'quvchi" && p.employmentStatus !== "Talaba" && p.employmentStatus !== "Maktab o'quchisi";
-        return isNeetAge && isUnemployed && isNotStudent;
+        if (!age || age < 18 || age > 30) return false;
+        const isUnemployed = p.employmentStatus === 'Ishsiz' || p.employmentStatus === 'Uy bekasi' || !p.employmentStatus;
+        const isNotStudent = !['Talaba', "Maktab o'quchisi", "Bog'cha", "Talaba/O'quvchi"].includes(p.employmentStatus);
+        return isUnemployed && isNotStudent;
     }).length;
     const xavfliStat = d.filter(p => {
         const risk = calculateRiskScore(p);
@@ -3441,10 +3540,36 @@ async function openStatDetails(category, categoryLabel) {
 
         // INSPEKTOR
         case 'shubhali': list = baza.filter(p => p.shubhali_shaxs === 'Ha'); break;
-        case 'pxt': list = baza.filter(p => p.toifa_turi === 'PXT'); break;
-        case 'probatsiya': list = baza.filter(p => p.toifa_turi === 'Probatsiya'); break;
+        case 'pxt': list = baza.filter(p => (p.toifa_turi || '').includes('PXT')); break;
+        case 'probatsiya': list = baza.filter(p => (p.toifa_turi || '').includes('Probatsiya')); break;
         case 'sudlangan': list = baza.filter(p => p.sudlanganlik === 'Ha'); break;
         case 'qurol': list = baza.filter(p => p.qurol_egalik === 'Ha'); break;
+
+        // IJTIMOIY DAFTARLAR
+        case 'ayollar-daftari': 
+            list = baza.filter(p => p.ayollar_daftari && (p.ayollar_daftari.includes("Ro'yxatda") || p.ayollar_daftari.includes("kerak"))); 
+            break;
+        case 'yoshlar-daftari': 
+            list = baza.filter(p => p.yoshlar_daftari && (p.yoshlar_daftari.includes("Ro'yxatda") || p.yoshlar_daftari.includes("kerak"))); 
+            break;
+        case 'moddiy-yordam': 
+            list = baza.filter(p => p.moddiy_yordam && (p.moddiy_yordam.includes('Bola puli') || p.moddiy_yordam.includes('Nafaqa'))); 
+            break;
+        case 'neet': 
+            list = baza.filter(p => {
+                const age = getAge(p.dob);
+                if (!age || age < 18 || age > 30) return false;
+                const isUnemployed = p.employmentStatus === 'Ishsiz' || p.employmentStatus === 'Uy bekasi' || !p.employmentStatus;
+                const isNotStudent = !['Talaba', "Maktab o'quchisi", "Bog'cha"].includes(p.employmentStatus);
+                return isUnemployed && isNotStudent;
+            }); 
+            break;
+        case 'xavfli': 
+            list = baza.filter(p => {
+                const risk = calculateRiskScore(p);
+                return risk.level === 'YUQORI XAVF' || risk.level === "O'rta xavf";
+            }); 
+            break;
 
         default: list = [];
     }
@@ -3462,8 +3587,22 @@ document.body.addEventListener('click', async (e) => {
     if (e.target.closest('.summary-stat-card')) {
         const card = e.target.closest('.summary-stat-card');
         const category = card.getAttribute('data-category');
+        
+        // Label ni topish - turli strukturalar uchun
+        let label = 'Ro\'yxat';
         const labelDiv = card.querySelector('.label');
-        const label = labelDiv ? labelDiv.textContent : 'Ro\'yxat';
+        if (labelDiv) {
+            label = labelDiv.textContent;
+        } else {
+            // Inline style bilan yozilgan label (oxirgi div)
+            const allDivs = card.querySelectorAll('div');
+            if (allDivs.length > 0) {
+                const lastDiv = allDivs[allDivs.length - 1];
+                if (lastDiv && !lastDiv.id) {
+                    label = lastDiv.textContent;
+                }
+            }
+        }
 
         // Toifa ichidagi kichik kartalar bosilganda (Toifadagilar -> PXT)
         if (category === 'toifa_detail') {
@@ -3976,7 +4115,49 @@ function setupEventListeners(){
       if(DOM.signatureModal.style.display === 'flex') { goBack(); return; }
       if (document.querySelector('.modal-overlay[style*="display: flex"]')) { goBack(); }
       else if (!DOM.searchView.classList.contains('active')) { showScreen('search-view'); }
-    } 
+    }
+    
+    // ENTER tugmasi - keyingi fieldga o'tish
+    if (e.key === 'Enter') {
+      const activeEl = document.activeElement;
+      const form = activeEl?.closest('form');
+      
+      // Agar textarea ichida bo'lsa, yangi qator qo'shsin (Enter ni bloklamasin)
+      if (activeEl?.tagName === 'TEXTAREA') return;
+      
+      // Agar form ichida input/select bo'lsa
+      if (form && (activeEl?.tagName === 'INPUT' || activeEl?.tagName === 'SELECT')) {
+        e.preventDefault();
+        
+        // Barcha ko'rinadigan inputlarni olish
+        const allInputs = Array.from(form.querySelectorAll('input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]), select, textarea'))
+          .filter(el => {
+            // Faqat ko'rinadigan elementlarni olish
+            const style = window.getComputedStyle(el);
+            const parent = el.closest('.conditional-field, .form-group');
+            const parentStyle = parent ? window.getComputedStyle(parent) : null;
+            return style.display !== 'none' && style.visibility !== 'hidden' &&
+                   (!parentStyle || (parentStyle.display !== 'none' && parentStyle.visibility !== 'hidden'));
+          });
+        
+        const currentIndex = allInputs.indexOf(activeEl);
+        
+        if (currentIndex !== -1 && currentIndex < allInputs.length - 1) {
+          // Keyingi fieldga o'tish
+          const nextInput = allInputs[currentIndex + 1];
+          nextInput.focus();
+          
+          // Agar select bo'lsa, ochish
+          if (nextInput.tagName === 'SELECT') {
+            // Qisqa vaqtdan keyin click eventini trigger qilish
+            setTimeout(() => {
+              const event = new MouseEvent('mousedown', { bubbles: true, cancelable: true, view: window });
+              nextInput.dispatchEvent(event);
+            }, 50);
+          }
+        }
+      }
+    }
   });
   DOM.detailsContent.addEventListener('click', (e) => {
     if (e.target.closest('.js-view-meeting-photo')) {
@@ -4256,6 +4437,10 @@ function setupEventListeners(){
       else if (t.classList.contains('js-employment-status')) { 
         const s = t.value; 
         ['.js-study-details', '.js-employment-details', '.js-bogcha-details', '.js-disability-group', '.js-migration-details', '.js-returned-migration-details', '.js-unemployed-details'].forEach(sel => { const f = currentForm.querySelector(sel); if (f) f.style.display = 'none'; }); 
+        // "Boshqa" ish turi inputini ham yashirish
+        const boshqaIsh = currentForm.querySelector('.js-boshqa-ish-input');
+        if (boshqaIsh) boshqaIsh.style.display = 'none';
+        
         if (['Talaba', "Maktab o'quchisi"].includes(s)) toggle('.js-study-details', true); 
         else if (['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(s)) toggle('.js-employment-details', true); 
         else if (s === "Bog'cha") toggle('.js-bogcha-details', true); 
@@ -4263,6 +4448,13 @@ function setupEventListeners(){
         else if (s === "Migratsiya") toggle('.js-migration-details', true); 
         else if (s === "Migratsiyadan qaytgan") toggle('.js-returned-migration-details', true);
         else if (s === "Ishsiz") toggle('.js-unemployed-details', true);
+      }
+      // JS-JOB-CATEGORY - "Boshqa" tanlaganda input ko'rsatish
+      else if (t.classList.contains('js-job-category')) {
+        const boshqaIsh = currentForm.querySelector('.js-boshqa-ish-input');
+        if (boshqaIsh) {
+            boshqaIsh.style.display = (t.value === 'Boshqa') ? 'block' : 'none';
+        }
       }
       // ══════════ YANGI BO'LIMLAR UCHUN HANDLERLAR ══════════
       else if (t.classList.contains('js-sudlanganlik')) {
@@ -4749,6 +4941,37 @@ function updateClock() {
     if(timeEl) timeEl.textContent = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
     if(dateEl) dateEl.textContent = `${pad(now.getDate())}.${pad(now.getMonth() + 1)}.${now.getFullYear()}`;
 }
+
+// Vaqtga qarab salom berish
+function updateGreeting() {
+    const greetingEl = document.getElementById('greeting-message');
+    if (!greetingEl) return;
+    
+    const hour = new Date().getHours();
+    let greeting = '';
+    let emoji = '';
+    let motivation = '';
+    
+    if (hour >= 5 && hour < 12) {
+        greeting = 'Xayrli tong';
+        emoji = '🌅';
+        motivation = 'Bugungi kuningiz barakali o\'tsin!';
+    } else if (hour >= 12 && hour < 17) {
+        greeting = 'Xayrli kun';
+        emoji = '☀️';
+        motivation = 'Ish kuningiz unumli o\'tsin!';
+    } else if (hour >= 17 && hour < 21) {
+        greeting = 'Xayrli kech';
+        emoji = '🌆';
+        motivation = 'Oqshom yoqimli o\'tsin!';
+    } else {
+        greeting = 'Xayrli tun';
+        emoji = '🌙';
+        motivation = 'Tushlaringiz yoqimli bo\'lsin!';
+    }
+    
+    greetingEl.innerHTML = `${emoji} <strong>${greeting}!</strong> ${motivation}`;
+}
 function checkSystemStatus() {
     const statusEl = document.getElementById('system-status');
     if (!statusEl) return;
@@ -4797,7 +5020,9 @@ document.addEventListener('DOMContentLoaded',()=>{
         selectedRoleInfo = {};
     });
     updateClock();
+    updateGreeting();
     setInterval(updateClock, 1000);
+    setInterval(updateGreeting, 60000); // Har daqiqada yangilash
     checkSystemStatus();
     window.addEventListener('online', checkSystemStatus);
     window.addEventListener('offline', checkSystemStatus);
@@ -5665,7 +5890,7 @@ function calculateRiskScore(person) {
         factors.push('Nazoratda');
     }
     
-    let level = 'Barqaror';
+    let level = 'Past xavf';
     let color = '#10b981';
     
     if (score >= 50) {
@@ -5835,7 +6060,7 @@ function loadMapMarkers(filter) {
                         <div style="max-height: 120px; overflow-y: auto; background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
                                 ${erkaklar.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.openCitizenFromMap('${p.unique_id}')">
                                         <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #60a5fa); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -5857,7 +6082,7 @@ function loadMapMarkers(filter) {
                         <div style="max-height: 120px; overflow-y: auto; background: rgba(236,72,153,0.05); border: 1px solid rgba(236,72,153,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
                                 ${ayollar.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.openCitizenFromMap('${p.unique_id}')">
                                         <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -5920,7 +6145,7 @@ function loadMapMarkers(filter) {
                                 <div style="background: rgba(236,72,153,0.05); border: 1px solid rgba(236,72,153,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
                                     <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
                                         ${people.map(p => `
-                                            <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                            <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.openCitizenFromMap('${p.unique_id}')">
                                                 <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                                     ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                                 </div>
@@ -5987,7 +6212,7 @@ function loadMapMarkers(filter) {
                         <div style="max-height: 150px; overflow-y: auto; background: rgba(16,185,129,0.05); border: 1px solid rgba(16,185,129,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
                                 ${rasmiy.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.openCitizenFromMap('${p.unique_id}')" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                                         <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #10b981, #34d399); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -6009,7 +6234,7 @@ function loadMapMarkers(filter) {
                         <div style="max-height: 150px; overflow-y: auto; background: rgba(245,158,11,0.05); border: 1px solid rgba(245,158,11,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
                                 ${norasmiy.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.openCitizenFromMap('${p.unique_id}')" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                                         <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -6031,7 +6256,7 @@ function loadMapMarkers(filter) {
                         <div style="max-height: 150px; overflow-y: auto; background: rgba(139,92,246,0.05); border: 1px solid rgba(139,92,246,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.5rem;">
                                 ${tadbirkor.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s;" onclick="window.openCitizenFromMap('${p.unique_id}')" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
                                         <div style="width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, #8b5cf6, #a78bfa); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -6072,15 +6297,15 @@ function loadMapMarkers(filter) {
                         <div style="background: linear-gradient(135deg, #3b82f6, #2563eb); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600; font-size: 0.9rem;">
                             <i class="fas fa-male"></i> Erkaklar (${erkaklar.length})
                         </div>
-                        <div style="background: rgba(59,130,246,0.05); border: 1px solid rgba(59,130,246,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem; max-height: 150px; overflow-y: auto;">
+                        <div style="background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.3); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem; max-height: 150px; overflow-y: auto;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
                                 ${erkaklar.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid #3b82f6;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                    <div class="filter-citizen-card" onclick="window.openCitizenFromMap('${p.unique_id}')" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--surface-color); border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid #3b82f6; border: 1px solid var(--border-color);">
                                         <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #60a5fa); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 14px;"></i>'}
                                         </div>
                                         <div style="min-width: 0; overflow: hidden;">
-                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-color);">${p.fio || ''}</div>
                                             <div style="font-size: 0.7rem; color: #3b82f6;">${getAge(p.dob) || '?'} yosh ${p.employmentStatus ? '• ' + p.employmentStatus : ''}</div>
                                         </div>
                                     </div>
@@ -6096,15 +6321,15 @@ function loadMapMarkers(filter) {
                         <div style="background: linear-gradient(135deg, #ec4899, #db2777); color: white; padding: 0.5rem 1rem; border-radius: 10px 10px 0 0; font-weight: 600; font-size: 0.9rem;">
                             <i class="fas fa-female"></i> Ayollar (${ayollar.length})
                         </div>
-                        <div style="background: rgba(236,72,153,0.05); border: 1px solid rgba(236,72,153,0.2); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem; max-height: 150px; overflow-y: auto;">
+                        <div style="background: rgba(236,72,153,0.1); border: 1px solid rgba(236,72,153,0.3); border-top: none; border-radius: 0 0 10px 10px; padding: 0.5rem; max-height: 150px; overflow-y: auto;">
                             <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 0.5rem;">
                                 ${ayollar.map(p => `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid #ec4899;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                    <div class="filter-citizen-card" onclick="window.openCitizenFromMap('${p.unique_id}')" style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: var(--surface-color); border-radius: 8px; cursor: pointer; transition: all 0.2s; border-left: 3px solid #ec4899; border: 1px solid var(--border-color);">
                                         <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #ec4899, #f472b6); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 14px;"></i>'}
                                         </div>
                                         <div style="min-width: 0; overflow: hidden;">
-                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${p.fio || ''}</div>
+                                            <div style="font-weight: 600; font-size: 0.8rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; color: var(--text-color);">${p.fio || ''}</div>
                                             <div style="font-size: 0.7rem; color: #ec4899;">${getAge(p.dob) || '?'} yosh ${p.employmentStatus ? '• ' + p.employmentStatus : ''}</div>
                                         </div>
                                     </div>
@@ -6188,7 +6413,7 @@ function loadMapMarkers(filter) {
                                 ${yuqoriXavf.map(p => {
                                     const risk = calculateRiskScore(p);
                                     return `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border-left: 3px solid #dc2626;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border-left: 3px solid #dc2626;" onclick="window.openCitizenFromMap('${p.unique_id}')">
                                         <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #dc2626, #ef4444); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -6212,7 +6437,7 @@ function loadMapMarkers(filter) {
                                 ${ortaXavf.map(p => {
                                     const risk = calculateRiskScore(p);
                                     return `
-                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border-left: 3px solid #f59e0b;" onclick="window.showCitizenDetails && window.showCitizenDetails(activeCitizenDatabase.find(c => c.unique_id === '${p.unique_id}'))">
+                                    <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.5rem; background: white; border-radius: 8px; cursor: pointer; border-left: 3px solid #f59e0b;" onclick="window.openCitizenFromMap('${p.unique_id}')">
                                         <div style="width: 36px; height: 36px; border-radius: 50%; background: linear-gradient(135deg, #f59e0b, #fbbf24); display: flex; align-items: center; justify-content: center; overflow: hidden; flex-shrink: 0;">
                                             ${p.rasm_link ? `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover;">` : '<i class="fas fa-user" style="color: white; font-size: 12px;"></i>'}
                                         </div>
@@ -6679,13 +6904,55 @@ function showDetailList(list, title) {
 
 // Fuqaro tafsilotlarini ko'rsatish funksiyasi (analitikadan) - GLOBAL
 window.showCitizenDetails = function(person) {
-    if (!person) return;
-    // Detail list modalini yopish
-    document.getElementById('detail-list-modal').style.display = 'none';
+    if (!person) {
+        console.log('showCitizenDetails: person not found');
+        return;
+    }
+    console.log('showCitizenDetails:', person.fio);
+    
+    // Detail list modalini yopish (agar ochiq bo'lsa)
+    const detailListModal = document.getElementById('detail-list-modal');
+    if (detailListModal && detailListModal.style.display !== 'none') {
+        detailListModal.style.display = 'none';
+    }
+    
+    // Xarita modalini yopish (agar ochiq bo'lsa)
+    const mapModal = document.getElementById('objects-stats-modal');
+    if (mapModal && mapModal.style.display !== 'none') {
+        mapModal.style.display = 'none';
+    }
+    
     // Details modalini ochish
     showScreen('details-modal');
     DOM.detailsContent.innerHTML = createFullDetailsHTML(person);
 }
+
+// GLOBAL: Xaritadan fuqaroni ochish funksiyasi
+window.openCitizenFromMap = function(uniqueId) {
+    console.log('openCitizenFromMap chaqirildi:', uniqueId);
+    
+    // Vibration (mobil uchun)
+    if (navigator.vibrate) {
+        navigator.vibrate(50);
+    }
+    
+    const person = activeCitizenDatabase.find(function(c) { return c.unique_id === uniqueId; });
+    if (person) {
+        console.log('Fuqaro topildi:', person.fio);
+        
+        // Xarita modalini yopish
+        const objectsModal = document.getElementById('objects-stats-modal');
+        if (objectsModal) {
+            objectsModal.style.display = 'none';
+        }
+        
+        // Details modalini ochish
+        window.showCitizenDetails(person);
+    } else {
+        console.log('Fuqaro topilmadi:', uniqueId);
+        showToast('Fuqaro topilmadi', 'error');
+    }
+};
 
 
 // 2. Kategoriya kartochkalari uchun funksiya (global)
@@ -6902,6 +7169,7 @@ function restoreData() {
             if (data.citizenDatabase) {
                 citizenDatabase = data.citizenDatabase;
                 activeCitizenDatabase = citizenDatabase.filter(c => c.arxiv_holati !== 'arxiv');
+                window.activeCitizenDatabase = activeCitizenDatabase;
                 archivedCitizenDatabase = citizenDatabase.filter(c => c.arxiv_holati === 'arxiv');
             }
             if (data.socialObjectsDatabase) socialObjectsDatabase = data.socialObjectsDatabase;
@@ -7106,6 +7374,7 @@ function restoreData() {
             if (data.citizenDatabase) {
                 citizenDatabase = data.citizenDatabase;
                 activeCitizenDatabase = citizenDatabase.filter(c => c.status !== 'archived');
+                window.activeCitizenDatabase = activeCitizenDatabase;
                 archivedCitizenDatabase = citizenDatabase.filter(c => c.status === 'archived');
             }
             if (data.socialObjectsDatabase) socialObjectsDatabase = data.socialObjectsDatabase;
@@ -7182,496 +7451,492 @@ function exportToCSV(data, filename) {
 }
 
 /* ========================================================== */
-/* AI YORDAMCHI - GOOGLE GEMINI API (TO'LIQ INTEGRATSIYA) */
+/* AI YORDAMCHI - TO'LIQ BAZA INTEGRATSIYASI */
 /* ========================================================== */
 
-const GEMINI_API_KEY = 'AIzaSyC3CbRPj_orfTBe0sg7MwKxGHlnWOcJNIc';
+const OPENAI_API_KEY = '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';
 
 async function getAIResponse(message) {
-    const msg = message.toLowerCase().trim();
     const baza = activeCitizenDatabase || [];
-    
-    // Statistikalar
+    const msg = message.toLowerCase().trim();
     const total = baza.length;
-    const erkaklar = baza.filter(p => p.jinsi === 'Erkak').length;
-    const ayollar = baza.filter(p => p.jinsi === 'Ayol').length;
+    
+    // ════════════════════════════════════════
+    // ASOSIY STATISTIKALAR
+    // ════════════════════════════════════════
+    const erkaklar = baza.filter(p => p.jinsi === 'Erkak');
+    const ayollar = baza.filter(p => p.jinsi === 'Ayol');
     const ishsizlar = baza.filter(p => p.employmentStatus === 'Ishsiz');
-    const talabalar = baza.filter(p => p.employmentStatus === 'Talaba');
-    const migrantlar = baza.filter(p => p.employmentStatus === 'Migratsiya');
-    const ijarachilar = baza.filter(p => p.registrationType === 'Ijara');
-    const nafaqaxorlar = baza.filter(p => p.employmentStatus === 'Nafaqada');
-    const nogironlar = baza.filter(p => p.employmentStatus === 'Nogironligi bor');
-    const bandlar = baza.filter(p => ['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(p.employmentStatus));
     const rasmiyBand = baza.filter(p => p.employmentStatus === 'Rasmiy band');
     const norasmiyBand = baza.filter(p => p.employmentStatus === 'Norasmiy band');
     const tadbirkorlar = baza.filter(p => p.employmentStatus === 'Tadbirkor');
+    const talabalar = baza.filter(p => p.employmentStatus === 'Talaba');
+    const migrantlar = baza.filter(p => p.employmentStatus === 'Migratsiya');
+    const nafaqaxorlar = baza.filter(p => p.employmentStatus === 'Nafaqada');
+    const ijarachilar = baza.filter(p => p.registrationType === 'Ijara');
+    const doimiylar = baza.filter(p => p.registrationType === 'Doimiy' || !p.registrationType);
+    const maktabOquvchi = baza.filter(p => p.employmentStatus === "Maktab o'quchisi");
     const uyBekasi = baza.filter(p => p.employmentStatus === 'Uy bekasi');
-    const dekret = baza.filter(p => p.employmentStatus === 'Dekret');
+    const nogironlar = baza.filter(p => p.employmentStatus === 'Nogironligi bor');
+    const oilaBoshilari = baza.filter(p => p.familyRole === 'Oila boshi');
     
-    // NEET yoshlar - ishsiz va uy bekasi yoshlar
-    const neetYoshlar = baza.filter(p => {
+    // Band fuqarolar (rasmiy + norasmiy + tadbirkor)
+    const bandlar = baza.filter(p => ['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(p.employmentStatus));
+    
+    // Yoshlar (18-35 yosh)
+    const yoshlar = baza.filter(p => {
         const yosh = getAge(p.dob);
-        if (!yosh || yosh < 18 || yosh > 30) return false;
-        const neetHolatlar = ['Ishsiz', 'Uy bekasi'];
-        return neetHolatlar.includes(p.employmentStatus);
+        return yosh && yosh >= 18 && yosh <= 35;
     });
     
-    // Yuqori xavfdagilar
+    // NEET yoshlar
+    const neetYoshlar = baza.filter(p => {
+        const yosh = getAge(p.dob);
+        return yosh && yosh >= 18 && yosh <= 30 && ['Ishsiz', 'Uy bekasi'].includes(p.employmentStatus);
+    });
+    
     const yuqoriXavf = baza.filter(p => calculateRiskScore(p).level === 'YUQORI XAVF');
     
-    // Maktab o'quvchilari
-    const maktabOquvchilari = baza.filter(p => p.employmentStatus === "Maktab o'quchisi");
+    // ════════════════════════════════════════
+    // XONADON STATISTIKASI (dom + hovli)
+    // ════════════════════════════════════════
+    function getXonadonStats() {
+        const stats = [];
+        if (typeof APARTMENT_BUILDINGS === 'undefined') return stats;
+        
+        for (const domNum in APARTMENT_BUILDINGS) {
+            const config = APARTMENT_BUILDINGS[domNum];
+            const domPeople = baza.filter(p => {
+                const street = (p.street || '').toLowerCase();
+                return street.includes(domNum + '-dom') || street.includes(domNum + ' dom') || 
+                       street.includes(domNum + '-uy') || street.includes(domNum + ' uy');
+            });
+            
+            const apartments = new Set();
+            domPeople.forEach(p => {
+                const match = (p.street || '').match(/(\d+)\s*[-]?\s*(kv|xonadon)/i);
+                if (match) apartments.add(parseInt(match[1]));
+            });
+            
+            stats.push({
+                dom: domNum,
+                name: config.name || (domNum + '-dom'),
+                total: config.total || 36,
+                registered: apartments.size,
+                notRegistered: (config.total || 36) - apartments.size,
+                people: domPeople.length,
+                percent: Math.round((apartments.size / (config.total || 36)) * 100)
+            });
+        }
+        
+        // Hovlidagi xonadonlar (ko'cha, uy formatida)
+        const hovliPeople = baza.filter(p => {
+            const street = (p.street || '').toLowerCase();
+            return street.includes('ko.') || street.includes("ko'") || street.includes('uy');
+        });
+        
+        const hovliAddresses = new Set();
+        hovliPeople.forEach(p => {
+            const street = (p.street || '').toLowerCase();
+            hovliAddresses.add(street.split(',')[0].trim());
+        });
+        
+        return stats;
+    }
     
-    // ══════════ YANGI STATISTIKALAR ══════════
-    // Xavfsizlik va Nazorat
-    const sudlanganlar = baza.filter(p => p.sudlanganlik === 'Ha');
-    const qurollilar = baza.filter(p => p.qurol_egalik === 'Ha');
+    const domStats = getXonadonStats();
+    const totalApartments = domStats.reduce((s, d) => s + d.total, 0);
+    const registeredApartments = domStats.reduce((s, d) => s + d.registered, 0);
     
-    // Texnik holat
-    const aqlliGaz = baza.filter(p => p.gaz_hisoblagich === 'Aqlli');
-    const aqlliElektr = baza.filter(p => p.elektr_hisoblagich === 'Aqlli');
-    const isitishYoq = baza.filter(p => p.isitish_tizimi === "Yo'q");
-    const gazYoq = baza.filter(p => p.gaz_hisoblagich === "Yo'q");
+    // Jami xonadonlar (dom + hovli)
+    const allAddresses = new Set();
+    baza.forEach(p => {
+        if (p.street) allAddresses.add(p.street.toLowerCase().trim());
+    });
+    const totalXonadonlar = allAddresses.size;
     
-    // Transport
-    const avtomobillilar = baza.filter(p => p.avtomobil_bor === 'Ha');
-    const ishonchnomaAuto = baza.filter(p => p.avto_ishonchnoma === 'Ha');
-    const gazliAuto = baza.filter(p => p.avto_gaz === 'Metan' || p.avto_gaz === 'Propan');
-    
-    // Psixologik
-    const psixYordam = baza.filter(p => p.psixologik_yordam === 'Ha');
-    
-    // Huquqiy
-    const alimentMuammo = baza.filter(p => p.aliment_muammo === 'Ha');
-    const yuridikMuammo = baza.filter(p => p.yuridik_maslahat === 'Ha');
-    const mulkMuammo = baza.filter(p => p.mulk_muammo === 'Ha');
-    
-    // Telegram
-    const telegramAzo = baza.filter(p => p.telegram_azo === 'Ha');
-    const telegramYoq = baza.filter(p => p.telegram_azo === "Yo'q");
-    
-    // Iqtisodiy
-    const daromadPast = baza.filter(p => p.oylik_daromad === '2 mln gacha');
-    const ishlovchiYoq = baza.filter(p => p.ishlovchilar_soni === '0');
-    
-    // Fuqaro kartochkasini yaratish funksiyasi
-    function createPersonCard(p) {
+    // ════════════════════════════════════════
+    // FUQARO KARTOCHKASI (registrationType bilan)
+    // ════════════════════════════════════════
+    function card(p) {
         const risk = calculateRiskScore(p);
-        return `
-        <div style="background: var(--bg-color); border-radius: 10px; padding: 10px; margin: 5px 0; border-left: 3px solid ${risk.color};">
-            <strong>${p.fio || 'Noma\'lum'}</strong><br>
-            📍 ${p.street || 'Manzil yo\'q'}<br>
-            👤 ${p.jinsi || ''} | ${getAge(p.dob) || '?'} yosh<br>
-            💼 ${p.employmentStatus || 'Noma\'lum'}<br>
-            ${p.telefon ? `📱 ${p.telefon}` : ''}
-            <span style="font-size: 0.75rem; color: ${risk.color};">[${risk.level}]</span>
+        const regType = p.registrationType === 'Ijara' ? '🏠 Ijarachi' : '🏡 Doimiy';
+        return `<div style="background:var(--bg-color);border-radius:10px;padding:12px;margin:8px 0;border-left:4px solid ${risk.color};">
+            <strong>${p.fio || 'Nomalum'}</strong> <span style="font-size:0.8rem;color:#666;">[${regType}]</span><br>
+            📍 ${p.street || 'Manzil yoq'}<br>
+            👤 ${p.jinsi || ''} | ${getAge(p.dob) || '?'} yosh | 📅 ${formatDate(p.dob) || ''}<br>
+            💼 ${p.employmentStatus || 'Nomalum'}${p.familyRole ? ' | 👨‍👩‍👧 ' + p.familyRole : ''}<br>
+            ${p.telefon ? '📱 ' + p.telefon + '<br>' : ''}
+            ${p.jshshir ? '🆔 ' + p.jshshir + '<br>' : ''}
         </div>`;
     }
     
-    // XONADON SO'ROVI - yangilangan
-    if (msg.includes('dom') || msg.includes('uy') || msg.includes('xonadon') || msg.includes('xatlov')) {
-        // 13a, 14a, 14b, 14c, 39b kabi dom raqamlarini topish
-        const domMatch = msg.match(/(\d+[abc]?)[\s-]*(dom|uy)/i) || msg.match(/(\d+[abc]?)/);
-        if (domMatch) {
-            const domNumber = domMatch[1].toLowerCase();
-            
-            // Bazadan shu domga tegishli fuqarolarni topish
-            const domPeople = baza.filter(p => {
-                const street = (p.street || '').toLowerCase();
-                return street.includes(domNumber + '-dom') || 
-                       street.includes(domNumber + ' dom') ||
-                       street.includes(domNumber + '-uy') ||
-                       street.includes(domNumber + ' uy') ||
-                       street.includes('dom-' + domNumber) ||
-                       street.includes('dom ' + domNumber) ||
-                       street.includes(domNumber + 'dom') ||
-                       street.includes(domNumber + 'uy');
-            });
-            
-            // Xonadon raqamlarini topish
-            const foundApartments = new Set();
-            domPeople.forEach(p => {
-                const street = (p.street || '').toLowerCase();
-                const kvMatch = street.match(/(\d+)[\s-]*(kv|xonadon|xon)/i) || street.match(/kv[\s-]*(\d+)/i);
-                if (kvMatch) {
-                    const num = parseInt(kvMatch[1]);
-                    if (num > 0 && num <= 200) foundApartments.add(num);
-                }
-            });
-            
-            const config = APARTMENT_BUILDINGS[domNumber];
-            if (config) {
-                const totalApartments = config.total;
-                const registeredCount = foundApartments.size;
-                const missingCount = totalApartments - registeredCount;
-                
-                const missing = [];
-                for (let i = 1; i <= totalApartments; i++) {
-                    if (!foundApartments.has(i)) missing.push(i);
-                }
-                
-                const foundList = Array.from(foundApartments).sort((a,b) => a-b);
-                
-                return `🏠 <strong>${config.name} xonadonlar statistikasi:</strong><br><br>
-                        📊 Jami xonadonlar: <strong>${totalApartments}</strong> ta<br>
-                        ✅ Xatlovdan o'tgan: <strong>${registeredCount}</strong> ta ${foundList.length > 0 ? `(${foundList.join(', ')})` : ''}<br>
-                        ❌ Xatlovdan o'tmagan: <strong>${missingCount}</strong> ta<br>
-                        👥 Ro'yxatdagi fuqarolar: <strong>${domPeople.length}</strong> ta<br><br>
-                        ${missing.length > 0 ? `<strong>Qolib ketgan xonadonlar:</strong><br>${missing.join(', ')}` : '✅ Barcha xonadonlar xatlovdan o\'tgan!'}`;
-            } else {
-                if (domPeople.length > 0) {
-                    const foundList = Array.from(foundApartments).sort((a,b) => a-b);
-                    return `🏠 <strong>${domNumber}-dom statistikasi:</strong><br><br>
-                            👥 Bazada ${domPeople.length} ta fuqaro topildi<br>
-                            🏢 Topilgan xonadonlar: ${foundList.length > 0 ? foundList.join(', ') : 'aniqlanmadi'}`;
-                }
-                return `${domNumber}-dom bazada topilmadi.<br><br><strong>Mavjud domlar:</strong><br>6-17, 21-24, 28, 30, 13a, 14a, 14b, 14c, 39b`;
-            }
-        }
-    }
-    
-    // RO'YXAT SO'ROVI - TO'LIQ MA'LUMOT BILAN
-    if (msg.includes("ro'yxat") || msg.includes('royxat') || msg.includes('kimlar') || msg.includes('ber') || msg.includes('ular kim')) {
-        let list = [];
-        let title = '';
-        
-        if (msg.includes('ishsiz')) { list = ishsizlar; title = 'Ishsizlar'; }
-        else if (msg.includes('migrant')) { list = migrantlar; title = 'Migrantlar'; }
-        else if (msg.includes('talaba')) { list = talabalar; title = 'Talabalar'; }
-        else if (msg.includes('ijarachi')) { list = ijarachilar; title = 'Ijarachilar'; }
-        else if (msg.includes('nafaqa')) { list = nafaqaxorlar; title = 'Nafaqaxo\'rlar'; }
-        else if (msg.includes('nogiron')) { list = nogironlar; title = 'Nogironlar'; }
-        else if (msg.includes('rasmiy') && msg.includes('band')) { list = rasmiyBand; title = 'Rasmiy band'; }
-        else if (msg.includes('norasmiy')) { list = norasmiyBand; title = 'Norasmiy band'; }
-        else if (msg.includes('tadbirkor')) { list = tadbirkorlar; title = 'Tadbirkorlar'; }
-        else if (msg.includes('uy bekasi')) { list = uyBekasi; title = 'Uy bekalari'; }
-        else if (msg.includes('dekret')) { list = dekret; title = 'Dekretdagilar'; }
-        else if (msg.includes('neet') || (msg.includes('yosh') && msg.includes('ishsiz'))) { list = neetYoshlar; title = 'NEET Yoshlar (18-30 yosh)'; }
-        else if (msg.includes('xavf') || msg.includes('risk')) { list = yuqoriXavf; title = 'Yuqori xavfdagilar'; }
-        
-        if (list.length > 0) {
-            let result = `📋 <strong>${title} ro'yxati (${list.length} ta):</strong><br><br>`;
-            list.forEach((p, i) => {
-                result += createPersonCard(p);
-            });
-            return result;
-        }
-    }
-    
-    // ══════════ YANGI SO'ROVLAR ══════════
-    // SUDLANGANLAR VA QUROLLILAR
-    if (msg.includes('sudlan') || msg.includes('jinoyat') || msg.includes('jazo')) {
-        if (msg.includes("ro'yxat") || msg.includes('kimlar')) {
-            if (sudlanganlar.length === 0) return `✅ Bazada sudlanganlik holati qayd etilgan fuqaro topilmadi.`;
-            let result = `⚖️ <strong>Sudlanganlar ro'yxati (${sudlanganlar.length} ta):</strong><br><br>`;
-            sudlanganlar.forEach(p => {
-                result += `<div style="background: var(--bg-color); padding: 10px; border-radius: 8px; margin: 5px 0; border-left: 3px solid #ef4444;">
-                    <strong>${p.fio}</strong><br>
-                    📍 ${p.street || ''}<br>
-                    ⚖️ JK: ${p.jk_moddasi || 'Noma\'lum'}<br>
-                    📅 Ozodlikka chiqqan: ${formatDate(p.jazo_qaytgan_sana) || 'Noma\'lum'}
-                </div>`;
-            });
-            return result;
-        }
-        return `⚖️ Bazada <strong>${sudlanganlar.length}</strong> ta sudlanganlik holati qayd etilgan fuqaro bor.`;
-    }
-    
-    if (msg.includes('qurol') || msg.includes('ruxsatnoma')) {
-        if (msg.includes("ro'yxat") || msg.includes('kimlar') || msg.includes('tugay')) {
-            if (qurollilar.length === 0) return `✅ Bazada qurolga egaligi bo'lgan fuqaro topilmadi.`;
-            let result = `🔫 <strong>Qurolga egallar ro'yxati (${qurollilar.length} ta):</strong><br><br>`;
-            qurollilar.forEach(p => {
-                result += `<div style="background: var(--bg-color); padding: 10px; border-radius: 8px; margin: 5px 0; border-left: 3px solid #f59e0b;">
-                    <strong>${p.fio}</strong><br>
-                    📍 ${p.street || ''}<br>
-                    🔢 Ruxsatnoma: ${p.qurol_ruxsatnoma || 'Noma\'lum'}<br>
-                    📅 Tugash: ${formatDate(p.qurol_tugash_sana) || 'Noma\'lum'}
-                </div>`;
-            });
-            return result;
-        }
-        return `🔫 Bazada <strong>${qurollilar.length}</strong> ta qurolga egaligi bo'lgan fuqaro bor.`;
-    }
-    
-    // TEXNIK HOLAT
-    if (msg.includes('aqlli') && (msg.includes('gaz') || msg.includes('hisoblagich'))) {
-        if (msg.includes("o'rnatilmagan") || msg.includes("yo'q")) {
-            const gazYoqList = baza.filter(p => p.gaz_hisoblagich !== 'Aqlli' && p.gaz_hisoblagich);
-            if (gazYoqList.length === 0) return `✅ Barcha uylar aqlli gaz hisoblagichiga ega.`;
-            let result = `🔥 <strong>Aqlli gaz hisoblagichi yo'q (${gazYoqList.length} ta):</strong><br><br>`;
-            gazYoqList.slice(0, 20).forEach(p => result += createPersonCard(p));
-            return result;
-        }
-        return `📊 Aqlli gaz hisoblagichi: <strong>${aqlliGaz.length}</strong> ta<br>Aqlli elektr hisoblagich: <strong>${aqlliElektr.length}</strong> ta`;
-    }
-    
-    // SUV HISOBLAGICH
-    if (msg.includes('suv')) {
-        const suvYoq = baza.filter(p => p.suv_hisoblagich === "Yo'q");
-        const suvAqlli = baza.filter(p => p.suv_hisoblagich === 'Aqlli');
-        if (msg.includes("yo'q") || msg.includes("emas")) {
-            if (suvYoq.length === 0) return `✅ Barcha uylarda suv hisoblagichi mavjud.`;
-            let result = `💧 <strong>Suv hisoblagichi yo'q (${suvYoq.length} ta):</strong><br><br>`;
-            suvYoq.slice(0, 20).forEach(p => result += createPersonCard(p));
-            return result;
-        }
-        return `💧 <strong>Suv hisoblagich statistikasi:</strong><br>Aqlli: ${suvAqlli.length} ta<br>Yo'q: ${suvYoq.length} ta`;
-    }
-    
-    // CHIQINDI XIZMATI
-    if (msg.includes('chiqindi') || msg.includes('axlat')) {
-        const chiqindiYoq = baza.filter(p => p.chiqindi_xizmat === "Yo'q");
-        const chiqindiBor = baza.filter(p => p.chiqindi_xizmat === 'Ha');
-        if (msg.includes("yo'q") || msg.includes("shartnoma")) {
-            if (chiqindiYoq.length === 0) return `✅ Barcha uylarda chiqindi shartnomasi mavjud.`;
-            let result = `🗑️ <strong>Chiqindi shartnomasi yo'q (${chiqindiYoq.length} ta):</strong><br><br>`;
-            chiqindiYoq.slice(0, 20).forEach(p => result += createPersonCard(p));
-            return result;
-        }
-        return `🗑️ <strong>Chiqindi xizmati:</strong><br>Shartnoma bor: ${chiqindiBor.length} ta<br>Yo'q: ${chiqindiYoq.length} ta`;
-    }
-    
-    if (msg.includes('isitish') && (msg.includes("yo'q") || msg.includes('muammo'))) {
-        if (isitishYoq.length === 0) return `✅ Barcha uylarda isitish tizimi mavjud.`;
-        let result = `🔥 <strong>Isitish tizimi yo'q/ishlamaydi (${isitishYoq.length} ta):</strong><br><br>`;
-        isitishYoq.forEach(p => result += createPersonCard(p));
+    // TO'LIQ RO'YXAT (hamma fuqarolar)
+    function showList(list, title) {
+        let result = `📋 <strong>${title} (${list.length} ta):</strong><br><br>`;
+        list.forEach(p => { result += card(p); });
         return result;
     }
     
-    // QUROL TURI
-    if (msg.includes('qurol') && msg.includes('turi')) {
-        const qurolTurlari = {};
-        baza.filter(p => p.qurol_egalik === 'Ha' && p.qurol_turi).forEach(p => {
-            qurolTurlari[p.qurol_turi] = (qurolTurlari[p.qurol_turi] || 0) + 1;
+    // MANZIL BO'YICHA GURUHLANGAN RO'YXAT
+    function showGroupedByAddress(list, title) {
+        // Manzil bo'yicha guruhlash
+        const byAddress = {};
+        list.forEach(p => {
+            const addr = p.street || 'Manzil nomalum';
+            if (!byAddress[addr]) byAddress[addr] = [];
+            byAddress[addr].push(p);
         });
-        let result = `🔫 <strong>Qurol turlari statistikasi:</strong><br><br>`;
-        Object.entries(qurolTurlari).forEach(([turi, soni]) => {
-            result += `• ${turi}: ${soni} ta<br>`;
-        });
-        return result || `ℹ️ Qurol turi ma'lumoti kiritilmagan.`;
-    }
-    
-    // AVTOMOBIL
-    if (msg.includes('mashina') || msg.includes('avtomobil') || msg.includes('avto')) {
-        if (msg.includes('davlat') || msg.includes('raqam') || msg.includes('qidirish')) {
-            const raqamMatch = msg.match(/(\d{2}\s*[a-z]\s*\d{3}\s*[a-z]{2})/i);
-            if (raqamMatch) {
-                const searchRaqam = raqamMatch[1].replace(/\s/g, '').toUpperCase();
-                const topilgan = baza.find(p => (p.avto_raqami || '').replace(/\s/g, '').toUpperCase().includes(searchRaqam));
-                if (topilgan) {
-                    return `🚗 <strong>Avtomobil topildi!</strong><br><br>
-                        ${createPersonCard(topilgan)}
-                        🚙 ${topilgan.avto_rusumi || ''} | ${topilgan.avto_raqami || ''}<br>
-                        🎨 Rang: ${topilgan.avto_rangi || ''}<br>
-                        📝 Ishonchnoma: ${topilgan.avto_ishonchnoma || 'Yo\'q'}`;
-                }
-                return `❌ "${raqamMatch[1]}" davlat raqamli avtomobil bazada topilmadi.`;
+        
+        let result = `📋 <strong>${title} (${list.length} ta, ${Object.keys(byAddress).length} manzilda):</strong><br><br>`;
+        
+        // Har bir manzil uchun
+        Object.keys(byAddress).sort().forEach(addr => {
+            const people = byAddress[addr];
+            const oilaBoshi = people.find(p => p.familyRole === 'Oila boshi');
+            const others = people.filter(p => p.familyRole !== 'Oila boshi');
+            
+            result += `<div style="background:linear-gradient(135deg,#f0f9ff,#e0f2fe);border-radius:12px;padding:12px;margin:12px 0;border:1px solid #0ea5e9;">`;
+            result += `<div style="background:#0ea5e9;color:white;padding:8px 12px;border-radius:8px;margin:-12px -12px 12px -12px;font-weight:bold;">`;
+            result += `📍 ${addr} <span style="float:right;background:white;color:#0ea5e9;padding:2px 8px;border-radius:10px;">${people.length} kishi</span></div>`;
+            
+            // Oila boshi birinchi
+            if (oilaBoshi) {
+                result += `<div style="background:#fef3c7;border-radius:8px;padding:10px;margin-bottom:8px;border-left:4px solid #f59e0b;">`;
+                result += `<strong>👨‍👩‍👧 OILA BOSHI:</strong><br>`;
+                result += `<strong>${oilaBoshi.fio}</strong><br>`;
+                result += `👤 ${oilaBoshi.jinsi || ''} | ${getAge(oilaBoshi.dob) || '?'} yosh | 📅 ${formatDate(oilaBoshi.dob) || ''}<br>`;
+                result += `💼 ${oilaBoshi.employmentStatus || ''} | ${oilaBoshi.registrationType === 'Ijara' ? '🏠 Ijarachi' : '🏡 Doimiy'}<br>`;
+                if (oilaBoshi.telefon) result += `📱 ${oilaBoshi.telefon}<br>`;
+                result += `</div>`;
             }
-        }
-        if (msg.includes('ishonchnoma') || msg.includes('doverennost')) {
-            if (ishonchnomaAuto.length === 0) return `✅ Ishonchnoma asosida avtomobil yo'q.`;
-            let result = `📝 <strong>Ishonchnoma asosida avtomobillar (${ishonchnomaAuto.length} ta):</strong><br><br>`;
-            ishonchnomaAuto.forEach(p => result += `${createPersonCard(p)}🚗 ${p.avto_rusumi} | ${p.avto_raqami}<br>`);
-            return result;
-        }
-        return `🚗 Bazada <strong>${avtomobillilar.length}</strong> ta shaxsiy avtomobili bor fuqaro bor.<br>
-                📝 Ishonchnoma asosida: ${ishonchnomaAuto.length} ta<br>
-                ⛽ Gaz o'rnatilgan: ${gazliAuto.length} ta`;
-    }
-    
-    // HOBBI VA QIZIQISH
-    if (msg.includes('tikuvchi') || msg.includes('tikuv')) {
-        const tikuvchilar = baza.filter(p => (p.hobbi || '').toLowerCase().includes('tikuvchilik'));
-        const ishsizTikuvchi = tikuvchilar.filter(p => p.employmentStatus === 'Ishsiz');
-        if (tikuvchilar.length === 0) return `ℹ️ Tikuvchilikka qiziqadigan fuqaro topilmadi.`;
-        let result = `🧵 <strong>Tikuvchilikka qiziqadiganlar (${tikuvchilar.length} ta):</strong><br>`;
-        result += `Ishsizlar: ${ishsizTikuvchi.length} ta<br><br>`;
-        tikuvchilar.forEach(p => result += createPersonCard(p));
-        return result;
-    }
-    
-    if (msg.includes('hobbi') || msg.includes('qiziqish')) {
-        const hobbiStats = {};
-        baza.forEach(p => {
-            if (p.hobbi) {
-                p.hobbi.split(', ').forEach(h => {
-                    hobbiStats[h] = (hobbiStats[h] || 0) + 1;
+            
+            // Boshqa oila a'zolari
+            if (others.length > 0) {
+                result += `<div style="margin-top:8px;"><strong>Oila a'zolari (${others.length}):</strong></div>`;
+                others.forEach(p => {
+                    result += `<div style="background:white;border-radius:8px;padding:8px;margin:4px 0;border-left:3px solid #10b981;">`;
+                    result += `<strong>${p.fio}</strong><br>`;
+                    result += `👤 ${p.jinsi || ''} | ${getAge(p.dob) || '?'} yosh | 💼 ${p.employmentStatus || ''}<br>`;
+                    result += `${p.registrationType === 'Ijara' ? '🏠 Ijarachi' : '🏡 Doimiy'}`;
+                    if (p.telefon) result += ` | 📱 ${p.telefon}`;
+                    result += `</div>`;
                 });
             }
-        });
-        let result = `🎯 <strong>Hobbilar statistikasi:</strong><br><br>`;
-        Object.entries(hobbiStats).sort((a,b) => b[1] - a[1]).forEach(([h, c]) => {
-            result += `• ${h}: ${c} ta<br>`;
-        });
-        return result || `ℹ️ Hobbilar haqida ma'lumot kiritilmagan.`;
-    }
-    
-    // TELEGRAM
-    if (msg.includes('telegram') && (msg.includes("a'zo") || msg.includes("yo'q") || msg.includes('kanal'))) {
-        if (msg.includes("yo'q") || msg.includes("emas")) {
-            if (telegramYoq.length === 0) return `✅ Barcha fuqarolar Telegram kanaliga a'zo.`;
-            let result = `📱 <strong>Telegram kanaliga a'zo bo'lmaganlar (${telegramYoq.length} ta):</strong><br><br>`;
-            telegramYoq.slice(0, 20).forEach(p => result += createPersonCard(p));
-            return result;
-        }
-        return `📱 Telegram kanaliga a'zo: <strong>${telegramAzo.length}</strong> ta<br>A'zo emas: <strong>${telegramYoq.length}</strong> ta`;
-    }
-    
-    // ALIMENT
-    if (msg.includes('aliment')) {
-        if (alimentMuammo.length === 0) return `✅ Aliment muammosi bo'lgan fuqaro topilmadi.`;
-        let result = `👶 <strong>Aliment muammosi borlar (${alimentMuammo.length} ta):</strong><br><br>`;
-        alimentMuammo.forEach(p => result += createPersonCard(p));
-        return result;
-    }
-    
-    // YURIDIK MASLAHAT
-    if (msg.includes('yuridik') || msg.includes('huquqiy')) {
-        const hammaMuammo = baza.filter(p => p.yuridik_maslahat === 'Ha' || p.mulk_muammo === 'Ha' || p.aliment_muammo === 'Ha');
-        if (hammaMuammo.length === 0) return `✅ Huquqiy muammosi bo'lgan fuqaro topilmadi.`;
-        let result = `⚖️ <strong>Huquqiy muammosi borlar (${hammaMuammo.length} ta):</strong><br>
-                    Aliment: ${alimentMuammo.length} ta | Yuridik: ${yuridikMuammo.length} ta | Mulk: ${mulkMuammo.length} ta<br><br>`;
-        hammaMuammo.slice(0, 20).forEach(p => result += createPersonCard(p));
-        return result;
-    }
-    
-    // PSIXOLOGIK YORDAM
-    if (msg.includes('psixolog') || msg.includes('stress') || msg.includes('tushkunlik')) {
-        if (psixYordam.length === 0) return `ℹ️ Psixologik yordamga ehtiyoj qayd etilgan fuqaro topilmadi.`;
-        let result = `🧠 <strong>Psixologik yordamga ehtiyoj (${psixYordam.length} ta):</strong><br><br>`;
-        psixYordam.forEach(p => result += createPersonCard(p));
-        return result;
-    }
-    
-    // IQTISODIY HOLAT
-    if (msg.includes('daromad') && (msg.includes('past') || msg.includes('kam'))) {
-        if (daromadPast.length === 0) return `ℹ️ Past daromadli oila topilmadi.`;
-        let result = `💰 <strong>Past daromadli oilalar (2 mln gacha) - ${daromadPast.length} ta:</strong><br><br>`;
-        daromadPast.forEach(p => result += createPersonCard(p));
-        return result;
-    }
-    
-    if (msg.includes('ishlovchi') && (msg.includes("yo'q") || msg.includes('hech kim'))) {
-        if (ishlovchiYoq.length === 0) return `✅ Hech kim ishlamaydigan oila topilmadi.`;
-        let result = `⚠️ <strong>Hech kim ishlamaydigan oilalar (${ishlovchiYoq.length} ta):</strong><br><br>`;
-        ishlovchiYoq.forEach(p => result += createPersonCard(p));
-        return result;
-    }
-    
-    // STATISTIKA SO'ROVLARI
-    if (msg.includes('nechta') || msg.includes('qancha') || msg.includes('soni') || msg.includes('bor')) {
-        if (msg.includes('erkak')) return `👨 Bazada <strong>${erkaklar}</strong> ta erkak bor.`;
-        if (msg.includes('ayol')) return `👩 Bazada <strong>${ayollar}</strong> ta ayol bor.`;
-        if (msg.includes('ishsiz')) return `💼 Bazada <strong>${ishsizlar.length}</strong> ta ishsiz bor.<br><br>Ro'yxatini ko'rish uchun: <em>"Ishsizlar ro'yxatini ber"</em>`;
-        if (msg.includes('talaba')) return `🎓 Bazada <strong>${talabalar.length}</strong> ta talaba bor.`;
-        if (msg.includes('migrant') || msg.includes('chet')) return `✈️ Bazada <strong>${migrantlar.length}</strong> ta migrant bor.`;
-        if (msg.includes('nafaqa')) return `👴 Bazada <strong>${nafaqaxorlar.length}</strong> ta nafaqaxo'r bor.`;
-        if (msg.includes('ijarachi')) return `🏠 Bazada <strong>${ijarachilar.length}</strong> ta ijarachi bor.`;
-        if (msg.includes('nogiron')) return `♿ Bazada <strong>${nogironlar.length}</strong> ta nogironligi bor shaxs bor.`;
-        if (msg.includes('neet')) return `⚠️ Bazada <strong>${neetYoshlar.length}</strong> ta NEET yosh (18-30 yosh, ishsiz, o'qimaydi) bor.`;
-        if (msg.includes('xavf')) return `🛡️ Bazada <strong>${yuqoriXavf.length}</strong> ta yuqori xavf darajasidagi fuqaro bor.`;
-        if (msg.includes('sudlan')) return `⚖️ Bazada <strong>${sudlanganlar.length}</strong> ta sudlangan fuqaro bor.`;
-        if (msg.includes('qurol')) return `🔫 Bazada <strong>${qurollilar.length}</strong> ta qurolga ega fuqaro bor.`;
-        if (msg.includes('mashina') || msg.includes('avtomobil')) return `🚗 Bazada <strong>${avtomobillilar.length}</strong> ta avtomobil egasi bor.`;
-        if (msg.includes('aholi') || msg.includes('kishi') || msg.includes('odam') || msg.includes('hammasi')) {
-            return `👥 Bazada jami <strong>${total}</strong> ta fuqaro ro'yxatdan o'tgan.<br><br>
-                    📊 <strong>Taqsimot:</strong><br>
-                    • Erkaklar: ${erkaklar} ta<br>
-                    • Ayollar: ${ayollar} ta<br>
-                    • Band: ${bandlar.length} ta<br>
-                    • Ishsiz: ${ishsizlar.length} ta<br>
-                    • Talaba: ${talabalar.length} ta<br>
-                    • Ijarachilar: ${ijarachilar.length} ta<br><br>
-                    🛡️ <strong>Xavfsizlik:</strong><br>
-                    • Sudlanganlar: ${sudlanganlar.length} ta<br>
-                    • Qurolga ega: ${qurollilar.length} ta<br><br>
-                    🚗 <strong>Transport:</strong><br>
-                    • Avtomobil egalari: ${avtomobillilar.length} ta`;
-        }
-    }
-    
-    // SALOM
-    if (msg.includes('salom') || msg.includes('assalom') || msg.includes('hi') || msg.includes('hey')) {
-        return `Assalomu alaykum! 👋<br><br>
-                Men <strong>O'zbegim AI Yordamchi</strong>man. Sizga qanday yordam bera olaman?<br><br>
-                📊 Bazada hozirda <strong>${total}</strong> ta fuqaro bor.<br><br>
-                <strong>Savol namunalari:</strong><br>
-                • "Sudlanganlar ro'yxati" yoki "Qurol egalari"<br>
-                • "Aqlli gaz hisoblagichi yo'q"<br>
-                • "01 A 123 AA raqamli mashina kimniki?"<br>
-                • "Tikuvchilikka qiziqadigan ishsiz ayollar"<br>
-                • "Telegram kanaliga a'zo bo'lmaganlar"`;
-    }
-    
-    // YORDAM
-    if (msg.includes('yordam') || msg.includes('help') || msg.includes('nima qila olasan')) {
-        return `🤖 <strong>Men quyidagilarni qila olaman:</strong><br><br>
-                🛡️ <strong>Xavfsizlik (Inspektor):</strong><br>
-                • "Sudlanganlar ro'yxati"<br>
-                • "Qurol egalari kimlar?"<br>
-                • "Qurol ruxsatnomasi tugaydiganlar"<br><br>
-                🏠 <strong>Texnik holat:</strong><br>
-                • "Aqlli gaz hisoblagichi yo'q"<br>
-                • "Isitish tizimi yo'q uylar"<br><br>
-                🚗 <strong>Avtomobil:</strong><br>
-                • "01 A 123 AA raqamli mashina"<br>
-                • "Ishonchnoma asosida mashinalar"<br><br>
-                🧵 <strong>Hobbi va Qiziqishlar:</strong><br>
-                • "Tikuvchilikka qiziqadiganlar"<br>
-                • "Hobbilar statistikasi"<br><br>
-                📱 <strong>Aqlli Mahalla:</strong><br>
-                • "Telegram kanaliga a'zo bo'lmaganlar"<br>
-                • "Aliment muammosi borlar"<br>
-                • "Yuridik muammosi borlar"<br><br>
-                💰 <strong>Iqtisodiy holat:</strong><br>
-                • "Past daromadli oilalar"<br>
-                • "Hech kim ishlamaydigan oilalar"`;
-    }
-    
-    // Gemini API ga so'rov
-    try {
-        const bazaContext = `
-Mahalla bazasidagi ma'lumotlar:
-- Jami aholi: ${total} kishi
-- Erkaklar: ${erkaklar} ta, Ayollar: ${ayollar} ta
-- Band: ${bandlar.length} ta, Ishsiz: ${ishsizlar.length} ta
-- Talabalar: ${talabalar.length} ta, Migrantlar: ${migrantlar.length} ta
-- Nafaqaxo'rlar: ${nafaqaxorlar.length} ta, Nogironlar: ${nogironlar.length} ta
-- Ijarachilar: ${ijarachilar.length} ta
-- NEET yoshlar (18-30, ishsiz): ${neetYoshlar.length} ta
-- Yuqori xavfdagilar: ${yuqoriXavf.length} ta
-
-Sen mahalla raisi uchun yordamchi AI assistentsan.`;
-
-        const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${AIzaSyDg-kUh9SIBc708k2M0XtTknPS_KLlO_ng}`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                contents: [{ parts: [{ text: `${bazaContext}\n\nSavol: ${message}\n\nO'zbek tilida qisqa javob ber.` }] }],
-                generationConfig: { temperature: 0.7, maxOutputTokens: 800 }
-            })
+            result += `</div>`;
         });
         
-        if (response.ok) {
-            const data = await response.json();
-            if (data.candidates?.[0]?.content?.parts?.[0]?.text) {
-                let aiText = data.candidates[0].content.parts[0].text;
-                aiText = aiText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-                aiText = aiText.replace(/\n/g, '<br>');
-                return aiText;
-            }
-        }
-    } catch (err) {
-        console.log('Gemini xatosi:', err);
+        return result;
     }
     
-    return `🤖 Savolingizni tushundim!<br><br>
-            Bazada <strong>${total}</strong> ta fuqaro bor.<br><br>
-            <strong>Savol namunalari:</strong><br>
-            • "Ishsizlar nechta?" / "Ishsizlar kimlar?"<br>
-            • "13a domda nechta xatlov qilingan?"<br>
-            • "NEET yoshlar ro'yxati"`;
+    // Domdan fuqaro topish
+    function getDomPeople(domNum) {
+        return baza.filter(p => {
+            const street = (p.street || '').toLowerCase();
+            return street.includes(domNum + '-dom') || street.includes(domNum + ' dom') || 
+                   street.includes(domNum + '-uy') || street.includes(domNum + ' uy');
+        });
+    }
+    
+    // ════════════════════════════════════════
+    // 1. SALOM
+    // ════════════════════════════════════════
+    if (msg.includes('salom') || msg.includes('assalom') || msg === 'hi' || msg === 'hello') {
+        return `Vaalaykum assalom! 👋<br><br>
+            Men <strong>O'zbegim AI</strong> yordamchisiman.<br>
+            📊 Bazada <strong>${total}</strong> ta fuqaro bor.<br><br>
+            <strong>Savol bering:</strong><br>
+            • "Boynazarov" - ism bo'yicha<br>
+            • "27 yosh" - yosh bo'yicha<br>
+            • "band" - band fuqarolar<br>
+            • "ijarachilar" - ijarachilar ro'yxati<br>
+            • "yoshlar" - 18-35 yoshlilar<br>
+            • "oilalar" - oila boshilari<br>
+            • "10 dom" - dom statistikasi<br>
+            • "statistika" - umumiy holat`;
+    }
+    
+    // ════════════════════════════════════════
+    // 2. IJARACHILAR (manzil bo'yicha guruhlangan)
+    // ════════════════════════════════════════
+    if (msg.includes('ijarachi')) {
+        if (ijarachilar.length > 0) {
+            return showGroupedByAddress(ijarachilar, 'Ijarachilar');
+        } else {
+            return `❌ Bazada ijarachi topilmadi.`;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 3. BAND FUQAROLAR
+    // ════════════════════════════════════════
+    if (msg === 'band' || msg.includes('bandlar') || msg.includes('band fuqaro') || msg.includes('ishlaydigan')) {
+        if (bandlar.length > 0) {
+            let result = `💼 <strong>Band fuqarolar (${bandlar.length} ta):</strong><br><br>`;
+            result += `<div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:15px;">`;
+            result += `<span style="background:#10b981;color:white;padding:5px 12px;border-radius:15px;">✓ Rasmiy: ${rasmiyBand.length}</span>`;
+            result += `<span style="background:#f59e0b;color:white;padding:5px 12px;border-radius:15px;">⚡ Norasmiy: ${norasmiyBand.length}</span>`;
+            result += `<span style="background:#8b5cf6;color:white;padding:5px 12px;border-radius:15px;">🏪 Tadbirkor: ${tadbirkorlar.length}</span>`;
+            result += `</div>`;
+            bandlar.forEach(p => { result += card(p); });
+            return result;
+        } else {
+            return `❌ Bazada band fuqaro topilmadi.`;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 4. YOSH BO'YICHA QIDIRISH
+    // ════════════════════════════════════════
+    const yoshMatch = msg.match(/(\d+)\s*(yosh|yoshli|yoshdagi|ga kirgan)/i);
+    if (yoshMatch) {
+        const targetYosh = parseInt(yoshMatch[1]);
+        let filtered = baza.filter(p => getAge(p.dob) === targetYosh);
+        let title = `${targetYosh} yoshdagi fuqarolar`;
+        
+        if (msg.includes('erkak') || msg.includes('o\'g\'il') || msg.includes('yigit')) {
+            filtered = filtered.filter(p => p.jinsi === 'Erkak');
+            title = `${targetYosh} yoshdagi erkaklar`;
+        } else if (msg.includes('ayol') || msg.includes('qiz') || msg.includes('xotin')) {
+            filtered = filtered.filter(p => p.jinsi === 'Ayol');
+            title = `${targetYosh} yoshdagi ayollar`;
+        }
+        
+        if (filtered.length > 0) {
+            return showList(filtered, title);
+        } else {
+            return `❌ <strong>${title}</strong> topilmadi.`;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 5. DOM + ISM KOMBINATSIYASI
+    // ════════════════════════════════════════
+    const domIsmMatch = msg.match(/(\d+)\s*[-]?\s*(dom|uy)\s+(.+)/i);
+    if (domIsmMatch) {
+        const domNum = domIsmMatch[1];
+        const ismQuery = domIsmMatch[3].trim().toLowerCase();
+        
+        if (ismQuery.length >= 2) {
+            const domPeople = getDomPeople(domNum);
+            const filtered = domPeople.filter(p => {
+                const fio = (p.fio || '').toLowerCase();
+                return fio.includes(ismQuery);
+            });
+            
+            if (filtered.length > 0) {
+                return showList(filtered, `${domNum}-domda "${ismQuery}" nomli fuqarolar`);
+            } else {
+                return `❌ <strong>${domNum}-dom</strong>da <strong>"${ismQuery}"</strong> nomli fuqaro topilmadi.`;
+            }
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 6. DOM STATISTIKASI
+    // ════════════════════════════════════════
+    const domMatch = msg.match(/(\d+)\s*[-]?\s*(dom|uy)/i);
+    if (domMatch && !domIsmMatch) {
+        const domNum = domMatch[1];
+        const dom = domStats.find(d => d.dom === domNum);
+        
+        if (dom) {
+            const domPeople = getDomPeople(domNum);
+            
+            let result = `🏠 <strong>${dom.name} statistikasi:</strong><br><br>`;
+            result += `📊 Jami xonadonlar: <strong>${dom.total}</strong> ta<br>`;
+            result += `✅ Xatlovdan o'tgan: <strong>${dom.registered}</strong> ta (${dom.percent}%)<br>`;
+            result += `❌ O'tmagan: <strong>${dom.notRegistered}</strong> ta<br>`;
+            result += `👥 Fuqarolar soni: <strong>${domPeople.length}</strong> kishi<br><br>`;
+            
+            if (domPeople.length > 0) {
+                result += `<strong>Fuqarolar:</strong><br>`;
+                domPeople.forEach(p => { result += card(p); });
+            }
+            return result;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 7. YOSHLAR RO'YXATI
+    // ════════════════════════════════════════
+    if (msg.includes('yoshlar') || msg === 'yosh') {
+        return showList(yoshlar, 'Yoshlar (18-35 yosh)');
+    }
+    
+    // ════════════════════════════════════════
+    // 8. OILALAR RO'YXATI
+    // ════════════════════════════════════════
+    if (msg.includes('oila') || msg.includes('oilalar')) {
+        if (oilaBoshilari.length > 0) {
+            return showList(oilaBoshilari, 'Oila boshilari');
+        } else {
+            const kattalar = baza.filter(p => getAge(p.dob) >= 30);
+            return showList(kattalar, 'Kattalar (30+ yosh)');
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 9. XONADONLAR XATLOV HOLATI
+    // ════════════════════════════════════════
+    if (msg.includes('xonadon') || msg.includes('xatlov') || msg.includes('kvartira')) {
+        let result = `🏠 <strong>Xonadonlar xatlov statistikasi:</strong><br><br>`;
+        result += `📊 <strong>Umumiy:</strong><br>`;
+        result += `&nbsp;&nbsp;├─ Jami noyob manzillar: <strong>${totalXonadonlar}</strong> ta<br>`;
+        result += `&nbsp;&nbsp;├─ Ko'p qavatli uylar: <strong>${registeredApartments}/${totalApartments}</strong> xatlovdan o'tgan<br>`;
+        result += `&nbsp;&nbsp;└─ O'rtacha: ${Math.round(registeredApartments/totalApartments*100)}%<br><br>`;
+        
+        domStats.forEach(d => {
+            const color = d.percent >= 80 ? '#10b981' : d.percent >= 50 ? '#f59e0b' : '#ef4444';
+            result += `<div style="margin:6px 0;padding:10px;background:var(--bg-color);border-radius:8px;border-left:4px solid ${color};">
+                <strong>${d.name}</strong><br>
+                ✅ O'tgan: <strong>${d.registered}</strong>/${d.total} (${d.percent}%)<br>
+                ❌ O'tmagan: <strong>${d.notRegistered}</strong> ta | 👥 ${d.people} kishi
+            </div>`;
+        });
+        return result;
+    }
+    
+    // ════════════════════════════════════════
+    // 10. UMUMIY STATISTIKA
+    // ════════════════════════════════════════
+    if (msg.includes('statistika') || msg.includes('holat') || msg.includes('umumiy') || msg.includes('hisobot')) {
+        return `📊 <strong>Mahalla statistikasi:</strong><br><br>
+            👥 <strong>Jami aholi:</strong> ${total} kishi<br>
+            &nbsp;&nbsp;├─ 👨 Erkaklar: ${erkaklar.length}<br>
+            &nbsp;&nbsp;└─ 👩 Ayollar: ${ayollar.length}<br><br>
+            🏠 <strong>Ro'yxatdan o'tish turi:</strong><br>
+            &nbsp;&nbsp;├─ 🏡 Doimiy: ${doimiylar.length}<br>
+            &nbsp;&nbsp;└─ 🏠 Ijarachi: ${ijarachilar.length}<br><br>
+            💼 <strong>Bandlik:</strong><br>
+            &nbsp;&nbsp;├─ ✅ Rasmiy band: ${rasmiyBand.length}<br>
+            &nbsp;&nbsp;├─ ⚡ Norasmiy band: ${norasmiyBand.length}<br>
+            &nbsp;&nbsp;├─ 🏪 Tadbirkor: ${tadbirkorlar.length}<br>
+            &nbsp;&nbsp;├─ ❌ Ishsiz: ${ishsizlar.length}<br>
+            &nbsp;&nbsp;├─ 🎓 Talaba: ${talabalar.length}<br>
+            &nbsp;&nbsp;├─ 📚 Maktab o'quvchi: ${maktabOquvchi.length}<br>
+            &nbsp;&nbsp;├─ ✈️ Migrant: ${migrantlar.length}<br>
+            &nbsp;&nbsp;├─ 👴 Nafaqada: ${nafaqaxorlar.length}<br>
+            &nbsp;&nbsp;├─ ♿ Nogironlar: ${nogironlar.length}<br>
+            &nbsp;&nbsp;└─ 🏠 Uy bekasi: ${uyBekasi.length}<br><br>
+            ⚠️ <strong>Diqqat:</strong><br>
+            &nbsp;&nbsp;├─ NEET yoshlar: ${neetYoshlar.length}<br>
+            &nbsp;&nbsp;└─ Yuqori xavf: ${yuqoriXavf.length}<br><br>
+            🏘️ <strong>Xonadonlar:</strong><br>
+            &nbsp;&nbsp;├─ Jami manzillar: ${totalXonadonlar}<br>
+            &nbsp;&nbsp;└─ Ko'p qavatli: ${registeredApartments}/${totalApartments}`;
+    }
+    
+    // ════════════════════════════════════════
+    // 11. TOIFALAR BO'YICHA RO'YXATLAR
+    // ════════════════════════════════════════
+    let list = null, title = '';
+    
+    if (msg.includes('ishsiz')) { list = ishsizlar; title = 'Ishsizlar'; }
+    else if (msg.includes('migrant')) { list = migrantlar; title = 'Migrantlar'; }
+    else if (msg.includes('talaba')) { list = talabalar; title = 'Talabalar'; }
+    else if (msg.includes('nafaqa')) { list = nafaqaxorlar; title = "Nafaqaxo'rlar"; }
+    else if (msg.includes('neet')) { list = neetYoshlar; title = 'NEET yoshlar (18-30)'; }
+    else if (msg.includes('xavf') || msg.includes('risk')) { list = yuqoriXavf; title = 'Yuqori xavfdagilar'; }
+    else if (msg.includes('tadbirkor')) { list = tadbirkorlar; title = 'Tadbirkorlar'; }
+    else if (msg.includes('nogiron')) { list = nogironlar; title = 'Nogironlar'; }
+    else if (msg.includes('uy bekasi')) { list = uyBekasi; title = 'Uy bekalari'; }
+    else if (msg.includes('maktab')) { list = maktabOquvchi; title = "Maktab o'quvchilari"; }
+    else if (msg.includes('doimiy')) { list = doimiylar; title = 'Doimiy fuqarolar'; }
+    else if (msg.includes('rasmiy') && !msg.includes('norasmiy')) { list = rasmiyBand; title = 'Rasmiy bandlar'; }
+    else if (msg.includes('norasmiy')) { list = norasmiyBand; title = 'Norasmiy bandlar'; }
+    else if (msg.includes('erkak') && !msg.match(/\d+/)) { list = erkaklar; title = 'Erkaklar'; }
+    else if ((msg.includes('ayol') || msg.includes('qiz')) && !msg.match(/\d+/)) { list = ayollar; title = 'Ayollar'; }
+    
+    if (list && list.length > 0) {
+        return showList(list, title);
+    }
+    
+    // ════════════════════════════════════════
+    // 12. SANA BO'YICHA QIDIRISH
+    // ════════════════════════════════════════
+    const dateMatch = msg.match(/(\d{2})[\.\/](\d{2})[\.\/](\d{4})/);
+    if (dateMatch) {
+        const searchDate = dateMatch[0];
+        const found = baza.filter(p => {
+            const dob = formatDate(p.dob) || '';
+            return dob.includes(searchDate);
+        });
+        
+        if (found.length > 0) {
+            return showList(found, `${searchDate} sanasida tug'ilganlar`);
+        } else {
+            return `❌ <strong>${searchDate}</strong> sanasida tug'ilgan fuqaro topilmadi.`;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 13. JSHSHIR BO'YICHA QIDIRISH
+    // ════════════════════════════════════════
+    const jshshirMatch = msg.match(/(\d{14})/);
+    if (jshshirMatch) {
+        const jshshir = jshshirMatch[1];
+        const found = baza.filter(p => (p.jshshir || '').includes(jshshir));
+        
+        if (found.length > 0) {
+            return showList(found, `JSHSHIR ${jshshir}`);
+        } else {
+            return `❌ JSHSHIR <strong>${jshshir}</strong> bo'yicha fuqaro topilmadi.`;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 14. ISM/FAMILIYA BO'YICHA QIDIRISH
+    // ════════════════════════════════════════
+    const cleanQuery = msg.replace(/degan|fuqaro|bormi|bor|kishi|odam|haqida|ismli|topib|ber|ko'rsat|kim|qayerda|yashaydi|ro'yxat|royhat|royhati|\?/gi, '').trim();
+    
+    if (cleanQuery.length >= 2) {
+        const words = cleanQuery.split(/\s+/).filter(w => w.length >= 2);
+        
+        const found = baza.filter(p => {
+            const fio = (p.fio || '').toLowerCase();
+            const street = (p.street || '').toLowerCase();
+            
+            for (const word of words) {
+                if (fio.includes(word) || street.includes(word)) return true;
+            }
+            return false;
+        });
+        
+        if (found.length > 0) {
+            return showList(found, `"${cleanQuery}" bo'yicha topildi`);
+        } else {
+            return `❌ <strong>"${cleanQuery}"</strong> bo'yicha fuqaro topilmadi.<br><br>
+                <strong>Quyidagilarni sinab ko'ring:</strong><br>
+                • "band" - band fuqarolar<br>
+                • "yoshlar" - 18-35 yoshlilar<br>
+                • "statistika" - umumiy holat`;
+        }
+    }
+    
+    // ════════════════════════════════════════
+    // 15. YORDAM
+    // ════════════════════════════════════════
+    return `🤖 <strong>Men sizga yordam bera olaman!</strong><br><br>
+        📊 Bazada <strong>${total}</strong> ta fuqaro bor.<br><br>
+        <strong>Quyidagilarni yozing:</strong><br>
+        • <strong>"band"</strong> - band fuqarolar ro'yxati<br>
+        • <strong>"ijarachilar"</strong> - ijarachilar (oilalar bo'yicha)<br>
+        • <strong>"ishsizlar"</strong> - ishsizlar ro'yxati<br>
+        • <strong>"yoshlar"</strong> - 18-35 yoshlilar<br>
+        • <strong>"27 yosh"</strong> - aniq yoshdagilar<br>
+        • <strong>"10 dom"</strong> - dom statistikasi<br>
+        • <strong>"statistika"</strong> - umumiy holat<br>
+        • <strong>Ism</strong> - "Boynazarov"`;
+}
+function formatAIResponse(text) {
+    let formatted = text;
+    formatted = formatted.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+    formatted = formatted.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    formatted = formatted.replace(/\*(.*?)\*/g, '<em>$1</em>');
+    formatted = formatted.replace(/\n\n/g, '<br><br>');
+    formatted = formatted.replace(/\n/g, '<br>');
+    return formatted;
 }
 
 function initializeAIChat() {
@@ -7710,10 +7975,10 @@ function initializeAIChat() {
         body.innerHTML += `
             <div id="${typingId}" style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
                 <div style="width: 35px; height: 35px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-robot" style="color: white;"></i>
+                    <i class="fas fa-brain" style="color: white;"></i>
                 </div>
                 <div style="background: var(--surface-color); padding: 0.75rem 1rem; border-radius: 0 12px 12px 12px;">
-                    <i class="fas fa-circle-notch fa-spin"></i> O'ylayapman...
+                    <i class="fas fa-circle-notch fa-spin"></i> AI tahlil qilmoqda...
                 </div>
             </div>
         `;
@@ -7727,9 +7992,9 @@ function initializeAIChat() {
         body.innerHTML += `
             <div style="display: flex; gap: 0.75rem; margin-bottom: 1rem;">
                 <div style="width: 35px; height: 35px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
-                    <i class="fas fa-robot" style="color: white;"></i>
+                    <i class="fas fa-brain" style="color: white;"></i>
                 </div>
-                <div style="background: var(--surface-color); padding: 0.75rem 1rem; border-radius: 0 12px 12px 12px; max-width: 85%; box-shadow: var(--shadow-sm);">
+                <div style="background: var(--surface-color); padding: 0.75rem 1rem; border-radius: 0 12px 12px 12px; max-width: 90%; box-shadow: var(--shadow-sm);">
                     ${response}
                 </div>
             </div>
@@ -7960,5 +8225,184 @@ showScreen = function(screenName) {
 };
 
 </script>
+<!-- ========================================================== -->
+<!-- SERVICE WORKER & OFFLINE STORAGE -->
+<!-- ========================================================== -->
+<script>
+// PWA O'RNATISH
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+    e.preventDefault();
+    deferredPrompt = e;
+    // Install button ko'rsatish (agar kerak bo'lsa)
+    console.log('PWA o\'rnatish mumkin');
+});
+
+// OFFLINE STORAGE - IndexedDB
+const DB_NAME = 'OzbegimOfflineDB';
+const DB_VERSION = 1;
+let offlineDB = null;
+
+function initOfflineDB() {
+    return new Promise((resolve, reject) => {
+        const request = indexedDB.open(DB_NAME, DB_VERSION);
+        
+        request.onerror = () => reject(request.error);
+        request.onsuccess = () => {
+            offlineDB = request.result;
+            resolve(offlineDB);
+        };
+        
+        request.onupgradeneeded = (e) => {
+            const db = e.target.result;
+            
+            // Offline saqlangan fuqarolar
+            if (!db.objectStoreNames.contains('pendingCitizens')) {
+                db.createObjectStore('pendingCitizens', { keyPath: 'tempId', autoIncrement: true });
+            }
+            
+            // Offline o'zgartirishlar
+            if (!db.objectStoreNames.contains('pendingUpdates')) {
+                db.createObjectStore('pendingUpdates', { keyPath: 'tempId', autoIncrement: true });
+            }
+            
+            // Cache qilingan baza
+            if (!db.objectStoreNames.contains('cachedDatabase')) {
+                db.createObjectStore('cachedDatabase', { keyPath: 'id' });
+            }
+        };
+    });
+}
+
+// Offline fuqaro qo'shish
+async function saveOfflineCitizen(citizenData) {
+    if (!offlineDB) await initOfflineDB();
+    
+    return new Promise((resolve, reject) => {
+        const transaction = offlineDB.transaction(['pendingCitizens'], 'readwrite');
+        const store = transaction.objectStore('pendingCitizens');
+        
+        citizenData.savedAt = new Date().toISOString();
+        citizenData.synced = false;
+        
+        const request = store.add(citizenData);
+        request.onsuccess = () => {
+            showToast('📴 Offline saqlandi. Internet kelganda sync bo\'ladi.', 'warning');
+            resolve(request.result);
+        };
+        request.onerror = () => reject(request.error);
+    });
+}
+
+// Pending fuqarolar sonini olish
+async function getPendingCount() {
+    if (!offlineDB) await initOfflineDB();
+    
+    return new Promise((resolve) => {
+        const transaction = offlineDB.transaction(['pendingCitizens'], 'readonly');
+        const store = transaction.objectStore('pendingCitizens');
+        const request = store.count();
+        request.onsuccess = () => resolve(request.result);
+        request.onerror = () => resolve(0);
+    });
+}
+
+// Pending fuqarolarni sync qilish
+async function syncPendingCitizens() {
+    if (!navigator.onLine) return;
+    if (!offlineDB) await initOfflineDB();
+    
+    const transaction = offlineDB.transaction(['pendingCitizens'], 'readwrite');
+    const store = transaction.objectStore('pendingCitizens');
+    const request = store.getAll();
+    
+    request.onsuccess = async () => {
+        const pendingItems = request.result;
+        if (pendingItems.length === 0) return;
+        
+        showToast(`🔄 ${pendingItems.length} ta fuqaroni sinxronlash...`, 'info');
+        
+        for (const item of pendingItems) {
+            try {
+                // Google Sheets ga yuborish
+                if (typeof submitToGoogleSheets === 'function') {
+                    await submitToGoogleSheets(item);
+                }
+                // Muvaffaqiyatli bo'lsa o'chirish
+                store.delete(item.tempId);
+            } catch (error) {
+                console.error('Sync xatosi:', error);
+            }
+        }
+        
+        showToast('✅ Sinxronlash tugadi!', 'success');
+    };
+}
+
+// Internet holatini kuzatish
+window.addEventListener('online', () => {
+    showToast('🌐 Internet qayta ulandi!', 'success');
+    syncPendingCitizens();
+});
+
+window.addEventListener('offline', () => {
+    showToast('📴 Oflayn rejim. Ma\'lumotlar lokal saqlanadi.', 'warning');
+});
+
+// MICRO-INTERACTIONS - Vibration API
+function vibrate(pattern = 50) {
+    if (navigator.vibrate) {
+        navigator.vibrate(pattern);
+    }
+}
+
+// Barcha tugmalarga vibration qo'shish
+document.addEventListener('click', (e) => {
+    const btn = e.target.closest('.btn, .fab, .role-btn, .map-filter-btn, .search-option-btn');
+    if (btn) {
+        vibrate(30);
+    }
+});
+
+// Offline indikator
+function updateOfflineIndicator() {
+    const indicator = document.getElementById('offline-indicator');
+    if (!indicator) {
+        const div = document.createElement('div');
+        div.id = 'offline-indicator';
+        div.style.cssText = 'position:fixed;top:0;left:0;right:0;padding:8px;text-align:center;font-size:0.85rem;font-weight:600;z-index:99999;transition:transform 0.3s;';
+        document.body.appendChild(div);
+    }
+    
+    const el = document.getElementById('offline-indicator');
+    if (navigator.onLine) {
+        el.style.transform = 'translateY(-100%)';
+        el.style.background = '#10b981';
+        el.style.color = 'white';
+        el.innerHTML = '🌐 Online';
+    } else {
+        el.style.transform = 'translateY(0)';
+        el.style.background = '#f59e0b';
+        el.style.color = 'white';
+        el.innerHTML = '📴 Oflayn rejim - Ma\'lumotlar lokal saqlanmoqda';
+    }
+}
+
+// Init
+document.addEventListener('DOMContentLoaded', async () => {
+    await initOfflineDB();
+    updateOfflineIndicator();
+    
+    // Pending count ko'rsatish
+    const pendingCount = await getPendingCount();
+    if (pendingCount > 0) {
+        showToast(`📝 ${pendingCount} ta sinxronlanmagan fuqaro bor`, 'info');
+    }
+});
+
+window.addEventListener('online', updateOfflineIndicator);
+window.addEventListener('offline', updateOfflineIndicator);
+</script>
+
 </body>
 </html>
