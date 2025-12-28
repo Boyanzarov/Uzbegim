@@ -36,18 +36,18 @@
     *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast);-webkit-tap-highlight-color:transparent;position:relative}
     .hidden{display:none!important}.permission-hidden{display:none!important}.app-shell{max-width:1000px;margin:2rem auto;padding:1rem;display:none;position:relative;z-index:1}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding:0 .5rem}.header h1{display:flex;align-items:center;gap:.8rem;font-size:1.8rem;font-weight:700;color:var(--text-dark);cursor:pointer}.header h1 i{color:var(--primary-color)}.header-actions{display:flex;gap:.5rem}.header-btn{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--surface-color),rgba(0,119,182,0.05));border:2px solid transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden;color:var(--text-light)}.header-btn::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,#0077b6,#10b981);opacity:0;transition:opacity 0.2s;z-index:-1;border-radius:16px}.header-btn:hover{color:#0077b6;transform:translateY(-3px) scale(1.05);box-shadow:0 8px 25px rgba(0,119,182,0.2)}.header-btn:hover::before{opacity:1}#notification-bell-container{position:relative;}#notification-count{position:absolute;top:-5px;right:-8px;background-color:var(--danger-color);color:white;border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);animation:pulse 2s infinite}.card{background:var(--surface-color);padding:2rem;border-radius:24px;border:1px solid rgba(0,119,182,0.1);margin-bottom:2rem;box-shadow:0 10px 40px rgba(0,119,182,0.08);position:relative;overflow:hidden;backdrop-filter:blur(10px)}.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#0077b6,#10b981,#fbbf24);border-radius:24px 24px 0 0}.view{display:none}.view.active{display:block;animation:slideUpFadeIn .15s ease forwards}@keyframes slideUpFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.search-options{display:flex;flex-wrap:wrap;border-radius:20px;margin-bottom:1.5rem;overflow:hidden;background:linear-gradient(135deg,rgba(0,119,182,0.08),rgba(16,185,129,0.08));padding:0.5rem;border:2px solid transparent;background-clip:padding-box;position:relative;box-shadow:0 4px 20px rgba(0,119,182,0.1)}.search-options::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,#0077b6,#10b981,#fbbf24);z-index:-1;}.search-option-btn{flex:1;min-width:80px;padding:1rem .75rem;border:none;background:transparent;cursor:pointer;font-size:.95rem;font-weight:700;color:var(--text-light);transition:all 0.15s cubic-bezier(0.4, 0, 0.2, 1);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:.6rem;position:relative;overflow:hidden}.search-option-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,119,182,0.1),rgba(16,185,129,0.1));opacity:0;transition:opacity 0.1s}.search-option-btn:hover{color:var(--primary-color);transform:translateY(-2px)}.search-option-btn:hover::before{opacity:1}.search-option-btn.active{background:linear-gradient(135deg,#0077b6,#0096c7);color:white;box-shadow:0 6px 20px rgba(0,119,182,0.4);transform:scale(1.02)}.search-option-btn.active i{color:white}.search-option-btn i{font-size:1.1rem;transition:all 0.1s}
     @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}.search-panel{display:none;animation:fadeSlideUp 0.1s ease}.search-panel.active{display:block}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}input,select,textarea{width:100%;padding:.9rem;font-size:1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-color);color:var(--text-dark);transition:all var(--transition-fast)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}label{margin-bottom:.5rem;display:block;font-weight:500;color:var(--text-light)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;border-radius:12px;border:none;color:#fff;transition:all 0.1s ease;margin-top:1rem;position:relative;overflow:hidden}.btn i{margin-right:.5rem}.btn:disabled{opacity:.6;cursor:not-allowed}.btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-primary{background:linear-gradient(135deg,#0077b6,#0096c7,#00b4d8);background-size:200% 200%;animation:gradientShift 3s ease infinite;box-shadow:0 6px 25px -5px rgba(0,119,182,0.5);position:relative;overflow:hidden}.btn-primary::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,0.15),transparent);transform:rotate(45deg);transition:all 0.5s}.btn-primary:hover::before{left:100%}@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}.btn-success{background:linear-gradient(135deg,#10b981,#34d399,#6ee7b7);background-size:200% 200%;animation:gradientShift 3s ease infinite;box-shadow:0 6px 25px -5px rgba(16,185,129,0.5)}.btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:2px solid var(--border-color);}.btn-secondary:hover{border-color:var(--secondary-color);background:rgba(100,116,139,.05)}.btn-secondary-outline {background:transparent;color:var(--text-light);font-weight:600;border:2px solid var(--border-color);}.btn-secondary-outline:hover {border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow);}.btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:2px solid var(--danger-color)}.btn-cancel:hover{background:var(--danger-color);color:#fff}
-    .fab-container{position:fixed;bottom:0.5rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0.5rem;background:linear-gradient(135deg,rgba(0,119,182,0.35),rgba(16,185,129,0.35));backdrop-filter:blur(12px);padding:0.55rem 0.8rem;border-radius:32px;border:2px solid rgba(255,255,255,0.4);box-shadow:0 8px 25px rgba(0,0,0,0.35)}
-    .fab{width:52px;height:52px;border-radius:50%;color:#fff;border:none;box-shadow:0 5px 15px rgba(0,0,0,0.4);display:flex;align-items:center;justify-content:center;font-size:1.3rem;cursor:pointer;transition:transform 0.15s ease,box-shadow 0.15s ease;position:relative}
-    .fab:active{transform:scale(0.88)!important}
-    .fab-add{background:linear-gradient(135deg,#0077b6,#00b4d8);width:58px;height:58px;font-size:1.6rem;box-shadow:0 6px 20px rgba(0,119,182,0.55)}
-    .fab-summary{background:linear-gradient(135deg,#10b981,#34d399);box-shadow:0 5px 15px rgba(16,185,129,0.55)}
-    .fab-list{background:linear-gradient(135deg,#0d9488,#14b8a6);box-shadow:0 5px 15px rgba(13,148,136,0.55)}
-    .fab-objects{background:linear-gradient(135deg,#fbbf24,#f59e0b);box-shadow:0 5px 15px rgba(251,191,36,0.55)}
-    .fab-ai{background:linear-gradient(135deg,#ec4899,#f472b6);box-shadow:0 5px 15px rgba(236,72,153,0.55)}
-    .fab-analytics{background:linear-gradient(135deg,#3b82f6,#60a5fa);box-shadow:0 5px 15px rgba(59,130,246,0.55)}
-    .result-card{display:flex;gap:1.5rem;align-items:flex-start;background:var(--surface-color);padding:1.5rem;border:1px solid var(--border-color);border-radius:20px;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(0,119,182,0.08);transition:transform 0.1s,box-shadow 0.1s;position:relative;overflow:hidden}
+    .fab-container{position:fixed;bottom:0.6rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0.4rem;background:linear-gradient(135deg,rgba(0,119,182,0.3),rgba(16,185,129,0.3));backdrop-filter:blur(10px);padding:0.5rem 0.7rem;border-radius:28px;border:2px solid rgba(255,255,255,0.35);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
+    .fab{width:50px;height:50px;border-radius:50%;color:#fff;border:none;box-shadow:0 4px 12px rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;font-size:1.25rem;cursor:pointer;transition:transform 0.05s;position:relative}
+    .fab:active{transform:scale(0.9)}
+    .fab-add{background:linear-gradient(135deg,#0077b6,#00b4d8);width:56px;height:56px;font-size:1.5rem;box-shadow:0 5px 18px rgba(0,119,182,0.5)}
+    .fab-summary{background:linear-gradient(135deg,#10b981,#34d399);box-shadow:0 4px 12px rgba(16,185,129,0.5)}
+    .fab-list{background:linear-gradient(135deg,#0d9488,#14b8a6);box-shadow:0 4px 12px rgba(13,148,136,0.5)}
+    .fab-objects{background:linear-gradient(135deg,#fbbf24,#f59e0b);box-shadow:0 4px 12px rgba(251,191,36,0.5)}
+    .fab-ai{background:linear-gradient(135deg,#ec4899,#f472b6);box-shadow:0 4px 12px rgba(236,72,153,0.5)}
+    .fab-analytics{background:linear-gradient(135deg,#3b82f6,#60a5fa);box-shadow:0 4px 12px rgba(59,130,246,0.5)}
+    .result-card{display:flex;gap:1.5rem;align-items:flex-start;background:var(--surface-color);padding:1.5rem;border:1px solid var(--border-color);border-radius:20px;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(0,119,182,0.08);transition:all 0.2s ease;position:relative;overflow:hidden}
     .result-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#0077b6,#10b981);border-radius:20px 0 0 20px}
-    .result-card:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,119,182,0.12)}
+    .result-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,119,182,0.15)}
     .result-card.archived { opacity: 0.6; background: var(--bg-color); }
     .result-card.archived .result-header h3 { text-decoration: line-through; }
     .result-card-avatar { flex-shrink: 0; }
@@ -64,7 +64,7 @@
     #family-modal .modal-box { max-width: 95%; width: 1000px; }
     #family-modal-content { max-height: 70vh; overflow-y: auto; padding-right: 1rem; margin-top: 1.5rem; }
     #family-modal-content .result-card { background-color: var(--bg-color); box-shadow: none; border-color: var(--primary-glow); }
-    .modal-close-btn{position:absolute;top:0.75rem;right:0.75rem;background:rgba(0,0,0,0.1);border:none;font-size:1.5rem;color:var(--text-light);cursor:pointer;transition:all 0.1s;width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center;z-index:100}.modal-close-btn:hover,.modal-close-btn:active{color:var(--danger-color);background:rgba(239,68,68,0.1)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(20px)}}@keyframes zoomIn{from{transform:scale(.95);opacity:0}to{transform:scale(1);opacity:1}}.form-row{display:grid;grid-template-columns:1fr;gap:1rem 1.5rem}@media(min-width:600px){.form-row{grid-template-columns:1fr 1fr}}.full-width{grid-column:1 / -1}.form-group{position:relative;margin-top:1rem}.conditional-field{display:none}.passport-inputs,.metrka-inputs{display:flex;gap:.5rem}.passport-inputs input:first-child{text-transform:uppercase;flex-basis:80px;flex-grow:0}.form-progress{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2.5rem;position:relative}.form-progress-bar{position:absolute;top:12px;left:16.66%;height:2px;width:0;background:var(--primary-color);transform:translateY(0);transition:width var(--transition-slow);z-index:2}.form-progress::after{content:'';position:absolute;top:12px;left:16.66%;right:16.66%;height:2px;background:var(--border-color);z-index:1}.progress-step{display:flex;flex-direction:column;align-items:center;width:33.33%;position:relative;z-index:3;color:var(--text-light);font-weight:500;font-size:.9rem;text-align:center}.progress-step::before{content:'';display:block;width:24px;height:24px;border-radius:50%;background-color:var(--surface-color);border:2px solid var(--border-color);margin-bottom:.5rem;transition:all var(--transition-fast)}.progress-step.active{color:var(--primary-color);font-weight:600}.progress-step.active::before{background-color:var(--primary-color);border-color:var(--primary-color);content:'✓';color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;line-height:1}.form-step{display:none; animation: slideUpFadeIn 0.15s ease-in-out;}.form-step.active{display:block}.app-footer{text-align:center;margin-top:3rem;padding:1.5rem;color:var(--text-light);font-size:.9rem;border-top:1px solid var(--border-color)}.app-footer span{font-weight:600;background:-webkit-linear-gradient(45deg,var(--primary-color),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.4);backdrop-filter:blur(5px);display:none;justify-content:center;align-items:center;z-index:9999}.loader{width:50px;height:50px;border:5px solid var(--border-color);border-top-color:var(--primary-color);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .modal-close-btn{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;color:var(--text-light);cursor:pointer;transition:all var(--transition-fast)}.modal-close-btn:hover{color:var(--danger-color);transform:rotate(90deg)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(20px)}}@keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}.form-row{display:grid;grid-template-columns:1fr;gap:1rem 1.5rem}@media(min-width:600px){.form-row{grid-template-columns:1fr 1fr}}.full-width{grid-column:1 / -1}.form-group{position:relative;margin-top:1rem}.conditional-field{display:none}.passport-inputs,.metrka-inputs{display:flex;gap:.5rem}.passport-inputs input:first-child{text-transform:uppercase;flex-basis:80px;flex-grow:0}.form-progress{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2.5rem;position:relative}.form-progress-bar{position:absolute;top:12px;left:16.66%;height:2px;width:0;background:var(--primary-color);transform:translateY(0);transition:width var(--transition-slow);z-index:2}.form-progress::after{content:'';position:absolute;top:12px;left:16.66%;right:16.66%;height:2px;background:var(--border-color);z-index:1}.progress-step{display:flex;flex-direction:column;align-items:center;width:33.33%;position:relative;z-index:3;color:var(--text-light);font-weight:500;font-size:.9rem;text-align:center}.progress-step::before{content:'';display:block;width:24px;height:24px;border-radius:50%;background-color:var(--surface-color);border:2px solid var(--border-color);margin-bottom:.5rem;transition:all var(--transition-fast)}.progress-step.active{color:var(--primary-color);font-weight:600}.progress-step.active::before{background-color:var(--primary-color);border-color:var(--primary-color);content:'✓';color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;line-height:1}.form-step{display:none; animation: slideUpFadeIn 0.15s ease-in-out;}.form-step.active{display:block}.app-footer{text-align:center;margin-top:3rem;padding:1.5rem;color:var(--text-light);font-size:.9rem;border-top:1px solid var(--border-color)}.app-footer span{font-weight:600;background:-webkit-linear-gradient(45deg,var(--primary-color),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.4);backdrop-filter:blur(5px);display:none;justify-content:center;align-items:center;z-index:9999}.loader{width:50px;height:50px;border:5px solid var(--border-color);border-top-color:var(--primary-color);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
     .context-highlight{padding: .6rem .8rem; margin-bottom: 1rem; border-radius: var(--radius-md); font-weight: 600;}.context-highlight.problem{background-color: var(--warning-glow); color: var(--warning-color); border-left: 4px solid var(--warning-color);}.context-highlight.toifadagilar{background-color: var(--primary-glow); color: var(--primary-color); border-left: 4px solid var(--primary-color);}.context-highlight .label{font-weight: 500; opacity: .8; margin-right: .5rem;}
     #toast-notification { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background-color: var(--success-color); color: white; padding: 12px 24px; border-radius: 8px; box-shadow: var(--shadow-md); z-index: 10001; font-weight: 600; font-size: 0.95rem; transition: bottom 0.5s ease-in-out; display: flex; align-items: center; gap: 10px; }
     #toast-notification.show { bottom: 20px; }
@@ -819,6 +819,62 @@
         .modal-box { padding: 0.75rem; }
         .summary-stat-card .number { font-size: 1.4rem; }
     }
+    
+    /* ═══════════════════════════════════════════════════════════════════ */
+    /* MAHALLA YETTILIGI MUROJAAT TIZIMI */
+    /* ═══════════════════════════════════════════════════════════════════ */
+    .murojaat-modal .modal-box { max-width: 900px; width: 95%; max-height: 90vh; overflow-y: auto; }
+    .murojaat-steps { display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 1.5rem; }
+    .murojaat-step { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.1); color: #94a3b8; display: flex; align-items: center; justify-content: center; font-weight: 600; font-size: 0.9rem; transition: all 0.3s; }
+    .murojaat-step.active { background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; box-shadow: 0 4px 15px rgba(0,119,182,0.4); }
+    .murojaat-step.completed { background: #10b981; color: white; }
+    .murojaat-section { display: none; animation: fadeIn 0.3s ease; }
+    .murojaat-section.active { display: block; }
+    
+    /* Xodimlar kartochkalari */
+    .xodimlar-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .xodim-card { background: rgba(255,255,255,0.05); border: 2px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1rem; text-align: center; cursor: pointer; transition: all 0.2s ease; position: relative; }
+    .xodim-card:hover { border-color: rgba(0,119,182,0.5); transform: translateY(-3px); box-shadow: 0 8px 25px rgba(0,0,0,0.2); }
+    .xodim-card.selected { border-color: #10b981; background: rgba(16,185,129,0.15); }
+    .xodim-card.selected::after { content: '✓'; position: absolute; top: 8px; right: 8px; width: 24px; height: 24px; background: #10b981; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: bold; }
+    .xodim-avatar { width: 70px; height: 70px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(255,255,255,0.2); margin: 0 auto 0.75rem; display: block; }
+    .xodim-avatar-placeholder { width: 70px; height: 70px; border-radius: 50%; background: linear-gradient(135deg, #0077b6, #10b981); display: flex; align-items: center; justify-content: center; margin: 0 auto 0.75rem; font-size: 1.5rem; color: white; }
+    .xodim-name { font-weight: 600; color: #fff; font-size: 0.9rem; margin-bottom: 0.25rem; }
+    .xodim-role { color: #94a3b8; font-size: 0.75rem; margin-bottom: 0.5rem; }
+    .xodim-phone { color: #38bdf8; font-size: 0.75rem; }
+    
+    /* Manzil tanlash */
+    .address-type-btns { display: flex; gap: 1rem; margin-bottom: 1rem; }
+    .address-type-btn { flex: 1; padding: 1rem; border-radius: 12px; border: 2px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; cursor: pointer; transition: all 0.2s; text-align: center; }
+    .address-type-btn:hover { border-color: rgba(0,119,182,0.5); }
+    .address-type-btn.active { border-color: #0077b6; background: rgba(0,119,182,0.2); }
+    .address-type-btn i { font-size: 1.5rem; display: block; margin-bottom: 0.5rem; }
+    .address-fields { display: none; }
+    .address-fields.active { display: block; }
+    
+    /* Murojaat formasi */
+    .murojaat-textarea { width: 100%; min-height: 120px; padding: 1rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.15); background: rgba(255,255,255,0.05); color: #fff; font-size: 1rem; resize: vertical; }
+    .murojaat-textarea:focus { border-color: #0077b6; outline: none; }
+    .murojaat-file-upload { border: 2px dashed rgba(255,255,255,0.2); border-radius: 12px; padding: 2rem; text-align: center; cursor: pointer; transition: all 0.2s; }
+    .murojaat-file-upload:hover { border-color: #0077b6; background: rgba(0,119,182,0.1); }
+    .murojaat-file-upload i { font-size: 2rem; color: #64748b; margin-bottom: 0.5rem; }
+    .murojaat-preview-img { max-width: 200px; max-height: 150px; border-radius: 8px; margin-top: 1rem; }
+    
+    /* Murojaatlar ro'yxati (admin) */
+    .murojaatlar-badge { position: absolute; top: -5px; right: -5px; background: #ef4444; color: white; font-size: 0.7rem; padding: 2px 6px; border-radius: 10px; font-weight: bold; }
+    .murojaat-item { background: linear-gradient(135deg, rgba(139, 92, 246, 0.08), rgba(6, 182, 212, 0.05)); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 1.25rem; margin-bottom: 1rem; transition: all 0.2s; border-left: 4px solid #8b5cf6; }
+    .murojaat-item:hover { transform: translateX(5px); border-color: rgba(139, 92, 246, 0.3); box-shadow: 0 4px 20px rgba(139, 92, 246, 0.15); }
+    .murojaat-item.yangi { border-left-color: #ef4444; background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(239,68,68,0.05)); }
+    .murojaat-item.yangi:hover { box-shadow: 0 4px 20px rgba(239, 68, 68, 0.2); }
+    .murojaat-item-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem; }
+    .murojaat-item-date { color: #94a3b8; font-size: 0.8rem; }
+    .murojaat-item-from { font-weight: 600; color: #fff; }
+    .murojaat-item-address { color: #38bdf8; font-size: 0.85rem; margin-bottom: 0.5rem; }
+    .murojaat-item-text { color: #cbd5e1; font-size: 0.9rem; }
+    .murojaat-item-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+    .murojaat-filter-btn { padding: 0.625rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #94a3b8; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; font-family: inherit; }
+    .murojaat-filter-btn:hover { background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); color: #fff; }
+    .murojaat-filter-btn.active { background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-color: transparent; color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
   </style>
 </head>
 <body>
@@ -1058,7 +1114,80 @@
                       </div>
                       <div style="background: linear-gradient(135deg, rgba(139,92,246,0.1), rgba(139,92,246,0.05)); border-radius: 12px; padding: 1rem; border-left: 4px solid #a78bfa;">
                           <h5 style="color: #c4b5fd; margin-bottom: 0.5rem;"><i class="fas fa-sitemap"></i> Oila daraxti (Family Tree)</h5>
-                          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Interaktiv sxemada oila a'zolarini chiziqlar bilan bog'langan holda ko'rish.</p>
+                          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.7);">Interaktiv sxemada oila a'zolarini chiziqlar bilan bog'langan holda ko'rish. PNG formatida yuklab olish.</p>
+                      </div>
+                  </div>
+              </div>
+              
+              <!-- YANGI QOSHILGAN FUNKSIYALAR -->
+              <div style="margin-bottom: 2rem;">
+                  <h3 style="color: #38bdf8; font-size: 1.3rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-sparkles" style="color: #fbbf24;"></i> 🆕 Yangi qo'shilgan funksiyalar</h3>
+                  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem;">
+                      <!-- MUAMMOLAR XARITASI -->
+                      <div style="background: linear-gradient(135deg, rgba(239,68,68,0.15), rgba(249,115,22,0.1)); border-radius: 16px; padding: 1.25rem; border: 2px solid rgba(239,68,68,0.3); position: relative; overflow: hidden;">
+                          <div style="position: absolute; top: 10px; right: 10px; background: #ef4444; color: white; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 8px; font-weight: 700;">YANGI</div>
+                          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🗺️</div>
+                          <h4 style="color: #f87171; margin-bottom: 0.5rem; font-size: 1.05rem;">Muammolar Xaritasi</h4>
+                          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 0.75rem;">
+                              Mahalla infratuzilma muammolarini GPS joylashuv bilan birga xaritada belgilash.
+                          </p>
+                          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem;">
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>GPS joylashuvni aniqlash</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Kamida 2-4 ta rasmga olish</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Muammo turini tanlash (Asfalt, Chiroq, Suv, Gaz, Chiqindi)</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>PDF hisobotni yuklab olish</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Statistika: Jami / Kutilmoqda / Hal qilindi</li>
+                          </ul>
+                      </div>
+                      
+                      <!-- MAHALLA YETTILIGI MUROJAAT -->
+                      <div style="background: linear-gradient(135deg, rgba(99,102,241,0.15), rgba(139,92,246,0.1)); border-radius: 16px; padding: 1.25rem; border: 2px solid rgba(99,102,241,0.3); position: relative; overflow: hidden;">
+                          <div style="position: absolute; top: 10px; right: 10px; background: #6366f1; color: white; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 8px; font-weight: 700;">YANGI</div>
+                          <div style="font-size: 2rem; margin-bottom: 0.75rem;">📬</div>
+                          <h4 style="color: #a5b4fc; margin-bottom: 0.5rem; font-size: 1.05rem;">Mahalla Yettiligi Murojaat</h4>
+                          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 0.75rem;">
+                              Fuqarolar to'g'ridan-to'g'ri tegishli xodimga murojaat yuborishi mumkin.
+                          </p>
+                          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem;">
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>7 ta xodim - rasmli kartochkalar</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Tezkor qo'ng'iroq qilish</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Manzil tanlash (ko'cha, dom, kvartira)</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Rasm yuklash imkoniyati</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Murojaatlarni kuzatish (telefon raqam orqali)</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Xodim javobini ko'rish va baholash (5 yulduz)</li>
+                          </ul>
+                      </div>
+                      
+                      <!-- KELGAN MUROJAATLAR -->
+                      <div style="background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.1)); border-radius: 16px; padding: 1.25rem; border: 2px solid rgba(251,191,36,0.3); position: relative; overflow: hidden;">
+                          <div style="position: absolute; top: 10px; right: 10px; background: #fbbf24; color: #1e293b; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 8px; font-weight: 700;">YANGI</div>
+                          <div style="font-size: 2rem; margin-bottom: 0.75rem;">📥</div>
+                          <h4 style="color: #fbbf24; margin-bottom: 0.5rem; font-size: 1.05rem;">Kelgan Murojaatlar (Inbox)</h4>
+                          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 0.75rem;">
+                              Xodimlar o'ziga kelgan murojaatlarni ko'rish va javob berish.
+                          </p>
+                          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem;">
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Yangi murojaatlar badge bilan ko'rsatiladi</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Filterlar: Barchasi / Yangi / Javob berilgan</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Fuqaro ma'lumotlarini ko'rish</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Rasmli javob yuborish</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>PDF chiqarish (murojaat + javob)</li>
+                          </ul>
+                      </div>
+                      
+                      <!-- IJARA MUDDATI -->
+                      <div style="background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(219,39,119,0.1)); border-radius: 16px; padding: 1.25rem; border: 2px solid rgba(236,72,153,0.3); position: relative; overflow: hidden;">
+                          <div style="position: absolute; top: 10px; right: 10px; background: #ec4899; color: white; font-size: 0.65rem; padding: 0.2rem 0.5rem; border-radius: 8px; font-weight: 700;">YANGI</div>
+                          <div style="font-size: 2rem; margin-bottom: 0.75rem;">🏠</div>
+                          <h4 style="color: #f472b6; margin-bottom: 0.5rem; font-size: 1.05rem;">Ijara Muddati Nazorati</h4>
+                          <p style="font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.6; margin-bottom: 0.75rem;">
+                              Ijarachillarning shartnoma muddatini avtomatik kuzatish.
+                          </p>
+                          <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.8rem;">
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>15 kun oldin eslatma</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Muddati o'tganlar qizil rangda</li>
+                              <li style="padding: 0.2rem 0; color: rgba(255,255,255,0.7);"><i class="fas fa-check" style="color: #10b981; margin-right: 0.5rem;"></i>Eslatmalar panelida ko'rsatiladi</li>
+                          </ul>
                       </div>
                   </div>
               </div>
@@ -1118,7 +1247,7 @@
               <div style="background: linear-gradient(135deg, rgba(0,119,182,0.2), rgba(16,185,129,0.15)); border-radius: 16px; padding: 1.5rem; text-align: center;">
                   <h3 style="color: #fff; margin-bottom: 0.5rem; font-size: 1.2rem;"><i class="fas fa-code" style="color: #fbbf24; margin-right: 0.5rem;"></i> Tizim muallifi</h3>
                   <p style="color: #38bdf8; font-size: 1.1rem; font-weight: 600; margin: 0;">Boynazarov Rozimuhammad</p>
-                  <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 0.25rem;">© 2025 Barcha huquqlar himoyalangan</p>
+                  <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-top: 0.25rem;">© 2026 Barcha huquqlar himoyalangan</p>
               </div>
           </div>
       </div>
@@ -1145,6 +1274,10 @@
         </div>
       </h1>
       <div class="header-actions">
+        <div id="murojaatlar-bell-container" style="position:relative;">
+            <button class="header-btn" id="murojaatlar-bell" title="Kelgan murojaatlar" ><i class="fas fa-inbox"></i></button>
+            <span id="murojaat-badge-header" style="display:none;position:absolute;top:-5px;right:-8px;background:#fff;color:#ef4444;border-radius:50%;width:22px;height:22px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #ef4444;">0</span>
+        </div>
         <div id="notification-bell-container">
             <button class="header-btn" id="notification-bell" title="Eslatmalar"><i class="fas fa-bell"></i></button>
             <span id="notification-count" class="hidden">0</span>
@@ -2281,6 +2414,7 @@
     </main>
     <div class="fab-container">
         <button id="fab-birthday-calendar" class="fab" style="background: linear-gradient(135deg, #ec4899, #f472b6);" title="Tug'ilgan kunlar kalendari"><i class="fas fa-birthday-cake"></i></button>
+        <button id="fab-problems-map" class="fab" style="background: linear-gradient(135deg, #ef4444, #f97316);" title="Muammolar xaritasi" onclick="openProblemsMap()"><i class="fas fa-map-marked-alt"></i></button>
         <button id="fab-advanced-filter" class="fab" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);" title="Murakkab filtrlash"><i class="fas fa-filter"></i></button>
         <button id="fab-show-ai" class="fab fab-list" style="background: linear-gradient(135deg, #0077b6, #00b4d8);" title="O'zbegim AI - Har qanday savol bering!"><i class="fas fa-brain"></i></button>
         <button id="fab-show-objects" class="fab fab-objects" title="Ijtimoiy ob'ektlar va Xarita"><i class="fas fa-store-alt"></i></button>
@@ -2288,13 +2422,65 @@
         <button id="fab-analytics" class="fab fab-list" style="background:linear-gradient(135deg,#3b82f6,#60a5fa);" title="Analitika"><i class="fas fa-chart-bar"></i></button>
         <button id="fab-add-citizen" class="fab fab-add" title="Yangi fuqaro qo'shish"><i class="fas fa-plus"></i></button>
     </div>
+    
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <!-- MUROJAATLAR RO'YXATI MODALI (XODIMLAR UCHUN) -->
+    <!-- ═══════════════════════════════════════════════════════════════════ -->
+    <div id="murojaatlar-modal" class="modal-overlay">
+        <div class="modal-box" style="max-width: 900px; width: 95%; max-height: 90vh; overflow-y: auto; background: linear-gradient(135deg, #0f172a, #1e293b); border: 1px solid rgba(139, 92, 246, 0.2);">
+            <button class="modal-close-btn" onclick="document.getElementById('murojaatlar-modal').style.display='none';"><i class="fas fa-times"></i></button>
+            
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.25rem;">
+                <div style="width: 50px; height: 50px; background: linear-gradient(135deg, #f97316, #ef4444); border-radius: 14px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-inbox" style="font-size: 1.4rem; color: white;"></i>
+                </div>
+                <div>
+                    <h3 style="color: #fff; font-size: 1.25rem; font-weight: 700;">Kelgan Murojaatlar</h3>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">Fuqarolardan kelgan murojaatlar ro'yxati</p>
+                </div>
+                <span id="murojaatlar-total" style="background: linear-gradient(135deg, #ef4444, #dc2626); color: white; font-size: 0.85rem; padding: 6px 14px; border-radius: 20px; font-weight: 700; margin-left: auto;">0</span>
+            </div>
+            
+            <!-- Filters -->
+            <div style="display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; background: rgba(0,0,0,0.3); padding: 0.75rem; border-radius: 14px;">
+                <button class="murojaat-filter-btn active" data-filter="all" onclick="filterMurojaatlar('all')">
+                    <i class="fas fa-list"></i> Barchasi
+                </button>
+                <button class="murojaat-filter-btn" data-filter="yangi" onclick="filterMurojaatlar('yangi')">
+                    <span style="color:#ef4444;">●</span> Yangi
+                </button>
+                <button class="murojaat-filter-btn" data-filter="oqildi" onclick="filterMurojaatlar('oqildi')">
+                    <span style="color:#64748b;">●</span> O'qilgan
+                </button>
+                <button class="murojaat-filter-btn" data-filter="javob" onclick="filterMurojaatlar('javob')">
+                    <span style="color:#10b981;">●</span> Javob berilgan
+                </button>
+            </div>
+            
+            <div id="murojaatlar-content" style="max-height: 55vh; overflow-y: auto; padding-right: 0.5rem;">
+                <!-- JavaScript orqali to'ldiriladi -->
+            </div>
+        </div>
+    </div>
+    
+    <!-- MUROJAAT DETAIL MODAL -->
+    <div id="murojaat-detail-modal" class="modal-overlay">
+        <div class="modal-box" style="max-width: 600px; width: 95%; background: linear-gradient(135deg, #0f172a, #1e293b); border: 1px solid rgba(139, 92, 246, 0.2);">
+            <button class="modal-close-btn" onclick="closeMurojaatDetail();"><i class="fas fa-times"></i></button>
+            
+            <div id="murojaat-detail-content">
+                <!-- JavaScript orqali to'ldiriladi -->
+            </div>
+        </div>
+    </div>
+    
     <div id="alert-modal" class="modal-overlay"><div class="modal-box"><h4 id="alert-title">Xabar</h4><p id="alert-message">Matn</p><div class="button-group" style="display:flex;gap:1rem;margin-top:1.5rem;"><button class="btn btn-primary js-alert-ok" style="width:auto;flex-grow:1;">OK</button><button class="btn btn-cancel js-alert-cancel" style="width:auto;flex-grow:1;margin-top:0;">Bekor</button></div></div></div>
-    <div id="details-modal" class="modal-overlay">
+    <div id="details-modal" class="modal-overlay" onclick="if(event.target===this)closeDetailsModal();">
       <div id="details-modal-box" class="modal-box">
-        <button class="modal-close-btn" id="details-modal-close" onclick="document.getElementById('details-modal').style.display='none';"><i class="fas fa-times"></i></button>
+        <button class="modal-close-btn" id="details-modal-close" onclick="closeDetailsModal();"><i class="fas fa-times"></i></button>
         <div id="details-content"></div>
         <div class="modal-actions" style="flex-wrap: wrap; gap: 0.5rem;">
-            <button class="btn btn-secondary" onclick="document.getElementById('details-modal').style.display='none';" style="flex: 1; min-width: 120px;"><i class="fas fa-arrow-left"></i> Qaytish</button>
+            <button class="btn btn-secondary" onclick="closeDetailsModal();" style="flex: 1; min-width: 120px;"><i class="fas fa-arrow-left"></i> Qaytish</button>
             <button class="btn btn-success" id="js-show-family-tree" style="flex: 1; min-width: 120px;"><i class="fas fa-sitemap"></i> Oila daraxti</button>
             <button class="btn btn-info" id="js-show-on-map" style="flex: 1; min-width: 120px; display: none;"><i class="fas fa-map-marker-alt"></i> Xaritada</button>
             <button class="btn btn-primary" id="js-download-pdf" style="flex: 1; min-width: 120px;"><i class="fas fa-file-pdf"></i> PDF</button>
@@ -3117,7 +3303,7 @@
 <script>
 // Bu yerdan faqat bitta to'liq script bloki boshlanadi
 /* ================== KONFIG ================== */
-const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwz2rrxGrXmaPjBNuDrg61EneKNHBTktZpMqVzCg67nAP3Oq_u6bTVu41YpxKrILSn5uQ/exec';
+const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx0WFwNyi-RYxmaxOB2qbGB9lQaXBU_1nR7f1Orje8vxUC9nkRkfrKahYfTOEoxJzUkNA/exec';
 const KOP_QAVATLI_STREETS=["Musaev","Lermontov","A.Temur","Mashrab","Leninizm","Shevchenko","B.Raximov","Shoxruxmirzo","Boshqa"];
 const HOVLI_STREETS=["Musaev","Lermontov","Shevchenko","B.Raximov","Shoxruxmirzo","Ustalar","B.Turon","Muqumiy111","A.Temur","Boshqa"];
 const METRKA_SERIES_LIST=["I-AN","I-BH","I-FR","I-GZ","I-HR","I-NA","I-NV","I-QD","I-QQ","I-SM","I-SR","I-SU","I-TN","I-TV","II-AN","II-BH","II-FR","II-GZ","II-HR","II-KS","II-NA","II-NV","II-QD","II-QQ","II-SM","II-SR","II-SU","II-TN","II-TS","II-TV","III-AN","III-BH","III-FR","III-GZ","III-HR","III-NA","III-NV","III-QD","III-QQ","III-SM","III-SR","III-SU","III-TN","III-TV","T","TA"];
@@ -3402,30 +3588,31 @@ async function fetchData(isManualRefresh = false, isSilent = false) {
     if (isDataLoading) return dataReadyPromise;
     isDataLoading = true;
     if (isManualRefresh && !isSilent) {
-        showToast("Baza yangilanmoqda...", "info");
+        showToast("Baza fonda yangilanmoqda...", "info");
     } else if (!isManualRefresh && !isSilent) {
         showLoader(true);
     }
     dataReadyPromise = new Promise(async (resolve, reject) => {
         try {
             const controller = new AbortController();
-            const timeoutId = setTimeout(() => controller.abort(), 15000); // 15 sekund timeout (tezroq)
+            const timeoutId = setTimeout(() => controller.abort(), 30000); // 30 sekund timeout
             
-            const response = await fetch(`${SCRIPT_URL}?action=readAllData&t=${Date.now()}`, {
+            const response = await fetch(`${SCRIPT_URL}?action=readAllData&t=${new Date().getTime()}`, {
                 signal: controller.signal
             });
             clearTimeout(timeoutId);
             
-            if (!response.ok) throw new Error(`Server xatoligi`);
+            if (!response.ok) throw new Error(`Server xatoligi: ${response.statusText}`);
             const result = await response.json();
             if (result.status === 'success') {
+                // ⚡ Tez yuklash - bir marta filter
                 const allCitizens = result.data.citizenDatabase || [];
                 citizenDatabase = allCitizens;
                 activeCitizenDatabase = [];
                 archivedCitizenDatabase = [];
                 
                 // ⚡ Bir loop da ikki massiv
-                for (let i = 0, len = allCitizens.length; i < len; i++) {
+                for (let i = 0; i < allCitizens.length; i++) {
                     if (allCitizens[i].arxiv_holati === 'arxiv') {
                         archivedCitizenDatabase.push(allCitizens[i]);
                     } else {
@@ -3438,23 +3625,29 @@ async function fetchData(isManualRefresh = false, isSilent = false) {
                 objectStaffDatabase = result.data.objectStaffDatabase || [];
                 populateCsvHeaders();
                 
-                // ⚡ Async saqlash
-                requestAnimationFrame(() => {
+                // ⚡ Async saqlash - UI ni bloklamaslik
+                setTimeout(() => {
                     try {
                         localStorage.setItem('databases', JSON.stringify({
-                            citizenDatabase, socialObjectsDatabase, objectStaffDatabase,
-                            timestamp: Date.now()
+                            citizenDatabase,
+                            socialObjectsDatabase,
+                            objectStaffDatabase,
+                            timestamp: new Date().getTime()
                         }));
-                    } catch(e) { localStorage.removeItem('databases'); }
-                });
+                    } catch(e) {
+                        // localStorage to'lgan bo'lsa
+                        localStorage.removeItem('databases');
+                    }
+                }, 0);
                 
                 checkAndShowNotifications();
                 resolve();
             } else {
-                throw new Error(result.message || "Server xatoligi");
+                throw new Error(result.message || "Noma'lum server xatoligi.");
             }
         } catch (error) {
-            if(isManualRefresh && !isSilent) showToast("Aloqa yo'q!", "error");
+            console.error("Ma'lumot yuklashda xatolik:", error);
+            if(isManualRefresh && !isSilent) showToast("Baza bilan aloqa yo'q!", "error");
             loadDataFromCache();
             reject(error);
         } finally {
@@ -8603,17 +8796,40 @@ window.showCitizenDetails = function(person) {
 }
 
 // GLOBAL: Xaritadan fuqaroni ochish funksiyasi
+// ═══════════════════════════════════════════════════════════════════
+// GLOBAL: Oldingi ochiq modal (qaytish uchun)
+// ═══════════════════════════════════════════════════════════════════
+let previousOpenModal = null;
+
+// Details modalni yopish va oldingi modalga qaytish
+window.closeDetailsModal = function() {
+    const detailsModal = document.getElementById('details-modal');
+    if (detailsModal) detailsModal.style.display = 'none';
+    
+    // Oldingi modalga qaytish
+    if (previousOpenModal) {
+        const prevModal = document.getElementById(previousOpenModal);
+        if (prevModal) {
+            prevModal.style.display = 'flex';
+        }
+        previousOpenModal = null;
+    }
+};
+
 window.openCitizenFromMap = function(uniqueId) {
-    // Vibration (mobil uchun)
     if (navigator.vibrate) navigator.vibrate(30);
     
     const searchId = String(uniqueId);
     const person = activeCitizenDatabase.find(c => String(c.unique_id) === searchId);
     
     if (person) {
-        // Barcha modallarni yopish
+        // Oldingi ochiq modalni saqlash
+        previousOpenModal = null;
         document.querySelectorAll('.modal-overlay').forEach(m => {
-            if (m.id !== 'details-modal') m.style.display = 'none';
+            if (m.style.display === 'flex' && m.id !== 'details-modal') {
+                previousOpenModal = m.id;
+                m.style.display = 'none';
+            }
         });
         
         // Details modalini ochish
@@ -8621,10 +8837,6 @@ window.openCitizenFromMap = function(uniqueId) {
         if (detailsModal) {
             detailsModal.style.display = 'flex';
             DOM.detailsContent.innerHTML = createFullDetailsHTML(person);
-            // Stack ga qo'shish (goBack ishlashi uchun)
-            if (previousScreenStack[previousScreenStack.length - 1] !== 'details-modal') {
-                previousScreenStack.push('details-modal');
-            }
         }
     } else {
         showToast('Fuqaro topilmadi', 'error');
@@ -11064,55 +11276,2359 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+});
+</script>
+
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<!-- MUROJAATLAR TIZIMI SCRIPTI (XODIMLAR UCHUN) -->
+<!-- ═══════════════════════════════════════════════════════════════════ -->
+<script>
+// ═══════════════════════════════════════════════════════════════════
+// MUROJAATLAR TIZIMI
+// ═══════════════════════════════════════════════════════════════════
+let murojaatlarCache = [];
+let currentMurojaatFilter = 'all';
+
+// MFY raisi va Rozimuhammad barcha murojaatlarni ko'radi
+const ADMIN_PASS_CODES = ['4161', '2304']; // MFY raisi va Rozimuhammad
+
+// Murojaatlarni yuklash
+async function loadMurojaatlar() {
+    try {
+        // Xodim ID sini aniqlash
+        const xodimId = CURRENT_USER?.pass || '';
+        const isAdmin = ADMIN_PASS_CODES.includes(xodimId);
+        
+        const url = `${SCRIPT_URL}?action=getMurojaatlar&xodim_id=${isAdmin ? 'all' : xodimId}&t=${Date.now()}`;
+        const response = await fetch(url);
+        const result = await response.json();
+        
+        if (result.status === 'success') {
+            murojaatlarCache = result.data || [];
+            updateMurojaatBadge();
+            return murojaatlarCache;
+        }
+    } catch (e) {
+        console.error('Murojaatlar yuklanmadi:', e);
+    }
+    return [];
+}
+
+// Badge yangilash
+function updateMurojaatBadge() {
+    const yangiCount = murojaatlarCache.filter(m => m.status === 'yangi').length;
+    const badge = document.getElementById('murojaat-badge-header');
     
-    // ═══════════════════════════════════════════════════════════════════
-    // DETAILS MODAL CLOSE TUGMASI - TO'G'RIDAN-TO'G'RI
-    // ═══════════════════════════════════════════════════════════════════
-    const detailsCloseBtn = document.getElementById('details-modal-close');
-    if (detailsCloseBtn) {
-        detailsCloseBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            const modal = document.getElementById('details-modal');
-            if (modal) modal.style.display = 'none';
-            // Stack dan olib tashlash
-            if (previousScreenStack[previousScreenStack.length - 1] === 'details-modal') {
-                previousScreenStack.pop();
+    if (badge) {
+        if (yangiCount > 0) {
+            badge.textContent = yangiCount;
+            badge.style.display = 'flex';
+        } else {
+            badge.style.display = 'none';
+        }
+    }
+}
+
+// Murojaatlar modalini ochish
+async function openMurojaatlarModal() {
+    // Avval modalni ochish - foydalanuvchi tezroq ko'radi
+    document.getElementById('murojaatlar-modal').style.display = 'flex';
+    
+    // Agar cache bo'sh bo'lsa, yuklash
+    if (murojaatlarCache.length === 0) {
+        document.getElementById('murojaatlar-content').innerHTML = `
+            <div style="text-align: center; padding: 3rem;">
+                <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #8b5cf6;"></i>
+                <p style="color: #94a3b8; margin-top: 1rem;">Yuklanmoqda...</p>
+            </div>
+        `;
+        await loadMurojaatlar();
+    }
+    
+    renderMurojaatlar();
+}
+
+// Murojaatlarni render qilish
+function renderMurojaatlar() {
+    const content = document.getElementById('murojaatlar-content');
+    const totalEl = document.getElementById('murojaatlar-total');
+    
+    // Filter
+    let filtered = murojaatlarCache;
+    if (currentMurojaatFilter !== 'all') {
+        filtered = murojaatlarCache.filter(m => m.status === currentMurojaatFilter);
+    }
+    
+    totalEl.textContent = filtered.length;
+    
+    if (filtered.length === 0) {
+        content.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #64748b;">
+                <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Murojaatlar topilmadi</p>
+            </div>
+        `;
+        return;
+    }
+    
+    // Sort by date (newest first)
+    filtered.sort((a, b) => new Date(b.vaqt) - new Date(a.vaqt));
+    
+    content.innerHTML = filtered.map(m => {
+        const date = new Date(m.vaqt);
+        const dateStr = date.toLocaleDateString('uz-UZ') + ' ' + date.toLocaleTimeString('uz-UZ', {hour: '2-digit', minute: '2-digit'});
+        
+        const statusBadge = m.status === 'yangi' 
+            ? '<span style="background:#ef4444;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">YANGI</span>'
+            : m.status === 'javob'
+            ? '<span style="background:#10b981;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">JAVOB BERILGAN</span>'
+            : '<span style="background:#64748b;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">O\'QILGAN</span>';
+        
+        return `
+            <div class="murojaat-item ${m.status === 'yangi' ? 'yangi' : ''}" onclick="openMurojaatDetail('${m.id}')" style="cursor:pointer;">
+                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;">
+                    <div>
+                        <div style="font-weight:600;color:#fff;font-size:1rem;">${m.fuqaro_fio}${statusBadge}</div>
+                        <div style="color:#38bdf8;font-size:0.85rem;margin-top:0.25rem;">
+                            <i class="fas fa-map-marker-alt"></i> ${m.fuqaro_manzil}
+                        </div>
+                        <div style="color:#94a3b8;font-size:0.8rem;margin-top:0.25rem;">
+                            <i class="fas fa-phone"></i> ${m.fuqaro_telefon}
+                        </div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="color:#64748b;font-size:0.75rem;">${dateStr}</div>
+                        <div style="color:#94a3b8;font-size:0.75rem;margin-top:0.25rem;">
+                            <i class="fas fa-user-tie"></i> ${m.xodim_lavozim}
+                        </div>
+                    </div>
+                </div>
+                <div style="color:#cbd5e1;font-size:0.9rem;line-height:1.4;background:rgba(0,0,0,0.2);padding:0.75rem;border-radius:8px;">
+                    ${m.murojaat_matni.substring(0, 150)}${m.murojaat_matni.length > 150 ? '...' : ''}
+                </div>
+                ${m.rasm_link ? '<div style="margin-top:0.5rem;color:#0077b6;font-size:0.8rem;"><i class="fas fa-image"></i> Rasm biriktirilgan</div>' : ''}
+            </div>
+        `;
+    }).join('');
+}
+
+// Filter
+function filterMurojaatlar(filter) {
+    currentMurojaatFilter = filter;
+    
+    // Update buttons
+    document.querySelectorAll('.murojaat-filter-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.dataset.filter === filter);
+    });
+    
+    renderMurojaatlar();
+}
+
+// Murojaat detail
+function openMurojaatDetail(id) {
+    const murojaat = murojaatlarCache.find(m => m.id === id);
+    if (!murojaat) return;
+    
+    // Mark as read if new
+    if (murojaat.status === 'yangi') {
+        markMurojaatRead(id);
+    }
+    
+    const date = new Date(murojaat.vaqt);
+    const dateStr = date.toLocaleDateString('uz-UZ') + ' ' + date.toLocaleTimeString('uz-UZ', {hour: '2-digit', minute: '2-digit'});
+    
+    const content = document.getElementById('murojaat-detail-content');
+    content.innerHTML = `
+        <h3 style="margin-bottom:1rem;color:#fff;border-bottom:1px solid rgba(255,255,255,0.1);padding-bottom:1rem;">
+            <i class="fas fa-envelope-open" style="color:#f97316;"></i> Murojaat tafsilotlari
+        </h3>
+        
+        <div style="background:rgba(255,255,255,0.05);border-radius:12px;padding:1rem;margin-bottom:1rem;">
+            <div style="display:grid;gap:0.75rem;">
+                <div style="display:flex;justify-content:space-between;">
+                    <span style="color:#94a3b8;">Sana:</span>
+                    <span style="color:#fff;font-weight:500;">${dateStr}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                    <span style="color:#94a3b8;">Kimga:</span>
+                    <span style="color:#fff;font-weight:500;">${murojaat.xodim_fio || murojaat.xodim_lavozim}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                    <span style="color:#94a3b8;">F.I.O.:</span>
+                    <span style="color:#fff;font-weight:500;">${murojaat.fuqaro_fio}</span>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                    <span style="color:#94a3b8;">Telefon:</span>
+                    <span style="color:#38bdf8;font-weight:500;">
+                        <a href="tel:${murojaat.fuqaro_telefon}" style="color:#38bdf8;text-decoration:none;">
+                            ${murojaat.fuqaro_telefon}
+                        </a>
+                    </span>
+                </div>
+                <div style="display:flex;justify-content:space-between;">
+                    <span style="color:#94a3b8;">Manzil:</span>
+                    <span style="color:#fff;font-weight:500;">${murojaat.fuqaro_manzil}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-bottom:1rem;">
+            <div style="color:#94a3b8;font-size:0.85rem;margin-bottom:0.5rem;">Murojaat matni:</div>
+            <div style="background:rgba(0,119,182,0.1);border-left:3px solid #0077b6;padding:1rem;border-radius:0 8px 8px 0;color:#fff;line-height:1.6;">
+                ${murojaat.murojaat_matni}
+            </div>
+        </div>
+        
+        ${murojaat.rasm_link ? `
+        <div style="margin-bottom:1rem;">
+            <div style="color:#94a3b8;font-size:0.85rem;margin-bottom:0.5rem;">Biriktirilgan rasm:</div>
+            <img src="https://drive.google.com/thumbnail?id=${murojaat.rasm_link}&sz=w400" 
+                 style="max-width:100%;border-radius:8px;cursor:pointer;"
+                 onclick="window.open('https://drive.google.com/file/d/${murojaat.rasm_link}/view', '_blank')">
+        </div>
+        ` : ''}
+        
+        ${murojaat.javob ? `
+        <div style="background:rgba(16,185,129,0.1);border-left:3px solid #10b981;padding:1rem;border-radius:0 8px 8px 0;margin-bottom:1rem;">
+            <div style="color:#10b981;font-size:0.85rem;margin-bottom:0.5rem;font-weight:600;">Javob:</div>
+            <div style="color:#fff;line-height:1.6;">${murojaat.javob}</div>
+        </div>
+        ` : ''}
+        
+        <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+            <button class="btn btn-primary" onclick="downloadMurojaatPDF('${murojaat.id}')" style="flex:1;min-width:120px;">
+                <i class="fas fa-file-pdf"></i> PDF
+            </button>
+            <a href="tel:${murojaat.fuqaro_telefon}" class="btn btn-success" style="flex:1;min-width:120px;text-decoration:none;text-align:center;">
+                <i class="fas fa-phone"></i> Qo'ng'iroq
+            </a>
+            ${murojaat.status !== 'javob' ? `
+            <button class="btn btn-secondary" onclick="showJavobForm('${murojaat.id}')" style="flex:1;min-width:120px;">
+                <i class="fas fa-reply"></i> Javob
+            </button>
+            ` : ''}
+        </div>
+    `;
+    
+    document.getElementById('murojaat-detail-modal').style.display = 'flex';
+}
+
+function closeMurojaatDetail() {
+    document.getElementById('murojaat-detail-modal').style.display = 'none';
+}
+
+// Mark as read
+async function markMurojaatRead(id) {
+    try {
+        await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({ action: 'updateMurojaatStatus', payload: { id, status: 'oqildi' } })
+        });
+        
+        // Update local cache
+        const idx = murojaatlarCache.findIndex(m => m.id === id);
+        if (idx !== -1) {
+            murojaatlarCache[idx].status = 'oqildi';
+        }
+        
+        updateMurojaatBadge();
+        renderMurojaatlar();
+    } catch(e) {
+        console.error('Status yangilash xatosi:', e);
+    }
+}
+
+// Javob form - YANGI MODAL BILAN
+function showJavobForm(id) {
+    const murojaat = murojaatlarCache.find(m => m.id === id);
+    if (!murojaat) return;
+    
+    // Yangi modal yaratish
+    let javobModal = document.getElementById('javob-modal');
+    if (!javobModal) {
+        javobModal = document.createElement('div');
+        javobModal.id = 'javob-modal';
+        javobModal.className = 'modal-overlay';
+        javobModal.innerHTML = `
+            <div class="modal-box" style="max-width:520px;background:linear-gradient(135deg,#0f172a,#1e293b);border:1px solid rgba(139,92,246,0.3);">
+                <button class="modal-close-btn" onclick="document.getElementById('javob-modal').style.display='none';"><i class="fas fa-times"></i></button>
+                <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:1.25rem;">
+                    <div style="width:50px;height:50px;background:linear-gradient(135deg,#10b981,#059669);border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                        <i class="fas fa-reply" style="font-size:1.3rem;color:white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="color:#fff;font-size:1.15rem;font-weight:700;">Javob berish</h3>
+                        <p id="javob-fuqaro-name" style="color:#94a3b8;font-size:0.9rem;"></p>
+                    </div>
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label style="color:#94a3b8;font-size:0.9rem;margin-bottom:0.5rem;display:block;font-weight:600;">Javobingizni yozing *</label>
+                    <textarea id="javob-textarea" style="width:100%;min-height:130px;padding:1rem;border-radius:14px;border:2px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;font-size:1rem;font-family:inherit;resize:vertical;" placeholder="Javobingizni batafsil yozing..."></textarea>
+                </div>
+                <div style="margin-bottom:1rem;">
+                    <label style="color:#94a3b8;font-size:0.9rem;margin-bottom:0.5rem;display:block;font-weight:600;">📷 Rasm biriktirish (ixtiyoriy)</label>
+                    <div style="display:flex;gap:0.75rem;flex-wrap:wrap;">
+                        <button type="button" onclick="document.getElementById('javob-file-inp').click()" style="flex:1;min-width:120px;padding:0.75rem;border-radius:12px;border:2px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.05);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-size:0.9rem;">
+                            <i class="fas fa-image"></i> Galereya
+                        </button>
+                        <button type="button" onclick="openJavobCamera()" style="flex:1;min-width:120px;padding:0.75rem;border-radius:12px;border:none;background:linear-gradient(135deg,#8b5cf6,#7c3aed);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:0.5rem;font-size:0.9rem;">
+                            <i class="fas fa-camera"></i> Kamera
+                        </button>
+                    </div>
+                    <input type="file" id="javob-file-inp" accept="image/*" style="display:none" onchange="handleJavobFile(this)">
+                    <div id="javob-preview-container" style="display:none;margin-top:0.75rem;position:relative;display:inline-block;">
+                        <img id="javob-preview-img" style="max-width:180px;border-radius:12px;border:2px solid #10b981;">
+                        <button onclick="removeJavobImage()" style="position:absolute;top:-8px;right:-8px;width:26px;height:26px;border-radius:50%;background:#ef4444;border:none;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:0.8rem;"><i class="fas fa-times"></i></button>
+                    </div>
+                </div>
+                <input type="hidden" id="javob-murojaat-id">
+                <input type="hidden" id="javob-rasm-data">
+                <div style="display:flex;gap:0.875rem;">
+                    <button class="btn btn-secondary" onclick="document.getElementById('javob-modal').style.display='none';" style="flex:1;">
+                        <i class="fas fa-times"></i> Bekor
+                    </button>
+                    <button class="btn btn-success" onclick="submitJavob()" style="flex:1;">
+                        <i class="fas fa-paper-plane"></i> Yuborish
+                    </button>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(javobModal);
+    }
+    
+    // Modal ma'lumotlarini to'ldirish
+    document.getElementById('javob-fuqaro-name').textContent = 'Fuqaro: ' + murojaat.fuqaro_fio;
+    document.getElementById('javob-murojaat-id').value = id;
+    document.getElementById('javob-textarea').value = '';
+    document.getElementById('javob-rasm-data').value = '';
+    document.getElementById('javob-preview-container').style.display = 'none';
+    javobModal.style.display = 'flex';
+}
+
+// Javob uchun rasm yuklash
+let javobCameraStream = null;
+
+function handleJavobFile(inp) {
+    if (inp.files && inp.files[0]) {
+        const file = inp.files[0];
+        if (file.size > 5 * 1024 * 1024) {
+            showToast('Rasm 5MB dan katta', 'error');
+            return;
+        }
+        const reader = new FileReader();
+        reader.onload = e => {
+            document.getElementById('javob-rasm-data').value = e.target.result;
+            document.getElementById('javob-preview-img').src = e.target.result;
+            document.getElementById('javob-preview-container').style.display = 'inline-block';
+        };
+        reader.readAsDataURL(file);
+    }
+}
+
+function removeJavobImage() {
+    document.getElementById('javob-rasm-data').value = '';
+    document.getElementById('javob-preview-container').style.display = 'none';
+    document.getElementById('javob-file-inp').value = '';
+}
+
+async function openJavobCamera() {
+    try {
+        javobCameraStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        
+        // Camera modal
+        let cameraModal = document.getElementById('javob-camera-modal');
+        if (!cameraModal) {
+            cameraModal = document.createElement('div');
+            cameraModal.id = 'javob-camera-modal';
+            cameraModal.className = 'modal-overlay';
+            cameraModal.innerHTML = `
+                <div class="modal-box" style="max-width:500px;background:linear-gradient(135deg,#0f172a,#1e293b);">
+                    <h3 style="text-align:center;margin-bottom:1rem;"><i class="fas fa-camera"></i> Rasm olish</h3>
+                    <video id="javob-camera-video" autoplay playsinline style="width:100%;border-radius:14px;background:#000;"></video>
+                    <canvas id="javob-camera-canvas" style="display:none;"></canvas>
+                    <div style="display:flex;gap:0.75rem;margin-top:1rem;">
+                        <button class="btn btn-secondary" onclick="closeJavobCamera()" style="flex:1;"><i class="fas fa-times"></i> Bekor</button>
+                        <button class="btn btn-primary" onclick="captureJavobPhoto()" style="flex:1;"><i class="fas fa-camera"></i> Olish</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(cameraModal);
+        }
+        
+        document.getElementById('javob-camera-video').srcObject = javobCameraStream;
+        cameraModal.style.display = 'flex';
+    } catch (e) {
+        showToast('Kameraga kirish imkoni yo\'q', 'error');
+    }
+}
+
+function closeJavobCamera() {
+    if (javobCameraStream) {
+        javobCameraStream.getTracks().forEach(t => t.stop());
+        javobCameraStream = null;
+    }
+    document.getElementById('javob-camera-modal').style.display = 'none';
+}
+
+function captureJavobPhoto() {
+    const video = document.getElementById('javob-camera-video');
+    const canvas = document.getElementById('javob-camera-canvas');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    canvas.getContext('2d').drawImage(video, 0, 0);
+    const imgData = canvas.toDataURL('image/jpeg', 0.85);
+    
+    document.getElementById('javob-rasm-data').value = imgData;
+    document.getElementById('javob-preview-img').src = imgData;
+    document.getElementById('javob-preview-container').style.display = 'inline-block';
+    
+    closeJavobCamera();
+    showToast('Rasm olindi', 'success');
+}
+
+// Javob yuborish
+async function submitJavob() {
+    const id = document.getElementById('javob-murojaat-id').value;
+    const javobText = document.getElementById('javob-textarea').value.trim();
+    const javobRasm = document.getElementById('javob-rasm-data').value;
+    
+    if (!javobText) {
+        showToast('Javob matnini kiriting', 'error');
+        return;
+    }
+    
+    if (javobText.length < 5) {
+        showToast('Javob kamida 5 ta belgidan iborat bo\'lishi kerak', 'error');
+        return;
+    }
+    
+    try {
+        const payload = { 
+            id, 
+            status: 'javob', 
+            javob: javobText 
+        };
+        
+        // Rasm bormi?
+        if (javobRasm && javobRasm.startsWith('data:image')) {
+            payload.javob_rasm = javobRasm;
+        }
+        
+        const res = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain' },
+            body: JSON.stringify({ 
+                action: 'updateMurojaatStatus', 
+                payload 
+            })
+        });
+        
+        const result = await res.json();
+        
+        if (result.status === 'success') {
+            showToast('Javob yuborildi!', 'success');
+            document.getElementById('javob-modal').style.display = 'none';
+            closeMurojaatDetail();
+            await loadMurojaatlar();
+            renderMurojaatlar();
+        } else {
+            showToast('Xatolik: ' + (result.message || 'Noma\'lum xato'), 'error');
+        }
+    } catch(e) {
+        showToast('Server bilan aloqada xatolik', 'error');
+        console.error(e);
+    }
+}
+
+// PDF download
+async function downloadMurojaatPDF(id) {
+    const murojaat = murojaatlarCache.find(m => m.id === id);
+    if (!murojaat) return;
+    
+    showToast('PDF tayyorlanmoqda...', 'info');
+    
+    const date = new Date(murojaat.vaqt);
+    const dateStr = date.toLocaleDateString('uz-UZ') + ' ' + date.toLocaleTimeString('uz-UZ');
+    
+    const pdfContent = `
+        <div style="font-family: 'Times New Roman', serif; padding: 2cm; max-width: 21cm; background: white; color: black;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="margin: 0; color: #0077b6;">O'ZBEGIM MFY</h2>
+                <p style="margin: 0.5rem 0; color: #666;">Fuqaro Murojaati</p>
+                <p style="margin: 0; font-size: 0.9rem; color: #888;">Andijon viloyati, Andijon shahar</p>
+                <hr style="border: none; border-top: 2px solid #0077b6; margin: 1rem 0;">
+            </div>
+            
+            <table style="width: 100%; border-collapse: collapse; margin-bottom: 1.5rem;">
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd; width: 30%; background: #f5f5f5; font-weight: bold;">Sana:</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">${dateStr}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;">Kimga:</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">${murojaat.xodim_fio || ''} - ${murojaat.xodim_lavozim}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;">F.I.O.:</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">${murojaat.fuqaro_fio}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;">Telefon:</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">${murojaat.fuqaro_telefon}</td>
+                </tr>
+                <tr>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd; background: #f5f5f5; font-weight: bold;">Manzil:</td>
+                    <td style="padding: 0.5rem; border: 1px solid #ddd;">${murojaat.fuqaro_manzil}</td>
+                </tr>
+            </table>
+            
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: #0077b6; border-bottom: 1px solid #0077b6; padding-bottom: 0.5rem;">Murojaat mazmuni:</h4>
+                <p style="line-height: 1.6;">${murojaat.murojaat_matni}</p>
+            </div>
+            
+            ${murojaat.javob ? `
+            <div style="margin-bottom: 1.5rem; background: #e8f5e9; padding: 1rem; border-radius: 8px; border-left: 4px solid #2e7d32;">
+                <h4 style="color: #2e7d32; margin-bottom: 0.5rem;">Javob:</h4>
+                <p style="line-height: 1.6;">${murojaat.javob}</p>
+                ${murojaat.javob_vaqt ? `<p style="color: #666; font-size: 0.85rem; margin-top: 0.75rem; font-style: italic;">Javob berilgan sana: ${murojaat.javob_vaqt}</p>` : ''}
+            </div>
+            ` : ''}
+            
+            ${murojaat.rasm_link ? `
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: #0077b6; border-bottom: 1px solid #0077b6; padding-bottom: 0.5rem;">Biriktirilgan rasm:</h4>
+                <img src="https://drive.google.com/thumbnail?id=${murojaat.rasm_link}&sz=w400" style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd;">
+            </div>
+            ` : ''}
+            
+            ${murojaat.javob_rasm ? `
+            <div style="margin-bottom: 1.5rem;">
+                <h4 style="color: #2e7d32; border-bottom: 1px solid #2e7d32; padding-bottom: 0.5rem;">Javob rasmi:</h4>
+                <img src="https://drive.google.com/thumbnail?id=${murojaat.javob_rasm}&sz=w400" style="max-width: 100%; border-radius: 8px; border: 1px solid #ddd;">
+            </div>
+            ` : ''}
+        </div>
+    `;
+    
+    const container = document.createElement('div');
+    container.innerHTML = pdfContent;
+    document.body.appendChild(container);
+    
+    try {
+        const opt = {
+            margin: 0,
+            filename: `Murojaat_${murojaat.fuqaro_fio.replace(/\s+/g, '_')}_${new Date().toLocaleDateString('uz-UZ').replace(/\./g, '-')}.pdf`,
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { scale: 2 },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        
+        await html2pdf().set(opt).from(container).save();
+        showToast('PDF yuklandi!', 'success');
+    } catch(e) {
+        showToast('PDF xatosi', 'error');
+    } finally {
+        document.body.removeChild(container);
+    }
+}
+
+// FAB va Header tugmalari
+document.addEventListener('DOMContentLoaded', () => {
+    // Header Murojaatlar tugmasi
+    const murojaatlarBell = document.getElementById('murojaatlar-bell');
+    if (murojaatlarBell) {
+        murojaatlarBell.addEventListener('click', openMurojaatlarModal);
+    }
+    
+    // Murojaatlarni yuklash
+    setTimeout(() => {
+        if (typeof CURRENT_USER !== 'undefined' && CURRENT_USER?.pass) {
+            loadMurojaatlar();
+        }
+    }, 3000);
+});
+
+// ═══════════════════════════════════════════════════════════════
+// 🗺️ MUAMMOLAR XARITASI (Problems Map / Crowdsourcing)
+// ═══════════════════════════════════════════════════════════════
+let problemsMap = null;
+let problemMarkers = [];
+let problemsData = [];
+
+function openProblemsMap() {
+    let modal = document.getElementById('problems-map-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'problems-map-modal';
+        modal.className = 'modal-overlay';
+        modal.innerHTML = `
+            <div class="modal-box" style="max-width:900px;width:95%;max-height:95vh;overflow-y:auto;padding:1.25rem;">
+                <button class="modal-close-btn" onclick="closeProblemsMap()"><i class="fas fa-times"></i></button>
+                
+                <div style="display:flex;align-items:center;gap:0.875rem;margin-bottom:1rem;">
+                    <div style="width:50px;height:50px;background:linear-gradient(135deg,#ef4444,#f97316);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i class="fas fa-map-marked-alt" style="font-size:1.3rem;color:white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size:1.15rem;font-weight:700;">Muammolar Xaritasi</h3>
+                        <p style="color:var(--text-light);font-size:0.8rem;">Infratuzilma muammolarini belgilang</p>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
+                    <button class="btn btn-primary" style="margin:0;padding:0.7rem;font-size:0.85rem;" onclick="addProblemMode()">
+                        <i class="fas fa-plus-circle"></i> Muammo qo'shish
+                    </button>
+                    <select id="problem-filter" style="padding:0.7rem;border-radius:12px;background:var(--bg-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;" onchange="filterProblems()">
+                        <option value="all">📋 Barchasi</option>
+                        <option value="asfalt">🛣️ Asfalt</option>
+                        <option value="chiroq">💡 Chiroq</option>
+                        <option value="suv">💧 Suv</option>
+                        <option value="gaz">🔥 Gaz</option>
+                        <option value="chiqindi">🗑️ Chiqindi</option>
+                        <option value="boshqa">📌 Boshqa</option>
+                    </select>
+                </div>
+                
+                <!-- Map Container -->
+                <div id="problems-map-container" style="height:300px;border-radius:14px;overflow:hidden;border:2px solid var(--border-color);margin-bottom:0.75rem;"></div>
+                
+                <!-- Problem Form -->
+                <div id="problem-form" style="display:none;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.05));padding:1rem;border-radius:14px;border:1px solid rgba(239,68,68,0.2);">
+                    <h4 style="margin-bottom:0.75rem;font-size:0.95rem;display:flex;align-items:center;gap:0.5rem;">
+                        <i class="fas fa-exclamation-triangle" style="color:#ef4444;"></i> Yangi muammo
+                    </h4>
+                    
+                    <!-- Location Detection Button -->
+                    <button class="btn btn-secondary" style="width:100%;margin:0 0 0.5rem 0;padding:0.7rem;font-size:0.85rem;" onclick="detectProblemLocation()">
+                        <i class="fas fa-crosshairs"></i> Joylashuvni aniqlash
+                    </button>
+                    <p id="problem-location-status" style="font-size:0.75rem;color:var(--text-light);margin-bottom:0.5rem;text-align:center;display:none;"></p>
+                    
+                    <select id="problem-type" style="width:100%;padding:0.65rem;border-radius:10px;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;margin-bottom:0.5rem;">
+                        <option value="">Muammo turini tanlang</option>
+                        <option value="asfalt">🛣️ Asfalt o'yilgan/buzilgan</option>
+                        <option value="chiroq">💡 Chiroq yonmaydi / Simyog'och</option>
+                        <option value="suv">💧 Suv quvuri buzilgan</option>
+                        <option value="gaz">🔥 Gaz muammosi</option>
+                        <option value="chiqindi">🗑️ Chiqindi to'plangan</option>
+                        <option value="boshqa">📌 Boshqa</option>
+                    </select>
+                    <input type="text" id="problem-description" placeholder="Muammo tavsifi..." style="width:100%;padding:0.65rem;border-radius:10px;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;margin-bottom:0.5rem;">
+                    
+                    <!-- RASMGA OLISH -->
+                    <div style="margin-bottom:0.75rem;">
+                        <p style="font-size:0.8rem;font-weight:600;margin-bottom:0.5rem;color:var(--text-dark);">
+                            <i class="fas fa-camera" style="color:#ef4444;"></i> Rasmlar (kamida 2 ta, maksimum 4 ta)
+                        </p>
+                        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;">
+                            <div class="problem-img-box" onclick="captureProblemImage(0)">
+                                <input type="file" id="problem-img-0" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(0)">
+                                <div id="problem-img-preview-0" class="img-preview-box">
+                                    <i class="fas fa-camera"></i>
+                                    <span>1</span>
+                                </div>
+                            </div>
+                            <div class="problem-img-box" onclick="captureProblemImage(1)">
+                                <input type="file" id="problem-img-1" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(1)">
+                                <div id="problem-img-preview-1" class="img-preview-box">
+                                    <i class="fas fa-camera"></i>
+                                    <span>2</span>
+                                </div>
+                            </div>
+                            <div class="problem-img-box" onclick="captureProblemImage(2)">
+                                <input type="file" id="problem-img-2" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(2)">
+                                <div id="problem-img-preview-2" class="img-preview-box">
+                                    <i class="fas fa-camera"></i>
+                                    <span>3</span>
+                                </div>
+                            </div>
+                            <div class="problem-img-box" onclick="captureProblemImage(3)">
+                                <input type="file" id="problem-img-3" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(3)">
+                                <div id="problem-img-preview-3" class="img-preview-box">
+                                    <i class="fas fa-camera"></i>
+                                    <span>4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="problem-img-count" style="font-size:0.7rem;color:var(--text-light);margin-top:0.35rem;text-align:center;">0 ta rasm yuklandi</p>
+                    </div>
+                    
+                    <div style="display:flex;gap:0.5rem;">
+                        <button class="btn btn-success" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="saveProblem()"><i class="fas fa-save"></i> Saqlash</button>
+                        <button class="btn btn-cancel" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="cancelProblem()"><i class="fas fa-times"></i> Bekor</button>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div id="problems-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-top:0.75rem;"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // CSS qo'shish
+        if (!document.getElementById('problem-img-styles')) {
+            const style = document.createElement('style');
+            style.id = 'problem-img-styles';
+            style.textContent = `
+                .problem-img-box { cursor: pointer; }
+                .img-preview-box {
+                    width: 100%; aspect-ratio: 1; border-radius: 10px;
+                    background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(249,115,22,0.05));
+                    border: 2px dashed rgba(239,68,68,0.3);
+                    display: flex; flex-direction: column; align-items: center; justify-content: center;
+                    gap: 0.25rem; transition: all 0.2s;
+                }
+                .img-preview-box:hover { border-color: #ef4444; background: rgba(239,68,68,0.15); }
+                .img-preview-box i { font-size: 1.2rem; color: #ef4444; }
+                .img-preview-box span { font-size: 0.7rem; color: var(--text-light); }
+                .img-preview-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
+                .img-preview-box.has-image { border: 2px solid #10b981; }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+    
+    modal.style.display = 'flex';
+    setTimeout(() => initProblemsMap(), 100);
+}
+
+function closeProblemsMap() {
+    document.getElementById('problems-map-modal').style.display = 'none';
+}
+
+function initProblemsMap() {
+    if (problemsMap) {
+        problemsMap.invalidateSize();
+        return;
+    }
+    
+    problemsMap = L.map('problems-map-container').setView([40.7821, 72.3442], 15);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    }).addTo(problemsMap);
+    
+    // Load existing problems
+    loadProblems();
+}
+
+let addingProblem = false;
+let tempProblemMarker = null;
+let problemLatlng = null;
+
+// Joylashuvni aniqlash funksiyasi
+function detectProblemLocation() {
+    const statusEl = document.getElementById('problem-location-status');
+    statusEl.style.display = 'block';
+    statusEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Joylashuv aniqlanmoqda...';
+    statusEl.style.color = 'var(--primary-color)';
+    
+    if (!navigator.geolocation) {
+        statusEl.innerHTML = '<i class="fas fa-times-circle"></i> Geolokatsiya qo\'llab-quvvatlanmaydi';
+        statusEl.style.color = 'var(--danger-color)';
+        showToast('Geolokatsiya qo\'llab-quvvatlanmaydi', 'error');
+        return;
+    }
+    
+    // Birinchi tez javob olish uchun
+    const geoOptions = {
+        enableHighAccuracy: false,
+        timeout: 15000,
+        maximumAge: 60000
+    };
+    
+    navigator.geolocation.getCurrentPosition(
+        (position) => {
+            const lat = position.coords.latitude;
+            const lng = position.coords.longitude;
+            
+            console.log('Joylashuv aniqlandi:', lat, lng);
+            
+            // Xaritani shu joyga o'tkazish
+            if (problemsMap) {
+                problemsMap.setView([lat, lng], 17);
+            }
+            
+            // Marker qo'yish
+            if (tempProblemMarker && problemsMap) {
+                problemsMap.removeLayer(tempProblemMarker);
+            }
+            
+            if (problemsMap) {
+                tempProblemMarker = L.marker([lat, lng], {
+                    icon: L.divIcon({
+                        className: 'problem-marker-temp',
+                        html: '<div style="width:35px;height:35px;background:#ef4444;border-radius:50%;border:3px solid white;box-shadow:0 4px 15px rgba(239,68,68,0.5);display:flex;align-items:center;justify-content:center;"><i class="fas fa-crosshairs" style="color:white;font-size:1rem;"></i></div>',
+                        iconSize: [35, 35],
+                        iconAnchor: [17, 17]
+                    })
+                }).addTo(problemsMap);
+            }
+            
+            problemLatlng = { lat, lng };
+            
+            statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Joylashuv aniqlandi!';
+            statusEl.style.color = 'var(--success-color)';
+            
+            showToast('Joylashuv muvaffaqiyatli aniqlandi!', 'success');
+        },
+        (error) => {
+            console.error('Geolokatsiya xatosi:', error);
+            let msg = 'Joylashuvni aniqlab bo\'lmadi';
+            if (error.code === 1) msg = 'Joylashuvga ruxsat berilmagan. Iltimos, sozlamalardan ruxsat bering.';
+            else if (error.code === 2) msg = 'Joylashuv mavjud emas. GPS yoqilganligini tekshiring.';
+            else if (error.code === 3) msg = 'Vaqt tugadi. Qayta urinib ko\'ring.';
+            
+            statusEl.innerHTML = '<i class="fas fa-times-circle"></i> ' + msg;
+            statusEl.style.color = 'var(--danger-color)';
+            showToast(msg, 'error');
+        },
+        geoOptions
+    );
+}
+
+function addProblemMode() {
+    addingProblem = true;
+    problemLatlng = null;
+    document.getElementById('problem-form').style.display = 'block';
+    document.getElementById('problem-location-status').style.display = 'none';
+    showToast('Joylashuvni aniqlang yoki xaritani bosing', 'info');
+    
+    problemsMap.on('click', onMapClick);
+}
+
+function onMapClick(e) {
+    if (!addingProblem) return;
+    
+    if (tempProblemMarker) {
+        problemsMap.removeLayer(tempProblemMarker);
+    }
+    
+    tempProblemMarker = L.marker(e.latlng, {
+        icon: L.divIcon({
+            className: 'problem-marker-temp',
+            html: '<div style="width:32px;height:32px;background:#ef4444;border-radius:50%;border:3px solid white;box-shadow:0 4px 12px rgba(239,68,68,0.4);"></div>',
+            iconSize: [32, 32],
+            iconAnchor: [16, 16]
+        })
+    }).addTo(problemsMap);
+    
+    problemLatlng = { lat: e.latlng.lat, lng: e.latlng.lng };
+    
+    const statusEl = document.getElementById('problem-location-status');
+    statusEl.style.display = 'block';
+    statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Xaritadan joy tanlandi';
+    statusEl.style.color = 'var(--success-color)';
+}
+
+// Problem rasmlarini saqlash
+let problemImages = [];
+
+function captureProblemImage(index) {
+    document.getElementById('problem-img-' + index).click();
+}
+
+function previewProblemImage(index) {
+    const input = document.getElementById('problem-img-' + index);
+    const preview = document.getElementById('problem-img-preview-' + index);
+    
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            preview.innerHTML = `<img src="${e.target.result}" alt="Rasm ${index+1}">`;
+            preview.classList.add('has-image');
+            problemImages[index] = e.target.result;
+            updateProblemImgCount();
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function updateProblemImgCount() {
+    const count = problemImages.filter(img => img).length;
+    const countEl = document.getElementById('problem-img-count');
+    if (countEl) {
+        countEl.textContent = count + ' ta rasm yuklandi';
+        countEl.style.color = count >= 2 ? 'var(--success-color)' : 'var(--text-light)';
+    }
+}
+
+// Rasmni compress qilish funksiyasi
+function compressImage(base64, maxWidth = 800, quality = 0.7) {
+    return new Promise((resolve) => {
+        const img = new Image();
+        img.onload = () => {
+            const canvas = document.createElement('canvas');
+            let width = img.width;
+            let height = img.height;
+            
+            // Kichiklashtirish
+            if (width > maxWidth) {
+                height = (height * maxWidth) / width;
+                width = maxWidth;
+            }
+            
+            canvas.width = width;
+            canvas.height = height;
+            
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 0, 0, width, height);
+            
+            resolve(canvas.toDataURL('image/jpeg', quality));
+        };
+        img.onerror = () => resolve(base64);
+        img.src = base64;
+    });
+}
+
+async function saveProblem() {
+    if (!problemLatlng && !tempProblemMarker) {
+        showToast('Avval joylashuvni aniqlang yoki xaritadan tanlang', 'error');
+        return;
+    }
+    
+    const type = document.getElementById('problem-type').value;
+    const desc = document.getElementById('problem-description').value.trim();
+    
+    if (!type) {
+        showToast('Muammo turini tanlang', 'error');
+        return;
+    }
+    
+    // Kamida 2 ta rasm kerak
+    const imgCount = problemImages.filter(img => img).length;
+    if (imgCount < 2) {
+        showToast('Kamida 2 ta rasm yuklang!', 'error');
+        return;
+    }
+    
+    const lat = problemLatlng ? problemLatlng.lat : (tempProblemMarker?.problemLatlng?.lat || 40.7821);
+    const lng = problemLatlng ? problemLatlng.lng : (tempProblemMarker?.problemLatlng?.lng || 72.3442);
+    
+    // Rasmlarni compress qilish
+    showToast('Rasmlar tayyorlanmoqda...', 'info');
+    const compressedImages = [];
+    for (const img of problemImages.filter(i => i)) {
+        const compressed = await compressImage(img, 600, 0.5);
+        compressedImages.push(compressed);
+    }
+    
+    // Sana va vaqtni to'g'ri formatda
+    const now = new Date();
+    const dateStr = String(now.getDate()).padStart(2, '0') + '.' + 
+                    String(now.getMonth() + 1).padStart(2, '0') + '.' + 
+                    now.getFullYear();
+    const timeStr = String(now.getHours()).padStart(2, '0') + ':' + 
+                    String(now.getMinutes()).padStart(2, '0');
+    
+    // Xodim ismini va lavozimini olish - CURRENT_USER dan yoki localStorage dan
+    let xodimName = '';
+    let xodimLavozim = '';
+    if (CURRENT_USER) {
+        xodimName = CURRENT_USER.fio || CURRENT_USER.fullName || '';
+        xodimLavozim = CURRENT_USER.lavozim || CURRENT_USER.role || '';
+    }
+    if (!xodimName) {
+        // LocalStorage dan tekshirish
+        try {
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                xodimName = user.fio || user.fullName || '';
+                xodimLavozim = user.lavozim || user.role || '';
+            }
+        } catch(e) {}
+    }
+    // Agar hali ham bo'sh bo'lsa
+    if (!xodimName) xodimName = 'Mahalla xodimi';
+    
+    // Xodim ismiga lavozimni qo'shish
+    let reporterFull = xodimName;
+    if (xodimLavozim && xodimName !== 'Mahalla xodimi') {
+        reporterFull = xodimName + ' (' + xodimLavozim + ')';
+    }
+    
+    const problem = {
+        id: 'MUA_' + Date.now(),
+        type: type,
+        description: desc,
+        lat: lat,
+        lng: lng,
+        date: dateStr,
+        time: timeStr,
+        status: 'yangi',
+        reporter: reporterFull,
+        images: compressedImages
+    };
+    
+    // Avval localStorage ga saqlash
+    problemsData.push(problem);
+    localStorage.setItem('problemsData', JSON.stringify(problemsData));
+    addProblemMarker(problem);
+    cancelProblem();
+    updateProblemsStats();
+    
+    // Google Sheets ga saqlash (fonda)
+    showToast('Saqlanmoqda...', 'info');
+    console.log('Muammo yuborilmoqda:', problem.type, 'Xodim:', reporterFull);
+    
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors', // CORS muammosini hal qilish
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                action: 'saveMuammo',
+                payload: problem
+            })
+        });
+        
+        console.log('Server javobi:', response);
+        showToast('Muammo ' + imgCount + ' ta rasm bilan saqlandi! ✓', 'success');
+    } catch (error) {
+        console.error('Google Sheets xatosi:', error);
+        showToast('Mahalliy saqlandi (' + error.message + ')', 'warning');
+    }
+}
+
+function cancelProblem() {
+    addingProblem = false;
+    problemLatlng = null;
+    problemImages = [];
+    
+    document.getElementById('problem-form').style.display = 'none';
+    document.getElementById('problem-type').value = '';
+    document.getElementById('problem-description').value = '';
+    document.getElementById('problem-location-status').style.display = 'none';
+    
+    // Rasmlarni tozalash
+    for (let i = 0; i < 4; i++) {
+        const input = document.getElementById('problem-img-' + i);
+        const preview = document.getElementById('problem-img-preview-' + i);
+        if (input) input.value = '';
+        if (preview) {
+            preview.innerHTML = `<i class="fas fa-camera"></i><span>${i+1}</span>`;
+            preview.classList.remove('has-image');
+        }
+    }
+    updateProblemImgCount();
+    
+    if (tempProblemMarker) {
+        problemsMap.removeLayer(tempProblemMarker);
+        tempProblemMarker = null;
+    }
+    
+    problemsMap.off('click', onMapClick);
+}
+
+// Muammolar ma'lumotlarini tozalash
+function clearProblemsData() {
+    clearProblemsWithPassword();
+}
+
+// Admin tekshirish - faqat 2304 parol egasi
+function isAdmin2304() {
+    if (CURRENT_USER && CURRENT_USER.parol === '2304') {
+        return true;
+    }
+    try {
+        const savedUser = localStorage.getItem('currentUser');
+        if (savedUser) {
+            const user = JSON.parse(savedUser);
+            if (user.parol === '2304' || user.password === '2304') {
+                return true;
+            }
+        }
+    } catch(e) {}
+    return false;
+}
+
+// Parol bilan ma'lumotlarni tozalash (HAMMA UCHUN)
+function clearProblemsWithPassword() {
+    // Parol so'rash
+    const parol = prompt('⚠️ Ma\'lumotlarni tozalash uchun parolni kiriting:');
+    
+    if (parol === null) {
+        // Cancel bosildi
+        return;
+    }
+    
+    if (parol !== '2025') {
+        showToast('❌ Parol noto\'g\'ri!', 'error');
+        return;
+    }
+    
+    // Parol to'g'ri - tasdiqlash
+    if (confirm('⚠️ DIQQAT!\n\nBarcha muammolar o\'chiriladi:\n- Xaritadagi markerlar\n- Mahalliy saqlangan ma\'lumotlar\n\nDavom etasizmi?')) {
+        // Tozalash
+        problemsData = [];
+        localStorage.removeItem('problemsData');
+        
+        // Markerlarni tozalash
+        if (problemsMap) {
+            problemMarkers.forEach(m => {
+                try { problemsMap.removeLayer(m); } catch(e) {}
+            });
+        }
+        problemMarkers = [];
+        
+        updateProblemsStats();
+        showToast('✅ Barcha mahalliy ma\'lumotlar tozalandi!', 'success');
+        
+        // Google Sheets dan qayta yuklash
+        setTimeout(() => {
+            syncFromGoogleSheets(true);
+        }, 1000);
+    }
+}
+
+// Admin uchun muammolarni tozalash (eski funksiya - yangi funksiyaga yo'naltirish)
+function clearProblemsDataAdmin() {
+    clearProblemsWithPassword();
+}
+
+// PDF yuklab olish
+async function downloadProblemsPDF() {
+    if (problemsData.length === 0) {
+        showToast('Hech qanday muammo yo\'q', 'error');
+        return;
+    }
+    
+    showToast('PDF tayyorlanmoqda...', 'info');
+    
+    const typeNames = {
+        asfalt: 'Asfalt muammosi',
+        chiroq: 'Chiroq/Simyog\'och',
+        suv: 'Suv ta\'minoti',
+        gaz: 'Gaz muammosi',
+        chiqindi: 'Chiqindi',
+        boshqa: 'Boshqa'
+    };
+    
+    const typeIcons = {
+        asfalt: '🛣️',
+        chiroq: '💡',
+        suv: '💧',
+        gaz: '🔥',
+        chiqindi: '🗑️',
+        boshqa: '📌'
+    };
+    
+    // Sana formatlash
+    function formatDatePDF(dateStr, timeStr) {
+        if (!dateStr) return '-';
+        if (dateStr.includes('T')) {
+            try {
+                const d = new Date(dateStr);
+                const day = String(d.getDate()).padStart(2, '0');
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                const hours = String(d.getHours()).padStart(2, '0');
+                const mins = String(d.getMinutes()).padStart(2, '0');
+                return day + '.' + month + '.' + d.getFullYear() + ' ' + hours + ':' + mins;
+            } catch(e) { return dateStr; }
+        }
+        let time = timeStr || '';
+        if (time === '00:00' || time === '00:00:00') time = '';
+        return dateStr + (time ? ' ' + time : '');
+    }
+    
+    // Reporter nomini olish funksiyasi
+    function getReporterName(problem) {
+        let reporterName = problem.reporter || '';
+        if (!reporterName || reporterName === 'Noma\'lum' || reporterName === 'Nomalum') {
+            if (CURRENT_USER && CURRENT_USER.fio) {
+                return CURRENT_USER.fio;
+            } else {
+                try {
+                    const savedUser = localStorage.getItem('currentUser');
+                    if (savedUser) {
+                        const user = JSON.parse(savedUser);
+                        if (user.fio) return user.fio;
+                    }
+                } catch(e) {}
+            }
+        }
+        return reporterName || 'Mahalla xodimi';
+    }
+    
+    const now = new Date();
+    const currentDate = String(now.getDate()).padStart(2, '0') + '.' + 
+                        String(now.getMonth() + 1).padStart(2, '0') + '.' + 
+                        now.getFullYear() + ' ' +
+                        String(now.getHours()).padStart(2, '0') + ':' + 
+                        String(now.getMinutes()).padStart(2, '0');
+    
+    const total = problemsData.length;
+    const pending = problemsData.filter(p => p.status !== 'hal_qilindi').length;
+    const solved = problemsData.filter(p => p.status === 'hal_qilindi').length;
+    
+    // HTML yaratish - A4 format, zamonaviy dizayn
+    let html = `
+        <div id="all-problems-pdf" style="font-family:'Segoe UI',Arial,sans-serif;width:210mm;padding:0;margin:0;background:#ffffff;box-sizing:border-box;">
+            
+            <!-- HEADER -->
+            <div style="background:linear-gradient(135deg,#ef4444 0%,#f97316 50%,#fbbf24 100%);padding:30px 35px;color:white;">
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+                    <div>
+                        <div style="display:flex;align-items:center;gap:15px;">
+                            <div style="width:60px;height:60px;background:rgba(255,255,255,0.2);border-radius:16px;display:flex;align-items:center;justify-content:center;font-size:28px;backdrop-filter:blur(10px);border:2px solid rgba(255,255,255,0.3);">
+                                📋
+                            </div>
+                            <div>
+                                <h1 style="margin:0;font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:1px;">Muammolar Hisoboti</h1>
+                                <p style="margin:5px 0 0;font-size:14px;opacity:0.9;">O'zbegim MFY - Infratuzilma Nazorati</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="background:rgba(255,255,255,0.2);padding:15px 20px;border-radius:14px;backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,0.3);">
+                            <div style="font-size:11px;opacity:0.8;margin-bottom:4px;">Yaratilgan sana</div>
+                            <div style="font-size:15px;font-weight:700;">${currentDate}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- STATISTIKA -->
+            <div style="padding:25px 35px;background:#f8fafc;border-bottom:2px solid #e2e8f0;">
+                <div style="display:flex;gap:20px;">
+                    <div style="flex:1;text-align:center;padding:20px;background:linear-gradient(135deg,#fef2f2,#fee2e2);border-radius:16px;border:2px solid #fca5a5;">
+                        <div style="font-size:42px;font-weight:800;color:#dc2626;">${total}</div>
+                        <div style="font-size:13px;color:#991b1b;font-weight:600;margin-top:5px;">Jami muammo</div>
+                    </div>
+                    <div style="flex:1;text-align:center;padding:20px;background:linear-gradient(135deg,#fffbeb,#fef3c7);border-radius:16px;border:2px solid #fcd34d;">
+                        <div style="font-size:42px;font-weight:800;color:#d97706;">${pending}</div>
+                        <div style="font-size:13px;color:#92400e;font-weight:600;margin-top:5px;">Kutilmoqda</div>
+                    </div>
+                    <div style="flex:1;text-align:center;padding:20px;background:linear-gradient(135deg,#f0fdf4,#dcfce7);border-radius:16px;border:2px solid #86efac;">
+                        <div style="font-size:42px;font-weight:800;color:#16a34a;">${solved}</div>
+                        <div style="font-size:13px;color:#166534;font-weight:600;margin-top:5px;">Hal qilindi</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- SARLAVHA -->
+            <div style="padding:25px 35px 15px;">
+                <h2 style="font-size:18px;color:#1e293b;margin:0;padding-bottom:15px;border-bottom:3px solid #ef4444;display:inline-block;">
+                    📋 Muammolar tafsiloti
+                </h2>
+            </div>
+            
+            <!-- Muammolar ro'yxati -->
+            <div style="padding:10px 35px 30px;">
+    `;
+    
+    // Har bir muammo
+    problemsData.forEach((p, i) => {
+        const statusBg = p.status === 'hal_qilindi' ? '#f0fdf4' : '#fffbeb';
+        const statusBorder = p.status === 'hal_qilindi' ? '#22c55e' : '#f59e0b';
+        const statusText = p.status === 'hal_qilindi' ? '✅ HAL QILINDI' : '⏳ KUTILMOQDA';
+        const dateDisplay = formatDatePDF(p.date, p.time);
+        const typeName = typeNames[p.type] || p.type || 'Boshqa';
+        const typeIcon = typeIcons[p.type] || '📌';
+        
+        // Reporter nomini olish
+        const reporterName = getReporterName(p);
+        
+        html += `
+            <div style="background:${statusBg};border-left:5px solid ${statusBorder};padding:20px;margin-bottom:15px;border-radius:12px;page-break-inside:avoid;">
+                
+                <!-- Sarlavha qatori -->
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:15px;">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <div style="background:${statusBorder};color:white;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;box-shadow:0 3px 8px ${statusBorder}60;">${i + 1}</div>
+                        <div style="font-size:20px;">${typeIcon}</div>
+                        <span style="font-size:17px;font-weight:700;color:#1e293b;">${typeName}</span>
+                    </div>
+                    <span style="background:${statusBorder};color:white;padding:6px 16px;border-radius:20px;font-size:11px;font-weight:700;">${statusText}</span>
+                </div>
+                
+                <!-- Tavsif -->
+                <div style="background:rgba(255,255,255,0.8);padding:15px;border-radius:10px;margin-bottom:15px;">
+                    <p style="margin:0;color:#374151;font-size:14px;line-height:1.7;">${p.description || 'Tavsif kiritilmagan'}</p>
+                </div>
+                
+                <!-- Ma'lumotlar -->
+                <div style="display:flex;gap:15px;flex-wrap:wrap;font-size:13px;color:#64748b;">
+                    <span style="background:rgba(255,255,255,0.8);padding:8px 14px;border-radius:8px;display:flex;align-items:center;gap:6px;">
+                        📅 <strong style="color:#374151;">${dateDisplay}</strong>
+                    </span>
+                    <span style="background:rgba(255,255,255,0.8);padding:8px 14px;border-radius:8px;display:flex;align-items:center;gap:6px;">
+                        👤 <strong style="color:#374151;">${reporterName}</strong>
+                    </span>
+                    <span style="background:rgba(255,255,255,0.8);padding:8px 14px;border-radius:8px;display:flex;align-items:center;gap:6px;">
+                        📍 <strong style="color:#374151;">${p.lat ? p.lat.toFixed(4) : '-'}, ${p.lng ? p.lng.toFixed(4) : '-'}</strong>
+                    </span>
+                </div>
+        `;
+        
+        // Rasmlar
+        if (p.images && p.images.length > 0) {
+            const validImages = p.images.filter(img => img && img.startsWith('data:image'));
+            if (validImages.length > 0) {
+                html += `<div style="margin-top:15px;display:flex;gap:10px;flex-wrap:wrap;">`;
+                validImages.slice(0, 4).forEach(img => {
+                    html += `<img src="${img}" style="width:80px;height:80px;border-radius:10px;object-fit:cover;border:3px solid white;box-shadow:0 3px 10px rgba(0,0,0,0.15);">`;
+                });
+                html += `</div>`;
+            }
+        }
+        
+        // Hal qilingan bo'lsa yechim
+        if (p.status === 'hal_qilindi' && p.hal_qilindi_izoh) {
+            html += `
+                <div style="margin-top:15px;background:#dcfce7;padding:12px;border-radius:8px;border-left:4px solid #22c55e;">
+                    <div style="font-size:12px;font-weight:700;color:#166534;margin-bottom:5px;">✅ Yechim:</div>
+                    <div style="font-size:13px;color:#15803d;">${p.hal_qilindi_izoh}</div>
+                </div>
+            `;
+        }
+        
+        html += `</div>`;
+    });
+    
+    // Footer
+    html += `
+            </div>
+            
+            <!-- FOOTER -->
+            <div style="background:linear-gradient(135deg,#1e293b,#334155);padding:25px 35px;">
+                <div style="display:flex;justify-content:space-between;align-items:center;color:white;">
+                    <div>
+                        <div style="font-size:15px;font-weight:700;">O'zbegim MFY</div>
+                        <div style="font-size:12px;opacity:0.7;margin-top:3px;">Mahalla Fuqarolar Yig'ini - Infratuzilma Nazorati</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:11px;opacity:0.7;">Hujjat yaratilgan:</div>
+                        <div style="font-size:13px;font-weight:600;">${currentDate}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Container yaratish
+    const container = document.createElement('div');
+    container.id = 'pdf-container-temp';
+    container.innerHTML = html;
+    container.style.cssText = 'position:fixed;left:0;top:0;width:210mm;background:white;z-index:-1;opacity:0;pointer-events:none;';
+    document.body.appendChild(container);
+    
+    // Biroz kutish - rasmlar yuklanishi uchun
+    await new Promise(resolve => setTimeout(resolve, 800));
+    
+    try {
+        const opt = {
+            margin: 0,
+            filename: 'muammolar_' + currentDate.replace(/[.: ]/g, '_') + '.pdf',
+            image: { type: 'jpeg', quality: 0.98 },
+            html2canvas: { 
+                scale: 2, 
+                useCORS: true, 
+                backgroundColor: '#ffffff',
+                logging: false,
+                windowWidth: 794
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        
+        await html2pdf().set(opt).from(container.firstElementChild).save();
+        showToast('PDF muvaffaqiyatli yuklandi! ✅', 'success');
+    } catch (e) {
+        console.error('PDF xatosi:', e);
+        showToast('PDF xatosi: ' + e.message, 'error');
+    } finally {
+        if (document.getElementById('pdf-container-temp')) {
+            document.body.removeChild(container);
+        }
+    }
+}
+
+// Yagona muammo uchun PDF yuklab olish
+async function downloadSingleProblemPDF(problemId) {
+    const problem = problemsData.find(p => (p.id === problemId || p.muammo_id === problemId));
+    if (!problem) {
+        showToast('Muammo topilmadi', 'error');
+        return;
+    }
+    
+    showToast('PDF tayyorlanmoqda...', 'info');
+    
+    const typeNames = {
+        asfalt: 'Asfalt muammosi',
+        chiroq: 'Chiroq/Simyog\'och',
+        suv: 'Suv ta\'minoti',
+        gaz: 'Gaz muammosi',
+        chiqindi: 'Chiqindi',
+        boshqa: 'Boshqa'
+    };
+    
+    const typeIcons = {
+        asfalt: '🛣️',
+        chiroq: '💡',
+        suv: '💧',
+        gaz: '🔥',
+        chiqindi: '🗑️',
+        boshqa: '📌'
+    };
+    
+    function formatDatePDF(dateStr, timeStr) {
+        if (!dateStr) return '-';
+        if (dateStr.includes('T')) {
+            try {
+                const d = new Date(dateStr);
+                return String(d.getDate()).padStart(2,'0') + '.' + 
+                       String(d.getMonth()+1).padStart(2,'0') + '.' + 
+                       d.getFullYear() + ' ' + 
+                       String(d.getHours()).padStart(2,'0') + ':' + 
+                       String(d.getMinutes()).padStart(2,'0');
+            } catch(e) { return dateStr; }
+        }
+        let time = timeStr || '';
+        if (time === '00:00' || time === '00:00:00') time = '';
+        return dateStr + (time ? ' ' + time : '');
+    }
+    
+    const now = new Date();
+    const currentDate = String(now.getDate()).padStart(2,'0') + '.' + 
+                        String(now.getMonth()+1).padStart(2,'0') + '.' + 
+                        now.getFullYear() + ' ' +
+                        String(now.getHours()).padStart(2,'0') + ':' + 
+                        String(now.getMinutes()).padStart(2,'0');
+    
+    // HAQIQIY xodim ismini olish
+    let xodimName = '';
+    let xodimLavozim = '';
+    if (CURRENT_USER) {
+        xodimName = CURRENT_USER.fio || CURRENT_USER.fullName || '';
+        xodimLavozim = CURRENT_USER.lavozim || CURRENT_USER.role || '';
+    }
+    if (!xodimName) {
+        try {
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                xodimName = user.fio || user.fullName || '';
+                xodimLavozim = user.lavozim || user.role || '';
+            }
+        } catch(e) {}
+    }
+    
+    // Reporter - muammoni kim saqlagan
+    let reporterName = problem.reporter || problem.muammo_xabarchi || '';
+    if (!reporterName || reporterName === 'Noma\'lum' || reporterName === 'Nomalum' || reporterName === 'Xodim' || reporterName === 'undefined') {
+        reporterName = xodimName || 'Mahalla xodimi';
+    }
+    if (xodimLavozim && reporterName !== 'Mahalla xodimi') {
+        reporterName = reporterName + ' (' + xodimLavozim + ')';
+    }
+    
+    const statusColor = problem.status === 'hal_qilindi' ? '#16a34a' : '#d97706';
+    const statusBg = problem.status === 'hal_qilindi' ? '#dcfce7' : '#fef3c7';
+    const statusText = problem.status === 'hal_qilindi' ? 'HAL QILINDI' : 'KUTILMOQDA';
+    const dateDisplay = formatDatePDF(problem.date, problem.time);
+    const typeName = typeNames[problem.type] || problem.type || 'Boshqa';
+    const typeIcon = typeIcons[problem.type] || '📌';
+    
+    // RASMLARNI TAYYORLASH
+    let imagesHtml = '';
+    let allImages = [];
+    
+    if (problem.images && problem.images.length > 0) {
+        problem.images.forEach(img => {
+            if (img && img.startsWith('data:image')) {
+                allImages.push(img);
             }
         });
     }
     
-    // Details modal backdrop click
-    const detailsModal = document.getElementById('details-modal');
-    if (detailsModal) {
-        detailsModal.addEventListener('click', (e) => {
-            if (e.target === detailsModal) {
-                detailsModal.style.display = 'none';
-                if (previousScreenStack[previousScreenStack.length - 1] === 'details-modal') {
-                    previousScreenStack.pop();
+    // Drive rasmlar
+    const driveIds = [problem.driveRasm1, problem.driveRasm2, problem.driveRasm3, problem.driveRasm4].filter(id => id);
+    driveIds.forEach(id => {
+        allImages.push('https://lh3.googleusercontent.com/d/' + id + '=w300');
+    });
+    
+    if (allImages.length > 0) {
+        imagesHtml = '<div style="margin-top:20px;padding:20px;background:#f0f9ff;border-radius:12px;border:2px solid #bae6fd;">';
+        imagesHtml += '<div style="font-size:14px;font-weight:bold;color:#0369a1;margin-bottom:15px;">📷 Muammo rasmlari (' + allImages.length + ' ta)</div>';
+        imagesHtml += '<div style="display:flex;gap:15px;flex-wrap:wrap;">';
+        allImages.slice(0, 4).forEach(img => {
+            imagesHtml += '<img src="' + img + '" style="width:140px;height:140px;object-fit:cover;border-radius:10px;border:3px solid #7dd3fc;box-shadow:0 4px 12px rgba(0,0,0,0.15);" crossorigin="anonymous">';
+        });
+        imagesHtml += '</div></div>';
+    }
+    
+    const googleMapsUrl = problem.lat && problem.lng ? 
+        'https://www.google.com/maps?q=' + problem.lat + ',' + problem.lng : '';
+    
+    // A4 PDF HTML
+    let html = `
+<div style="font-family:'Segoe UI',Tahoma,sans-serif;width:210mm;min-height:297mm;padding:0;margin:0;background:#fff;box-sizing:border-box;">
+    
+    <!-- HEADER -->
+    <div style="background:linear-gradient(135deg,#f97316,#ea580c,#dc2626);padding:30px 40px;color:white;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <div style="display:flex;align-items:center;gap:20px;">
+                <div style="width:70px;height:70px;background:rgba(255,255,255,0.2);border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:36px;border:2px solid rgba(255,255,255,0.3);">${typeIcon}</div>
+                <div>
+                    <div style="font-size:26px;font-weight:800;text-transform:uppercase;letter-spacing:2px;">MUAMMO HISOBOTI</div>
+                    <div style="font-size:14px;opacity:0.9;margin-top:5px;">O'zbegim MFY - Infratuzilma Nazorati</div>
+                </div>
+            </div>
+            <div style="background:rgba(255,255,255,0.15);padding:15px 25px;border-radius:14px;text-align:center;border:1px solid rgba(255,255,255,0.2);">
+                <div style="font-size:11px;opacity:0.8;">Yaratilgan sana</div>
+                <div style="font-size:16px;font-weight:700;margin-top:4px;">${currentDate}</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- MUAMMO TURI -->
+    <div style="padding:25px 40px;border-bottom:3px solid #fed7aa;display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;align-items:center;gap:15px;">
+            <span style="font-size:32px;">${typeIcon}</span>
+            <span style="font-size:24px;font-weight:700;color:#1e293b;">${typeName}</span>
+        </div>
+        <span style="background:${statusBg};color:${statusColor};padding:12px 28px;border-radius:30px;font-size:14px;font-weight:800;border:3px solid ${statusColor};text-transform:uppercase;">${statusText}</span>
+    </div>
+    
+    <!-- MA'LUMOTLAR -->
+    <div style="padding:30px 40px;">
+        <div style="background:linear-gradient(145deg,#f8fafc,#f1f5f9);border-radius:16px;border:2px solid #e2e8f0;overflow:hidden;">
+            <div style="padding:18px 25px;background:linear-gradient(135deg,#1e40af,#3b82f6);color:white;font-size:16px;font-weight:700;">📋 Muammo tafsilotlari</div>
+            
+            <div style="padding:0 25px;">
+                <div style="padding:15px 0;border-bottom:1px solid #e2e8f0;display:flex;">
+                    <span style="width:40%;color:#64748b;font-size:14px;">📅 Sana va vaqt:</span>
+                    <span style="font-size:16px;font-weight:700;color:#0f172a;">${dateDisplay || '-'}</span>
+                </div>
+                <div style="padding:15px 0;border-bottom:1px solid #e2e8f0;display:flex;">
+                    <span style="width:40%;color:#64748b;font-size:14px;">👤 Xodim:</span>
+                    <span style="font-size:16px;font-weight:700;color:#0f172a;">${reporterName}</span>
+                </div>
+                <div style="padding:15px 0;border-bottom:1px solid #e2e8f0;display:flex;">
+                    <span style="width:40%;color:#64748b;font-size:14px;">📍 GPS:</span>
+                    <span style="font-size:15px;font-weight:600;color:#0f172a;">${problem.lat ? Number(problem.lat).toFixed(6) : '-'}, ${problem.lng ? Number(problem.lng).toFixed(6) : '-'}</span>
+                </div>
+                ${googleMapsUrl ? `
+                <div style="padding:15px 0;display:flex;">
+                    <span style="width:40%;color:#64748b;font-size:14px;">🌍 Xarita:</span>
+                    <span style="font-size:12px;color:#2563eb;word-break:break-all;">${googleMapsUrl}</span>
+                </div>
+                ` : ''}
+            </div>
+        </div>
+        
+        <!-- TAVSIF -->
+        <div style="margin-top:25px;background:${statusBg};border-radius:14px;border-left:6px solid ${statusColor};padding:25px;">
+            <div style="font-size:15px;font-weight:700;color:#374151;margin-bottom:12px;">📝 Muammo tavsifi:</div>
+            <div style="font-size:15px;line-height:1.8;color:#1f2937;">${problem.description || 'Tavsif kiritilmagan'}</div>
+        </div>
+        
+        <!-- RASMLAR -->
+        ${imagesHtml}
+        
+        ${problem.status === 'hal_qilindi' ? `
+        <!-- YECHIM -->
+        <div style="margin-top:25px;background:#dcfce7;border-radius:14px;border-left:6px solid #22c55e;padding:25px;">
+            <div style="font-size:15px;font-weight:700;color:#166534;margin-bottom:12px;">✅ Muammo yechimi:</div>
+            <div style="font-size:15px;line-height:1.8;color:#15803d;">${problem.hal_qilindi_izoh || 'Muammo muvaffaqiyatli hal etildi.'}</div>
+            ${problem.hal_qilingan_sana ? '<div style="font-size:13px;color:#166534;margin-top:12px;font-weight:600;">📅 Hal qilingan: ' + problem.hal_qilingan_sana + '</div>' : ''}
+        </div>
+        ` : ''}
+    </div>
+    
+    <!-- FOOTER -->
+    <div style="background:linear-gradient(135deg,#1e293b,#0f172a);padding:25px 40px;margin-top:auto;">
+        <div style="display:flex;justify-content:space-between;align-items:center;color:white;">
+            <div>
+                <div style="font-size:16px;font-weight:700;">O'zbegim MFY</div>
+                <div style="font-size:12px;opacity:0.7;margin-top:4px;">Mahalla Fuqarolar Yig'ini - Infratuzilma Nazorati</div>
+            </div>
+            <div style="text-align:right;">
+                <div style="font-size:11px;opacity:0.7;">Hujjat yaratilgan:</div>
+                <div style="font-size:14px;font-weight:600;margin-top:2px;">${currentDate}</div>
+            </div>
+        </div>
+    </div>
+</div>`;
+    
+    const container = document.createElement('div');
+    container.id = 'single-pdf-container-temp';
+    container.innerHTML = html;
+    container.style.cssText = 'position:fixed;left:-9999px;top:0;background:white;';
+    document.body.appendChild(container);
+    
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    try {
+        const opt = {
+            margin: 0,
+            filename: 'muammo_' + typeName.replace(/[^a-zA-Z0-9]/g, '_') + '_' + currentDate.replace(/[.: ]/g, '_') + '.pdf',
+            image: { type: 'jpeg', quality: 0.95 },
+            html2canvas: { 
+                scale: 2, 
+                useCORS: true,
+                allowTaint: true,
+                backgroundColor: '#ffffff',
+                logging: false
+            },
+            jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+        };
+        
+        await html2pdf().set(opt).from(container.firstElementChild).save();
+        showToast('PDF muvaffaqiyatli yuklandi! ✅', 'success');
+    } catch (e) {
+        console.error('PDF xatosi:', e);
+        showToast('PDF xatosi: ' + e.message, 'error');
+    } finally {
+        if (document.getElementById('single-pdf-container-temp')) {
+            document.body.removeChild(container);
+        }
+    }
+}
+
+
+function loadProblems() {
+    console.log('loadProblems chaqirildi');
+    
+    // Dastlab bo'sh boshlash
+    problemsData = [];
+    
+    // BIRINCHI: Google Sheets dan yuklash (ASOSIY MANBA)
+    syncFromGoogleSheets(true);
+}
+
+// Duplikatlarni olib tashlash
+function removeDuplicateProblems(data) {
+    const seen = new Set();
+    return data.filter(p => {
+        const key = p.id || p.muammo_id;
+        if (!key || seen.has(key)) return false;
+        seen.add(key);
+        return true;
+    });
+}
+
+// Markerlarni qayta render
+function renderProblemMarkers() {
+    if (problemsMap) {
+        problemMarkers.forEach(m => {
+            try { problemsMap.removeLayer(m); } catch(e) {}
+        });
+    }
+    problemMarkers = [];
+    
+    problemsData.forEach(p => {
+        if (p.lat && p.lng) {
+            addProblemMarker(p);
+        }
+    });
+    
+    updateProblemsStats();
+}
+
+// Google Sheets dan sinxronizatsiya - ASOSIY MANBA
+function syncFromGoogleSheets(isInitialLoad = false) {
+    console.log('Google Sheets dan sinxronizatsiya...');
+    
+    // Loading ko'rsatish
+    if (isInitialLoad) {
+        showToast('Ma\'lumotlar yuklanmoqda...', 'info');
+    }
+    
+    fetch(SCRIPT_URL + '?action=getMuammolar&t=' + Date.now())
+        .then(response => response.json())
+        .then(result => {
+            console.log('Google Sheets javobi:', result);
+            
+            if (result.status === 'success') {
+                // Google Sheets dan kelgan ma'lumotlarni ASOSIY qilish
+                const sheetsData = [];
+                
+                if (result.data && result.data.length > 0) {
+                    result.data.forEach(p => {
+                        if (p.muammo_id && p.muammo_lat && p.muammo_lng) {
+                            sheetsData.push({
+                                id: p.muammo_id,
+                                muammo_id: p.muammo_id,
+                                type: p.muammo_turi || 'boshqa',
+                                description: p.muammo_tavsif || '',
+                                lat: parseFloat(p.muammo_lat) || 0,
+                                lng: parseFloat(p.muammo_lng) || 0,
+                                date: p.muammo_sana || '',
+                                time: p.muammo_vaqt || '',
+                                status: p.muammo_status || 'yangi',
+                                reporter: p.muammo_xabarchi || 'Mahalla xodimi',
+                                hal_qilingan_sana: p.hal_qilingan_sana || '',
+                                hal_qilindi_izoh: p.hal_qilindi_izoh || '',
+                                driveRasm1: p.muammo_rasm1 || '',
+                                driveRasm2: p.muammo_rasm2 || '',
+                                driveRasm3: p.muammo_rasm3 || '',
+                                driveRasm4: p.muammo_rasm4 || '',
+                                fromSheets: true
+                            });
+                        }
+                    });
+                }
+                
+                // LocalStorage dagi FAQAT yangi (hali sync bo'lmagan) ma'lumotlarni qo'shish
+                try {
+                    const localSaved = localStorage.getItem('problemsData');
+                    if (localSaved) {
+                        const localData = JSON.parse(localSaved);
+                        localData.forEach(lp => {
+                            // Faqat rasmli va Google Sheets da yo'q bo'lganlarni qo'shish
+                            if (lp.images && lp.images.length > 0) {
+                                const existsInSheets = sheetsData.some(sp => 
+                                    sp.id === lp.id || sp.muammo_id === lp.id
+                                );
+                                if (!existsInSheets && lp.lat && lp.lng) {
+                                    sheetsData.push(lp);
+                                }
+                            }
+                        });
+                    }
+                } catch(e) {
+                    console.log('LocalStorage o\'qish xatosi:', e);
+                }
+                
+                // Yangi ma'lumotlarni o'rnatish
+                problemsData = removeDuplicateProblems(sheetsData);
+                
+                // LocalStorage ni Google Sheets bilan sinxronlashtirish
+                localStorage.setItem('problemsData', JSON.stringify(problemsData));
+                
+                // Render
+                renderProblemMarkers();
+                
+                console.log('✅ Sinxronizatsiya tugadi:', problemsData.length, 'ta muammo');
+                if (isInitialLoad && problemsData.length > 0) {
+                    showToast(problemsData.length + ' ta muammo yuklandi', 'success');
+                } else if (isInitialLoad && problemsData.length === 0) {
+                    showToast('Hozircha muammo yo\'q', 'info');
+                }
+            }
+        })
+        .catch(err => {
+            console.log('Sinxronizatsiya xatosi:', err.message);
+            
+            // Xatolik bo'lsa - localStorage dan yuklash
+            if (isInitialLoad) {
+                try {
+                    const saved = localStorage.getItem('problemsData');
+                    if (saved) {
+                        problemsData = JSON.parse(saved);
+                        problemsData = removeDuplicateProblems(problemsData);
+                        renderProblemMarkers();
+                        showToast('Oflayn rejimda yuklandi', 'warning');
+                    }
+                } catch(e) {
+                    problemsData = [];
                 }
             }
         });
+}
+
+// Har 30 sekundda avtomatik sinxronizatsiya
+setInterval(() => {
+    if (document.visibilityState === 'visible') {
+        syncFromGoogleSheets(false);
+    }
+}, 30000);
+
+function addProblemMarker(problem) {
+    if (!problemsMap) return;
+    
+    const colors = {
+        asfalt: '#ef4444',
+        chiroq: '#f59e0b',
+        suv: '#3b82f6',
+        gaz: '#10b981',
+        chiqindi: '#8b5cf6',
+        boshqa: '#6b7280'
+    };
+    
+    const icons = {
+        asfalt: '🛣️',
+        chiroq: '💡',
+        suv: '💧',
+        gaz: '🔥',
+        chiqindi: '🗑️',
+        boshqa: '📌'
+    };
+    
+    const typeNames = {
+        asfalt: 'ASFALT',
+        chiroq: 'CHIROQ',
+        suv: 'SUV',
+        gaz: 'GAZ',
+        chiqindi: 'CHIQINDI',
+        boshqa: 'BOSHQA'
+    };
+    
+    const color = colors[problem.type] || '#6b7280';
+    const icon = icons[problem.type] || '📌';
+    const typeName = typeNames[problem.type] || problem.type || 'MUAMMO';
+    
+    const marker = L.marker([problem.lat, problem.lng], {
+        icon: L.divIcon({
+            className: 'problem-marker',
+            html: '<div style="width:36px;height:36px;background:' + color + ';border-radius:50%;border:3px solid white;box-shadow:0 3px 15px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;font-size:1.1rem;">' + icon + '</div>',
+            iconSize: [36, 36],
+            iconAnchor: [18, 18]
+        })
+    }).addTo(problemsMap);
+    
+    const problemId = problem.id || problem.muammo_id;
+    
+    // Sana formatini to'g'rilash
+    let dateDisplay = problem.date || '';
+    let timeDisplay = problem.time || '';
+    
+    if (dateDisplay && dateDisplay.includes('T')) {
+        try {
+            const d = new Date(dateDisplay);
+            dateDisplay = String(d.getDate()).padStart(2, '0') + '.' + 
+                         String(d.getMonth() + 1).padStart(2, '0') + '.' + 
+                         d.getFullYear();
+            timeDisplay = String(d.getHours()).padStart(2, '0') + ':' + 
+                         String(d.getMinutes()).padStart(2, '0');
+        } catch(e) {}
     }
     
-    // ═══════════════════════════════════════════════════════════════════
-    // FAB TUGMALARI ANIMATSIYASI
-    // ═══════════════════════════════════════════════════════════════════
-    document.querySelectorAll('.fab').forEach(fab => {
-        fab.addEventListener('touchstart', function() {
-            this.style.transform = 'scale(1.15)';
+    // Rasmlar HTML - base64 yoki Drive link
+    let imagesHtml = '';
+    if (problem.images && problem.images.length > 0) {
+        imagesHtml = '<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">';
+        problem.images.forEach((img) => {
+            if (img && img.startsWith('data:image')) {
+                const safeImg = img.replace(/'/g, "\\'");
+                imagesHtml += '<img src="' + img + '" style="width:50px;height:50px;border-radius:8px;object-fit:cover;border:2px solid #e5e7eb;cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'" onclick="openImageViewer(\'' + safeImg + '\')">';
+            }
         });
-        fab.addEventListener('touchend', function() {
-            this.style.transform = 'scale(1)';
+        imagesHtml += '</div>';
+    }
+    
+    // Drive rasmlar (ID bilan)
+    let driveImagesHtml = '';
+    const driveIds = [problem.driveRasm1, problem.driveRasm2, problem.driveRasm3, problem.driveRasm4].filter(id => id);
+    if (driveIds.length > 0) {
+        driveImagesHtml = '<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">';
+        driveIds.forEach((id) => {
+            const imgUrl = 'https://drive.google.com/thumbnail?id=' + id + '&sz=w200';
+            const fullUrl = 'https://drive.google.com/file/d/' + id + '/view';
+            driveImagesHtml += '<img src="' + imgUrl + '" style="width:50px;height:50px;border-radius:8px;object-fit:cover;border:2px solid #e5e7eb;cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'" onclick="window.open(\'' + fullUrl + '\')" onerror="this.style.display=\'none\'">';
         });
-        fab.addEventListener('mouseenter', function() {
-            this.style.transform = 'scale(1.1)';
+        driveImagesHtml += '</div>';
+    }
+    
+    // Status
+    const statusText = problem.status === 'hal_qilindi' ? '✓ Hal qilindi' : '⏳ Kutilmoqda';
+    const statusBg = problem.status === 'hal_qilindi' ? '#dcfce7' : '#fef3c7';
+    const statusColor = problem.status === 'hal_qilindi' ? '#16a34a' : '#d97706';
+    
+    // Google Maps link
+    const googleMapsUrl = 'https://www.google.com/maps?q=' + problem.lat + ',' + problem.lng;
+    
+    const popupContent = `
+        <div style="min-width:240px;max-width:300px;">
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                <span style="font-size:1.5rem;">${icon}</span>
+                <strong style="color:${color};font-size:1rem;">${typeName}</strong>
+            </div>
+            <p style="margin:0 0 8px;color:#374151;font-size:0.9rem;">${problem.description || 'Tavsif yo\'q'}</p>
+            <p style="margin:0 0 4px;font-size:0.8rem;color:#6b7280;">📅 ${dateDisplay} ${timeDisplay}</p>
+            <p style="margin:0 0 8px;font-size:0.8rem;color:#6b7280;">👤 ${problem.reporter || 'Noma\'lum'}</p>
+            <p style="margin:0 0 8px;">
+                <span style="padding:4px 10px;border-radius:12px;font-size:0.75rem;font-weight:600;background:${statusBg};color:${statusColor};">${statusText}</span>
+            </p>
+            
+            <!-- Google Maps tugmasi -->
+            <div style="margin:10px 0;">
+                <a href="${googleMapsUrl}" target="_blank" style="display:block;padding:8px;background:linear-gradient(135deg,#4285f4,#34a853);color:white;border-radius:10px;text-decoration:none;font-size:0.8rem;text-align:center;font-weight:600;">
+                    🌍 Google Maps da ko'rish
+                </a>
+            </div>
+            
+            ${imagesHtml}
+            ${driveImagesHtml}
+            
+            ${problem.status !== 'hal_qilindi' ? `
+                <button onclick="markProblemSolved('${problemId}')" style="margin-top:10px;width:100%;padding:8px;border:none;border-radius:8px;background:#10b981;color:white;cursor:pointer;font-weight:600;font-size:0.9rem;">✓ Hal qilindi</button>
+            ` : ''}
+        </div>
+    `;
+    
+    marker.bindPopup(popupContent, { maxWidth: 320 });
+    
+    marker.problemId = problemId;
+    marker.problemType = problem.type;
+    marker.problemStatus = problem.status;
+    problemMarkers.push(marker);
+}
+
+function markProblemSolved(id) {
+    // Rasm yuklash uchun modal ochish
+    const modalHtml = `
+        <div id="solve-problem-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:20000;display:flex;align-items:center;justify-content:center;padding:1rem;">
+            <div style="background:white;border-radius:16px;max-width:400px;width:100%;padding:1.5rem;">
+                <h3 style="margin:0 0 1rem;color:#10b981;display:flex;align-items:center;gap:0.5rem;">
+                    <i class="fas fa-check-circle"></i> Muammoni hal qilish
+                </h3>
+                <p style="color:#64748b;margin-bottom:1rem;font-size:0.9rem;">
+                    Hal qilingan muammo rasmini yuklang
+                </p>
+                
+                <!-- Rasm yuklash -->
+                <div style="border:2px dashed #10b981;border-radius:12px;padding:1.5rem;text-align:center;margin-bottom:1rem;cursor:pointer;background:#f0fdf4;" onclick="document.getElementById('solve-image-input').click()">
+                    <input type="file" id="solve-image-input" accept="image/*" capture="environment" style="display:none;" onchange="previewSolveImage(this)">
+                    <div id="solve-image-preview" style="display:none;margin-bottom:0.5rem;">
+                        <img id="solve-preview-img" style="max-width:100%;max-height:150px;border-radius:8px;">
+                    </div>
+                    <div id="solve-upload-text">
+                        <i class="fas fa-camera" style="font-size:2rem;color:#10b981;"></i>
+                        <p style="margin:0.5rem 0 0;color:#10b981;font-weight:600;">Rasm yuklash</p>
+                    </div>
+                </div>
+                
+                <!-- Izoh -->
+                <textarea id="solve-comment" placeholder="Izoh (ixtiyoriy)" style="width:100%;padding:0.75rem;border-radius:10px;border:1px solid #e5e7eb;font-size:0.9rem;resize:none;height:60px;margin-bottom:1rem;"></textarea>
+                
+                <!-- Tugmalar -->
+                <div style="display:flex;gap:0.75rem;">
+                    <button onclick="closeSolveModal()" style="flex:1;padding:0.75rem;border-radius:10px;border:1px solid #e5e7eb;background:white;color:#64748b;cursor:pointer;font-weight:600;">Bekor qilish</button>
+                    <button onclick="confirmSolveProblem('${id}')" style="flex:1;padding:0.75rem;border-radius:10px;border:none;background:#10b981;color:white;cursor:pointer;font-weight:600;">
+                        <i class="fas fa-check"></i> Tasdiqlash
+                    </button>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', modalHtml);
+}
+
+// Rasm preview
+let solveImageBase64 = null;
+
+function previewSolveImage(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            solveImageBase64 = e.target.result;
+            document.getElementById('solve-preview-img').src = solveImageBase64;
+            document.getElementById('solve-image-preview').style.display = 'block';
+            document.getElementById('solve-upload-text').style.display = 'none';
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function closeSolveModal() {
+    const modal = document.getElementById('solve-problem-modal');
+    if (modal) modal.remove();
+    solveImageBase64 = null;
+}
+
+async function confirmSolveProblem(id) {
+    if (!solveImageBase64) {
+        showToast('Iltimos, rasm yuklang!', 'error');
+        return;
+    }
+    
+    const comment = document.getElementById('solve-comment')?.value || '';
+    
+    // Rasmni compress qilish
+    showToast('Saqlanmoqda...', 'info');
+    const compressedImage = await compressImage(solveImageBase64, 600, 0.5);
+    
+    // LocalStorage ni yangilash
+    const idx = problemsData.findIndex(p => (p.id === id || p.muammo_id === id));
+    if (idx !== -1) {
+        problemsData[idx].status = 'hal_qilindi';
+        problemsData[idx].hal_qilindi_rasm = compressedImage;
+        problemsData[idx].hal_qilindi_izoh = comment;
+        
+        // Hal qilingan sanani qo'shish
+        const now = new Date();
+        problemsData[idx].hal_qilingan_sana = String(now.getDate()).padStart(2, '0') + '.' + 
+            String(now.getMonth() + 1).padStart(2, '0') + '.' + 
+            now.getFullYear() + ' ' +
+            String(now.getHours()).padStart(2, '0') + ':' + 
+            String(now.getMinutes()).padStart(2, '0');
+        
+        localStorage.setItem('problemsData', JSON.stringify(problemsData));
+    }
+    
+    // Modalni yopish
+    closeSolveModal();
+    
+    // Muammolar ro'yxati modalini yopish
+    const listModal = document.querySelector('div[style*="z-index:10000"]');
+    if (listModal) listModal.remove();
+    
+    // Qayta yuklash
+    loadProblems();
+    
+    // Google Sheets ga saqlash
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                action: 'updateMuammoStatus',
+                payload: { 
+                    id: id, 
+                    status: 'hal_qilindi',
+                    hal_qilindi_rasm: compressedImage,
+                    hal_qilindi_izoh: comment
+                }
+            })
         });
-        fab.addEventListener('mouseleave', function() {
-            this.style.transform = 'scale(1)';
-        });
+        
+        showToast('Muammo hal qilindi! ✓', 'success');
+    } catch (err) {
+        console.error('Google Sheets xatosi:', err);
+        showToast('Mahalliy saqlandi', 'warning');
+    }
+}
+
+function filterProblems() {
+    const filter = document.getElementById('problem-filter').value;
+    console.log('Filter tanlandi:', filter);
+    
+    problemMarkers.forEach(marker => {
+        const shouldShow = (filter === 'all' || filter === '') || marker.problemType === filter;
+        
+        if (shouldShow) {
+            if (!problemsMap.hasLayer(marker)) {
+                marker.addTo(problemsMap);
+            }
+        } else {
+            if (problemsMap.hasLayer(marker)) {
+                problemsMap.removeLayer(marker);
+            }
+        }
     });
-});
+    
+    // Statistikani yangilash
+    const visibleCount = problemMarkers.filter(m => problemsMap.hasLayer(m)).length;
+    showToast(visibleCount + ' ta muammo ko\'rsatilmoqda', 'info');
+}
+
+let heatmapLayer = null;
+function toggleHeatmap() {
+    showToast('Heatmap rejimi (demo)', 'info');
+}
+
+function updateProblemsStats() {
+    const stats = document.getElementById('problems-stats');
+    if (!stats) return;
+    
+    const total = problemsData.length;
+    const solved = problemsData.filter(p => p.status === 'hal_qilindi').length;
+    const pending = total - solved;
+    
+    stats.innerHTML = `
+        <div onclick="showProblemsList('all')" style="background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(239,68,68,0.05));border-radius:12px;padding:1rem;text-align:center;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="font-size:1.5rem;font-weight:800;color:#ef4444;">${total}</div>
+            <div style="font-size:0.8rem;color:var(--text-light);">Jami muammo</div>
+        </div>
+        <div onclick="showProblemsList('yangi')" style="background:linear-gradient(135deg,rgba(245,158,11,0.1),rgba(245,158,11,0.05));border-radius:12px;padding:1rem;text-align:center;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="font-size:1.5rem;font-weight:800;color:#f59e0b;">${pending}</div>
+            <div style="font-size:0.8rem;color:var(--text-light);">Kutilmoqda</div>
+        </div>
+        <div onclick="showProblemsList('hal_qilindi')" style="background:linear-gradient(135deg,rgba(16,185,129,0.1),rgba(16,185,129,0.05));border-radius:12px;padding:1rem;text-align:center;cursor:pointer;transition:all 0.2s;" onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'">
+            <div style="font-size:1.5rem;font-weight:800;color:#10b981;">${solved}</div>
+            <div style="font-size:0.8rem;color:var(--text-light);">Hal qilindi</div>
+        </div>
+    `;
+}
+
+// Muammolar ro'yxatini ko'rsatish
+function showProblemsList(filter) {
+    const typeNames = {
+        asfalt: '🛣️ Asfalt',
+        chiroq: '💡 Chiroq',
+        suv: '💧 Suv',
+        gaz: '🔥 Gaz',
+        chiqindi: '🗑️ Chiqindi',
+        boshqa: '📌 Boshqa'
+    };
+    
+    // Sana formatlash
+    function formatDate(dateStr, timeStr) {
+        if (!dateStr) return '-';
+        
+        // ISO formatni tekshirish
+        if (dateStr.includes('T')) {
+            try {
+                const d = new Date(dateStr);
+                const day = String(d.getDate()).padStart(2, '0');
+                const month = String(d.getMonth() + 1).padStart(2, '0');
+                const year = d.getFullYear();
+                const hours = String(d.getHours()).padStart(2, '0');
+                const mins = String(d.getMinutes()).padStart(2, '0');
+                return day + '.' + month + '.' + year + ' ' + hours + ':' + mins;
+            } catch(e) { return dateStr; }
+        }
+        
+        // Vaqtni tekshirish - 00:00 ni aniq vaqt bilan almashtirish
+        let time = timeStr || '';
+        if (time === '00:00' || time === '00:00:00' || !time) {
+            time = '';
+        }
+        
+        return dateStr + (time ? ' ' + time : '');
+    }
+    
+    // Xodim ismini olish uchun funksiya
+    function getXodimName() {
+        if (CURRENT_USER && CURRENT_USER.fio) {
+            return CURRENT_USER.fio;
+        }
+        try {
+            const savedUser = localStorage.getItem('currentUser');
+            if (savedUser) {
+                const user = JSON.parse(savedUser);
+                if (user.fio) return user.fio;
+            }
+        } catch(e) {}
+        return 'Xodim';
+    }
+    
+    // Reporter nomini olish uchun funksiya
+    function getReporterName(problem) {
+        // muammo_xabarchi ustunidan tekshirish
+        if (problem.muammo_xabarchi && problem.muammo_xabarchi !== 'Nomalum' && problem.muammo_xabarchi !== 'Noma\'lum' && problem.muammo_xabarchi !== 'undefined') {
+            return problem.muammo_xabarchi;
+        }
+        // reporter maydonidan tekshirish
+        let reporterName = problem.reporter || '';
+        if (!reporterName || reporterName === 'Noma\'lum' || reporterName === 'Nomalum' || reporterName === 'undefined') {
+            return getXodimName();
+        }
+        return reporterName;
+    }
+    
+    let filtered = problemsData;
+    let filterTitle = 'Barcha muammolar';
+    
+    if (filter === 'yangi') {
+        filtered = problemsData.filter(p => p.status !== 'hal_qilindi');
+        filterTitle = 'Kutilayotgan muammolar';
+    } else if (filter === 'hal_qilindi') {
+        filtered = problemsData.filter(p => p.status === 'hal_qilindi');
+        filterTitle = 'Hal qilingan muammolar';
+    }
+    
+    if (filtered.length === 0) {
+        showToast('Bu kategoriyada muammo yo\'q', 'info');
+        return;
+    }
+    
+    // Tozalash tugmasi - HAMMAGA korinadi (parol soraydi)
+    const clearBtnHtml = '<button onclick="clearProblemsWithPassword();this.closest(\'div[style*=fixed]\').remove();" style="background:rgba(220,38,38,0.4);border:2px solid rgba(255,255,255,0.5);padding:8px 16px;border-radius:12px;font-size:0.85rem;cursor:pointer;color:white;font-weight:700;backdrop-filter:blur(10px);transition:all 0.2s;" title="Parol: 2025">🗑️ Tozalash</button>';
+    
+    // Sinxronizatsiya tugmasi
+    const syncBtnHtml = '<button onclick="syncFromGoogleSheets(true);showToast(\'Sinxronizatsiya...\',\'info\')" style="background:rgba(59,130,246,0.4);border:2px solid rgba(255,255,255,0.5);padding:8px 16px;border-radius:12px;font-size:0.85rem;cursor:pointer;color:white;font-weight:700;backdrop-filter:blur(10px);transition:all 0.2s;" title="Google Sheets bilan sinxronlash">🔄 Yangilash</button>';
+    
+    let html = `
+        <div style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.8);z-index:10000;display:flex;align-items:center;justify-content:center;padding:1rem;backdrop-filter:blur(8px);" onclick="this.remove()">
+            <div style="background:white;border-radius:24px;max-width:480px;width:100%;max-height:90vh;overflow:hidden;box-shadow:0 25px 60px rgba(0,0,0,0.4);" onclick="event.stopPropagation()">
+                
+                <!-- Header -->
+                <div style="padding:1.5rem;background:linear-gradient(135deg,#ef4444 0%,#f97316 50%,#eab308 100%);color:white;">
+                    <div style="display:flex;justify-content:space-between;align-items:center;">
+                        <div>
+                            <h3 style="margin:0;font-size:1.25rem;font-weight:700;">📋 ${filterTitle}</h3>
+                            <p style="margin:6px 0 0;font-size:0.9rem;opacity:0.9;">${filtered.length} ta muammo</p>
+                        </div>
+                        <div style="display:flex;gap:10px;align-items:center;">
+                            ${syncBtnHtml}
+                            ${clearBtnHtml}
+                            <button onclick="this.closest('div[style*=fixed]').remove()" style="background:rgba(255,255,255,0.2);border:none;width:40px;height:40px;border-radius:50%;font-size:1.5rem;cursor:pointer;color:white;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(10px);">×</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Muammolar ro'yxati -->
+                <div style="padding:1rem 1.5rem;max-height:70vh;overflow-y:auto;">
+    `;
+    
+    filtered.forEach((p, i) => {
+        const statusColor = p.status === 'hal_qilindi' ? '#10b981' : '#f59e0b';
+        const statusBg = p.status === 'hal_qilindi' ? '#dcfce7' : '#fef3c7';
+        const statusText = p.status === 'hal_qilindi' ? '✓ Hal qilindi' : '⏳ Kutilmoqda';
+        const dateDisplay = formatDate(p.date, p.time);
+        const problemId = p.id || p.muammo_id;
+        
+        // Google Maps
+        const googleUrl = p.lat && p.lng ? 'https://www.google.com/maps?q=' + p.lat + ',' + p.lng : '#';
+        
+        // Reporter nomini olish - "Noma'lum" o'rniga Xodim
+        const reporterName = getReporterName(p);
+        
+        // Rasmlar
+        let imagesHtml = '';
+        let allImages = [];
+        
+        // Base64 rasmlar
+        if (p.images && p.images.length > 0) {
+            p.images.forEach(img => {
+                if (img && img.startsWith('data:image')) {
+                    allImages.push({ type: 'base64', src: img });
+                }
+            });
+        }
+        
+        // Drive rasmlar
+        const driveIds = [p.driveRasm1, p.driveRasm2, p.driveRasm3, p.driveRasm4].filter(id => id);
+        driveIds.forEach(id => {
+            allImages.push({ 
+                type: 'drive', 
+                thumb: 'https://drive.google.com/thumbnail?id=' + id + '&sz=w200',
+                full: 'https://drive.google.com/file/d/' + id + '/view'
+            });
+        });
+        
+        if (allImages.length > 0) {
+            imagesHtml = '<div style="display:flex;gap:10px;margin:1rem 0;overflow-x:auto;padding:4px 0;">';
+            allImages.forEach((img) => {
+                if (img.type === 'base64') {
+                    const safeImg = img.src.replace(/'/g, "\\'");
+                    imagesHtml += '<img src="' + img.src + '" style="width:70px;height:70px;border-radius:12px;object-fit:cover;cursor:pointer;border:3px solid #e5e7eb;flex-shrink:0;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform=\'scale(1.1)\';this.style.borderColor=\'#3b82f6\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor=\'#e5e7eb\'" onclick="openImageViewer(\'' + safeImg + '\')">';
+                } else {
+                    imagesHtml += '<img src="' + img.thumb + '" style="width:70px;height:70px;border-radius:12px;object-fit:cover;cursor:pointer;border:3px solid #e5e7eb;flex-shrink:0;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform=\'scale(1.1)\';this.style.borderColor=\'#3b82f6\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor=\'#e5e7eb\'" onclick="window.open(\'' + img.full + '\')" onerror="this.style.display=\'none\'">';
+                }
+            });
+            imagesHtml += '</div>';
+        }
+        
+        html += `
+            <div style="background:linear-gradient(145deg,#ffffff,#f8fafc);border-radius:18px;padding:1.25rem;margin-bottom:1rem;border:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+                
+                <!-- Sarlavha -->
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                    <div style="display:flex;align-items:center;gap:12px;">
+                        <div style="width:36px;height:36px;background:linear-gradient(135deg,${statusColor},${statusColor}cc);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:1rem;box-shadow:0 3px 10px ${statusColor}40;">${i + 1}</div>
+                        <span style="font-size:1.1rem;font-weight:700;color:#1e293b;">${typeNames[p.type] || p.type || 'Muammo'}</span>
+                    </div>
+                    <span style="font-size:0.75rem;padding:0.4rem 0.8rem;border-radius:20px;background:${statusBg};color:${statusColor};font-weight:700;">${statusText}</span>
+                </div>
+                
+                <!-- Tavsif -->
+                <div style="background:#f1f5f9;padding:1rem;border-radius:12px;margin-bottom:1rem;">
+                    <p style="margin:0;color:#475569;font-size:0.95rem;line-height:1.6;">${p.description || 'Tavsif kiritilmagan'}</p>
+                </div>
+                
+                <!-- Ma'lumotlar -->
+                <div style="display:flex;flex-wrap:wrap;gap:1rem;font-size:0.85rem;color:#64748b;margin-bottom:0.75rem;">
+                    <span style="display:flex;align-items:center;gap:6px;background:#f8fafc;padding:6px 12px;border-radius:8px;">📅 <strong>${dateDisplay}</strong></span>
+                    <span style="display:flex;align-items:center;gap:6px;background:#f8fafc;padding:6px 12px;border-radius:8px;">👤 <strong>${reporterName}</strong></span>
+                </div>
+                
+                <!-- Rasmlar -->
+                ${imagesHtml}
+                
+                <!-- Amallar -->
+                <div style="display:flex;gap:10px;margin-top:1rem;">
+                    <a href="${googleUrl}" target="_blank" style="flex:1;padding:0.75rem;background:linear-gradient(135deg,#4285f4,#34a853);color:white;border-radius:12px;text-decoration:none;font-size:0.85rem;text-align:center;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(66,133,244,0.3);">🌍 Google Maps</a>
+                    <button onclick="focusProblemOnMap('${problemId}')" style="flex:1;padding:0.75rem;background:linear-gradient(135deg,#3b82f6,#2563eb);color:white;border:none;border-radius:12px;font-size:0.85rem;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(59,130,246,0.3);">📍 Xaritada</button>
+                </div>
+                
+                <!-- Individual PDF tugmasi -->
+                <button onclick="event.stopPropagation();downloadSingleProblemPDF('${problemId}')" style="width:100%;margin-top:0.75rem;padding:0.75rem;background:linear-gradient(135deg,#dc2626,#ea580c);color:white;border:none;border-radius:12px;font-size:0.9rem;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(220,38,38,0.3);transition:transform 0.2s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+                    <i class="fas fa-file-pdf"></i> PDF yuklab olish
+                </button>
+                
+                ${p.status !== 'hal_qilindi' ? `
+                    <button onclick="markProblemSolved('${problemId}');this.closest('div[style*=fixed]').remove();" style="width:100%;margin-top:0.5rem;padding:0.75rem;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;border-radius:12px;font-size:0.9rem;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(16,185,129,0.3);">✓ Hal qilindi deb belgilash</button>
+                ` : ''}
+            </div>
+        `;
+    });
+    
+    html += `
+                </div>
+            </div>
+        </div>
+    `;
+    
+    document.body.insertAdjacentHTML('beforeend', html);
+}
+
+// Rasmni katta ko'rsatish
+function openImageViewer(src) {
+    const viewer = document.createElement('div');
+    viewer.style.cssText = 'position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.95);z-index:20000;display:flex;align-items:center;justify-content:center;padding:1rem;cursor:zoom-out;backdrop-filter:blur(10px);';
+    viewer.onclick = () => viewer.remove();
+    viewer.innerHTML = '<img src="' + src + '" style="max-width:95%;max-height:95%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.5);animation:zoomIn 0.3s ease;">';
+    document.body.appendChild(viewer);
+}
+
+// Muammoni xaritada ko'rsatish
+function focusProblemOnMap(problemId) {
+    const problem = problemsData.find(p => p.id === problemId || p.muammo_id === problemId);
+    if (problem && problemsMap) {
+        problemsMap.setView([problem.lat, problem.lng], 18);
+        
+        // Marker popup ochish
+        const marker = problemMarkers.find(m => m.problemId === problemId);
+        if (marker) {
+            marker.openPopup();
+        }
+        
+        // Modalni yopish
+        const modal = document.querySelector('div[style*="fixed"][style*="z-index:10000"]');
+        if (modal) modal.remove();
+        
+        showToast('Muammo joylashuvi ko\'rsatildi', 'success');
+    }
+}
+
+// Status bo'yicha filtrlash
+function filterByStatus(status) {
+    if (!problemsMap) return;
+    
+    problemMarkers.forEach(marker => {
+        const problem = problemsData.find(p => (p.id === marker.problemId || p.muammo_id === marker.problemId));
+        if (!problem) return;
+        
+        if (status === 'all') {
+            marker.addTo(problemsMap);
+        } else if (problem.status === status) {
+            marker.addTo(problemsMap);
+        } else {
+            problemsMap.removeLayer(marker);
+        }
+    });
+    
+    showToast(status === 'all' ? 'Barchasi' : (status === 'yangi' ? 'Kutilmoqda' : 'Hal qilindi'), 'info');
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 🌳 OILA DARAXTI EKSPORT (Family Tree Export)
+// ═══════════════════════════════════════════════════════════════
+function exportFamilyTreeAsImage() {
+    const treeContainer = document.getElementById('family-tree-canvas');
+    if (!treeContainer) {
+        showToast('Avval oila daraxtini oching', 'error');
+        return;
+    }
+    
+    html2canvas(treeContainer).then(canvas => {
+        const link = document.createElement('a');
+        link.download = 'oila-daraxti.png';
+        link.href = canvas.toDataURL('image/png');
+        link.click();
+        showToast('Oila daraxti rasm sifatida yuklandi!', 'success');
+    });
+}
 </script>
 
 </body>
