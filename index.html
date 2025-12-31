@@ -1275,11 +1275,11 @@
       </h1>
       <div class="header-actions">
         <div id="murojaatlar-bell-container" style="position:relative;">
-            <button class="header-btn" id="murojaatlar-bell" title="Kelgan murojaatlar" ><i class="fas fa-inbox"></i></button>
+            <button class="header-btn" id="murojaatlar-bell" title="Kelgan murojaatlar" onclick="window.openMurojaatlarModal()"><i class="fas fa-inbox"></i></button>
             <span id="murojaat-badge-header" style="display:none;position:absolute;top:-5px;right:-8px;background:#fff;color:#ef4444;border-radius:50%;width:22px;height:22px;font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid #ef4444;">0</span>
         </div>
         <div id="notification-bell-container">
-            <button class="header-btn" id="notification-bell" title="Eslatmalar"><i class="fas fa-bell"></i></button>
+            <button class="header-btn" id="notification-bell" title="Eslatmalar" onclick="window.openNotificationsModal()"><i class="fas fa-bell"></i></button>
             <span id="notification-count" class="hidden">0</span>
         </div>
         <button class="header-btn" id="refresh-btn" title="Bazani yangilash"><i class="fas fa-sync"></i></button>
@@ -1401,7 +1401,7 @@
               <div class="form-group full-width"><label><i class="fas fa-calendar-alt" style="color: #f59e0b;"></i> Tug'ilgan sana</label><input name="chet_el_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div>
             </div>
             <div class="form-row"><div class="form-group"><label>Jinsi</label><select name="jinsi" required><option value="" disabled selected>Tanlang...</option><option value="Erkak">Erkak</option><option value="Ayol">Ayol</option></select></div><div class="form-group"><label>Telefon (9 raqam)</label><input name="telefon_number" maxlength="9" class="js-numeric-input" placeholder="901234567" inputmode="numeric" required></div></div>
-            <div class="form-group full-width" style="display: none;"><label>Xatlovchi</label><select name="xatlovchi" id="xatlovchi-select" required><option value="" selected disabled>Tanlang...</option><option>MFY raisi</option><option>Yoshlar yetakchisi</option><option>Xotin qizlar faoli</option><option>Profilaktika inspektori</option><option>Xokim yordamchisi</option><option>Soliq hodimi</option><option>Ijtimoiy hodim</option><option>Javohir</option><option>Ruzimukhammed</option><option>Ravshanbek</option></select></div>
+            <div class="form-group full-width" style="display: none;"><label>Xatlovchi</label><select name="xatlovchi" id="xatlovchi-select" required><option value="" selected disabled>Tanlang...</option><option>MFY raisi</option><option>Yoshlar yetakchisi</option><option>Xotin qizlar faoli</option><option>Profilaktika inspektori</option><option>Xokim yordamchisi</option><option>Soliq hodimi</option><option>Ijtimoiy hodim</option><option>Javohir</option><option>Ruzimukhammed</option><option>Abdurahim</option></select></div>
           </div>
           <div class="form-step" data-step="2">
             <h4 class="form-step-title"><i class="fas fa-map-marker-alt"></i> Yashash manzili</h4>
@@ -2414,7 +2414,7 @@
     </main>
     <div class="fab-container">
         <button id="fab-birthday-calendar" class="fab" style="background: linear-gradient(135deg, #ec4899, #f472b6);" title="Tug'ilgan kunlar kalendari"><i class="fas fa-birthday-cake"></i></button>
-        <button id="fab-problems-map" class="fab" style="background: linear-gradient(135deg, #ef4444, #f97316);" title="Muammolar xaritasi" onclick="openProblemsMap()"><i class="fas fa-map-marked-alt"></i></button>
+        <button id="fab-problems-map" class="fab" style="background: linear-gradient(135deg, #ef4444, #f97316);" title="Muammolar xaritasi" onclick="window.openProblemsMap()"><i class="fas fa-map-marked-alt"></i></button>
         <button id="fab-advanced-filter" class="fab" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);" title="Murakkab filtrlash"><i class="fas fa-filter"></i></button>
         <button id="fab-show-ai" class="fab fab-list" style="background: linear-gradient(135deg, #0077b6, #00b4d8);" title="O'zbegim AI - Har qanday savol bering!"><i class="fas fa-brain"></i></button>
         <button id="fab-show-objects" class="fab fab-objects" title="Ijtimoiy ob'ektlar va Xarita"><i class="fas fa-store-alt"></i></button>
@@ -2475,12 +2475,12 @@
     </div>
     
     <div id="alert-modal" class="modal-overlay"><div class="modal-box"><h4 id="alert-title">Xabar</h4><p id="alert-message">Matn</p><div class="button-group" style="display:flex;gap:1rem;margin-top:1.5rem;"><button class="btn btn-primary js-alert-ok" style="width:auto;flex-grow:1;">OK</button><button class="btn btn-cancel js-alert-cancel" style="width:auto;flex-grow:1;margin-top:0;">Bekor</button></div></div></div>
-    <div id="details-modal" class="modal-overlay" onclick="if(event.target===this)closeDetailsModal();">
-      <div id="details-modal-box" class="modal-box">
-        <button class="modal-close-btn" id="details-modal-close" onclick="closeDetailsModal();"><i class="fas fa-times"></i></button>
+    <div id="details-modal" class="modal-overlay" style="z-index: 5000;" onclick="if(event.target===this){window.closeDetailsModalNow();}">
+      <div id="details-modal-box" class="modal-box" style="z-index: 5001;">
+        <button class="modal-close-btn" onclick="window.closeDetailsModalNow();" style="z-index: 5002;"><i class="fas fa-times"></i></button>
         <div id="details-content"></div>
         <div class="modal-actions" style="flex-wrap: wrap; gap: 0.5rem;">
-            <button class="btn btn-secondary" onclick="closeDetailsModal();" style="flex: 1; min-width: 120px;"><i class="fas fa-arrow-left"></i> Qaytish</button>
+            <button class="btn btn-secondary" onclick="window.closeDetailsModalNow();" style="flex: 1; min-width: 120px;"><i class="fas fa-arrow-left"></i> Qaytish</button>
             <button class="btn btn-success" id="js-show-family-tree" style="flex: 1; min-width: 120px;"><i class="fas fa-sitemap"></i> Oila daraxti</button>
             <button class="btn btn-info" id="js-show-on-map" style="flex: 1; min-width: 120px; display: none;"><i class="fas fa-map-marker-alt"></i> Xaritada</button>
             <button class="btn btn-primary" id="js-download-pdf" style="flex: 1; min-width: 120px;"><i class="fas fa-file-pdf"></i> PDF</button>
@@ -3055,9 +3055,9 @@
       </div>
     </div>
     <!-- Eslatmalar Markazi (Hacker Style) -->
-    <div id="notification-modal" class="modal-overlay">
+    <div id="notification-modal" class="modal-overlay" onclick="if(event.target===this){this.style.display='none';}">
         <div class="modal-box hacker-modal-box">
-            <button class="modal-close-btn" id="notification-modal-close"><i class="fas fa-times"></i></button>
+            <button class="modal-close-btn" onclick="document.getElementById('notification-modal').style.display='none';"><i class="fas fa-times"></i></button>
             <div class="hacker-modal-header">
                 <i class="fas fa-satellite-dish"></i> Eslatmalar Markazi
             </div>
@@ -3304,6 +3304,424 @@
 // Bu yerdan faqat bitta to'liq script bloki boshlanadi
 /* ================== KONFIG ================== */
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx0WFwNyi-RYxmaxOB2qbGB9lQaXBU_1nR7f1Orje8vxUC9nkRkfrKahYfTOEoxJzUkNA/exec';
+
+// ═══════════════════════════════════════════════════════════════════
+// BARCHA GLOBAL FUNKSIYALAR - SCRIPT BOSHIDA
+// ═══════════════════════════════════════════════════════════════════
+
+// 1. MUAMMOLAR XARITASI
+let problemsMap = null;
+let problemMarkers = [];
+let problemsData = [];
+let satelliteLayer = null;
+let streetLayer = null;
+let currentMapLayer = 'street';
+let addingProblem = false;
+let problemLatlng = null;
+let tempProblemMarker = null;
+let problemImages = [];
+
+window.openProblemsMap = function() {
+    console.log('openProblemsMap ishladi');
+    let modal = document.getElementById('problems-map-modal');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'problems-map-modal';
+        modal.className = 'modal-overlay';
+        modal.style.zIndex = '6000';
+        modal.innerHTML = `
+            <div class="modal-box" style="max-width:900px;width:95%;max-height:95vh;overflow-y:auto;padding:1.25rem;">
+                <button class="modal-close-btn" onclick="window.closeProblemsMap()"><i class="fas fa-times"></i></button>
+                
+                <div style="display:flex;align-items:center;gap:0.875rem;margin-bottom:1rem;">
+                    <div style="width:50px;height:50px;background:linear-gradient(135deg,#ef4444,#f97316);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                        <i class="fas fa-map-marked-alt" style="font-size:1.3rem;color:white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size:1.15rem;font-weight:700;">Muammolar Xaritasi</h3>
+                        <p style="color:var(--text-light);font-size:0.8rem;">Infratuzilma muammolarini belgilang</p>
+                    </div>
+                </div>
+                
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
+                    <button class="btn btn-primary" style="margin:0;padding:0.7rem;font-size:0.85rem;" onclick="window.addProblemMode()">
+                        <i class="fas fa-plus-circle"></i> Muammo qo'shish
+                    </button>
+                    <select id="problem-filter" style="padding:0.7rem;border-radius:12px;background:var(--bg-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;cursor:pointer;" onchange="window.filterProblemsByCategory()">
+                        <option value="all">📋 Barchasi</option>
+                        <option value="asfalt">🛣️ Asfalt</option>
+                        <option value="chiroq">💡 Chiroq</option>
+                        <option value="suv">💧 Suv</option>
+                        <option value="gaz">🔥 Gaz</option>
+                        <option value="chiqindi">🗑️ Chiqindi</option>
+                        <option value="boshqa">📌 Boshqa</option>
+                    </select>
+                </div>
+                
+                <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;">
+                    <button id="street-layer-btn" class="btn btn-secondary" style="flex:1;margin:0;padding:0.5rem;font-size:0.8rem;" onclick="window.switchMapLayer('street')">
+                        <i class="fas fa-road"></i> Ko'cha
+                    </button>
+                    <button id="satellite-layer-btn" class="btn btn-secondary-outline" style="flex:1;margin:0;padding:0.5rem;font-size:0.8rem;" onclick="window.switchMapLayer('satellite')">
+                        <i class="fas fa-satellite"></i> Sputnik
+                    </button>
+                </div>
+                
+                <div id="problems-map-container" style="height:300px;border-radius:14px;overflow:hidden;border:2px solid var(--border-color);margin-bottom:0.75rem;"></div>
+                
+                <div id="problem-form" style="display:none;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.05));padding:1rem;border-radius:14px;border:1px solid rgba(239,68,68,0.2);">
+                    <h4 style="margin-bottom:0.75rem;font-size:0.95rem;display:flex;align-items:center;gap:0.5rem;">
+                        <i class="fas fa-exclamation-triangle" style="color:#ef4444;"></i> Yangi muammo
+                    </h4>
+                    <p id="problem-location-status" style="display:none;font-size:0.8rem;color:#10b981;margin-bottom:0.5rem;"><i class="fas fa-check-circle"></i> Joylashuv aniqlandi</p>
+                    <select id="problem-type" style="width:100%;padding:0.6rem;border-radius:10px;margin-bottom:0.5rem;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;">
+                        <option value="">Muammo turini tanlang</option>
+                        <option value="asfalt">🛣️ Asfalt buzilgan</option>
+                        <option value="chiroq">💡 Chiroq yonmaydi</option>
+                        <option value="suv">💧 Suv muammosi</option>
+                        <option value="gaz">🔥 Gaz muammosi</option>
+                        <option value="chiqindi">🗑️ Chiqindi to'planib qolgan</option>
+                        <option value="boshqa">📌 Boshqa</option>
+                    </select>
+                    <textarea id="problem-description" placeholder="Muammo tavsifi..." rows="2" style="width:100%;padding:0.6rem;border-radius:10px;margin-bottom:0.5rem;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;resize:none;"></textarea>
+                    <div style="display:flex;gap:0.5rem;margin-top:0.5rem;">
+                        <button class="btn btn-success" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="window.saveProblem()"><i class="fas fa-save"></i> Saqlash</button>
+                        <button class="btn btn-cancel" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="window.cancelProblem()"><i class="fas fa-times"></i> Bekor</button>
+                    </div>
+                </div>
+                
+                <div id="problems-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-top:0.75rem;"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+    }
+    
+    modal.style.display = 'flex';
+    setTimeout(() => {
+        if (!problemsMap) {
+            problemsMap = L.map('problems-map-container').setView([40.7821, 72.3442], 15);
+            streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap'
+            });
+            satelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+                attribution: '© Google Satellite'
+            });
+            streetLayer.addTo(problemsMap);
+            loadProblemsFromServer();
+        } else {
+            problemsMap.invalidateSize();
+        }
+    }, 100);
+};
+
+window.closeProblemsMap = function() {
+    console.log('closeProblemsMap ishladi');
+    const modal = document.getElementById('problems-map-modal');
+    if (modal) modal.style.display = 'none';
+};
+
+window.addProblemMode = function() {
+    console.log('addProblemMode ishladi');
+    addingProblem = true;
+    problemLatlng = null;
+    document.getElementById('problem-form').style.display = 'block';
+    document.getElementById('problem-location-status').style.display = 'none';
+    if (typeof showToast === 'function') showToast('Xaritani bosib joylashuvni belgilang', 'info');
+    
+    if (problemsMap) {
+        problemsMap.on('click', function(e) {
+            if (!addingProblem) return;
+            problemLatlng = e.latlng;
+            if (tempProblemMarker) problemsMap.removeLayer(tempProblemMarker);
+            tempProblemMarker = L.marker(e.latlng, {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: '<div style="background:#ef4444;width:20px;height:20px;border-radius:50%;border:3px solid white;"></div>',
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10]
+                })
+            }).addTo(problemsMap);
+            document.getElementById('problem-location-status').style.display = 'block';
+        });
+    }
+};
+
+window.saveProblem = async function() {
+    console.log('saveProblem ishladi');
+    if (!problemLatlng) {
+        if (typeof showToast === 'function') showToast('Avval xaritadan joylashuvni tanlang', 'error');
+        return;
+    }
+    
+    const type = document.getElementById('problem-type').value;
+    const desc = document.getElementById('problem-description').value.trim();
+    
+    if (!type) {
+        if (typeof showToast === 'function') showToast('Muammo turini tanlang', 'error');
+        return;
+    }
+    
+    if (typeof showToast === 'function') showToast('Saqlanmoqda...', 'info');
+    
+    try {
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify({
+                action: 'addProblem',
+                type: type,
+                description: desc,
+                lat: problemLatlng.lat,
+                lng: problemLatlng.lng,
+                reporter: typeof CURRENT_USER !== 'undefined' ? CURRENT_USER.role : 'Noma\'lum'
+            })
+        });
+        
+        if (typeof showToast === 'function') showToast('Muammo saqlandi!', 'success');
+        window.cancelProblem();
+        loadProblemsFromServer();
+    } catch (err) {
+        console.error(err);
+        if (typeof showToast === 'function') showToast('Xatolik yuz berdi', 'error');
+    }
+};
+
+window.cancelProblem = function() {
+    console.log('cancelProblem ishladi');
+    addingProblem = false;
+    problemLatlng = null;
+    document.getElementById('problem-form').style.display = 'none';
+    document.getElementById('problem-type').value = '';
+    document.getElementById('problem-description').value = '';
+    document.getElementById('problem-location-status').style.display = 'none';
+    if (tempProblemMarker && problemsMap) {
+        problemsMap.removeLayer(tempProblemMarker);
+        tempProblemMarker = null;
+    }
+};
+
+window.filterProblemsByCategory = function() {
+    console.log('filterProblemsByCategory ishladi');
+    const filter = document.getElementById('problem-filter').value;
+    problemMarkers.forEach(marker => {
+        const shouldShow = (filter === 'all') || marker.problemType === filter;
+        if (shouldShow) {
+            if (!problemsMap.hasLayer(marker)) marker.addTo(problemsMap);
+        } else {
+            if (problemsMap.hasLayer(marker)) problemsMap.removeLayer(marker);
+        }
+    });
+};
+
+window.switchMapLayer = function(layerType) {
+    console.log('switchMapLayer ishladi:', layerType);
+    if (!problemsMap) return;
+    
+    if (layerType === 'satellite' && currentMapLayer !== 'satellite') {
+        problemsMap.removeLayer(streetLayer);
+        satelliteLayer.addTo(problemsMap);
+        currentMapLayer = 'satellite';
+        document.getElementById('satellite-layer-btn').classList.remove('btn-secondary-outline');
+        document.getElementById('satellite-layer-btn').classList.add('btn-secondary');
+        document.getElementById('street-layer-btn').classList.remove('btn-secondary');
+        document.getElementById('street-layer-btn').classList.add('btn-secondary-outline');
+    } else if (layerType === 'street' && currentMapLayer !== 'street') {
+        problemsMap.removeLayer(satelliteLayer);
+        streetLayer.addTo(problemsMap);
+        currentMapLayer = 'street';
+        document.getElementById('street-layer-btn').classList.remove('btn-secondary-outline');
+        document.getElementById('street-layer-btn').classList.add('btn-secondary');
+        document.getElementById('satellite-layer-btn').classList.remove('btn-secondary');
+        document.getElementById('satellite-layer-btn').classList.add('btn-secondary-outline');
+    }
+};
+
+function loadProblemsFromServer() {
+    fetch(SCRIPT_URL + '?action=getProblems')
+        .then(r => r.json())
+        .then(data => {
+            if (data.success && data.problems) {
+                problemMarkers.forEach(m => problemsMap.removeLayer(m));
+                problemMarkers = [];
+                
+                const icons = {
+                    'asfalt': '🛣️', 'chiroq': '💡', 'suv': '💧',
+                    'gaz': '🔥', 'chiqindi': '🗑️', 'boshqa': '📌'
+                };
+                
+                data.problems.forEach(p => {
+                    if (p.lat && p.lng) {
+                        const marker = L.marker([p.lat, p.lng], {
+                            icon: L.divIcon({
+                                className: 'problem-marker',
+                                html: `<div style="font-size:24px;">${icons[p.type] || '📌'}</div>`,
+                                iconSize: [30, 30],
+                                iconAnchor: [15, 15]
+                            })
+                        }).addTo(problemsMap);
+                        marker.problemType = p.type;
+                        marker.bindPopup(`<b>${icons[p.type] || '📌'} ${p.type}</b><br>${p.description || ''}<br><small>${p.reporter || ''}</small>`);
+                        problemMarkers.push(marker);
+                    }
+                });
+            }
+        })
+        .catch(err => console.error('Muammolar yuklanmadi:', err));
+}
+
+// 2. MUROJAATLAR MODAL
+let murojaatlarCache = [];
+let currentMurojaatFilter = 'all';
+
+window.openMurojaatlarModal = async function() {
+    console.log('openMurojaatlarModal ishladi');
+    const modal = document.getElementById('murojaatlar-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        
+        const content = document.getElementById('murojaatlar-content');
+        if (content && murojaatlarCache.length === 0) {
+            content.innerHTML = `
+                <div style="text-align: center; padding: 3rem;">
+                    <i class="fas fa-spinner fa-spin" style="font-size: 2rem; color: #8b5cf6;"></i>
+                    <p style="color: #94a3b8; margin-top: 1rem;">Yuklanmoqda...</p>
+                </div>
+            `;
+            
+            try {
+                const response = await fetch(SCRIPT_URL + '?action=getMurojaatlar');
+                const data = await response.json();
+                if (data.success && data.murojaatlar) {
+                    murojaatlarCache = data.murojaatlar;
+                    renderMurojaatlarList();
+                }
+            } catch (err) {
+                console.error('Murojaatlar yuklanmadi:', err);
+                content.innerHTML = '<p style="text-align:center;color:#ef4444;">Yuklab bo\'lmadi</p>';
+            }
+        } else {
+            renderMurojaatlarList();
+        }
+    }
+};
+
+function renderMurojaatlarList() {
+    const content = document.getElementById('murojaatlar-content');
+    const totalEl = document.getElementById('murojaatlar-total');
+    
+    if (!content) return;
+    
+    let filtered = murojaatlarCache;
+    if (currentMurojaatFilter !== 'all') {
+        filtered = murojaatlarCache.filter(m => m.status === currentMurojaatFilter);
+    }
+    
+    if (totalEl) totalEl.textContent = filtered.length;
+    
+    if (filtered.length === 0) {
+        content.innerHTML = `
+            <div style="text-align: center; padding: 3rem; color: #64748b;">
+                <i class="fas fa-inbox" style="font-size: 3rem; margin-bottom: 1rem; opacity: 0.5;"></i>
+                <p>Murojaatlar topilmadi</p>
+            </div>
+        `;
+        return;
+    }
+    
+    let html = '';
+    filtered.forEach(m => {
+        const statusColors = {
+            'Yangi': '#3b82f6',
+            'Ko\'rib chiqilmoqda': '#f59e0b',
+            'Hal qilindi': '#10b981'
+        };
+        const color = statusColors[m.status] || '#64748b';
+        
+        html += `
+            <div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);border-radius:12px;padding:1rem;margin-bottom:0.75rem;">
+                <div style="display:flex;justify-content:space-between;align-items:start;margin-bottom:0.5rem;">
+                    <span style="font-weight:600;color:#e2e8f0;">${m.fuqaro_fio || 'Noma\'lum'}</span>
+                    <span style="font-size:0.75rem;background:${color};color:white;padding:2px 8px;border-radius:10px;">${m.status || 'Yangi'}</span>
+                </div>
+                <p style="font-size:0.85rem;color:#94a3b8;margin-bottom:0.5rem;">${m.murojaat_matni || ''}</p>
+                <div style="display:flex;justify-content:space-between;font-size:0.75rem;color:#64748b;">
+                    <span><i class="fas fa-map-marker-alt"></i> ${m.fuqaro_manzil || ''}</span>
+                    <span><i class="fas fa-clock"></i> ${m.vaqt || ''}</span>
+                </div>
+            </div>
+        `;
+    });
+    
+    content.innerHTML = html;
+}
+
+// 3. ESLATMALAR MODAL
+window.openNotificationsModal = function() {
+    console.log('openNotificationsModal ishladi');
+    if (typeof renderNotifications === 'function') {
+        renderNotifications();
+    }
+    const modal = document.getElementById('notification-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+};
+
+// 4. DETAILS MODAL YOPISH FUNKSIYASI
+let _detailsModalPreviousId = null;
+
+window.closeDetailsModalNow = function() {
+    console.log('closeDetailsModalNow ishladi');
+    
+    // Details modalni yopish
+    const detailsModal = document.getElementById('details-modal');
+    if (detailsModal) {
+        detailsModal.style.display = 'none';
+    }
+    
+    // Agar oldingi ochiq modal bo'lsa - unga qaytish
+    if (_detailsModalPreviousId) {
+        console.log('Oldingi modalga qaytish:', _detailsModalPreviousId);
+        const prevModal = document.getElementById(_detailsModalPreviousId);
+        if (prevModal) {
+            prevModal.style.display = 'flex';
+        }
+        _detailsModalPreviousId = null;
+        return;
+    }
+    
+    // Aks holda - search-view ga qaytish
+    console.log('Search-view ga qaytish');
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+        m.style.display = 'none';
+    });
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    
+    const searchView = document.getElementById('search-view');
+    if (searchView) {
+        searchView.classList.add('active');
+    }
+};
+
+window.setDetailsPreviousModal = function(modalId) {
+    _detailsModalPreviousId = modalId;
+};
+
+// ═══════════════════════════════════════════════════════════════════
+// ESLATMALAR MODAL - GLOBAL FUNKSIYA
+// ═══════════════════════════════════════════════════════════════════
+window.openNotificationsModal = function() {
+    console.log('openNotificationsModal ishladi');
+    if (typeof renderNotifications === 'function') {
+        renderNotifications();
+    }
+    const modal = document.getElementById('notification-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+};
+// ═══════════════════════════════════════════════════════════════════
+
 const KOP_QAVATLI_STREETS=["Musaev","Lermontov","A.Temur","Mashrab","Leninizm","Shevchenko","B.Raximov","Shoxruxmirzo","Boshqa"];
 const HOVLI_STREETS=["Musaev","Lermontov","Shevchenko","B.Raximov","Shoxruxmirzo","Ustalar","B.Turon","Muqumiy111","A.Temur","Boshqa"];
 const METRKA_SERIES_LIST=["I-AN","I-BH","I-FR","I-GZ","I-HR","I-NA","I-NV","I-QD","I-QQ","I-SM","I-SR","I-SU","I-TN","I-TV","II-AN","II-BH","II-FR","II-GZ","II-HR","II-KS","II-NA","II-NV","II-QD","II-QQ","II-SM","II-SR","II-SU","II-TN","II-TS","II-TV","III-AN","III-BH","III-FR","III-GZ","III-HR","III-NA","III-NV","III-QD","III-QQ","III-SM","III-SR","III-SU","III-TN","III-TV","T","TA"];
@@ -3311,7 +3729,7 @@ const TOIFA_TURI_LIST = {
     "all": ["Janjalkash (Notinch oila)","Og'ir xulq atvor","G'ayriijtimoiy xulq atvor","Ruxiy kasal","Psixotrop","Ichkilikka ruju qo'ygan","Muqaddam sudlangan"],
     "inspector": ["PXT", "Probatsiya"]
 };
-const ROLES={"4161":{role:"MFY raisi",access:"full"},"1909":{role:"Yoshlar yetakchisi",access:"full"},"1983":{role:"Profilaktika inspektori",access:"inspector"},"5511":{role:"Xokim yordamchisi",access:"restricted"},"2233":{role:"Soliq hodimi",access:"restricted"},"4944":{role:"Ijtimoiy hodim",access:"restricted"},"2528":{role:"Javohir",access:"full"},"2304":{role:"Ruzimukhammed",access:"full"},"5252":{role:"Ravshanbek",access:"restricted"},"2025":{role:"Xotin qizlar faoli",access:"restricted"}};
+const ROLES={"4161":{role:"MFY raisi",access:"full"},"1909":{role:"Yoshlar yetakchisi",access:"full"},"1983":{role:"Profilaktika inspektori",access:"full"},"5511":{role:"Xokim yordamchisi",access:"restricted"},"2233":{role:"Soliq hodimi",access:"restricted"},"4944":{role:"Ijtimoiy hodim",access:"restricted"},"2528":{role:"Javohir",access:"full"},"2304":{role:"Ruzimukhammed",access:"full"},"6564":{role:"Abdurahim",access:"restricted"},"2025":{role:"Xotin qizlar faoli",access:"restricted"}};
 let CURRENT_USER={role:null,access:"restricted",pass:null};
 const NAZORAT_ICONS = {
     "Janjalkash (Notinch oila)": "fas fa-hand-fist",
@@ -3453,7 +3871,38 @@ const showScreen=(id)=>{
   }
 };
 const goBack = () => {
-    if (previousScreenStack.length > 1) {
+    // Avval ochiq modallarni tekshirish
+    const currentOpenModal = document.querySelector('.modal-overlay[style*="display: flex"]');
+    
+    if (currentOpenModal) {
+        // Modal yopish
+        currentOpenModal.style.display = 'none';
+        
+        // Stack dan olib tashlash
+        if (previousScreenStack.length > 0 && previousScreenStack[previousScreenStack.length - 1] === currentOpenModal.id) {
+            previousScreenStack.pop();
+        }
+        
+        // Oldingi elementga qaytish
+        if (previousScreenStack.length > 0) {
+            const prevId = previousScreenStack[previousScreenStack.length - 1];
+            const prevEl = document.getElementById(prevId);
+            if (prevEl) {
+                if (prevEl.classList.contains('view')) {
+                    // Barcha view larni yashirish
+                    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+                    prevEl.classList.add('active');
+                } else if (prevEl.classList.contains('modal-overlay')) {
+                    prevEl.style.display = 'flex';
+                }
+            }
+        } else {
+            // Default - search-view
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById('search-view').classList.add('active');
+            previousScreenStack = ['search-view'];
+        }
+    } else if (previousScreenStack.length > 1) {
         const currentId = previousScreenStack.pop(); 
         const prevId = previousScreenStack[previousScreenStack.length - 1]; 
         const currentEl = document.getElementById(currentId);
@@ -3948,7 +4397,11 @@ function createPersonCardHTML(p, isMain = false, context = 'search', highlightCa
     }
 
     if (CURRENT_USER.access === 'full' && !isArchived) {
-        h += `<button class="btn btn-secondary-outline js-fill-details-btn" style="flex:1;min-width:100px;margin-top:0;"><i class="fas fa-edit"></i> Tahrirlash</button>`;
+        // Tahrirlash tugmasi - faqat admin parol egalariga (2304, 4161, 1909, 2528, 1983)
+        const adminPasswords = ['2304', '4161', '1909', '2528', '1983'];
+        if (adminPasswords.includes(CURRENT_USER.pass)) {
+            h += `<button class="btn btn-secondary-outline js-fill-details-btn" style="flex:1;min-width:100px;margin-top:0;"><i class="fas fa-edit"></i> Tahrirlash</button>`;
+        }
     }
     if (context !== 'family-modal' && !isArchived) {
         h += `<button class="btn btn-secondary-outline js-toggle-family-view" style="flex:1;min-width:100px;margin-top:0;"><i class="fas fa-users"></i> Oila</button>`;
@@ -4218,7 +4671,7 @@ function checkAndShowNotifications() {
         if (parts.length !== 3 || parts.some(isNaN)) return null;
         return new Date(parts[2], parts[1] - 1, parts[0]);
     };
-    const isManager = ['2304', '1909', '4161'].includes(CURRENT_USER.pass);
+    const isManager = ['2304', '1909', '4161', '2528', '1983'].includes(CURRENT_USER.pass);
     
     // Tug'ilgan kunlarni tekshirish
     const todayStr = String(today.getDate()).padStart(2, '0') + '.' + String(today.getMonth() + 1).padStart(2, '0');
@@ -5467,7 +5920,22 @@ function setupEventListeners(){
             if (!card || !card.dataset.personData) return;
             const personData = JSON.parse(card.dataset.personData.replace(/&apos;/g, "'"));
             const p = citizenDatabase.find(citizen => citizen.unique_id === personData.unique_id) || personData;
-                   showScreen('details-modal');
+            
+            // Oldingi ochiq modalni saqlash
+            let prevModalId = null;
+            document.querySelectorAll('.modal-overlay').forEach(m => {
+                if (m.style.display === 'flex' && m.id !== 'details-modal') {
+                    prevModalId = m.id;
+                }
+            });
+            
+            // Global funksiyaga oldingi modal ID sini berish
+            if (typeof window.setDetailsPreviousModal === 'function') {
+                window.setDetailsPreviousModal(prevModalId);
+            }
+            
+            // Details modalini ochish
+            document.getElementById('details-modal').style.display = 'flex';
             DOM.detailsContent.innerHTML = createFullDetailsHTML(p);
         }
         else if(t.closest('.js-add-family-member-btn')) { 
@@ -6021,7 +6489,7 @@ DOM.notificationModal.addEventListener('click', (e) => {
         preview.style.display = 'none';
         preview.src = '';
         const uploadBtnLabel = document.getElementById('upload-solution-photo-btn-label');
-        const allowedUsers = ['2304', '4161', '1909'];
+        const allowedUsers = ['2304', '4161', '1909', '2528', '1983'];
         uploadBtnLabel.style.display = allowedUsers.includes(CURRENT_USER.pass) ? 'inline-flex' : 'none';
         showScreen('solve-problem-modal');
     } else if (e.target.closest('.js-dismiss-birthday')) {
@@ -6156,7 +6624,7 @@ function handleLogin() {
             document.body.removeAttribute('data-user-role');
         }
         
-        const canViewStats = ['4161', '2304'].includes(CURRENT_USER.pass);
+        const canViewStats = ['4161', '2304', '1909', '2528', '1983'].includes(CURRENT_USER.pass);
         document.getElementById('staff-stats-tab').classList.toggle('permission-hidden', !canViewStats);
         
         setTimeout(() => {
@@ -6440,7 +6908,7 @@ function performFaceIdLogin(passCode, role) {
         document.body.removeAttribute('data-user-role');
     }
     
-    const canViewStats = ['4161', '2304'].includes(CURRENT_USER.pass);
+    const canViewStats = ['4161', '2304', '1909', '2528', '1983'].includes(CURRENT_USER.pass);
     const staffTab = document.getElementById('staff-stats-tab');
     if (staffTab) staffTab.classList.toggle('permission-hidden', !canViewStats);
     
@@ -8768,20 +9236,30 @@ window.showCitizenDetails = function(person) {
     }
     console.log('showCitizenDetails:', person.fio);
     
+    // Oldingi ochiq modalni saqlash
+    let prevModalId = null;
+    
     // Detail list modalini yopish (agar ochiq bo'lsa)
     const detailListModal = document.getElementById('detail-list-modal');
     if (detailListModal && detailListModal.style.display !== 'none') {
+        prevModalId = 'detail-list-modal';
         detailListModal.style.display = 'none';
     }
     
     // Xarita modalini yopish (agar ochiq bo'lsa)
     const mapModal = document.getElementById('objects-stats-modal');
     if (mapModal && mapModal.style.display !== 'none') {
+        prevModalId = 'objects-stats-modal';
         mapModal.style.display = 'none';
     }
     
+    // Global funksiyaga oldingi modal ID sini berish
+    if (typeof window.setDetailsPreviousModal === 'function') {
+        window.setDetailsPreviousModal(prevModalId);
+    }
+    
     // Details modalini ochish
-    showScreen('details-modal');
+    document.getElementById('details-modal').style.display = 'flex';
     DOM.detailsContent.innerHTML = createFullDetailsHTML(person);
     
     // Xaritada ko'rish tugmasini ko'rsatish/yashirish
@@ -8796,25 +9274,6 @@ window.showCitizenDetails = function(person) {
 }
 
 // GLOBAL: Xaritadan fuqaroni ochish funksiyasi
-// ═══════════════════════════════════════════════════════════════════
-// GLOBAL: Oldingi ochiq modal (qaytish uchun)
-// ═══════════════════════════════════════════════════════════════════
-let previousOpenModal = null;
-
-// Details modalni yopish va oldingi modalga qaytish
-window.closeDetailsModal = function() {
-    const detailsModal = document.getElementById('details-modal');
-    if (detailsModal) detailsModal.style.display = 'none';
-    
-    // Oldingi modalga qaytish
-    if (previousOpenModal) {
-        const prevModal = document.getElementById(previousOpenModal);
-        if (prevModal) {
-            prevModal.style.display = 'flex';
-        }
-        previousOpenModal = null;
-    }
-};
 
 window.openCitizenFromMap = function(uniqueId) {
     if (navigator.vibrate) navigator.vibrate(30);
@@ -8824,13 +9283,18 @@ window.openCitizenFromMap = function(uniqueId) {
     
     if (person) {
         // Oldingi ochiq modalni saqlash
-        previousOpenModal = null;
+        let prevModalId = null;
         document.querySelectorAll('.modal-overlay').forEach(m => {
             if (m.style.display === 'flex' && m.id !== 'details-modal') {
-                previousOpenModal = m.id;
+                prevModalId = m.id;
                 m.style.display = 'none';
             }
         });
+        
+        // Global funksiyaga oldingi modal ID sini berish
+        if (typeof window.setDetailsPreviousModal === 'function') {
+            window.setDetailsPreviousModal(prevModalId);
+        }
         
         // Details modalini ochish
         const detailsModal = document.getElementById('details-modal');
@@ -11290,7 +11754,7 @@ let murojaatlarCache = [];
 let currentMurojaatFilter = 'all';
 
 // MFY raisi va Rozimuhammad barcha murojaatlarni ko'radi
-const ADMIN_PASS_CODES = ['4161', '2304']; // MFY raisi va Rozimuhammad
+const ADMIN_PASS_CODES = ['4161', '2304', '1909', '2528', '1983']; // Admin foydalanuvchilar
 
 // Murojaatlarni yuklash
 async function loadMurojaatlar() {
@@ -11330,7 +11794,8 @@ function updateMurojaatBadge() {
 }
 
 // Murojaatlar modalini ochish
-async function openMurojaatlarModal() {
+window.openMurojaatlarModal = async function() {
+    console.log('openMurojaatlarModal ishladi');
     // Avval modalni ochish - foydalanuvchi tezroq ko'radi
     document.getElementById('murojaatlar-modal').style.display = 'flex';
     
@@ -11348,7 +11813,7 @@ async function openMurojaatlarModal() {
     renderMurojaatlar();
 }
 
-// Murojaatlarni render qilish
+// Murojaatlarni render qilish - MANZIL BO'YICHA GURUHLANGAN
 function renderMurojaatlar() {
     const content = document.getElementById('murojaatlar-content');
     const totalEl = document.getElementById('murojaatlar-total');
@@ -11372,44 +11837,159 @@ function renderMurojaatlar() {
     }
     
     // Sort by date (newest first)
-    filtered.sort((a, b) => new Date(b.vaqt) - new Date(a.vaqt));
+    filtered.sort((a, b) => {
+        try {
+            return new Date(b.vaqt) - new Date(a.vaqt);
+        } catch(e) { return 0; }
+    });
     
-    content.innerHTML = filtered.map(m => {
-        const date = new Date(m.vaqt);
-        const dateStr = date.toLocaleDateString('uz-UZ') + ' ' + date.toLocaleTimeString('uz-UZ', {hour: '2-digit', minute: '2-digit'});
+    // MANZIL BO'YICHA GURUHLASH
+    const groupedByAddress = {};
+    filtered.forEach(m => {
+        // Manzilni normalizatsiya qilish
+        const address = normalizeAddress(m.fuqaro_manzil || 'Noma\'lum manzil');
+        if (!groupedByAddress[address]) {
+            groupedByAddress[address] = [];
+        }
+        groupedByAddress[address].push(m);
+    });
+    
+    // Render - GURUHLANGAN
+    let html = '';
+    const addressKeys = Object.keys(groupedByAddress);
+    
+    addressKeys.forEach((address, addressIndex) => {
+        const appeals = groupedByAddress[address];
+        const yangiCount = appeals.filter(m => m.status === 'yangi').length;
+        const isExpanded = appeals.length <= 3; // 3 tagacha bo'lsa avtomatik ochiq
         
-        const statusBadge = m.status === 'yangi' 
-            ? '<span style="background:#ef4444;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">YANGI</span>'
-            : m.status === 'javob'
-            ? '<span style="background:#10b981;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">JAVOB BERILGAN</span>'
-            : '<span style="background:#64748b;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">O\'QILGAN</span>';
-        
-        return `
-            <div class="murojaat-item ${m.status === 'yangi' ? 'yangi' : ''}" onclick="openMurojaatDetail('${m.id}')" style="cursor:pointer;">
-                <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.75rem;">
-                    <div>
-                        <div style="font-weight:600;color:#fff;font-size:1rem;">${m.fuqaro_fio}${statusBadge}</div>
-                        <div style="color:#38bdf8;font-size:0.85rem;margin-top:0.25rem;">
-                            <i class="fas fa-map-marker-alt"></i> ${m.fuqaro_manzil}
+        html += `
+            <div class="address-group" style="margin-bottom:1rem;background:linear-gradient(135deg,rgba(59,130,246,0.1),rgba(99,102,241,0.05));border-radius:16px;border:1px solid rgba(59,130,246,0.2);overflow:hidden;">
+                <!-- Manzil sarlavhasi -->
+                <div class="address-header" onclick="toggleAddressGroup(${addressIndex})" style="padding:1rem;cursor:pointer;display:flex;justify-content:space-between;align-items:center;background:linear-gradient(135deg,rgba(59,130,246,0.15),rgba(99,102,241,0.1));transition:all 0.2s;">
+                    <div style="display:flex;align-items:center;gap:0.75rem;">
+                        <div style="width:40px;height:40px;background:linear-gradient(135deg,#3b82f6,#6366f1);border-radius:12px;display:flex;align-items:center;justify-content:center;color:white;font-size:1.1rem;">
+                            <i class="fas fa-home"></i>
                         </div>
-                        <div style="color:#94a3b8;font-size:0.8rem;margin-top:0.25rem;">
-                            <i class="fas fa-phone"></i> ${m.fuqaro_telefon}
+                        <div>
+                            <div style="font-weight:700;color:#fff;font-size:1rem;">${address}</div>
+                            <div style="font-size:0.8rem;color:#94a3b8;margin-top:2px;">
+                                ${appeals.length} ta murojaat
+                                ${yangiCount > 0 ? '<span style="background:#ef4444;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">' + yangiCount + ' YANGI</span>' : ''}
+                            </div>
                         </div>
                     </div>
-                    <div style="text-align:right;">
-                        <div style="color:#64748b;font-size:0.75rem;">${dateStr}</div>
-                        <div style="color:#94a3b8;font-size:0.75rem;margin-top:0.25rem;">
-                            <i class="fas fa-user-tie"></i> ${m.xodim_lavozim}
-                        </div>
+                    <div style="display:flex;align-items:center;gap:0.5rem;">
+                        <span style="background:rgba(255,255,255,0.1);padding:0.4rem 0.8rem;border-radius:20px;font-size:0.8rem;color:#fff;font-weight:600;">${appeals.length}</span>
+                        <i class="fas fa-chevron-down address-chevron-${addressIndex}" style="color:#64748b;transition:transform 0.3s;${isExpanded ? 'transform:rotate(180deg)' : ''}"></i>
                     </div>
                 </div>
-                <div style="color:#cbd5e1;font-size:0.9rem;line-height:1.4;background:rgba(0,0,0,0.2);padding:0.75rem;border-radius:8px;">
-                    ${m.murojaat_matni.substring(0, 150)}${m.murojaat_matni.length > 150 ? '...' : ''}
+                
+                <!-- Murojaatlar ro'yxati -->
+                <div id="address-appeals-${addressIndex}" style="padding:0.5rem;${isExpanded ? '' : 'display:none;'}">
+        `;
+        
+        appeals.forEach(m => {
+            let dateStr = '';
+            try {
+                const date = new Date(m.vaqt);
+                if (!isNaN(date.getTime())) {
+                    dateStr = date.toLocaleDateString('uz-UZ') + ' ' + date.toLocaleTimeString('uz-UZ', {hour: '2-digit', minute: '2-digit'});
+                } else {
+                    dateStr = m.vaqt || '';
+                }
+            } catch(e) {
+                dateStr = m.vaqt || '';
+            }
+            
+            const statusBadge = m.status === 'yangi' 
+                ? '<span style="background:#ef4444;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">YANGI</span>'
+                : m.status === 'javob'
+                ? '<span style="background:#10b981;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">JAVOB BERILGAN</span>'
+                : '<span style="background:#64748b;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;margin-left:0.5rem;">O\'QILGAN</span>';
+            
+            html += `
+                <div class="murojaat-item ${m.status === 'yangi' ? 'yangi' : ''}" onclick="openMurojaatDetail('${m.id}')" style="cursor:pointer;margin:0.5rem;border-radius:12px;">
+                    <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.5rem;">
+                        <div>
+                            <div style="font-weight:600;color:#fff;font-size:0.95rem;">${m.fuqaro_fio}${statusBadge}</div>
+                            <div style="color:#94a3b8;font-size:0.8rem;margin-top:0.25rem;">
+                                <i class="fas fa-phone"></i> ${m.fuqaro_telefon}
+                            </div>
+                        </div>
+                        <div style="text-align:right;">
+                            <div style="color:#64748b;font-size:0.75rem;">${dateStr}</div>
+                            <div style="color:#94a3b8;font-size:0.7rem;margin-top:0.25rem;">
+                                <i class="fas fa-user-tie"></i> ${m.xodim_fio || m.xodim_lavozim || 'Xodim'}
+                            </div>
+                        </div>
+                    </div>
+                    <div style="color:#cbd5e1;font-size:0.85rem;line-height:1.4;background:rgba(0,0,0,0.2);padding:0.6rem;border-radius:8px;">
+                        ${m.murojaat_matni ? m.murojaat_matni.substring(0, 120) + (m.murojaat_matni.length > 120 ? '...' : '') : ''}
+                    </div>
+                    ${m.rasm_link ? '<div style="margin-top:0.4rem;color:#0077b6;font-size:0.75rem;"><i class="fas fa-image"></i> Rasm biriktirilgan</div>' : ''}
                 </div>
-                ${m.rasm_link ? '<div style="margin-top:0.5rem;color:#0077b6;font-size:0.8rem;"><i class="fas fa-image"></i> Rasm biriktirilgan</div>' : ''}
+            `;
+        });
+        
+        html += `
+                </div>
             </div>
         `;
-    }).join('');
+    });
+    
+    content.innerHTML = html;
+}
+
+// Manzilni normalizatsiya qilish
+function normalizeAddress(address) {
+    if (!address) return 'Noma\'lum manzil';
+    
+    // Bo'sh joylarni tozalash va kichik harflarga
+    let normalized = address.trim().toLowerCase();
+    
+    // Ko'p bo'sh joylarni bitta qilish
+    normalized = normalized.replace(/\s+/g, ' ');
+    
+    // Raqam va ko'chani ajratish
+    // Misol: "shevchenko 22" va "shevchenko ko'chasi 22-uy" bir xil bo'lishi kerak
+    
+    // Ko'cha so'zlarini olib tashlash
+    const streetWords = ['ko\'chasi', 'kochasi', 'ko\'cha', 'kocha', 'street', 'str', 'mavze', 'mavzesi', 'dahasi', 'daha'];
+    streetWords.forEach(word => {
+        normalized = normalized.replace(new RegExp('\\b' + word + '\\b', 'gi'), '');
+    });
+    
+    // Uy so'zlarini olib tashlash
+    const houseWords = ['uy', '-uy', 'dom', 'xonadon', 'kvartira', 'kv'];
+    houseWords.forEach(word => {
+        normalized = normalized.replace(new RegExp('\\b' + word + '\\b', 'gi'), '');
+    });
+    
+    // Ortiqcha belgilarni tozalash
+    normalized = normalized.replace(/[-_,.:;]/g, ' ').trim();
+    normalized = normalized.replace(/\s+/g, ' ');
+    
+    // Birinchi harfni katta qilish
+    if (normalized.length > 0) {
+        normalized = normalized.charAt(0).toUpperCase() + normalized.slice(1);
+    }
+    
+    return normalized || 'Noma\'lum manzil';
+}
+
+// Manzil guruhini ochish/yopish
+function toggleAddressGroup(index) {
+    const content = document.getElementById('address-appeals-' + index);
+    const chevron = document.querySelector('.address-chevron-' + index);
+    
+    if (content.style.display === 'none') {
+        content.style.display = 'block';
+        chevron.style.transform = 'rotate(180deg)';
+    } else {
+        content.style.display = 'none';
+        chevron.style.transform = 'rotate(0deg)';
+    }
 }
 
 // Filter
@@ -11851,154 +12431,11 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // ═══════════════════════════════════════════════════════════════
-// 🗺️ MUAMMOLAR XARITASI (Problems Map / Crowdsourcing)
+// 🗺️ MUAMMOLAR XARITASI - QOSHIMCHA FUNKSIYALAR
 // ═══════════════════════════════════════════════════════════════
-let problemsMap = null;
-let problemMarkers = [];
-let problemsData = [];
+// Asosiy funksiyalar script boshida aniqlangan
 
-function openProblemsMap() {
-    let modal = document.getElementById('problems-map-modal');
-    if (!modal) {
-        modal = document.createElement('div');
-        modal.id = 'problems-map-modal';
-        modal.className = 'modal-overlay';
-        modal.innerHTML = `
-            <div class="modal-box" style="max-width:900px;width:95%;max-height:95vh;overflow-y:auto;padding:1.25rem;">
-                <button class="modal-close-btn" onclick="closeProblemsMap()"><i class="fas fa-times"></i></button>
-                
-                <div style="display:flex;align-items:center;gap:0.875rem;margin-bottom:1rem;">
-                    <div style="width:50px;height:50px;background:linear-gradient(135deg,#ef4444,#f97316);border-radius:14px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">
-                        <i class="fas fa-map-marked-alt" style="font-size:1.3rem;color:white;"></i>
-                    </div>
-                    <div>
-                        <h3 style="font-size:1.15rem;font-weight:700;">Muammolar Xaritasi</h3>
-                        <p style="color:var(--text-light);font-size:0.8rem;">Infratuzilma muammolarini belgilang</p>
-                    </div>
-                </div>
-                
-                <!-- Controls -->
-                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
-                    <button class="btn btn-primary" style="margin:0;padding:0.7rem;font-size:0.85rem;" onclick="addProblemMode()">
-                        <i class="fas fa-plus-circle"></i> Muammo qo'shish
-                    </button>
-                    <select id="problem-filter" style="padding:0.7rem;border-radius:12px;background:var(--bg-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;" onchange="filterProblems()">
-                        <option value="all">📋 Barchasi</option>
-                        <option value="asfalt">🛣️ Asfalt</option>
-                        <option value="chiroq">💡 Chiroq</option>
-                        <option value="suv">💧 Suv</option>
-                        <option value="gaz">🔥 Gaz</option>
-                        <option value="chiqindi">🗑️ Chiqindi</option>
-                        <option value="boshqa">📌 Boshqa</option>
-                    </select>
-                </div>
-                
-                <!-- Map Container -->
-                <div id="problems-map-container" style="height:300px;border-radius:14px;overflow:hidden;border:2px solid var(--border-color);margin-bottom:0.75rem;"></div>
-                
-                <!-- Problem Form -->
-                <div id="problem-form" style="display:none;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.05));padding:1rem;border-radius:14px;border:1px solid rgba(239,68,68,0.2);">
-                    <h4 style="margin-bottom:0.75rem;font-size:0.95rem;display:flex;align-items:center;gap:0.5rem;">
-                        <i class="fas fa-exclamation-triangle" style="color:#ef4444;"></i> Yangi muammo
-                    </h4>
-                    
-                    <!-- Location Detection Button -->
-                    <button class="btn btn-secondary" style="width:100%;margin:0 0 0.5rem 0;padding:0.7rem;font-size:0.85rem;" onclick="detectProblemLocation()">
-                        <i class="fas fa-crosshairs"></i> Joylashuvni aniqlash
-                    </button>
-                    <p id="problem-location-status" style="font-size:0.75rem;color:var(--text-light);margin-bottom:0.5rem;text-align:center;display:none;"></p>
-                    
-                    <select id="problem-type" style="width:100%;padding:0.65rem;border-radius:10px;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;margin-bottom:0.5rem;">
-                        <option value="">Muammo turini tanlang</option>
-                        <option value="asfalt">🛣️ Asfalt o'yilgan/buzilgan</option>
-                        <option value="chiroq">💡 Chiroq yonmaydi / Simyog'och</option>
-                        <option value="suv">💧 Suv quvuri buzilgan</option>
-                        <option value="gaz">🔥 Gaz muammosi</option>
-                        <option value="chiqindi">🗑️ Chiqindi to'plangan</option>
-                        <option value="boshqa">📌 Boshqa</option>
-                    </select>
-                    <input type="text" id="problem-description" placeholder="Muammo tavsifi..." style="width:100%;padding:0.65rem;border-radius:10px;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;margin-bottom:0.5rem;">
-                    
-                    <!-- RASMGA OLISH -->
-                    <div style="margin-bottom:0.75rem;">
-                        <p style="font-size:0.8rem;font-weight:600;margin-bottom:0.5rem;color:var(--text-dark);">
-                            <i class="fas fa-camera" style="color:#ef4444;"></i> Rasmlar (kamida 2 ta, maksimum 4 ta)
-                        </p>
-                        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;">
-                            <div class="problem-img-box" onclick="captureProblemImage(0)">
-                                <input type="file" id="problem-img-0" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(0)">
-                                <div id="problem-img-preview-0" class="img-preview-box">
-                                    <i class="fas fa-camera"></i>
-                                    <span>1</span>
-                                </div>
-                            </div>
-                            <div class="problem-img-box" onclick="captureProblemImage(1)">
-                                <input type="file" id="problem-img-1" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(1)">
-                                <div id="problem-img-preview-1" class="img-preview-box">
-                                    <i class="fas fa-camera"></i>
-                                    <span>2</span>
-                                </div>
-                            </div>
-                            <div class="problem-img-box" onclick="captureProblemImage(2)">
-                                <input type="file" id="problem-img-2" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(2)">
-                                <div id="problem-img-preview-2" class="img-preview-box">
-                                    <i class="fas fa-camera"></i>
-                                    <span>3</span>
-                                </div>
-                            </div>
-                            <div class="problem-img-box" onclick="captureProblemImage(3)">
-                                <input type="file" id="problem-img-3" accept="image/*" capture="environment" style="display:none" onchange="previewProblemImage(3)">
-                                <div id="problem-img-preview-3" class="img-preview-box">
-                                    <i class="fas fa-camera"></i>
-                                    <span>4</span>
-                                </div>
-                            </div>
-                        </div>
-                        <p id="problem-img-count" style="font-size:0.7rem;color:var(--text-light);margin-top:0.35rem;text-align:center;">0 ta rasm yuklandi</p>
-                    </div>
-                    
-                    <div style="display:flex;gap:0.5rem;">
-                        <button class="btn btn-success" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="saveProblem()"><i class="fas fa-save"></i> Saqlash</button>
-                        <button class="btn btn-cancel" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="cancelProblem()"><i class="fas fa-times"></i> Bekor</button>
-                    </div>
-                </div>
-                
-                <!-- Stats -->
-                <div id="problems-stats" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin-top:0.75rem;"></div>
-            </div>
-        `;
-        document.body.appendChild(modal);
-        
-        // CSS qo'shish
-        if (!document.getElementById('problem-img-styles')) {
-            const style = document.createElement('style');
-            style.id = 'problem-img-styles';
-            style.textContent = `
-                .problem-img-box { cursor: pointer; }
-                .img-preview-box {
-                    width: 100%; aspect-ratio: 1; border-radius: 10px;
-                    background: linear-gradient(135deg, rgba(239,68,68,0.1), rgba(249,115,22,0.05));
-                    border: 2px dashed rgba(239,68,68,0.3);
-                    display: flex; flex-direction: column; align-items: center; justify-content: center;
-                    gap: 0.25rem; transition: all 0.2s;
-                }
-                .img-preview-box:hover { border-color: #ef4444; background: rgba(239,68,68,0.15); }
-                .img-preview-box i { font-size: 1.2rem; color: #ef4444; }
-                .img-preview-box span { font-size: 0.7rem; color: var(--text-light); }
-                .img-preview-box img { width: 100%; height: 100%; object-fit: cover; border-radius: 8px; }
-                .img-preview-box.has-image { border: 2px solid #10b981; }
-            `;
-            document.head.appendChild(style);
-        }
-    }
-    
-    modal.style.display = 'flex';
-    setTimeout(() => initProblemsMap(), 100);
-}
-
-function closeProblemsMap() {
-    document.getElementById('problems-map-modal').style.display = 'none';
-}
+// Eski funksiyalar o'chirildi - yangilari script boshida
 
 function initProblemsMap() {
     if (problemsMap) {
@@ -12007,12 +12444,48 @@ function initProblemsMap() {
     }
     
     problemsMap = L.map('problems-map-container').setView([40.7821, 72.3442], 15);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    
+    // Street Layer (default)
+    streetLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap'
-    }).addTo(problemsMap);
+    });
+    
+    // Satellite Layer - Google Satellite
+    satelliteLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+        attribution: '© Google Satellite'
+    });
+    
+    // Default - Street layer
+    streetLayer.addTo(problemsMap);
+    currentMapLayer = 'street';
     
     // Load existing problems
     loadProblems();
+}
+
+// Xarita qatlamini almashtirish
+window.switchMapLayer = function(layerType) {
+    if (!problemsMap) return;
+    
+    if (layerType === 'satellite' && currentMapLayer !== 'satellite') {
+        problemsMap.removeLayer(streetLayer);
+        satelliteLayer.addTo(problemsMap);
+        currentMapLayer = 'satellite';
+        document.getElementById('satellite-layer-btn').classList.remove('btn-secondary-outline');
+        document.getElementById('satellite-layer-btn').classList.add('btn-secondary');
+        document.getElementById('street-layer-btn').classList.remove('btn-secondary');
+        document.getElementById('street-layer-btn').classList.add('btn-secondary-outline');
+        showToast('Sputnik ko\'rinishi', 'success');
+    } else if (layerType === 'street' && currentMapLayer !== 'street') {
+        problemsMap.removeLayer(satelliteLayer);
+        streetLayer.addTo(problemsMap);
+        currentMapLayer = 'street';
+        document.getElementById('street-layer-btn').classList.remove('btn-secondary-outline');
+        document.getElementById('street-layer-btn').classList.add('btn-secondary');
+        document.getElementById('satellite-layer-btn').classList.remove('btn-secondary');
+        document.getElementById('satellite-layer-btn').classList.add('btn-secondary-outline');
+        showToast('Ko\'cha ko\'rinishi', 'success');
+    }
 }
 
 let addingProblem = false;
@@ -12033,11 +12506,10 @@ function detectProblemLocation() {
         return;
     }
     
-    // Birinchi tez javob olish uchun
     const geoOptions = {
-        enableHighAccuracy: false,
+        enableHighAccuracy: true,
         timeout: 15000,
-        maximumAge: 60000
+        maximumAge: 0
     };
     
     navigator.geolocation.getCurrentPosition(
@@ -12047,12 +12519,10 @@ function detectProblemLocation() {
             
             console.log('Joylashuv aniqlandi:', lat, lng);
             
-            // Xaritani shu joyga o'tkazish
             if (problemsMap) {
                 problemsMap.setView([lat, lng], 17);
             }
             
-            // Marker qo'yish
             if (tempProblemMarker && problemsMap) {
                 problemsMap.removeLayer(tempProblemMarker);
             }
@@ -12090,7 +12560,7 @@ function detectProblemLocation() {
     );
 }
 
-function addProblemMode() {
+window.addProblemMode = function() {
     addingProblem = true;
     problemLatlng = null;
     document.getElementById('problem-form').style.display = 'block';
@@ -12118,13 +12588,11 @@ function onMapClick(e) {
     
     problemLatlng = { lat: e.latlng.lat, lng: e.latlng.lng };
     
-    const statusEl = document.getElementById('problem-location-status');
-    statusEl.style.display = 'block';
-    statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Xaritadan joy tanlandi';
-    statusEl.style.color = 'var(--success-color)';
+    document.getElementById('problem-location-status').style.display = 'block';
+    document.getElementById('problem-location-status').innerHTML = '<i class="fas fa-check-circle"></i> Joylashuv tanlandi';
+    document.getElementById('problem-location-status').style.color = 'var(--success-color)';
 }
 
-// Problem rasmlarini saqlash
 let problemImages = [];
 
 function captureProblemImage(index) {
@@ -12138,9 +12606,9 @@ function previewProblemImage(index) {
     if (input.files && input.files[0]) {
         const reader = new FileReader();
         reader.onload = (e) => {
-            preview.innerHTML = `<img src="${e.target.result}" alt="Rasm ${index+1}">`;
-            preview.classList.add('has-image');
             problemImages[index] = e.target.result;
+            preview.innerHTML = '<img src="' + e.target.result + '">';
+            preview.classList.add('has-image');
             updateProblemImgCount();
         };
         reader.readAsDataURL(input.files[0]);
@@ -12149,15 +12617,15 @@ function previewProblemImage(index) {
 
 function updateProblemImgCount() {
     const count = problemImages.filter(img => img).length;
-    const countEl = document.getElementById('problem-img-count');
-    if (countEl) {
-        countEl.textContent = count + ' ta rasm yuklandi';
-        countEl.style.color = count >= 2 ? 'var(--success-color)' : 'var(--text-light)';
+    const el = document.getElementById('problem-img-count');
+    if (el) {
+        el.textContent = count + ' ta rasm yuklandi';
+        el.style.color = count >= 2 ? 'var(--success-color)' : 'var(--text-light)';
     }
 }
 
-// Rasmni compress qilish funksiyasi
-function compressImage(base64, maxWidth = 800, quality = 0.7) {
+// Rasmni siqish
+function compressImage(base64, maxWidth, quality) {
     return new Promise((resolve) => {
         const img = new Image();
         img.onload = () => {
@@ -12165,7 +12633,6 @@ function compressImage(base64, maxWidth = 800, quality = 0.7) {
             let width = img.width;
             let height = img.height;
             
-            // Kichiklashtirish
             if (width > maxWidth) {
                 height = (height * maxWidth) / width;
                 width = maxWidth;
@@ -12184,7 +12651,7 @@ function compressImage(base64, maxWidth = 800, quality = 0.7) {
     });
 }
 
-async function saveProblem() {
+window.saveProblem = async function() {
     if (!problemLatlng && !tempProblemMarker) {
         showToast('Avval joylashuvni aniqlang yoki xaritadan tanlang', 'error');
         return;
@@ -12198,7 +12665,6 @@ async function saveProblem() {
         return;
     }
     
-    // Kamida 2 ta rasm kerak
     const imgCount = problemImages.filter(img => img).length;
     if (imgCount < 2) {
         showToast('Kamida 2 ta rasm yuklang!', 'error');
@@ -12208,7 +12674,6 @@ async function saveProblem() {
     const lat = problemLatlng ? problemLatlng.lat : (tempProblemMarker?.problemLatlng?.lat || 40.7821);
     const lng = problemLatlng ? problemLatlng.lng : (tempProblemMarker?.problemLatlng?.lng || 72.3442);
     
-    // Rasmlarni compress qilish
     showToast('Rasmlar tayyorlanmoqda...', 'info');
     const compressedImages = [];
     for (const img of problemImages.filter(i => i)) {
@@ -12216,36 +12681,56 @@ async function saveProblem() {
         compressedImages.push(compressed);
     }
     
-    // Sana va vaqtni to'g'ri formatda
+    // TO'G'RI VAQT VA SANA FORMATI
     const now = new Date();
     const dateStr = String(now.getDate()).padStart(2, '0') + '.' + 
                     String(now.getMonth() + 1).padStart(2, '0') + '.' + 
                     now.getFullYear();
     const timeStr = String(now.getHours()).padStart(2, '0') + ':' + 
-                    String(now.getMinutes()).padStart(2, '0');
+                    String(now.getMinutes()).padStart(2, '0') + ':' +
+                    String(now.getSeconds()).padStart(2, '0');
     
-    // Xodim ismini va lavozimini olish - CURRENT_USER dan yoki localStorage dan
+    // XODIM NOMI VA LAVOZIMINI TO'G'RI OLISH
     let xodimName = '';
     let xodimLavozim = '';
-    if (CURRENT_USER) {
-        xodimName = CURRENT_USER.fio || CURRENT_USER.fullName || '';
-        xodimLavozim = CURRENT_USER.lavozim || CURRENT_USER.role || '';
+    
+    // 1. CURRENT_USER dan tekshirish
+    if (typeof CURRENT_USER !== 'undefined' && CURRENT_USER) {
+        xodimName = CURRENT_USER.fio || CURRENT_USER.fullName || CURRENT_USER.ism || '';
+        xodimLavozim = CURRENT_USER.lavozim || CURRENT_USER.role || CURRENT_USER.position || '';
     }
+    
+    // 2. localStorage dan tekshirish
     if (!xodimName) {
-        // LocalStorage dan tekshirish
         try {
             const savedUser = localStorage.getItem('currentUser');
             if (savedUser) {
                 const user = JSON.parse(savedUser);
-                xodimName = user.fio || user.fullName || '';
-                xodimLavozim = user.lavozim || user.role || '';
+                xodimName = user.fio || user.fullName || user.ism || '';
+                xodimLavozim = user.lavozim || user.role || user.position || '';
+            }
+        } catch(e) {
+            console.log('LocalStorage o\'qish xatosi:', e);
+        }
+    }
+    
+    // 3. Agar hali ham bo'sh bo'lsa - objectStaffDatabase dan qidirish
+    if (!xodimName && typeof objectStaffDatabase !== 'undefined') {
+        try {
+            const activeStaff = objectStaffDatabase.find(s => s.isActive === true || s.isActive === 'true');
+            if (activeStaff) {
+                xodimName = activeStaff.fullName || activeStaff.fio || '';
+                xodimLavozim = activeStaff.position || activeStaff.lavozim || '';
             }
         } catch(e) {}
     }
-    // Agar hali ham bo'sh bo'lsa
-    if (!xodimName) xodimName = 'Mahalla xodimi';
     
-    // Xodim ismiga lavozimni qo'shish
+    // 4. Default
+    if (!xodimName) {
+        xodimName = 'Mahalla xodimi';
+    }
+    
+    // Reporter - ism va lavozim birga
     let reporterFull = xodimName;
     if (xodimLavozim && xodimName !== 'Mahalla xodimi') {
         reporterFull = xodimName + ' (' + xodimLavozim + ')';
@@ -12271,14 +12756,14 @@ async function saveProblem() {
     cancelProblem();
     updateProblemsStats();
     
-    // Google Sheets ga saqlash (fonda)
+    // Google Sheets ga saqlash
     showToast('Saqlanmoqda...', 'info');
-    console.log('Muammo yuborilmoqda:', problem.type, 'Xodim:', reporterFull);
+    console.log('Muammo yuborilmoqda:', problem.type, 'Xodim:', reporterFull, 'Vaqt:', timeStr);
     
     try {
         const response = await fetch(SCRIPT_URL, {
             method: 'POST',
-            mode: 'no-cors', // CORS muammosini hal qilish
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 action: 'saveMuammo',
@@ -12294,7 +12779,7 @@ async function saveProblem() {
     }
 }
 
-function cancelProblem() {
+window.cancelProblem = function() {
     addingProblem = false;
     problemLatlng = null;
     problemImages = [];
@@ -12304,7 +12789,6 @@ function cancelProblem() {
     document.getElementById('problem-description').value = '';
     document.getElementById('problem-location-status').style.display = 'none';
     
-    // Rasmlarni tozalash
     for (let i = 0; i < 4; i++) {
         const input = document.getElementById('problem-img-' + i);
         const preview = document.getElementById('problem-img-preview-' + i);
@@ -12322,6 +12806,70 @@ function cancelProblem() {
     }
     
     problemsMap.off('click', onMapClick);
+}
+
+// ═══════════════════════════════════════════════════════════════
+// 📊 KATEGORIYA BO'YICHA FILTER VA ZOOM - YANGILANGAN
+// ═══════════════════════════════════════════════════════════════
+window.filterProblemsByCategory = function() {
+    const filter = document.getElementById('problem-filter').value;
+    console.log('Kategoriya tanlandi:', filter);
+    
+    let visibleProblems = [];
+    
+    problemMarkers.forEach(marker => {
+        const shouldShow = (filter === 'all' || filter === '') || marker.problemType === filter;
+        
+        if (shouldShow) {
+            if (!problemsMap.hasLayer(marker)) {
+                marker.addTo(problemsMap);
+            }
+            visibleProblems.push(marker);
+        } else {
+            if (problemsMap.hasLayer(marker)) {
+                problemsMap.removeLayer(marker);
+            }
+        }
+    });
+    
+    // Agar kategoriya tanlangan bo'lsa - shu kategoriya muammolariga zoom
+    if (filter !== 'all' && filter !== '' && visibleProblems.length > 0) {
+        // Birinchi muammoga zoom qilish va sputnik rejimga o'tish
+        const firstMarker = visibleProblems[0];
+        const lat = firstMarker.getLatLng().lat;
+        const lng = firstMarker.getLatLng().lng;
+        
+        // Sputnik rejimga o'tish
+        switchMapLayer('satellite');
+        
+        // Zoom
+        if (visibleProblems.length === 1) {
+            problemsMap.setView([lat, lng], 18);
+            firstMarker.openPopup();
+        } else {
+            // Bir nechta muammo bo'lsa - barchasini ko'rsatish
+            const bounds = L.latLngBounds(visibleProblems.map(m => m.getLatLng()));
+            problemsMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 17 });
+        }
+        
+        showToast(visibleProblems.length + ' ta ' + filter + ' muammosi topildi', 'success');
+    } else if (filter === 'all') {
+        // Barchasini ko'rsatish
+        if (problemMarkers.length > 0) {
+            const bounds = L.latLngBounds(problemMarkers.map(m => m.getLatLng()));
+            problemsMap.fitBounds(bounds, { padding: [30, 30], maxZoom: 15 });
+        }
+        showToast('Barcha muammolar ko\'rsatilmoqda', 'info');
+    } else {
+        showToast('Bu kategoriyada muammo topilmadi', 'info');
+    }
+    
+    updateProblemsStats();
+}
+
+// Eski filter funksiya (mos kelish uchun)
+function filterProblems() {
+    filterProblemsByCategory();
 }
 
 // Muammolar ma'lumotlarini tozalash
@@ -13360,7 +13908,7 @@ function showProblemsList(filter) {
         boshqa: '📌 Boshqa'
     };
     
-    // Sana formatlash
+    // Sana formatlash - YANGILANGAN
     function formatDate(dateStr, timeStr) {
         if (!dateStr) return '-';
         
@@ -13377,10 +13925,18 @@ function showProblemsList(filter) {
             } catch(e) { return dateStr; }
         }
         
-        // Vaqtni tekshirish - 00:00 ni aniq vaqt bilan almashtirish
+        // Vaqtni tekshirish - 00:00 bo'lsa haqiqiy vaqtni olish
         let time = timeStr || '';
-        if (time === '00:00' || time === '00:00:00' || !time) {
+        
+        // 00:00 ni tozalash
+        if (time === '00:00' || time === '00:00:00') {
+            // Hozirgi vaqtni olish emas, shunchaki sana qaytarish
             time = '';
+        }
+        
+        // HH:MM:SS formatini HH:MM ga aylantirish
+        if (time && time.length > 5) {
+            time = time.substring(0, 5);
         }
         
         return dateStr + (time ? ' ' + time : '');
@@ -13388,7 +13944,7 @@ function showProblemsList(filter) {
     
     // Xodim ismini olish uchun funksiya
     function getXodimName() {
-        if (CURRENT_USER && CURRENT_USER.fio) {
+        if (typeof CURRENT_USER !== 'undefined' && CURRENT_USER && CURRENT_USER.fio) {
             return CURRENT_USER.fio;
         }
         try {
@@ -13396,23 +13952,35 @@ function showProblemsList(filter) {
             if (savedUser) {
                 const user = JSON.parse(savedUser);
                 if (user.fio) return user.fio;
+                if (user.fullName) return user.fullName;
             }
         } catch(e) {}
         return 'Xodim';
     }
     
-    // Reporter nomini olish uchun funksiya
+    // Reporter nomini olish uchun funksiya - YANGILANGAN
     function getReporterName(problem) {
-        // muammo_xabarchi ustunidan tekshirish
-        if (problem.muammo_xabarchi && problem.muammo_xabarchi !== 'Nomalum' && problem.muammo_xabarchi !== 'Noma\'lum' && problem.muammo_xabarchi !== 'undefined') {
+        // 1. muammo_xabarchi ustunidan tekshirish
+        if (problem.muammo_xabarchi && 
+            problem.muammo_xabarchi !== 'Nomalum' && 
+            problem.muammo_xabarchi !== 'Noma\'lum' && 
+            problem.muammo_xabarchi !== 'undefined' &&
+            problem.muammo_xabarchi !== 'Mahalla xodimi') {
             return problem.muammo_xabarchi;
         }
-        // reporter maydonidan tekshirish
+        
+        // 2. reporter maydonidan tekshirish
         let reporterName = problem.reporter || '';
-        if (!reporterName || reporterName === 'Noma\'lum' || reporterName === 'Nomalum' || reporterName === 'undefined') {
-            return getXodimName();
+        if (reporterName && 
+            reporterName !== 'Noma\'lum' && 
+            reporterName !== 'Nomalum' && 
+            reporterName !== 'undefined' &&
+            reporterName !== 'Mahalla xodimi') {
+            return reporterName;
         }
-        return reporterName;
+        
+        // 3. Joriy foydalanuvchi nomini olish
+        return getXodimName();
     }
     
     let filtered = problemsData;
@@ -13571,23 +14139,50 @@ function openImageViewer(src) {
     document.body.appendChild(viewer);
 }
 
-// Muammoni xaritada ko'rsatish
+// Muammoni xaritada ko'rsatish - SPUTNIK ZOOM BILAN
 function focusProblemOnMap(problemId) {
     const problem = problemsData.find(p => p.id === problemId || p.muammo_id === problemId);
     if (problem && problemsMap) {
-        problemsMap.setView([problem.lat, problem.lng], 18);
+        // SPUTNIK REJIMGA O'TISH
+        if (currentMapLayer !== 'satellite') {
+            switchMapLayer('satellite');
+        }
+        
+        // Yaqinlashtirish - zoom 19
+        problemsMap.setView([problem.lat, problem.lng], 19);
         
         // Marker popup ochish
         const marker = problemMarkers.find(m => m.problemId === problemId);
         if (marker) {
-            marker.openPopup();
+            setTimeout(() => marker.openPopup(), 300);
         }
         
         // Modalni yopish
         const modal = document.querySelector('div[style*="fixed"][style*="z-index:10000"]');
         if (modal) modal.remove();
         
-        showToast('Muammo joylashuvi ko\'rsatildi', 'success');
+        showToast('📍 Muammo joylashuvi sputnik rejimda ko\'rsatildi', 'success');
+    }
+}
+
+// Xaritadan muammoni tanlash - sputnik zoom
+function locateProblemOnMapWithSatellite(problemId) {
+    const problem = problemsData.find(p => p.id === problemId || p.muammo_id === problemId);
+    if (problem && problemsMap) {
+        // Sputnik rejimga o'tish
+        switchMapLayer('satellite');
+        
+        // Animatsiya bilan zoom
+        problemsMap.flyTo([problem.lat, problem.lng], 19, {
+            duration: 1.5,
+            easeLinearity: 0.25
+        });
+        
+        // Marker popup ochish
+        setTimeout(() => {
+            const marker = problemMarkers.find(m => m.problemId === problemId);
+            if (marker) marker.openPopup();
+        }, 1500);
     }
 }
 
@@ -13629,6 +14224,601 @@ function exportFamilyTreeAsImage() {
         showToast('Oila daraxti rasm sifatida yuklandi!', 'success');
     });
 }
+
+// ═══════════════════════════════════════════════════════════════════
+// SCRIPT OXIRIDA - GLOBAL FUNKSIYALARNI QAYTA ANIQLASH
+// Bu eski funksiyalarni override qiladi
+// ═══════════════════════════════════════════════════════════════════
+
+// MUAMMOLAR XARITASI - TO'LIQ VERSIYA
+let _problemsMapInstance = null;
+let _problemMarkersList = [];
+let _tempProblemMarker = null;
+let _problemLocation = null;
+let _problemImagesData = [null, null, null, null];
+let _isAddingProblem = false;
+let _streetLayerInstance = null;
+let _satelliteLayerInstance = null;
+let _currentLayer = 'street';
+
+window.openProblemsMap = function() {
+    console.log('✅ openProblemsMap TO\'LIQ ishladi');
+    
+    let modal = document.getElementById('problems-map-modal-full');
+    if (!modal) {
+        modal = document.createElement('div');
+        modal.id = 'problems-map-modal-full';
+        modal.className = 'modal-overlay';
+        modal.style.cssText = 'z-index:6000;display:none;';
+        modal.innerHTML = `
+            <div class="modal-box" style="max-width:900px;width:95%;max-height:95vh;overflow-y:auto;padding:1.25rem;">
+                <button class="modal-close-btn" onclick="window.closeProblemsMapFull()"><i class="fas fa-times"></i></button>
+                
+                <!-- Header -->
+                <div style="display:flex;align-items:center;gap:0.875rem;margin-bottom:1rem;">
+                    <div style="width:50px;height:50px;background:linear-gradient(135deg,#ef4444,#f97316);border-radius:14px;display:flex;align-items:center;justify-content:center;">
+                        <i class="fas fa-map-marked-alt" style="font-size:1.3rem;color:white;"></i>
+                    </div>
+                    <div>
+                        <h3 style="font-size:1.15rem;font-weight:700;">Muammolar Xaritasi</h3>
+                        <p style="color:var(--text-light);font-size:0.8rem;">Infratuzilma muammolarini belgilang</p>
+                    </div>
+                </div>
+                
+                <!-- Controls -->
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:0.5rem;margin-bottom:0.75rem;">
+                    <button class="btn btn-primary" style="margin:0;padding:0.7rem;font-size:0.85rem;" onclick="window.showProblemForm()">
+                        <i class="fas fa-plus-circle"></i> Muammo qo'shish
+                    </button>
+                    <select id="problem-filter-select" style="padding:0.7rem;border-radius:12px;background:var(--bg-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;cursor:pointer;" onchange="window.filterProblemsOnMap()">
+                        <option value="all">📋 Barchasi</option>
+                        <option value="asfalt">🛣️ Asfalt</option>
+                        <option value="chiroq">💡 Chiroq</option>
+                        <option value="suv">💧 Suv</option>
+                        <option value="gaz">🔥 Gaz</option>
+                        <option value="chiqindi">🗑️ Chiqindi</option>
+                        <option value="boshqa">📌 Boshqa</option>
+                    </select>
+                </div>
+                
+                <!-- Map Layer Toggle -->
+                <div style="display:flex;gap:0.5rem;margin-bottom:0.75rem;">
+                    <button id="street-btn" class="btn btn-secondary" style="flex:1;margin:0;padding:0.5rem;font-size:0.8rem;" onclick="window.switchToStreet()">
+                        <i class="fas fa-road"></i> Ko'cha
+                    </button>
+                    <button id="satellite-btn" class="btn btn-secondary-outline" style="flex:1;margin:0;padding:0.5rem;font-size:0.8rem;" onclick="window.switchToSatellite()">
+                        <i class="fas fa-satellite"></i> Sputnik
+                    </button>
+                </div>
+                
+                <!-- Map Container -->
+                <div id="problems-map-full" style="height:300px;border-radius:14px;overflow:hidden;border:2px solid var(--border-color);margin-bottom:0.75rem;"></div>
+                
+                <!-- Problem Form (hidden by default) -->
+                <div id="problem-form-full" style="display:none;background:linear-gradient(135deg,rgba(239,68,68,0.08),rgba(249,115,22,0.05));padding:1rem;border-radius:14px;border:1px solid rgba(239,68,68,0.2);margin-bottom:0.75rem;">
+                    <h4 style="margin-bottom:0.75rem;font-size:0.95rem;display:flex;align-items:center;gap:0.5rem;">
+                        <i class="fas fa-exclamation-triangle" style="color:#ef4444;"></i> Yangi muammo
+                    </h4>
+                    
+                    <!-- Location Button -->
+                    <button class="btn btn-secondary" style="width:100%;margin:0 0 0.5rem 0;padding:0.7rem;font-size:0.85rem;" onclick="window.detectProblemLocationFull()">
+                        <i class="fas fa-crosshairs"></i> Joylashuvni aniqlash
+                    </button>
+                    <p id="location-status-full" style="font-size:0.75rem;color:var(--text-light);margin-bottom:0.5rem;text-align:center;display:none;"></p>
+                    
+                    <!-- Type Select -->
+                    <select id="problem-type-full" style="width:100%;padding:0.65rem;border-radius:10px;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;margin-bottom:0.5rem;">
+                        <option value="">Muammo turini tanlang</option>
+                        <option value="asfalt">🛣️ Asfalt o'yilgan/buzilgan</option>
+                        <option value="chiroq">💡 Chiroq yonmaydi</option>
+                        <option value="suv">💧 Suv quvuri buzilgan</option>
+                        <option value="gaz">🔥 Gaz muammosi</option>
+                        <option value="chiqindi">🗑️ Chiqindi to'plangan</option>
+                        <option value="boshqa">📌 Boshqa</option>
+                    </select>
+                    
+                    <!-- Description -->
+                    <input type="text" id="problem-desc-full" placeholder="Muammo tavsifi..." style="width:100%;padding:0.65rem;border-radius:10px;background:var(--surface-color);border:1px solid var(--border-color);color:var(--text-dark);font-size:0.85rem;margin-bottom:0.5rem;">
+                    
+                    <!-- Images -->
+                    <div style="margin-bottom:0.75rem;">
+                        <p style="font-size:0.8rem;font-weight:600;margin-bottom:0.5rem;color:var(--text-dark);">
+                            <i class="fas fa-camera" style="color:#ef4444;"></i> Rasmlar (kamida 2 ta, maksimum 4 ta)
+                        </p>
+                        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;">
+                            <div onclick="window.captureProblemImg(0)" style="cursor:pointer;">
+                                <input type="file" id="prob-img-0" accept="image/*" capture="environment" style="display:none" onchange="window.previewProblemImg(0)">
+                                <div id="prob-preview-0" style="width:100%;aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(249,115,22,0.05));border:2px dashed rgba(239,68,68,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;">
+                                    <i class="fas fa-camera" style="font-size:1.2rem;color:#ef4444;"></i>
+                                    <span style="font-size:0.7rem;color:var(--text-light);">1</span>
+                                </div>
+                            </div>
+                            <div onclick="window.captureProblemImg(1)" style="cursor:pointer;">
+                                <input type="file" id="prob-img-1" accept="image/*" capture="environment" style="display:none" onchange="window.previewProblemImg(1)">
+                                <div id="prob-preview-1" style="width:100%;aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(249,115,22,0.05));border:2px dashed rgba(239,68,68,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;">
+                                    <i class="fas fa-camera" style="font-size:1.2rem;color:#ef4444;"></i>
+                                    <span style="font-size:0.7rem;color:var(--text-light);">2</span>
+                                </div>
+                            </div>
+                            <div onclick="window.captureProblemImg(2)" style="cursor:pointer;">
+                                <input type="file" id="prob-img-2" accept="image/*" capture="environment" style="display:none" onchange="window.previewProblemImg(2)">
+                                <div id="prob-preview-2" style="width:100%;aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(249,115,22,0.05));border:2px dashed rgba(239,68,68,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;">
+                                    <i class="fas fa-camera" style="font-size:1.2rem;color:#ef4444;"></i>
+                                    <span style="font-size:0.7rem;color:var(--text-light);">3</span>
+                                </div>
+                            </div>
+                            <div onclick="window.captureProblemImg(3)" style="cursor:pointer;">
+                                <input type="file" id="prob-img-3" accept="image/*" capture="environment" style="display:none" onchange="window.previewProblemImg(3)">
+                                <div id="prob-preview-3" style="width:100%;aspect-ratio:1;border-radius:10px;background:linear-gradient(135deg,rgba(239,68,68,0.1),rgba(249,115,22,0.05));border:2px dashed rgba(239,68,68,0.3);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.25rem;">
+                                    <i class="fas fa-camera" style="font-size:1.2rem;color:#ef4444;"></i>
+                                    <span style="font-size:0.7rem;color:var(--text-light);">4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p id="img-count-full" style="font-size:0.7rem;color:var(--text-light);margin-top:0.35rem;text-align:center;">0 ta rasm yuklandi</p>
+                    </div>
+                    
+                    <!-- Buttons -->
+                    <div style="display:flex;gap:0.5rem;">
+                        <button class="btn btn-success" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="window.saveProblemFull()">
+                            <i class="fas fa-save"></i> Saqlash
+                        </button>
+                        <button class="btn btn-cancel" style="flex:1;margin:0;padding:0.7rem;font-size:0.85rem;" onclick="window.cancelProblemFull()">
+                            <i class="fas fa-times"></i> Bekor
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Stats -->
+                <div id="problems-stats-full" style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;"></div>
+            </div>
+        `;
+        document.body.appendChild(modal);
+        
+        // CSS
+        if (!document.getElementById('prob-img-styles-full')) {
+            const style = document.createElement('style');
+            style.id = 'prob-img-styles-full';
+            style.textContent = `
+                #prob-preview-0.has-img, #prob-preview-1.has-img, #prob-preview-2.has-img, #prob-preview-3.has-img {
+                    border: 2px solid #10b981 !important;
+                    background: transparent !important;
+                }
+                #prob-preview-0.has-img img, #prob-preview-1.has-img img, #prob-preview-2.has-img img, #prob-preview-3.has-img img {
+                    width: 100%; height: 100%; object-fit: cover; border-radius: 8px;
+                }
+            `;
+            document.head.appendChild(style);
+        }
+    }
+    
+    modal.style.display = 'flex';
+    
+    // Init map
+    setTimeout(function() {
+        initProblemsMapFull();
+    }, 150);
+};
+
+function initProblemsMapFull() {
+    const container = document.getElementById('problems-map-full');
+    if (!container) return;
+    
+    if (_problemsMapInstance) {
+        _problemsMapInstance.invalidateSize();
+        loadProblemsToMap();
+        return;
+    }
+    
+    _problemsMapInstance = L.map('problems-map-full').setView([40.7821, 72.3442], 15);
+    
+    _streetLayerInstance = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap'
+    });
+    
+    _satelliteLayerInstance = L.tileLayer('https://mt1.google.com/vt/lyrs=s&x={x}&y={y}&z={z}', {
+        attribution: '© Google'
+    });
+    
+    _streetLayerInstance.addTo(_problemsMapInstance);
+    _currentLayer = 'street';
+    
+    // Xaritaga bosilganda
+    _problemsMapInstance.on('click', function(e) {
+        if (_isAddingProblem) {
+            _problemLocation = { lat: e.latlng.lat, lng: e.latlng.lng };
+            
+            if (_tempProblemMarker) {
+                _problemsMapInstance.removeLayer(_tempProblemMarker);
+            }
+            
+            _tempProblemMarker = L.marker([e.latlng.lat, e.latlng.lng], {
+                icon: L.divIcon({
+                    className: 'temp-marker',
+                    html: '<div style="width:30px;height:30px;background:#ef4444;border-radius:50%;border:3px solid white;box-shadow:0 4px 15px rgba(0,0,0,0.3);"></div>',
+                    iconSize: [30, 30],
+                    iconAnchor: [15, 15]
+                })
+            }).addTo(_problemsMapInstance);
+            
+            const statusEl = document.getElementById('location-status-full');
+            if (statusEl) {
+                statusEl.style.display = 'block';
+                statusEl.innerHTML = '<i class="fas fa-check-circle" style="color:#10b981;"></i> Joylashuv tanlandi!';
+                statusEl.style.color = '#10b981';
+            }
+        }
+    });
+    
+    loadProblemsToMap();
+}
+
+function loadProblemsToMap() {
+    // Clear old markers
+    _problemMarkersList.forEach(m => {
+        if (_problemsMapInstance) _problemsMapInstance.removeLayer(m);
+    });
+    _problemMarkersList = [];
+    
+    fetch(SCRIPT_URL + '?action=getProblems')
+        .then(r => r.json())
+        .then(data => {
+            let problems = data.problems || data.data || [];
+            let total = 0, pending = 0, solved = 0;
+            
+            const icons = {
+                'asfalt': '🛣️', 'chiroq': '💡', 'suv': '💧',
+                'gaz': '🔥', 'chiqindi': '🗑️', 'boshqa': '📌'
+            };
+            const colors = {
+                'asfalt': '#6b7280', 'chiroq': '#fbbf24', 'suv': '#3b82f6',
+                'gaz': '#ef4444', 'chiqindi': '#84cc16', 'boshqa': '#8b5cf6'
+            };
+            
+            problems.forEach(p => {
+                const lat = parseFloat(p.lat || p.muammo_lat);
+                const lng = parseFloat(p.lng || p.muammo_lng);
+                const type = p.type || p.muammo_turi || 'boshqa';
+                const desc = p.description || p.muammo_tavsif || '';
+                const status = p.status || p.muammo_status || 'Kutilmoqda';
+                
+                if (lat && lng && !isNaN(lat) && !isNaN(lng)) {
+                    const marker = L.marker([lat, lng], {
+                        icon: L.divIcon({
+                            className: 'problem-marker-icon',
+                            html: `<div style="font-size:28px;filter:drop-shadow(2px 2px 2px rgba(0,0,0,0.3));">${icons[type] || '📌'}</div>`,
+                            iconSize: [35, 35],
+                            iconAnchor: [17, 17]
+                        })
+                    });
+                    
+                    marker.problemType = type;
+                    marker.problemStatus = status;
+                    
+                    const statusBadge = status === 'Hal qilindi' 
+                        ? '<span style="background:#10b981;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;">✓ Hal qilindi</span>'
+                        : '<span style="background:#f59e0b;color:white;padding:2px 8px;border-radius:10px;font-size:0.7rem;">⏳ Kutilmoqda</span>';
+                    
+                    marker.bindPopup(`
+                        <div style="min-width:150px;">
+                            <b style="font-size:1rem;">${icons[type] || '📌'} ${type.charAt(0).toUpperCase() + type.slice(1)}</b><br>
+                            <p style="margin:0.5rem 0;color:#666;">${desc || 'Tavsif yo\'q'}</p>
+                            ${statusBadge}
+                        </div>
+                    `);
+                    
+                    marker.addTo(_problemsMapInstance);
+                    _problemMarkersList.push(marker);
+                    
+                    total++;
+                    if (status === 'Hal qilindi') solved++;
+                    else pending++;
+                }
+            });
+            
+            // Update stats
+            const statsEl = document.getElementById('problems-stats-full');
+            if (statsEl) {
+                statsEl.innerHTML = `
+                    <div style="background:linear-gradient(135deg,#ef4444,#f97316);color:white;padding:1rem;border-radius:12px;text-align:center;">
+                        <div style="font-size:1.5rem;font-weight:700;">${total}</div>
+                        <div style="font-size:0.75rem;opacity:0.9;">Jami muammo</div>
+                    </div>
+                    <div style="background:linear-gradient(135deg,#f59e0b,#fbbf24);color:white;padding:1rem;border-radius:12px;text-align:center;">
+                        <div style="font-size:1.5rem;font-weight:700;">${pending}</div>
+                        <div style="font-size:0.75rem;opacity:0.9;">Kutilmoqda</div>
+                    </div>
+                    <div style="background:linear-gradient(135deg,#10b981,#34d399);color:white;padding:1rem;border-radius:12px;text-align:center;">
+                        <div style="font-size:1.5rem;font-weight:700;">${solved}</div>
+                        <div style="font-size:0.75rem;opacity:0.9;">Hal qilindi</div>
+                    </div>
+                `;
+            }
+        })
+        .catch(err => {
+            console.error('Muammolar yuklanmadi:', err);
+        });
+}
+
+window.closeProblemsMapFull = function() {
+    const modal = document.getElementById('problems-map-modal-full');
+    if (modal) modal.style.display = 'none';
+    window.cancelProblemFull();
+};
+
+window.showProblemForm = function() {
+    _isAddingProblem = true;
+    document.getElementById('problem-form-full').style.display = 'block';
+    showToast('Xaritadan joylashuvni tanlang yoki "Joylashuvni aniqlash" tugmasini bosing', 'info');
+};
+
+window.cancelProblemFull = function() {
+    _isAddingProblem = false;
+    _problemLocation = null;
+    _problemImagesData = [null, null, null, null];
+    
+    document.getElementById('problem-form-full').style.display = 'none';
+    document.getElementById('problem-type-full').value = '';
+    document.getElementById('problem-desc-full').value = '';
+    document.getElementById('location-status-full').style.display = 'none';
+    
+    // Reset previews
+    for (let i = 0; i < 4; i++) {
+        const preview = document.getElementById('prob-preview-' + i);
+        if (preview) {
+            preview.classList.remove('has-img');
+            preview.innerHTML = `<i class="fas fa-camera" style="font-size:1.2rem;color:#ef4444;"></i><span style="font-size:0.7rem;color:var(--text-light);">${i+1}</span>`;
+        }
+        const input = document.getElementById('prob-img-' + i);
+        if (input) input.value = '';
+    }
+    document.getElementById('img-count-full').textContent = '0 ta rasm yuklandi';
+    
+    if (_tempProblemMarker && _problemsMapInstance) {
+        _problemsMapInstance.removeLayer(_tempProblemMarker);
+        _tempProblemMarker = null;
+    }
+};
+
+window.detectProblemLocationFull = function() {
+    const statusEl = document.getElementById('location-status-full');
+    statusEl.style.display = 'block';
+    statusEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Joylashuv aniqlanmoqda...';
+    statusEl.style.color = 'var(--primary-color)';
+    
+    if (!navigator.geolocation) {
+        statusEl.innerHTML = '<i class="fas fa-times-circle"></i> Geolokatsiya qo\'llab-quvvatlanmaydi';
+        statusEl.style.color = '#ef4444';
+        return;
+    }
+    
+    navigator.geolocation.getCurrentPosition(
+        function(pos) {
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            
+            _problemLocation = { lat, lng };
+            
+            if (_problemsMapInstance) {
+                _problemsMapInstance.setView([lat, lng], 17);
+                
+                if (_tempProblemMarker) {
+                    _problemsMapInstance.removeLayer(_tempProblemMarker);
+                }
+                
+                _tempProblemMarker = L.marker([lat, lng], {
+                    icon: L.divIcon({
+                        className: 'temp-marker',
+                        html: '<div style="width:35px;height:35px;background:#ef4444;border-radius:50%;border:3px solid white;box-shadow:0 4px 15px rgba(0,0,0,0.3);display:flex;align-items:center;justify-content:center;"><i class="fas fa-crosshairs" style="color:white;"></i></div>',
+                        iconSize: [35, 35],
+                        iconAnchor: [17, 17]
+                    })
+                }).addTo(_problemsMapInstance);
+            }
+            
+            statusEl.innerHTML = '<i class="fas fa-check-circle"></i> Joylashuv aniqlandi!';
+            statusEl.style.color = '#10b981';
+            showToast('Joylashuv muvaffaqiyatli aniqlandi!', 'success');
+        },
+        function(err) {
+            console.error('Geolokatsiya xatosi:', err);
+            statusEl.innerHTML = '<i class="fas fa-times-circle"></i> Joylashuvni aniqlab bo\'lmadi';
+            statusEl.style.color = '#ef4444';
+            showToast('Joylashuvni aniqlab bo\'lmadi. Xaritadan tanlang.', 'error');
+        },
+        { enableHighAccuracy: true, timeout: 15000 }
+    );
+};
+
+window.captureProblemImg = function(index) {
+    document.getElementById('prob-img-' + index).click();
+};
+
+window.previewProblemImg = function(index) {
+    const input = document.getElementById('prob-img-' + index);
+    const preview = document.getElementById('prob-preview-' + index);
+    
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            // Compress image
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const maxSize = 800;
+                let w = img.width, h = img.height;
+                
+                if (w > h && w > maxSize) { h = h * maxSize / w; w = maxSize; }
+                else if (h > maxSize) { w = w * maxSize / h; h = maxSize; }
+                
+                canvas.width = w;
+                canvas.height = h;
+                canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+                
+                const compressed = canvas.toDataURL('image/jpeg', 0.7);
+                _problemImagesData[index] = compressed;
+                
+                preview.innerHTML = `<img src="${compressed}" style="width:100%;height:100%;object-fit:cover;border-radius:8px;">`;
+                preview.classList.add('has-img');
+                
+                updateImgCount();
+            };
+            img.src = e.target.result;
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+};
+
+function updateImgCount() {
+    const count = _problemImagesData.filter(x => x !== null).length;
+    document.getElementById('img-count-full').textContent = count + ' ta rasm yuklandi';
+}
+
+window.saveProblemFull = async function() {
+    // Validatsiya
+    if (!_problemLocation) {
+        showToast('Avval joylashuvni aniqlang yoki xaritadan tanlang!', 'error');
+        return;
+    }
+    
+    const type = document.getElementById('problem-type-full').value;
+    if (!type) {
+        showToast('Muammo turini tanlang!', 'error');
+        return;
+    }
+    
+    const imgCount = _problemImagesData.filter(x => x !== null).length;
+    if (imgCount < 2) {
+        showToast('Kamida 2 ta rasm yuklang!', 'error');
+        return;
+    }
+    
+    const desc = document.getElementById('problem-desc-full').value.trim();
+    
+    showToast('Saqlanmoqda...', 'info');
+    
+    try {
+        const payload = {
+            action: 'addMuammo',
+            muammo_turi: type,
+            muammo_tavsif: desc,
+            muammo_lat: _problemLocation.lat,
+            muammo_lng: _problemLocation.lng,
+            muammo_xabarchi: (typeof CURRENT_USER !== 'undefined' && CURRENT_USER.role) ? CURRENT_USER.role : 'Fuqaro',
+            muammo_rasm1: _problemImagesData[0] || '',
+            muammo_rasm2: _problemImagesData[1] || '',
+            muammo_rasm3: _problemImagesData[2] || '',
+            muammo_rasm4: _problemImagesData[3] || ''
+        };
+        
+        const response = await fetch(SCRIPT_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+            body: JSON.stringify(payload)
+        });
+        
+        const result = await response.json();
+        
+        if (result.status === 'success' || result.success) {
+            showToast('Muammo muvaffaqiyatli saqlandi!', 'success');
+            window.cancelProblemFull();
+            loadProblemsToMap();
+        } else {
+            showToast('Xatolik: ' + (result.message || 'Noma\'lum'), 'error');
+        }
+    } catch (err) {
+        console.error('Saqlash xatosi:', err);
+        showToast('Xatolik yuz berdi: ' + err.message, 'error');
+    }
+};
+
+window.filterProblemsOnMap = function() {
+    const filter = document.getElementById('problem-filter-select').value;
+    
+    _problemMarkersList.forEach(marker => {
+        const shouldShow = filter === 'all' || marker.problemType === filter;
+        if (shouldShow) {
+            if (!_problemsMapInstance.hasLayer(marker)) marker.addTo(_problemsMapInstance);
+        } else {
+            if (_problemsMapInstance.hasLayer(marker)) _problemsMapInstance.removeLayer(marker);
+        }
+    });
+};
+
+window.switchToStreet = function() {
+    if (!_problemsMapInstance || _currentLayer === 'street') return;
+    _problemsMapInstance.removeLayer(_satelliteLayerInstance);
+    _streetLayerInstance.addTo(_problemsMapInstance);
+    _currentLayer = 'street';
+    document.getElementById('street-btn').className = 'btn btn-secondary';
+    document.getElementById('satellite-btn').className = 'btn btn-secondary-outline';
+};
+
+window.switchToSatellite = function() {
+    if (!_problemsMapInstance || _currentLayer === 'satellite') return;
+    _problemsMapInstance.removeLayer(_streetLayerInstance);
+    _satelliteLayerInstance.addTo(_problemsMapInstance);
+    _currentLayer = 'satellite';
+    document.getElementById('satellite-btn').className = 'btn btn-secondary';
+    document.getElementById('street-btn').className = 'btn btn-secondary-outline';
+};
+
+// KELGAN MUROJAATLAR - TUGMA BOSILGANDA ISHLAYDI
+window.openMurojaatlarModal = function() {
+    console.log('✅ openMurojaatlarModal FINAL ishladi');
+    
+    const modal = document.getElementById('murojaatlar-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+        
+        // Ma'lumotlarni yuklash
+        const content = document.getElementById('murojaatlar-content');
+        if (content) {
+            content.innerHTML = '<div style="text-align:center;padding:2rem;"><i class="fas fa-spinner fa-spin" style="font-size:2rem;color:#8b5cf6;"></i><p style="margin-top:1rem;color:#94a3b8;">Yuklanmoqda...</p></div>';
+            
+            fetch(SCRIPT_URL + '?action=getMurojaatlar')
+                .then(r => r.json())
+                .then(data => {
+                    if (data.success && data.murojaatlar && data.murojaatlar.length > 0) {
+                        let html = '';
+                        data.murojaatlar.forEach(m => {
+                            const color = m.status === 'Hal qilindi' ? '#10b981' : (m.status === 'Ko\'rib chiqilmoqda' ? '#f59e0b' : '#3b82f6');
+                            html += '<div style="background:rgba(139,92,246,0.1);border:1px solid rgba(139,92,246,0.2);border-radius:12px;padding:1rem;margin-bottom:0.75rem;">' +
+                                '<div style="display:flex;justify-content:space-between;margin-bottom:0.5rem;">' +
+                                '<span style="font-weight:600;color:#e2e8f0;">' + (m.fuqaro_fio || 'Noma\'lum') + '</span>' +
+                                '<span style="font-size:0.75rem;background:' + color + ';color:white;padding:2px 8px;border-radius:10px;">' + (m.status || 'Yangi') + '</span>' +
+                                '</div>' +
+                                '<p style="font-size:0.85rem;color:#94a3b8;margin-bottom:0.5rem;">' + (m.murojaat_matni || '') + '</p>' +
+                                '<small style="color:#64748b;"><i class="fas fa-map-marker-alt"></i> ' + (m.fuqaro_manzil || '') + '</small>' +
+                                '</div>';
+                        });
+                        content.innerHTML = html;
+                        document.getElementById('murojaatlar-total').textContent = data.murojaatlar.length;
+                    } else {
+                        content.innerHTML = '<div style="text-align:center;padding:3rem;color:#64748b;"><i class="fas fa-inbox" style="font-size:3rem;opacity:0.5;"></i><p style="margin-top:1rem;">Murojaatlar topilmadi</p></div>';
+                    }
+                })
+                .catch(e => {
+                    console.error('Murojaatlar yuklanmadi:', e);
+                    content.innerHTML = '<div style="text-align:center;padding:2rem;color:#ef4444;"><i class="fas fa-exclamation-triangle" style="font-size:2rem;"></i><p style="margin-top:1rem;">Yuklab bo\'lmadi</p></div>';
+                });
+        }
+    }
+};
+
+// ESLATMALAR - TUGMA BOSILGANDA ISHLAYDI
+window.openNotificationsModal = function() {
+    console.log('✅ openNotificationsModal FINAL ishladi');
+    if (typeof renderNotifications === 'function') {
+        renderNotifications();
+    }
+    const modal = document.getElementById('notification-modal');
+    if (modal) {
+        modal.style.display = 'flex';
+    }
+};
+
+console.log('✅ Barcha global funksiyalar tayyor!');
 </script>
 
 </body>
