@@ -2877,9 +2877,11 @@
             <div style="font-size: 2.5rem; font-weight: 700;" id="analytics-unemployed">0</div>
             <div style="font-size: 0.9rem; opacity: 0.9;">Ishsiz</div>
           </div>
-          <div class="analytics-top-card" onclick="showCategoryDetail('ijara')" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer;">
-            <div style="font-size: 2.5rem; font-weight: 700;" id="analytics-renters">0</div>
-            <div style="font-size: 0.9rem; opacity: 0.9;">Ijarachilar</div>
+          <div class="analytics-top-card" onclick="showCategoryDetail('ijara')" style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; position: relative;">
+            <i class="fas fa-key" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+            <div style="font-size: 2rem; font-weight: 700;" id="analytics-renters">0</div>
+            <div style="font-size: 0.85rem; opacity: 0.9;">Ijarachilar</div>
+            <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 0.25rem; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; display: inline-block;" id="analytics-renters-manzil">0 manzilda</div>
           </div>
         </div>
         
@@ -4425,15 +4427,27 @@ async function prepareAndConfirmSubmit(isFamily = false) {
         if (newCitizenData.maktab_nomi === 'Boshqa' && newCitizenData.maktab_boshqa) {
             newCitizenData.oqish_joyi = newCitizenData.maktab_boshqa;
         } else if (newCitizenData.maktab_nomi !== 'Boshqa') {
-            newCitizenData.oqish_joyi = newCitizenData.maktab_nomi;
+            // Faqat maktab nomini olish (tuman nomisiz)
+            const maktabParts = newCitizenData.maktab_nomi.split(',');
+            newCitizenData.oqish_joyi = maktabParts[0].trim();
         }
         newCitizenData.kursi_sinfi = newCitizenData.maktab_sinf || '';
         // Viloyat va tuman ma'lumotlarini saqlash
         if (newCitizenData.maktab_viloyat) newCitizenData.talaba_viloyat = newCitizenData.maktab_viloyat;
         if (newCitizenData.maktab_tuman) newCitizenData.talaba_tuman = newCitizenData.maktab_tuman;
     }
+    // Talaba uchun - faqat OTM nomi
+    if (newCitizenData.oqish_joyi && newCitizenData.oqish_joyi.includes(',') && newCitizenData.employmentStatus === 'Talaba') {
+        const otmParts = newCitizenData.oqish_joyi.split(',');
+        newCitizenData.oqish_joyi = otmParts[0].trim();
+    }
     if (newCitizenData.otm_boshqa && newCitizenData.oqish_joyi === 'Boshqa') {
         newCitizenData.oqish_joyi = newCitizenData.otm_boshqa;
+    }
+    // Bog'cha uchun - faqat bog'cha nomi
+    if (newCitizenData.bogcha_nomi && newCitizenData.bogcha_nomi.includes(',')) {
+        const bogchaParts = newCitizenData.bogcha_nomi.split(',');
+        newCitizenData.bogcha_nomi = bogchaParts[0].trim();
     }
     if (newCitizenData.bogcha_nomi === 'Boshqa' && newCitizenData.bogcha_boshqa) {
         newCitizenData.bogcha_nomi = newCitizenData.bogcha_boshqa;
@@ -9011,13 +9025,23 @@ function initializeAnalytics() {
     Object.values(chartInstances).forEach(chart => chart?.destroy());
     chartInstances = {};
     
-    // Statistikalar
+    // ══════════════ ASOSIY STATISTIKALAR ══════════════
     const total = baza.length;
     const employed = baza.filter(p => ['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(p.employmentStatus)).length;
     const unemployed = baza.filter(p => p.employmentStatus === 'Ishsiz').length;
-    const renters = baza.filter(p => p.registrationType === 'Ijara').length;
     
-    // YANGI STATISTIKALAR
+    // IJARACHILAR - manzil bo'yicha guruhlash
+    const ijarachilar = baza.filter(p => p.registrationType === 'Ijara');
+    const renters = ijarachilar.length;
+    const ijara_manzillar = {};
+    ijarachilar.forEach(p => {
+        const addr = (p.street || 'Noaniq').trim();
+        if (!ijara_manzillar[addr]) ijara_manzillar[addr] = [];
+        ijara_manzillar[addr].push(p);
+    });
+    const ijara_manzil_soni = Object.keys(ijara_manzillar).length;
+    
+    // ══════════════ YANGI STATISTIKALAR ══════════════
     const avtomobil = baza.filter(p => p.avtomobil_bor === 'Ha').length;
     const telegramYoq = baza.filter(p => p.telegram_azo === "Yo'q").length;
     const aliment = baza.filter(p => p.aliment_muammo === 'Ha').length;
@@ -9027,10 +9051,15 @@ function initializeAnalytics() {
     const gazAqlli = baza.filter(p => p.gaz_hisoblagich === 'Aqlli').length;
     const isitishYoq = baza.filter(p => p.isitish_tizimi === "Yo'q").length;
     
+    // ══════════════ DOM ELEMENTLARIGA YOZISH ══════════════
     document.getElementById('analytics-total').textContent = total;
     document.getElementById('analytics-employed').textContent = employed;
     document.getElementById('analytics-unemployed').textContent = unemployed;
     document.getElementById('analytics-renters').textContent = renters;
+    
+    // Ijarachilar manzil soni
+    const rentersManzilEl = document.getElementById('analytics-renters-manzil');
+    if (rentersManzilEl) rentersManzilEl.textContent = ijara_manzil_soni + ' manzilda';
     
     // YANGI STATISTIKALAR
     const avtomobilEl = document.getElementById('analytics-avtomobil');
@@ -9176,6 +9205,7 @@ window.showCategoryDetail = function(category) {
     const baza = activeCitizenDatabase;
     let list = [];
     let title = '';
+    let showGrouped = false; // Manzil bo'yicha guruhlash
 
     // Filtrlash logikasi
     switch(category) {
@@ -9193,6 +9223,7 @@ window.showCategoryDetail = function(category) {
             break;
         case 'ijara':
             list = baza.filter(p => p.registrationType === 'Ijara');
+            showGrouped = true;
             title = 'Ijarachilar ro\'yxati';
             break;
         case 'neet':
@@ -9274,6 +9305,11 @@ window.showCategoryDetail = function(category) {
             break;
         default:
             list = [];
+    }
+
+    // Manzil bo'yicha guruhlash kerak bo'lsa
+    if (showGrouped && list.length > 0) {
+        return showGroupedByAddress(list, title);
     }
 
     // Ro'yxatni ochish
@@ -9441,52 +9477,50 @@ window.closeDetailsModal = function() {
     }
 };
 
-// ============ DETAILS MODAL - TEZ VA TOUCH-FRIENDLY ============
-(function() {
-    // Touch va click uchun yagona handler
-    function handleClose(e) {
-        if (e.cancelable) e.preventDefault();
+// ============ DETAILS MODAL - EVENT DELEGATION BILAN ============
+// Document ga listener qo'yish - DOM o'zgarganda ham ishlaydi
+document.addEventListener('click', function(e) {
+    // X tugmasi
+    if (e.target.closest('#details-modal-close-btn')) {
+        e.preventDefault();
         e.stopPropagation();
         window.closeDetailsModal();
+        return;
     }
     
-    function handleBackgroundClick(e) {
-        if (e.target.id === 'details-modal') {
-            window.closeDetailsModal();
-        }
+    // Qaytish tugmasi
+    if (e.target.closest('#details-modal-back-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
     }
     
-    function setup() {
-        var closeBtn = document.getElementById('details-modal-close-btn');
-        var backBtn = document.getElementById('details-modal-back-btn');
-        var modal = document.getElementById('details-modal');
-        
-        if (closeBtn) {
-            closeBtn.removeEventListener('click', handleClose);
-            closeBtn.removeEventListener('touchend', handleClose);
-            closeBtn.addEventListener('click', handleClose, {passive: false});
-            closeBtn.addEventListener('touchend', handleClose, {passive: false});
-        }
-        
-        if (backBtn) {
-            backBtn.removeEventListener('click', handleClose);
-            backBtn.removeEventListener('touchend', handleClose);
-            backBtn.addEventListener('click', handleClose, {passive: false});
-            backBtn.addEventListener('touchend', handleClose, {passive: false});
-        }
-        
-        if (modal) {
-            modal.removeEventListener('click', handleBackgroundClick);
-            modal.addEventListener('click', handleBackgroundClick);
-        }
+    // Modal orqa fon
+    if (e.target.id === 'details-modal') {
+        window.closeDetailsModal();
+        return;
+    }
+}, true);
+
+// Touch uchun ham
+document.addEventListener('touchend', function(e) {
+    // X tugmasi
+    if (e.target.closest('#details-modal-close-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
     }
     
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setup);
-    } else {
-        setup();
+    // Qaytish tugmasi
+    if (e.target.closest('#details-modal-back-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
     }
-})();
+}, {passive: false, capture: true});
 
 window.openCitizenFromMap = function(uniqueId) {
     if (navigator.vibrate) navigator.vibrate(30);
@@ -10140,7 +10174,152 @@ async function getAIResponse(message) {
     }
     
     // MANZIL BO'YICHA GURUHLANGAN RO'YXAT
-    function showGroupedByAddress(list, title) {
+    window.showGroupedByAddress = function(list, title) {
+        // Manzil bo'yicha guruhlash
+        const byAddress = {};
+        list.forEach(p => {
+            const addr = (p.street || 'Manzil nomalum').trim();
+            if (!byAddress[addr]) byAddress[addr] = [];
+            byAddress[addr].push(p);
+        });
+        
+        const manzilSoni = Object.keys(byAddress).length;
+        const sortedAddresses = Object.keys(byAddress).sort((a, b) => byAddress[b].length - byAddress[a].length);
+        
+        // Modal kontentini yaratish
+        let html = `
+            <!-- STATISTIKA KARTOCHKALARI -->
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-bottom: 1.5rem;">
+                <div style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%); color: white; padding: 1.25rem; border-radius: 16px; text-align: center; box-shadow: 0 4px 15px rgba(236,72,153,0.3);">
+                    <i class="fas fa-users" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: block;"></i>
+                    <div style="font-size: 2.5rem; font-weight: 700;">${list.length}</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">Jami ijarachilar</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #0ea5e9 0%, #38bdf8 100%); color: white; padding: 1.25rem; border-radius: 16px; text-align: center; box-shadow: 0 4px 15px rgba(14,165,233,0.3);">
+                    <i class="fas fa-home" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: block;"></i>
+                    <div style="font-size: 2.5rem; font-weight: 700;">${manzilSoni}</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">Manzil</div>
+                </div>
+                <div style="background: linear-gradient(135deg, #10b981 0%, #34d399 100%); color: white; padding: 1.25rem; border-radius: 16px; text-align: center; box-shadow: 0 4px 15px rgba(16,185,129,0.3);">
+                    <i class="fas fa-chart-pie" style="font-size: 1.5rem; margin-bottom: 0.5rem; display: block;"></i>
+                    <div style="font-size: 2.5rem; font-weight: 700;">${(list.length / manzilSoni).toFixed(1)}</div>
+                    <div style="font-size: 0.85rem; opacity: 0.9;">O'rtacha / manzil</div>
+                </div>
+            </div>
+            
+            <!-- MANZILLAR RO'YXATI -->
+            <div style="background: var(--surface-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden;">
+                <div style="background: linear-gradient(135deg, #1e293b 0%, #334155 100%); color: white; padding: 1rem 1.25rem; display: flex; justify-content: space-between; align-items: center;">
+                    <span style="font-weight: 600;"><i class="fas fa-list"></i> Manzillar bo'yicha taqsimot</span>
+                    <span style="background: rgba(255,255,255,0.2); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem;">${manzilSoni} ta manzil</span>
+                </div>
+                <div style="max-height: 500px; overflow-y: auto; padding: 1rem;">
+        `;
+        
+        // Har bir manzil uchun accordion style
+        sortedAddresses.forEach((addr, index) => {
+            const people = byAddress[addr];
+            const erkaklar = people.filter(p => p.jinsi === 'Erkak').length;
+            const ayollar = people.filter(p => p.jinsi === 'Ayol').length;
+            const bolalar = people.filter(p => {
+                const yosh = getAge(p.dob);
+                return yosh && yosh < 18;
+            }).length;
+            
+            html += `
+                <div style="background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border-radius: 12px; margin-bottom: ${index < sortedAddresses.length - 1 ? '12px' : '0'}; border: 1px solid #e2e8f0; overflow: hidden;">
+                    <!-- Manzil sarlavhasi -->
+                    <div style="background: linear-gradient(135deg, #0284c7 0%, #0ea5e9 100%); color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;">
+                        <div style="display: flex; align-items: center; gap: 10px;">
+                            <div style="width: 36px; height: 36px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <div style="font-weight: 600; font-size: 1rem;">${addr}</div>
+                                <div style="font-size: 0.75rem; opacity: 0.9;">
+                                    👨 ${erkaklar} erkak | 👩 ${ayollar} ayol ${bolalar > 0 ? '| 👶 ' + bolalar + ' bola' : ''}
+                                </div>
+                            </div>
+                        </div>
+                        <div style="background: white; color: #0284c7; padding: 6px 14px; border-radius: 20px; font-weight: 700; font-size: 0.9rem;">
+                            ${people.length} kishi
+                        </div>
+                    </div>
+                    
+                    <!-- Oila a'zolari -->
+                    <div style="padding: 12px;">
+            `;
+            
+            // Har bir odam uchun kartochka
+            people.forEach((p, i) => {
+                const isOilaBoshi = p.familyRole === 'Oila boshi';
+                const yosh = getAge(p.dob);
+                const bgGradient = isOilaBoshi 
+                    ? 'linear-gradient(135deg, #fef3c7 0%, #fde68a 100%)' 
+                    : 'linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)';
+                const borderColor = isOilaBoshi ? '#f59e0b' : '#10b981';
+                const icon = p.jinsi === 'Erkak' ? '👨' : '👩';
+                
+                html += `
+                    <div onclick="openCitizenFromMap('${p.unique_id}')" 
+                         style="background: ${bgGradient}; border-radius: 10px; padding: 12px; margin-bottom: ${i < people.length - 1 ? '8px' : '0'}; border-left: 4px solid ${borderColor}; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 1px 3px rgba(0,0,0,0.1);"
+                         onmouseover="this.style.transform='translateX(8px)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.15)';"
+                         onmouseout="this.style.transform='translateX(0)'; this.style.boxShadow='0 1px 3px rgba(0,0,0,0.1)';">
+                        <div style="display: flex; justify-content: space-between; align-items: center;">
+                            <div style="display: flex; align-items: center; gap: 12px;">
+                                <div style="width: 45px; height: 45px; background: ${isOilaBoshi ? 'linear-gradient(135deg, #f59e0b, #fbbf24)' : 'linear-gradient(135deg, #10b981, #34d399)'}; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; color: white;">
+                                    ${isOilaBoshi ? '👑' : icon}
+                                </div>
+                                <div>
+                                    <div style="font-weight: 600; color: #1e293b; font-size: 0.95rem;">
+                                        ${isOilaBoshi ? '<span style="color: #f59e0b;">★</span> ' : ''}${p.fio || 'Ism kiritilmagan'}
+                                    </div>
+                                    <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;">
+                                        <span style="background: #e0f2fe; color: #0369a1; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem;">
+                                            ${yosh || '?'} yosh
+                                        </span>
+                                        <span style="background: #f0fdf4; color: #166534; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem;">
+                                            ${p.employmentStatus || 'Noaniq'}
+                                        </span>
+                                        ${p.telefon ? `<span style="background: #fef3c7; color: #92400e; padding: 2px 8px; border-radius: 6px; font-size: 0.75rem;">📱 ${p.telefon}</span>` : ''}
+                                    </div>
+                                </div>
+                            </div>
+                            <i class="fas fa-chevron-right" style="color: #94a3b8; font-size: 1rem;"></i>
+                        </div>
+                    </div>
+                `;
+            });
+            
+            html += `
+                    </div>
+                </div>
+            `;
+        });
+        
+        html += `
+                </div>
+            </div>
+        `;
+        
+        // Modal ochish
+        const modal = document.getElementById('detail-list-modal');
+        const titleEl = document.getElementById('detail-list-title');
+        const contentEl = document.getElementById('detail-list-content');
+        
+        if (titleEl) titleEl.innerHTML = `<i class="fas fa-key" style="color: #ec4899;"></i> ${title}`;
+        if (contentEl) contentEl.innerHTML = html;
+        
+        document.getElementById('analytics-modal').style.display = 'none';
+        modal.style.display = 'flex';
+        
+        // previousScreenStack ga qo'shish
+        if (typeof previousScreenStack !== 'undefined') {
+            previousScreenStack.push('detail-list-modal');
+        }
+    }
+    
+    function showGroupedByAddressLocal(list, title) {
         // Manzil bo'yicha guruhlash
         const byAddress = {};
         list.forEach(p => {
@@ -10232,7 +10411,7 @@ async function getAIResponse(message) {
     // ════════════════════════════════════════
     if (msg.includes('ijarachi') && !msg.includes('muddat')) {
         if (ijarachilar.length > 0) {
-            return showGroupedByAddress(ijarachilar, 'Ijarachilar');
+            return showGroupedByAddressLocal(ijarachilar, 'Ijarachilar');
         } else {
             return `❌ Bazada ijarachi topilmadi.`;
         }
