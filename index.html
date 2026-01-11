@@ -1401,7 +1401,7 @@
               <div class="form-group full-width"><label><i class="fas fa-calendar-alt" style="color: #f59e0b;"></i> Tug'ilgan sana</label><input name="chet_el_dob" placeholder="DD.MM.YYYY" maxlength="10" class="js-date-input" inputmode="numeric"></div>
             </div>
             <div class="form-row"><div class="form-group"><label>Jinsi</label><select name="jinsi" required><option value="" disabled selected>Tanlang...</option><option value="Erkak">Erkak</option><option value="Ayol">Ayol</option></select></div><div class="form-group"><label>Telefon (9 raqam)</label><input name="telefon_number" maxlength="9" class="js-numeric-input" placeholder="901234567" inputmode="numeric" required></div></div>
-            <div class="form-group full-width" style="display: none;"><label>Xatlovchi</label><select name="xatlovchi" id="xatlovchi-select" required><option value="" selected disabled>Tanlang...</option><option>MFY raisi</option><option>Yoshlar yetakchisi</option><option>Xotin qizlar faoli</option><option>Profilaktika inspektori</option><option>Xokim yordamchisi</option><option>Soliq hodimi</option><option>Ijtimoiy hodim</option><option>Javohir</option><option>Ruzimukhammed</option><option>Abdurahim</option></select></div>
+            <div class="form-group full-width" style="display: none;"><label>Xatlovchi</label><select name="xatlovchi" id="xatlovchi-select" required><option value="" selected disabled>Tanlang...</option><option>MFY raisi</option><option>Yoshlar yetakchisi</option><option>Xotin qizlar faoli</option><option>Profilaktika inspektori</option><option>Xokim yordamchisi</option><option>Soliq hodimi</option><option>Ijtimoiy hodim</option><option>Javohir</option><option>Ruzimukhammed</option><option>Ravshanbek</option></select></div>
           </div>
           <div class="form-step" data-step="2">
             <h4 class="form-step-title"><i class="fas fa-map-marker-alt"></i> Yashash manzili</h4>
@@ -1528,8 +1528,103 @@
             </div>
 
             <div class="form-group full-width conditional-field js-employment-details"><label>Ish joyi</label><input name="employmentDetails" class="js-transliterate"></div>
-             <div class="form-row full-width conditional-field js-study-details"><div class="form-group"><label class="js-oqish-joyi-label">O'qish joyi</label><input name="oqish_joyi" class="js-transliterate"></div><div class="form-group"><label class="js-kursi-sinfi-label">Kursi/Sinfi</label><input name="kursi_sinfi" inputmode="numeric"></div></div>
-             <div class="form-group full-width conditional-field js-bogcha-details"><label>Bog'cha nomi yoki raqami</label><input name="bogcha_nomi" class="js-transliterate"></div>
+             
+             <!-- MAKTAB O'QUVCHISI UCHUN - 3 BOSQICHLI -->
+             <div class="conditional-field js-maktab-details" style="display:none;">
+               <div class="form-row full-width">
+                 <div class="form-group">
+                   <label><i class="fas fa-map" style="color:#0077b6;"></i> Viloyat</label>
+                   <select name="maktab_viloyat" class="js-maktab-viloyat">
+                     <option value="">Viloyatni tanlang...</option>
+                   </select>
+                 </div>
+                 <div class="form-group">
+                   <label><i class="fas fa-city" style="color:#10b981;"></i> Tuman/Shahar</label>
+                   <select name="maktab_tuman" class="js-maktab-tuman">
+                     <option value="">Avval viloyatni tanlang</option>
+                   </select>
+                 </div>
+               </div>
+               <div class="form-row full-width">
+                 <div class="form-group" style="flex:2;">
+                   <label><i class="fas fa-school" style="color:#8b5cf6;"></i> Maktab</label>
+                   <select name="maktab_nomi" class="js-maktab-select">
+                     <option value="">Avval tumanni tanlang</option>
+                   </select>
+                   <input name="maktab_boshqa" class="js-transliterate" placeholder="Boshqa maktab nomini yozing..." style="display:none; margin-top:0.5rem;">
+                 </div>
+                 <div class="form-group" style="flex:1;">
+                   <label><i class="fas fa-sort-numeric-up" style="color:#f59e0b;"></i> Sinf</label>
+                   <select name="maktab_sinf">
+                     <option value="">Sinf</option>
+                     <option>1</option><option>2</option><option>3</option><option>4</option>
+                     <option>5</option><option>6</option><option>7</option><option>8</option>
+                     <option>9</option><option>10</option><option>11</option>
+                   </select>
+                 </div>
+               </div>
+             </div>
+             
+             <!-- TALABA UCHUN -->
+             <div class="conditional-field js-talaba-details" style="display:none;">
+               <div class="form-row full-width">
+                 <div class="form-group">
+                   <label><i class="fas fa-map" style="color:#0077b6;"></i> Viloyat</label>
+                   <select name="talaba_viloyat" class="js-talaba-viloyat">
+                     <option value="">Viloyatni tanlang...</option>
+                   </select>
+                 </div>
+                 <div class="form-group">
+                   <label><i class="fas fa-city" style="color:#10b981;"></i> Tuman/Shahar</label>
+                   <select name="talaba_tuman" class="js-talaba-tuman">
+                     <option value="">Avval viloyatni tanlang</option>
+                   </select>
+                 </div>
+               </div>
+               <div class="form-row full-width">
+                 <div class="form-group" style="flex:2;">
+                   <label><i class="fas fa-university" style="color:#8b5cf6;"></i> OTM / Kollej / Litsey</label>
+                   <select name="oqish_joyi" class="js-otm-select">
+                     <option value="">Avval viloyatni tanlang</option>
+                   </select>
+                   <input name="otm_boshqa" class="js-transliterate" placeholder="Boshqa OTM nomini yozing..." style="display:none; margin-top:0.5rem;">
+                 </div>
+                 <div class="form-group" style="flex:1;">
+                   <label><i class="fas fa-sort-numeric-up" style="color:#f59e0b;"></i> Kursi</label>
+                   <select name="kursi_sinfi">
+                     <option value="">Kurs</option>
+                     <option>1</option><option>2</option><option>3</option><option>4</option>
+                     <option>5</option><option>6</option><option>Magistr</option>
+                   </select>
+                 </div>
+               </div>
+             </div>
+             
+             <!-- BOG'CHA UCHUN -->
+             <div class="conditional-field js-bogcha-details" style="display:none;">
+               <div class="form-row full-width">
+                 <div class="form-group">
+                   <label><i class="fas fa-map" style="color:#0077b6;"></i> Viloyat</label>
+                   <select name="bogcha_viloyat" class="js-bogcha-viloyat">
+                     <option value="">Viloyatni tanlang...</option>
+                   </select>
+                 </div>
+                 <div class="form-group">
+                   <label><i class="fas fa-city" style="color:#10b981;"></i> Tuman/Shahar</label>
+                   <select name="bogcha_tuman" class="js-bogcha-tuman">
+                     <option value="">Avval viloyatni tanlang</option>
+                   </select>
+                 </div>
+               </div>
+               <div class="form-group full-width">
+                 <label><i class="fas fa-baby" style="color:#ec4899;"></i> Bog'cha</label>
+                 <select name="bogcha_nomi" class="js-bogcha-select">
+                   <option value="">Avval tumanni tanlang</option>
+                 </select>
+                 <input name="bogcha_boshqa" class="js-transliterate" placeholder="Boshqa bog'cha nomini yozing..." style="display:none; margin-top:0.5rem;">
+               </div>
+             </div>
+             
              <div class="form-group full-width conditional-field js-disability-group"><label>Nogironlik guruhi</label><select name="disabilityGroup"><option value="" disabled selected>Tanlang...</option><option>1-guruh</option><option>2-guruh</option><option>3-guruh</option><option>Bolalikdan nogiron</option></select></div>
              
              <!-- ISHSIZ UCHUN QOSHIMCHA MA'LUMOTLAR -->
@@ -1657,8 +1752,21 @@
                </div>
              </div>
              
-             <div class="form-row full-width conditional-field js-migration-details"><div class="form-group"><label>Qaysi davlatda</label><input name="migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Ketgan sanasi</label><input name="migration_duration" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10"></div></div>
-             <div class="form-row full-width conditional-field js-returned-migration-details"><div class="form-group"><label>Qaysi davlatdan qaytgan</label><input name="returned_migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Qachon qaytgan</label><input name="returned_migration_date" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10" inputmode="numeric"></div><div class="form-group"><label>Hozirgi holati</label><select name="returned_migration_current_status" class="js-employment-status-sub" data-optional="true"></select></div></div>
+             <div class="form-row full-width conditional-field js-migration-details"><div class="form-group"><label><i class="fas fa-globe" style="color:#0077b6;"></i> Qaysi davlatda</label><select name="migration_country" class="js-davlat-select"><option value="">Davlatni tanlang...</option></select></div><div class="form-group"><label>Ketgan sanasi</label><input name="migration_duration" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10"></div></div>
+             <div class="form-row full-width conditional-field js-returned-migration-details"><div class="form-group"><label><i class="fas fa-globe" style="color:#10b981;"></i> Qaysi davlatdan qaytgan</label><select name="returned_migration_country" class="js-davlat-select"><option value="">Davlatni tanlang...</option></select></div><div class="form-group"><label>Qachon qaytgan</label><input name="returned_migration_date" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10" inputmode="numeric"></div><div class="form-group"><label>Hozirgi holati</label><select name="returned_migration_current_status" class="js-returned-status-select"><option value="">Tanlang...</option><option value="Ishsiz">Ishsiz</option><option value="Ish qidiryapti">Ish qidiryapti</option><option value="Ishga joylashgan">Ishga joylashgan</option><option value="Ketish arafasida">Ketish arafasida</option><option value="Tadbirkorlik">Tadbirkorlik</option></select></div></div>
+             <!-- KETISH ARAFASIDA uchun qo'shimcha maydonlar -->
+             <div class="form-row full-width conditional-field js-ketish-arafasida-details" style="display:none;">
+               <div class="form-group">
+                 <label><i class="fas fa-plane-departure" style="color:#ef4444;"></i> Qaysi davlatga ketmoqchi</label>
+                 <select name="ketish_davlati" class="js-davlat-select">
+                   <option value="">Davlatni tanlang...</option>
+                 </select>
+               </div>
+               <div class="form-group">
+                 <label><i class="fas fa-calendar-alt" style="color:#f59e0b;"></i> Ketish sanasi (taxminan)</label>
+                 <input name="ketish_sanasi" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10" inputmode="numeric">
+               </div>
+             </div>
             <div class="form-group full-width conditional-field js-toifa-turi inspector-only-section">
                 <label>Toifa turi</label>
                 <div id="toifa-checkboxes-container"></div>
@@ -2769,9 +2877,11 @@
             <div style="font-size: 2.5rem; font-weight: 700;" id="analytics-unemployed">0</div>
             <div style="font-size: 0.9rem; opacity: 0.9;">Ishsiz</div>
           </div>
-          <div class="analytics-top-card" onclick="showCategoryDetail('ijara')" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer;">
-            <div style="font-size: 2.5rem; font-weight: 700;" id="analytics-renters">0</div>
-            <div style="font-size: 0.9rem; opacity: 0.9;">Ijarachilar</div>
+          <div class="analytics-top-card" onclick="showCategoryDetail('ijara')" style="background: linear-gradient(135deg, #ec4899 0%, #f472b6 100%); color: white; padding: 1.25rem; border-radius: 12px; text-align: center; cursor: pointer; position: relative;">
+            <i class="fas fa-key" style="font-size: 1.5rem; margin-bottom: 0.5rem;"></i>
+            <div style="font-size: 2rem; font-weight: 700;" id="analytics-renters">0</div>
+            <div style="font-size: 0.85rem; opacity: 0.9;">Ijarachilar</div>
+            <div style="font-size: 0.7rem; opacity: 0.8; margin-top: 0.25rem; background: rgba(255,255,255,0.2); padding: 2px 8px; border-radius: 10px; display: inline-block;" id="analytics-renters-manzil">0 manzilda</div>
           </div>
         </div>
         
@@ -3311,7 +3421,7 @@ const TOIFA_TURI_LIST = {
     "all": ["Janjalkash (Notinch oila)","Og'ir xulq atvor","G'ayriijtimoiy xulq atvor","Ruxiy kasal","Psixotrop","Ichkilikka ruju qo'ygan","Muqaddam sudlangan"],
     "inspector": ["PXT", "Probatsiya"]
 };
-const ROLES={"4161":{role:"MFY raisi",access:"full"},"1909":{role:"Yoshlar yetakchisi",access:"full"},"1983":{role:"Profilaktika inspektori",access:"inspector"},"5511":{role:"Xokim yordamchisi",access:"restricted"},"2233":{role:"Soliq hodimi",access:"restricted"},"4944":{role:"Ijtimoiy hodim",access:"restricted"},"2528":{role:"Javohir",access:"full"},"2304":{role:"Ruzimukhammed",access:"full"},"6564":{role:"Abdurahim",access:"restricted"},"2025":{role:"Xotin qizlar faoli",access:"restricted"}};
+const ROLES={"4161":{role:"MFY raisi",access:"full"},"1909":{role:"Yoshlar yetakchisi",access:"full"},"1983":{role:"Profilaktika inspektori",access:"inspector"},"5511":{role:"Xokim yordamchisi",access:"restricted"},"2233":{role:"Soliq hodimi",access:"restricted"},"4944":{role:"Ijtimoiy hodim",access:"restricted"},"2528":{role:"Javohir",access:"full"},"2304":{role:"Ruzimukhammed",access:"full"},"5252":{role:"Ravshanbek",access:"restricted"},"2025":{role:"Xotin qizlar faoli",access:"restricted"}};
 let CURRENT_USER={role:null,access:"restricted",pass:null};
 const NAZORAT_ICONS = {
     "Janjalkash (Notinch oila)": "fas fa-hand-fist",
@@ -3376,6 +3486,159 @@ const tumanlarData = {
     "Surxondaryo viloyati": ["Termiz shahri", "Angor tumani", "Bandixon tumani", "Boysun tumani", "Denov tumani", "Jarqo'rg'on tumani", "Muzrabod tumani", "Oltinsoy tumani", "Qiziriq tumani", "Qumqo'rg'on tumani", "Sariosiyo tumani", "Sherobod tumani", "Sho'rchi tumani", "Termiz tumani", "Uzun tumani"]
 };
 // =======================================================================
+
+// ================== MAKTABLAR RO'YXATI (Andijon viloyati) ==================
+const maktablarData = {
+    "Andijon shahri": Array.from({length: 50}, (_, i) => `${i+1}-maktab`),
+    "Xonobod shahri": Array.from({length: 20}, (_, i) => `${i+1}-maktab`),
+    "Andijon tumani": Array.from({length: 30}, (_, i) => `${i+1}-maktab`),
+    "Asaka tumani": Array.from({length: 35}, (_, i) => `${i+1}-maktab`),
+    "Baliqchi tumani": Array.from({length: 25}, (_, i) => `${i+1}-maktab`),
+    "Bo'ston tumani": Array.from({length: 20}, (_, i) => `${i+1}-maktab`),
+    "Buloqboshi tumani": Array.from({length: 22}, (_, i) => `${i+1}-maktab`),
+    "Izboskan tumani": Array.from({length: 28}, (_, i) => `${i+1}-maktab`),
+    "Jalaquduq tumani": Array.from({length: 32}, (_, i) => `${i+1}-maktab`),
+    "Xo'jaobod tumani": Array.from({length: 18}, (_, i) => `${i+1}-maktab`),
+    "Marhamat tumani": Array.from({length: 30}, (_, i) => `${i+1}-maktab`),
+    "Oltinko'l tumani": Array.from({length: 26}, (_, i) => `${i+1}-maktab`),
+    "Paxtaobod tumani": Array.from({length: 20}, (_, i) => `${i+1}-maktab`),
+    "Qo'rg'ontepa tumani": Array.from({length: 24}, (_, i) => `${i+1}-maktab`),
+    "Shahrixon tumani": Array.from({length: 35}, (_, i) => `${i+1}-maktab`),
+    "Ulug'nor tumani": Array.from({length: 22}, (_, i) => `${i+1}-maktab`)
+};
+
+// ================== OTM LAR RO'YXATI ==================
+const otmlarData = {
+    "Toshkent shahri": [
+        "O'zbekiston Milliy universiteti",
+        "Toshkent davlat texnika universiteti",
+        "Toshkent moliya instituti",
+        "Toshkent davlat yuridik universiteti",
+        "Toshkent davlat iqtisodiyot universiteti",
+        "Toshkent tibbiyot akademiyasi",
+        "Toshkent pediatriya tibbiyot instituti",
+        "Toshkent davlat stomatologiya instituti",
+        "Toshkent farmatsevtika instituti",
+        "Toshkent arxitektura-qurilish instituti",
+        "Toshkent irrigatsiya va qishloq xo'jaligini mexanizatsiyalash muhandislari instituti",
+        "Toshkent avtomobil-yo'llar instituti",
+        "Toshkent axborot texnologiyalari universiteti",
+        "Toshkent davlat sharqshunoslik universiteti",
+        "Toshkent davlat o'zbek tili va adabiyoti universiteti",
+        "Toshkent davlat pedagogika universiteti",
+        "Nizomiy nomidagi Toshkent davlat pedagogika universiteti",
+        "O'zbekiston davlat jismoniy tarbiya va sport universiteti",
+        "O'zbekiston davlat san'at va madaniyat instituti",
+        "Toshkent davlat konservatoriyasi",
+        "O'zbekiston davlat jahon tillari universiteti",
+        "Islam Karimov nomidagi Toshkent davlat texnika universiteti",
+        "Muhammad al-Xorazmiy nomidagi TATU",
+        "Milliy rassomlik san'ati instituti",
+        "INHA University in Tashkent",
+        "Westminster International University in Tashkent",
+        "Turin Politexnika universiteti Toshkent filiali",
+        "Singapur menejment va rivojlanish instituti",
+        "Yeoju texnika instituti",
+        "Amity University Tashkent",
+        "Boshqa"
+    ],
+    "Andijon viloyati": [
+        "Andijon davlat universiteti",
+        "Andijon mashinasozlik instituti",
+        "Andijon davlat tibbiyot instituti",
+        "Andijon qishloq xo'jaligi va agrotexnologiyalar instituti",
+        "Andijon davlat chet tillar instituti",
+        "Kokan davlat pedagogika instituti filiali",
+        "Andijon pedagogika instituti",
+        "Andijon viloyati kollej va texnikumlari",
+        "Boshqa"
+    ],
+    "Farg'ona viloyati": [
+        "Farg'ona davlat universiteti",
+        "Farg'ona politexnika instituti",
+        "Qo'qon davlat pedagogika instituti",
+        "Farg'ona tibbiyot instituti",
+        "Boshqa"
+    ],
+    "Namangan viloyati": [
+        "Namangan davlat universiteti",
+        "Namangan muhandislik-texnologiya instituti",
+        "Namangan muhandislik-qurilish instituti",
+        "Boshqa"
+    ],
+    "Samarqand viloyati": [
+        "Samarqand davlat universiteti",
+        "Samarqand davlat tibbiyot universiteti",
+        "Samarqand iqtisodiyot va servis instituti",
+        "Samarqand davlat arxitektura-qurilish instituti",
+        "Samarqand davlat chet tillar instituti",
+        "Boshqa"
+    ],
+    "Buxoro viloyati": [
+        "Buxoro davlat universiteti",
+        "Buxoro muhandislik-texnologiya instituti",
+        "Buxoro davlat tibbiyot instituti",
+        "Boshqa"
+    ],
+    "Qashqadaryo viloyati": [
+        "Qarshi davlat universiteti",
+        "Qarshi muhandislik-iqtisodiyot instituti",
+        "Boshqa"
+    ],
+    "Surxondaryo viloyati": [
+        "Termiz davlat universiteti",
+        "Boshqa"
+    ],
+    "Xorazm viloyati": [
+        "Urganch davlat universiteti",
+        "Xorazm Ma'mun akademiyasi",
+        "Boshqa"
+    ],
+    "Navoiy viloyati": [
+        "Navoiy davlat konchilik instituti",
+        "Navoiy davlat pedagogika instituti",
+        "Boshqa"
+    ],
+    "Jizzax viloyati": [
+        "Jizzax davlat pedagogika instituti",
+        "Jizzax politexnika instituti",
+        "Boshqa"
+    ],
+    "Sirdaryo viloyati": [
+        "Guliston davlat universiteti",
+        "Boshqa"
+    ],
+    "Toshkent viloyati": [
+        "Chirchiq davlat pedagogika instituti",
+        "Toshkent viloyati Chirchiq oliy tanki qo'mondonlik-muhandislik bilim yurti",
+        "Boshqa"
+    ],
+    "Qoraqalpog'iston Respublikasi": [
+        "Qoraqalpog'iston davlat universiteti",
+        "Nukus davlat pedagogika instituti",
+        "Boshqa"
+    ]
+};
+
+// ================== BOG'CHALAR RO'YXATI ==================
+const bogchalarData = {
+    "Andijon shahri": Array.from({length: 80}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Xonobod shahri": Array.from({length: 30}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Andijon tumani": Array.from({length: 40}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Asaka tumani": Array.from({length: 45}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Baliqchi tumani": Array.from({length: 35}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Bo'ston tumani": Array.from({length: 25}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Buloqboshi tumani": Array.from({length: 28}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Izboskan tumani": Array.from({length: 32}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Jalaquduq tumani": Array.from({length: 38}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Xo'jaobod tumani": Array.from({length: 20}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Marhamat tumani": Array.from({length: 35}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Oltinko'l tumani": Array.from({length: 30}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Paxtaobod tumani": Array.from({length: 25}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Qo'rg'ontepa tumani": Array.from({length: 28}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Shahrixon tumani": Array.from({length: 40}, (_, i) => `${i+1}-sonli bog'cha`),
+    "Ulug'nor tumani": Array.from({length: 26}, (_, i) => `${i+1}-sonli bog'cha`)
+};
 
 
 
@@ -4083,6 +4346,38 @@ function validateForm(form, step = null) {
   }
   return [...new Set(missing)];
 }
+
+// FIO ni to'g'ri formatlash (Boynazarov Rozimuhammad Dilshodbek o'g'li)
+function formatFIO(fio) {
+    if (!fio) return '';
+    
+    // Bo'shliqlar bo'yicha ajratish
+    const words = fio.trim().split(/\s+/);
+    
+    return words.map((word, index) => {
+        // Kichik harflarga o'tkazish
+        word = word.toLowerCase();
+        
+        // "o'g'li" va "qizi" ni tekshirish
+        if (word === "ogli" || word === "o'gli" || word === "o`gli") {
+            return "o'g'li";
+        }
+        if (word === "qizi" || word === "kizi") {
+            return "qizi";
+        }
+        
+        // Birinchi harfni katta qilish
+        if (word.length > 0) {
+            // O'zbek apostrofini hisobga olish
+            if (word.startsWith("o'") || word.startsWith("o`")) {
+                return "O'" + word.slice(2, 3).toUpperCase() + word.slice(3);
+            }
+            return word.charAt(0).toUpperCase() + word.slice(1);
+        }
+        return word;
+    }).join(' ');
+}
+
 function buildAddressFromForm(form,data){if(!data.xonadon_turi)return;const type=data.xonadon_turi;let streetSelect=form.querySelector(`select[name="${type}_kochasi"]`);let streetName=streetSelect?streetSelect.value:'';if(streetName==='Boshqa'){const other=form.querySelector(`.js-other-street-input[data-type="${type}"]`);streetName=other?other.value.trim():'';}const dom=data.dom_raqami?.trim()||'';const kv=data.kvartira_raqami?.trim()||'';const uy=data.uy_raqami?.trim()||'';let full='';if(type==='kop_qavatli'&&streetName&&dom&&kv)full=`${streetName} ko., ${dom}-dom, ${kv}-kv.`;if(type==='xovli'&&streetName&&uy)full=`${streetName} ko., ${uy}-uy`;data.street=transliterate(full);}
 async function finalSubmit(data, formElement) {
     showToast("Ma'lumotlar qurilmaga saqlandi!", 'success');
@@ -4119,9 +4414,45 @@ async function prepareAndConfirmSubmit(isFamily = false) {
             const el = form.querySelector(`[name="${k}"]`); 
             let value = typeof v === 'string' ? v.trim() : v; 
             if (typeof value === 'string' && el && el.classList.contains('js-transliterate')) value = transliterate(value); 
+            // FIO ni formatlash
+            if (k === 'fio' && typeof value === 'string') {
+                value = formatFIO(value);
+            }
             newCitizenData[k] = value; 
         }
     } 
+    
+    // Maktab, Talaba, Bog'cha maydonlarini birlashtirish
+    if (newCitizenData.maktab_nomi) {
+        if (newCitizenData.maktab_nomi === 'Boshqa' && newCitizenData.maktab_boshqa) {
+            newCitizenData.oqish_joyi = newCitizenData.maktab_boshqa;
+        } else if (newCitizenData.maktab_nomi !== 'Boshqa') {
+            // Faqat maktab nomini olish (tuman nomisiz)
+            const maktabParts = newCitizenData.maktab_nomi.split(',');
+            newCitizenData.oqish_joyi = maktabParts[0].trim();
+        }
+        newCitizenData.kursi_sinfi = newCitizenData.maktab_sinf || '';
+        // Viloyat va tuman ma'lumotlarini saqlash
+        if (newCitizenData.maktab_viloyat) newCitizenData.talaba_viloyat = newCitizenData.maktab_viloyat;
+        if (newCitizenData.maktab_tuman) newCitizenData.talaba_tuman = newCitizenData.maktab_tuman;
+    }
+    // Talaba uchun - faqat OTM nomi
+    if (newCitizenData.oqish_joyi && newCitizenData.oqish_joyi.includes(',') && newCitizenData.employmentStatus === 'Talaba') {
+        const otmParts = newCitizenData.oqish_joyi.split(',');
+        newCitizenData.oqish_joyi = otmParts[0].trim();
+    }
+    if (newCitizenData.otm_boshqa && newCitizenData.oqish_joyi === 'Boshqa') {
+        newCitizenData.oqish_joyi = newCitizenData.otm_boshqa;
+    }
+    // Bog'cha uchun - faqat bog'cha nomi
+    if (newCitizenData.bogcha_nomi && newCitizenData.bogcha_nomi.includes(',')) {
+        const bogchaParts = newCitizenData.bogcha_nomi.split(',');
+        newCitizenData.bogcha_nomi = bogchaParts[0].trim();
+    }
+    if (newCitizenData.bogcha_nomi === 'Boshqa' && newCitizenData.bogcha_boshqa) {
+        newCitizenData.bogcha_nomi = newCitizenData.bogcha_boshqa;
+    }
+    
     const selectedToifalar = Array.from(form.querySelectorAll('[name="toifa_turi"]:checked')).map(cb => cb.value);
     newCitizenData.toifa_turi = selectedToifalar.join(', ');
     // Hobbilarni yig'ish
@@ -5467,7 +5798,24 @@ function setupEventListeners(){
             if (!card || !card.dataset.personData) return;
             const personData = JSON.parse(card.dataset.personData.replace(/&apos;/g, "'"));
             const p = citizenDatabase.find(citizen => citizen.unique_id === personData.unique_id) || personData;
-                   showScreen('details-modal');
+            
+            // Oldingi modallarni saqlash (qaytish uchun)
+            window.detailsPreviousModal = null;
+            var modals = ['full-list-modal', 'detail-list-modal', 'summary-modal', 'analytics-modal', 'family-modal', 'objects-stats-modal'];
+            for (var i = 0; i < modals.length; i++) {
+                var m = document.getElementById(modals[i]);
+                if (m && m.style.display === 'flex') {
+                    window.detailsPreviousModal = modals[i];
+                    m.style.display = 'none';
+                    break;
+                }
+            }
+            
+            // Details modalini ochish
+            var detailsModal = document.getElementById('details-modal');
+            if (detailsModal) {
+                detailsModal.style.display = 'flex';
+            }
             DOM.detailsContent.innerHTML = createFullDetailsHTML(p);
         }
         else if(t.closest('.js-add-family-member-btn')) { 
@@ -5631,17 +5979,35 @@ function setupEventListeners(){
       }
       else if (t.classList.contains('js-employment-status')) { 
         const s = t.value; 
-        ['.js-study-details', '.js-employment-details', '.js-bogcha-details', '.js-disability-group', '.js-migration-details', '.js-returned-migration-details', '.js-unemployed-details'].forEach(sel => { const f = currentForm.querySelector(sel); if (f) f.style.display = 'none'; }); 
+        // Barcha conditional fieldlarni yashirish
+        ['.js-maktab-details', '.js-talaba-details', '.js-bogcha-details', '.js-employment-details', '.js-disability-group', '.js-migration-details', '.js-returned-migration-details', '.js-unemployed-details', '.js-ketish-arafasida-details'].forEach(sel => { const f = currentForm.querySelector(sel); if (f) f.style.display = 'none'; }); 
         // "Boshqa" ish turi inputini ham yashirish
         const boshqaIsh = currentForm.querySelector('.js-boshqa-ish-input');
         if (boshqaIsh) boshqaIsh.style.display = 'none';
         
-        if (['Talaba', "Maktab o'quchisi"].includes(s)) toggle('.js-study-details', true); 
+        // Kerakli maydonlarni ko'rsatish
+        if (s === "Maktab o'quchisi") {
+            toggle('.js-maktab-details', true);
+            initializeMaktabSelect(currentForm);
+        }
+        else if (s === 'Talaba') {
+            toggle('.js-talaba-details', true);
+            initializeTalabaSelects(currentForm);
+        }
+        else if (s === "Bog'cha") {
+            toggle('.js-bogcha-details', true);
+            initializeBogchaSelects(currentForm);
+        }
         else if (['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(s)) toggle('.js-employment-details', true); 
-        else if (s === "Bog'cha") toggle('.js-bogcha-details', true); 
         else if (s === "Nogironligi bor") toggle('.js-disability-group', true); 
-        else if (s === "Migratsiya") toggle('.js-migration-details', true); 
-        else if (s === "Migratsiyadan qaytgan") toggle('.js-returned-migration-details', true);
+        else if (s === "Migratsiya") {
+            toggle('.js-migration-details', true);
+            initializeDavlatSelect(currentForm, 'migration_country');
+        }
+        else if (s === "Migratsiyadan qaytgan") {
+            toggle('.js-returned-migration-details', true);
+            initializeDavlatSelect(currentForm, 'returned_migration_country');
+        }
         else if (s === "Ishsiz") toggle('.js-unemployed-details', true);
       }
       // JS-JOB-CATEGORY - "Boshqa" tanlaganda input ko'rsatish
@@ -5673,8 +6039,245 @@ function setupEventListeners(){
       else if (t.classList.contains('js-avtomobil-bor')) {
           toggle('.js-avtomobil-details', t.value === 'Ha');
       }
+      // Ketish arafasida tanlaganda
+      else if (t.classList.contains('js-returned-status-select')) {
+          toggle('.js-ketish-arafasida-details', t.value === 'Ketish arafasida');
+          if (t.value === 'Ketish arafasida') {
+              initializeDavlatSelect(currentForm, 'ketish_davlati');
+          }
+      }
     }); 
   });
+  
+  // ═══════════════════════════════════════════════════════════════════
+  // QIDIRUV FUNKSIYASI - SELECT ICHIDA QIDIRISH
+  // ═══════════════════════════════════════════════════════════════════
+  function setupSearchFilter(searchInput, selectElement) {
+      if (!searchInput || !selectElement) return;
+      
+      // Original options ni saqlash
+      const originalOptions = Array.from(selectElement.options).map(opt => ({
+          value: opt.value,
+          text: opt.text,
+          selected: opt.selected
+      }));
+      
+      searchInput.addEventListener('input', function() {
+          const query = this.value.toLowerCase().trim();
+          
+          // Barcha optionlarni tozalash
+          selectElement.innerHTML = '';
+          
+          // Filtrlangan optionlarni qo'shish
+          originalOptions.forEach(opt => {
+              if (query === '' || opt.text.toLowerCase().includes(query) || opt.value.toLowerCase().includes(query)) {
+                  const option = document.createElement('option');
+                  option.value = opt.value;
+                  option.text = opt.text;
+                  selectElement.appendChild(option);
+              }
+          });
+      });
+  }
+  
+  // ═══════════════════════════════════════════════════════════════════
+  // MAKTAB, TALABA, BOG'CHA VA DAVLAT SELECTLARINI BOSHQARISH
+  // ═══════════════════════════════════════════════════════════════════
+  
+  // Maktab selectlarni to'ldirish - 3 BOSQICHLI
+  function initializeMaktabSelect(form) {
+      const viloyatSelect = form.querySelector('.js-maktab-viloyat');
+      const tumanSelect = form.querySelector('.js-maktab-tuman');
+      const maktabSelect = form.querySelector('.js-maktab-select');
+      const boshqaInput = form.querySelector('[name="maktab_boshqa"]');
+      const searchInput = form.querySelector('.js-maktab-details .js-search-input');
+      
+      if (!viloyatSelect) return;
+      
+      // Viloyatlarni to'ldirish
+      let html = '<option value="">Viloyatni tanlang...</option>';
+      viloyatlar.forEach(v => {
+          html += `<option value="${v}">${v}</option>`;
+      });
+      viloyatSelect.innerHTML = html;
+      
+      // Viloyat o'zgarganda tumanlarni yangilash
+      viloyatSelect.onchange = function() {
+          const selectedViloyat = this.value;
+          const tumanlar = tumanlarData[selectedViloyat] || [];
+          
+          let tumanHtml = '<option value="">Tuman/shaharni tanlang...</option>';
+          tumanlar.forEach(t => {
+              tumanHtml += `<option value="${t}">${t}</option>`;
+          });
+          if (tumanSelect) tumanSelect.innerHTML = tumanHtml;
+          
+          // Maktablarni tozalash
+          if (maktabSelect) maktabSelect.innerHTML = '<option value="">Avval tumanni tanlang</option>';
+      };
+      
+      // Tuman o'zgarganda maktablarni yangilash
+      if (tumanSelect) {
+          tumanSelect.onchange = function() {
+              const selectedTuman = this.value;
+              const maktablar = maktablarData[selectedTuman] || [];
+              
+              // Agar maktablar ro'yxati bo'lmasa, 1-60 gacha yaratish
+              let maktabList = maktablar.length > 0 ? maktablar : Array.from({length: 60}, (_, i) => `${i+1}-maktab`);
+              
+              let maktabHtml = '<option value="">Maktabni tanlang...</option>';
+              maktabList.forEach(m => {
+                  maktabHtml += `<option value="${m}, ${selectedTuman}">${m}</option>`;
+              });
+              maktabHtml += '<option value="Boshqa">➕ Boshqa...</option>';
+              if (maktabSelect) {
+                  maktabSelect.innerHTML = maktabHtml;
+                  // Qidiruv funksiyasini sozlash
+                  if (searchInput) setupSearchFilter(searchInput, maktabSelect);
+              }
+          };
+      }
+      
+      // Boshqa tanlaganda input ko'rsatish
+      if (maktabSelect) {
+          maktabSelect.onchange = function() {
+              if (boshqaInput) {
+                  boshqaInput.style.display = (this.value === 'Boshqa') ? 'block' : 'none';
+              }
+          };
+      }
+  }
+  
+  // Talaba selectlarni to'ldirish
+  function initializeTalabaSelects(form) {
+      const viloyatSelect = form.querySelector('.js-talaba-viloyat');
+      const tumanSelect = form.querySelector('.js-talaba-tuman');
+      const otmSelect = form.querySelector('.js-otm-select');
+      const boshqaInput = form.querySelector('[name="otm_boshqa"]');
+      const searchInput = form.querySelector('.js-talaba-details .js-search-input');
+      
+      if (!viloyatSelect) return;
+      
+      // Viloyatlarni to'ldirish
+      let html = '<option value="">Viloyatni tanlang...</option>';
+      viloyatlar.forEach(v => {
+          html += `<option value="${v}">${v}</option>`;
+      });
+      viloyatSelect.innerHTML = html;
+      
+      // Viloyat o'zgarganda tumanlarni va OTMlarni yangilash
+      viloyatSelect.onchange = function() {
+          const selectedViloyat = this.value;
+          const tumanlar = tumanlarData[selectedViloyat] || [];
+          
+          let tumanHtml = '<option value="">Tuman/shaharni tanlang...</option>';
+          tumanlar.forEach(t => {
+              tumanHtml += `<option value="${t}">${t}</option>`;
+          });
+          if (tumanSelect) tumanSelect.innerHTML = tumanHtml;
+          
+          // OTM larni yangilash
+          const otmlar = otmlarData[selectedViloyat] || [];
+          let otmHtml = '<option value="">OTM/Kollej/Litseyni tanlang...</option>';
+          otmlar.forEach(o => {
+              otmHtml += `<option value="${o}">${o}</option>`;
+          });
+          otmHtml += '<option value="Boshqa">➕ Boshqa...</option>';
+          if (otmSelect) {
+              otmSelect.innerHTML = otmHtml;
+              // Qidiruv funksiyasini sozlash
+              if (searchInput) setupSearchFilter(searchInput, otmSelect);
+          }
+      };
+      
+      // Boshqa tanlaganda input ko'rsatish
+      if (otmSelect) {
+          otmSelect.onchange = function() {
+              if (boshqaInput) {
+                  boshqaInput.style.display = (this.value === 'Boshqa') ? 'block' : 'none';
+              }
+          };
+      }
+  }
+  
+  // Bog'cha selectlarni to'ldirish
+  function initializeBogchaSelects(form) {
+      const viloyatSelect = form.querySelector('.js-bogcha-viloyat');
+      const tumanSelect = form.querySelector('.js-bogcha-tuman');
+      const bogchaSelect = form.querySelector('.js-bogcha-select');
+      const boshqaInput = form.querySelector('[name="bogcha_boshqa"]');
+      const searchInput = form.querySelector('.js-bogcha-details .js-search-input');
+      
+      if (!viloyatSelect) return;
+      
+      // Viloyatlarni to'ldirish
+      let html = '<option value="">Viloyatni tanlang...</option>';
+      viloyatlar.forEach(v => {
+          html += `<option value="${v}">${v}</option>`;
+      });
+      viloyatSelect.innerHTML = html;
+      
+      // Viloyat o'zgarganda tumanlarni yangilash
+      viloyatSelect.onchange = function() {
+          const selectedViloyat = this.value;
+          const tumanlar = tumanlarData[selectedViloyat] || [];
+          
+          let tumanHtml = '<option value="">Tuman/shaharni tanlang...</option>';
+          tumanlar.forEach(t => {
+              tumanHtml += `<option value="${t}">${t}</option>`;
+          });
+          if (tumanSelect) tumanSelect.innerHTML = tumanHtml;
+          
+          // Bog'chalarni tozalash
+          if (bogchaSelect) bogchaSelect.innerHTML = '<option value="">Avval tumanni tanlang</option>';
+      };
+      
+      // Tuman o'zgarganda bog'chalarni yangilash
+      if (tumanSelect) {
+          tumanSelect.onchange = function() {
+              const selectedTuman = this.value;
+              const bogchalar = bogchalarData[selectedTuman] || [];
+              
+              // Agar bog'chalar ro'yxati bo'lmasa, 1-100 gacha yaratish
+              let bogchaList = bogchalar.length > 0 ? bogchalar : Array.from({length: 100}, (_, i) => `${i+1}-sonli bog'cha`);
+              
+              let bogchaHtml = '<option value="">Bog\'chani tanlang...</option>';
+              bogchaList.forEach(b => {
+                  bogchaHtml += `<option value="${b}, ${selectedTuman}">${b}</option>`;
+              });
+              bogchaHtml += '<option value="Boshqa">➕ Boshqa...</option>';
+              if (bogchaSelect) {
+                  bogchaSelect.innerHTML = bogchaHtml;
+                  // Qidiruv funksiyasini sozlash
+                  if (searchInput) setupSearchFilter(searchInput, bogchaSelect);
+              }
+          };
+      }
+      
+      // Boshqa tanlaganda input ko'rsatish
+      if (bogchaSelect) {
+          bogchaSelect.onchange = function() {
+              if (boshqaInput) {
+                  boshqaInput.style.display = (this.value === 'Boshqa') ? 'block' : 'none';
+              }
+          };
+      }
+  }
+  
+  // Davlat selectni to'ldirish
+  function initializeDavlatSelect(form, fieldName) {
+      const davlatSelect = form.querySelector(`[name="${fieldName}"]`);
+      if (!davlatSelect) return;
+      
+      let html = '<option value="">Davlatni tanlang...</option>';
+      davlatlar.forEach(d => {
+          html += `<option value="${d}">${d}</option>`;
+      });
+      davlatSelect.innerHTML = html;
+  }
+  
+  // ═══════════════════════════════════════════════════════════════════
+  
   const addressInputs = '[name="dom_raqami"], [name="kvartira_raqami"], [name="uy_raqami"], .js-other-street-input';
   let addressCheckTimeout;
   DOM.addForm.addEventListener('input', (e) => {
@@ -8422,13 +9025,23 @@ function initializeAnalytics() {
     Object.values(chartInstances).forEach(chart => chart?.destroy());
     chartInstances = {};
     
-    // Statistikalar
+    // ══════════════ ASOSIY STATISTIKALAR ══════════════
     const total = baza.length;
     const employed = baza.filter(p => ['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(p.employmentStatus)).length;
     const unemployed = baza.filter(p => p.employmentStatus === 'Ishsiz').length;
-    const renters = baza.filter(p => p.registrationType === 'Ijara').length;
     
-    // YANGI STATISTIKALAR
+    // IJARACHILAR - manzil bo'yicha guruhlash
+    const ijarachilar = baza.filter(p => p.registrationType === 'Ijara');
+    const renters = ijarachilar.length;
+    const ijara_manzillar = {};
+    ijarachilar.forEach(p => {
+        const addr = (p.street || 'Noaniq').trim();
+        if (!ijara_manzillar[addr]) ijara_manzillar[addr] = [];
+        ijara_manzillar[addr].push(p);
+    });
+    const ijara_manzil_soni = Object.keys(ijara_manzillar).length;
+    
+    // ══════════════ YANGI STATISTIKALAR ══════════════
     const avtomobil = baza.filter(p => p.avtomobil_bor === 'Ha').length;
     const telegramYoq = baza.filter(p => p.telegram_azo === "Yo'q").length;
     const aliment = baza.filter(p => p.aliment_muammo === 'Ha').length;
@@ -8438,10 +9051,15 @@ function initializeAnalytics() {
     const gazAqlli = baza.filter(p => p.gaz_hisoblagich === 'Aqlli').length;
     const isitishYoq = baza.filter(p => p.isitish_tizimi === "Yo'q").length;
     
+    // ══════════════ DOM ELEMENTLARIGA YOZISH ══════════════
     document.getElementById('analytics-total').textContent = total;
     document.getElementById('analytics-employed').textContent = employed;
     document.getElementById('analytics-unemployed').textContent = unemployed;
     document.getElementById('analytics-renters').textContent = renters;
+    
+    // Ijarachilar manzil soni
+    const rentersManzilEl = document.getElementById('analytics-renters-manzil');
+    if (rentersManzilEl) rentersManzilEl.textContent = ijara_manzil_soni + ' manzilda';
     
     // YANGI STATISTIKALAR
     const avtomobilEl = document.getElementById('analytics-avtomobil');
@@ -8587,6 +9205,7 @@ window.showCategoryDetail = function(category) {
     const baza = activeCitizenDatabase;
     let list = [];
     let title = '';
+    let showGrouped = false; // Manzil bo'yicha guruhlash
 
     // Filtrlash logikasi
     switch(category) {
@@ -8604,6 +9223,7 @@ window.showCategoryDetail = function(category) {
             break;
         case 'ijara':
             list = baza.filter(p => p.registrationType === 'Ijara');
+            showGrouped = true;
             title = 'Ijarachilar ro\'yxati';
             break;
         case 'neet':
@@ -8687,6 +9307,11 @@ window.showCategoryDetail = function(category) {
             list = [];
     }
 
+    // Manzil bo'yicha guruhlash kerak bo'lsa
+    if (showGrouped && list.length > 0) {
+        return showGroupedByAddress(list, title);
+    }
+
     // Ro'yxatni ochish
     if (list.length > 0) {
         showDetailList(list, title);
@@ -8762,68 +9387,33 @@ function showDetailList(list, title) {
 
 // Fuqaro tafsilotlarini ko'rsatish funksiyasi (analitikadan) - GLOBAL
 window.showCitizenDetails = function(person) {
-    if (!person) {
-        console.log('showCitizenDetails: person not found');
-        return;
-    }
-    console.log('showCitizenDetails:', person.fio);
+    if (!person) return;
     
     // Oldingi modallarni saqlash (qaytish uchun)
-    previousOpenModal = null;
+    window.detailsPreviousModal = null;
     
-    // Detail list modalini tekshirish
-    const detailListModal = document.getElementById('detail-list-modal');
-    if (detailListModal && detailListModal.style.display === 'flex') {
-        previousOpenModal = 'detail-list-modal';
-        detailListModal.style.display = 'none';
+    // Barcha modallarni tekshirish va oldingi ochiq bo'lganini saqlash
+    var modals = ['detail-list-modal', 'analytics-modal', 'summary-modal', 'full-list-modal', 'objects-stats-modal'];
+    for (var i = 0; i < modals.length; i++) {
+        var m = document.getElementById(modals[i]);
+        if (m && m.style.display === 'flex') {
+            window.detailsPreviousModal = modals[i];
+            m.style.display = 'none';
+            break;
+        }
     }
-    
-    // Analytics modalini tekshirish
-    const analyticsModal = document.getElementById('analytics-modal');
-    if (analyticsModal && analyticsModal.style.display === 'flex') {
-        if (!previousOpenModal) previousOpenModal = 'analytics-modal';
-        analyticsModal.style.display = 'none';
-    }
-    
-    // Summary modalini tekshirish
-    const summaryModal = document.getElementById('summary-modal');
-    if (summaryModal && summaryModal.style.display === 'flex') {
-        if (!previousOpenModal) previousOpenModal = 'summary-modal';
-        summaryModal.style.display = 'none';
-    }
-    
-    // Full list modalini tekshirish
-    const fullListModal = document.getElementById('full-list-modal');
-    if (fullListModal && fullListModal.style.display === 'flex') {
-        if (!previousOpenModal) previousOpenModal = 'full-list-modal';
-        fullListModal.style.display = 'none';
-    }
-    
-    // Xarita modalini tekshirish
-    const mapModal = document.getElementById('objects-stats-modal');
-    if (mapModal && mapModal.style.display === 'flex') {
-        if (!previousOpenModal) previousOpenModal = 'objects-stats-modal';
-        mapModal.style.display = 'none';
-    }
-    
-    console.log('previousOpenModal:', previousOpenModal);
     
     // Details modalini ochish
-    const detailsModal = document.getElementById('details-modal');
+    var detailsModal = document.getElementById('details-modal');
     if (detailsModal) {
         detailsModal.style.display = 'flex';
-        detailsModal.style.zIndex = '4000';
         DOM.detailsContent.innerHTML = createFullDetailsHTML(person);
     }
     
     // Xaritada ko'rish tugmasini ko'rsatish/yashirish
-    const mapBtn = document.getElementById('js-show-on-map');
+    var mapBtn = document.getElementById('js-show-on-map');
     if (mapBtn) {
-        if (person.latitude && person.longitude) {
-            mapBtn.style.display = 'flex';
-        } else {
-            mapBtn.style.display = 'none';
-        }
+        mapBtn.style.display = (person.latitude && person.longitude) ? 'flex' : 'none';
     }
 }
 
@@ -8835,108 +9425,102 @@ let previousOpenModal = null;
 
 // Details modalni yopish va oldingi modalga qaytish
 window.closeDetailsModal = function() {
-    console.log('=== closeDetailsModal CHAQIRILDI ===');
-    
     var detailsModal = document.getElementById('details-modal');
     if (detailsModal) {
         detailsModal.style.display = 'none';
-        detailsModal.style.zIndex = '2000';
-        console.log('Details modal yopildi');
     }
     
-    // AI modallariga qaytish (agar ular orqali ochilgan bo'lsa)
+    // AI modallariga qaytish
     if (window.aiPreviousModals) {
-        console.log('AI modallarga qaytish:', window.aiPreviousModals);
-        
         if (window.aiPreviousModals.filtered) {
             var aiFilteredModal = document.getElementById('ai-filtered-citizens-modal');
-            if (aiFilteredModal) {
-                aiFilteredModal.style.display = 'flex';
-                console.log('AI filtered modal qayta ochildi');
-            }
+            if (aiFilteredModal) aiFilteredModal.style.display = 'flex';
         }
         if (window.aiPreviousModals.chat) {
             var aiChat = document.getElementById('ai-assistant-modal');
-            if (aiChat) {
-                aiChat.style.display = 'flex';
-                console.log('AI chat qayta ochildi');
-            }
+            if (aiChat) aiChat.style.display = 'flex';
         }
         window.aiPreviousModals = null;
         return;
     }
     
-    // Oldingi modalga qaytish
-    if (previousOpenModal) {
-        console.log('Oldingi modalga qaytish:', previousOpenModal);
-        var prevModal = document.getElementById(previousOpenModal);
+    // Oldingi modalga qaytish (window.detailsPreviousModal dan)
+    if (window.detailsPreviousModal) {
+        var prevModal = document.getElementById(window.detailsPreviousModal);
         if (prevModal) {
             prevModal.style.display = 'flex';
-            console.log(previousOpenModal + ' qayta ochildi');
         }
-        previousOpenModal = null;
+        window.detailsPreviousModal = null;
+        return;
+    }
+    
+    // previousScreenStack dan qaytish
+    if (typeof previousScreenStack !== 'undefined' && previousScreenStack.length > 1) {
+        // details-modal ni stackdan olib tashlash
+        var lastIndex = previousScreenStack.lastIndexOf('details-modal');
+        if (lastIndex !== -1) {
+            previousScreenStack.splice(lastIndex, 1);
+        }
+        
+        // Oldingi ekranga qaytish
+        var prevId = previousScreenStack[previousScreenStack.length - 1];
+        if (prevId) {
+            var prevEl = document.getElementById(prevId);
+            if (prevEl) {
+                if (prevEl.classList.contains('modal-overlay')) {
+                    prevEl.style.display = 'flex';
+                } else if (prevEl.classList.contains('view')) {
+                    prevEl.classList.add('active');
+                }
+            }
+        }
     }
 };
 
-// Alias
-function closeDetailsModal() {
-    window.closeDetailsModal();
-}
+// ============ DETAILS MODAL - EVENT DELEGATION BILAN ============
+// Document ga listener qo'yish - DOM o'zgarganda ham ishlaydi
+document.addEventListener('click', function(e) {
+    // X tugmasi
+    if (e.target.closest('#details-modal-close-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
+    }
+    
+    // Qaytish tugmasi
+    if (e.target.closest('#details-modal-back-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
+    }
+    
+    // Modal orqa fon
+    if (e.target.id === 'details-modal') {
+        window.closeDetailsModal();
+        return;
+    }
+}, true);
 
-// ============ DETAILS MODAL TUGMALARI UCHUN EVENT LISTENER ============
-// Bu kod sahifa yuklangandan keyin ishlaydi va 100% ishlashini ta'minlaydi
-(function() {
-    function setupDetailsModalButtons() {
-        console.log('Details modal tugmalarini sozlash...');
-        
-        // X tugmasi
-        var closeBtn = document.getElementById('details-modal-close-btn');
-        if (closeBtn) {
-            closeBtn.onclick = function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('X tugmasi bosildi!');
-                window.closeDetailsModal();
-            };
-            console.log('X tugmasi ulandi');
-        }
-        
-        // Qaytish tugmasi
-        var backBtn = document.getElementById('details-modal-back-btn');
-        if (backBtn) {
-            backBtn.onclick = function(e) {
-                e.preventDefault();
-                e.stopPropagation();
-                console.log('Qaytish tugmasi bosildi!');
-                window.closeDetailsModal();
-            };
-            console.log('Qaytish tugmasi ulandi');
-        }
-        
-        // Modal orqa fon
-        var detailsModal = document.getElementById('details-modal');
-        if (detailsModal) {
-            detailsModal.onclick = function(e) {
-                if (e.target === this) {
-                    console.log('Modal fon bosildi!');
-                    window.closeDetailsModal();
-                }
-            };
-            console.log('Modal fon ulandi');
-        }
+// Touch uchun ham
+document.addEventListener('touchend', function(e) {
+    // X tugmasi
+    if (e.target.closest('#details-modal-close-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
     }
     
-    // DOM tayyor bo'lganda
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', setupDetailsModalButtons);
-    } else {
-        setupDetailsModalButtons();
+    // Qaytish tugmasi
+    if (e.target.closest('#details-modal-back-btn')) {
+        e.preventDefault();
+        e.stopPropagation();
+        window.closeDetailsModal();
+        return;
     }
-    
-    // Qo'shimcha - 500ms dan keyin yana tekshirish
-    setTimeout(setupDetailsModalButtons, 500);
-    setTimeout(setupDetailsModalButtons, 1500);
-})();
+}, {passive: false, capture: true});
 
 window.openCitizenFromMap = function(uniqueId) {
     if (navigator.vibrate) navigator.vibrate(30);
@@ -8946,10 +9530,10 @@ window.openCitizenFromMap = function(uniqueId) {
     
     if (person) {
         // Oldingi ochiq modalni saqlash
-        previousOpenModal = null;
+        window.detailsPreviousModal = null;
         document.querySelectorAll('.modal-overlay').forEach(m => {
             if (m.style.display === 'flex' && m.id !== 'details-modal') {
-                previousOpenModal = m.id;
+                window.detailsPreviousModal = m.id;
                 m.style.display = 'none';
             }
         });
