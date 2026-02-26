@@ -30,44 +30,165 @@
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&display=swap');
-    :root{--bg-color:#f0f9ff;--surface-color:#fff;--primary-color:#0077b6;--primary-light:#48cae4;--primary-glow:rgba(0,119,182,.15);--success-color:#10b981;--danger-color:#ef4444;--secondary-color:#64748b;--warning-color:#f59e0b;--warning-glow:rgba(245,158,11,.2);--text-dark:#0f172a;--text-light:#475569;--border-color:rgba(226,232,240,1);--radius-md:12px;--radius-lg:16px;--shadow-sm:0 4px 6px -1px rgba(0,0,0,.05),0 2px 4px -2px rgba(0,0,0,.05);--shadow-md:0 10px 15px -3px rgba(0,0,0,.07),0 4px 6px -4px rgba(0,0,0,.07);--transition-fast:0.08s ease;--transition-slow:0.15s ease;--uz-blue:#0077b6;--uz-green:#10b981;--uz-gold:#fbbf24;--uz-white:#ffffff}
-    /* Dark Mode - Eye Comfort (ko'zni charchatmaydigan) */
-    [data-theme=dark]{--bg-color:#0a1628;--surface-color:#1e293b;--primary-color:#38bdf8;--primary-light:#7dd3fc;--primary-glow:rgba(56,189,248,.2);--text-dark:#e8e6f0;--text-light:#a8a5b8;--border-color:rgba(80,75,100,.5);--warning-color:#fcd34d;--warning-glow:rgba(252,211,77,.2);--success-color:#34d399;--danger-color:#f87171;--secondary-color:#94a3b8}
-    *{box-sizing:border-box;margin:0;padding:0}body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast);-webkit-tap-highlight-color:transparent;position:relative}
-    .hidden{display:none!important}.permission-hidden{display:none!important}.app-shell{max-width:1000px;margin:2rem auto;padding:1rem;display:none;position:relative;z-index:1}.header{display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;padding:0 .5rem}.header h1{display:flex;align-items:center;gap:.8rem;font-size:1.8rem;font-weight:700;color:var(--text-dark);cursor:pointer}.header h1 i{color:var(--primary-color)}.header-actions{display:flex;gap:.5rem}.header-btn{width:48px;height:48px;border-radius:14px;background:linear-gradient(135deg,var(--surface-color),rgba(0,119,182,0.05));border:2px solid transparent;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all 0.2s cubic-bezier(0.4, 0, 0.2, 1);position:relative;overflow:hidden;color:var(--text-light)}.header-btn::before{content:'';position:absolute;inset:-2px;background:linear-gradient(135deg,#0077b6,#10b981);opacity:0;transition:opacity 0.2s;z-index:-1;border-radius:16px}.header-btn:hover{color:#0077b6;transform:translateY(-3px) scale(1.05);box-shadow:0 8px 25px rgba(0,119,182,0.2)}.header-btn:hover::before{opacity:1}#notification-bell-container{position:relative;}#notification-count{position:absolute;top:-5px;right:-8px;background-color:var(--danger-color);color:white;border-radius:50%;width:22px;height:22px;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);animation:pulse 2s infinite}.card{background:var(--surface-color);padding:2rem;border-radius:24px;border:1px solid rgba(0,119,182,0.1);margin-bottom:2rem;box-shadow:0 10px 40px rgba(0,119,182,0.08);position:relative;overflow:hidden;backdrop-filter:blur(10px)}.card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#0077b6,#10b981,#fbbf24);border-radius:24px 24px 0 0}.view{display:none}.view.active{display:block;animation:slideUpFadeIn .15s ease forwards}@keyframes slideUpFadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}.search-options{display:flex;flex-wrap:wrap;border-radius:20px;margin-bottom:1.5rem;overflow:hidden;background:linear-gradient(135deg,rgba(0,119,182,0.08),rgba(16,185,129,0.08));padding:0.5rem;border:2px solid transparent;background-clip:padding-box;position:relative;box-shadow:0 4px 20px rgba(0,119,182,0.1)}.search-options::before{content:'';position:absolute;inset:-2px;border-radius:22px;background:linear-gradient(135deg,#0077b6,#10b981,#fbbf24);z-index:-1;}.search-option-btn{flex:1;min-width:80px;padding:1rem .75rem;border:none;background:transparent;cursor:pointer;font-size:.95rem;font-weight:700;color:var(--text-light);transition:all 0.15s cubic-bezier(0.4, 0, 0.2, 1);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:.6rem;position:relative;overflow:hidden}.search-option-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,119,182,0.1),rgba(16,185,129,0.1));opacity:0;transition:opacity 0.1s}.search-option-btn:hover{color:var(--primary-color);transform:translateY(-2px)}.search-option-btn:hover::before{opacity:1}.search-option-btn.active{background:linear-gradient(135deg,#0077b6,#0096c7);color:white;box-shadow:0 6px 20px rgba(0,119,182,0.4);transform:scale(1.02)}.search-option-btn.active i{color:white}.search-option-btn i{font-size:1.1rem;transition:all 0.1s}
-    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(1.3)}}.search-panel{display:none;animation:fadeSlideUp 0.1s ease}.search-panel.active{display:block}@keyframes fadeSlideUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}input,select,textarea{width:100%;padding:.9rem;font-size:1rem;border:1px solid var(--border-color);border-radius:12px;background:var(--bg-color);color:var(--text-dark);transition:all var(--transition-fast)}input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}label{margin-bottom:.5rem;display:block;font-weight:500;color:var(--text-light)}.btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.25rem;font-size:1rem;font-weight:600;cursor:pointer;text-align:center;border-radius:12px;border:none;color:#fff;transition:all 0.1s ease;margin-top:1rem;position:relative;overflow:hidden}.btn i{margin-right:.5rem}.btn:disabled{opacity:.6;cursor:not-allowed}.btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-md)}.btn-primary{background:linear-gradient(135deg,#0077b6,#0096c7,#00b4d8);background-size:200% 200%;animation:gradientShift 3s ease infinite;box-shadow:0 6px 25px -5px rgba(0,119,182,0.5);position:relative;overflow:hidden}.btn-primary::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:linear-gradient(45deg,transparent,rgba(255,255,255,0.15),transparent);transform:rotate(45deg);transition:all 0.5s}.btn-primary:hover::before{left:100%}@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}.btn-success{background:linear-gradient(135deg,#10b981,#34d399,#6ee7b7);background-size:200% 200%;animation:gradientShift 3s ease infinite;box-shadow:0 6px 25px -5px rgba(16,185,129,0.5)}.btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:2px solid var(--border-color);}.btn-secondary:hover{border-color:var(--secondary-color);background:rgba(100,116,139,.05)}.btn-secondary-outline {background:transparent;color:var(--text-light);font-weight:600;border:2px solid var(--border-color);}.btn-secondary-outline:hover {border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow);}.btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:2px solid var(--danger-color)}.btn-cancel:hover{background:var(--danger-color);color:#fff}
-    .fab-container{position:fixed;bottom:0.6rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0.4rem;background:linear-gradient(135deg,rgba(0,119,182,0.3),rgba(16,185,129,0.3));backdrop-filter:blur(10px);padding:0.5rem 0.7rem;border-radius:28px;border:2px solid rgba(255,255,255,0.35);box-shadow:0 6px 20px rgba(0,0,0,0.3)}
-    .fab{width:50px;height:50px;border-radius:50%;color:#fff;border:none;box-shadow:0 4px 12px rgba(0,0,0,0.35);display:flex;align-items:center;justify-content:center;font-size:1.25rem;cursor:pointer;transition:transform 0.05s;position:relative}
-    .fab:active{transform:scale(0.9)}
-    .fab-add{background:linear-gradient(135deg,#0077b6,#00b4d8);width:56px;height:56px;font-size:1.5rem;box-shadow:0 5px 18px rgba(0,119,182,0.5)}
-    .fab-summary{background:linear-gradient(135deg,#10b981,#34d399);box-shadow:0 4px 12px rgba(16,185,129,0.5)}
+    
+    /* ═══ ZAMONAVIY RANG SXEMASI ═══ */
+    :root{
+        --bg-color:#eef7ff;
+        --surface-color:#ffffff;
+        --primary-color:#0077b6;
+        --primary-light:#00b4d8;
+        --primary-glow:rgba(0,119,182,.12);
+        --success-color:#059669;
+        --danger-color:#dc2626;
+        --secondary-color:#64748b;
+        --warning-color:#d97706;
+        --warning-glow:rgba(217,119,6,.2);
+        --text-dark:#0a1628;
+        --text-light:#4a5568;
+        --border-color:rgba(0,119,182,0.12);
+        --radius-md:14px;
+        --radius-lg:20px;
+        --shadow-sm:0 2px 12px rgba(0,119,182,0.08),0 1px 4px rgba(0,0,0,0.04);
+        --shadow-md:0 8px 32px rgba(0,119,182,0.12),0 4px 12px rgba(0,0,0,0.06);
+        --shadow-lg:0 20px 60px rgba(0,119,182,0.18),0 8px 24px rgba(0,0,0,0.08);
+        --transition-fast:0.12s cubic-bezier(0.4,0,0.2,1);
+        --transition-slow:0.2s cubic-bezier(0.4,0,0.2,1);
+        --uz-blue:#0077b6;
+        --uz-green:#059669;
+        --uz-gold:#f59e0b;
+        --uz-white:#ffffff;
+        --card-radius:22px;
+        --glass-bg:rgba(255,255,255,0.92);
+        --glass-border:rgba(255,255,255,0.7);
+        --gradient-main:linear-gradient(135deg,#0077b6 0%,#00b4d8 50%,#059669 100%);
+        --gradient-card:linear-gradient(145deg,rgba(255,255,255,1),rgba(238,247,255,0.6));
+    }
+    /* Dark Mode */
+    [data-theme=dark]{
+        --bg-color:#060e1c;
+        --surface-color:#0d1929;
+        --primary-color:#38bdf8;
+        --primary-light:#7dd3fc;
+        --primary-glow:rgba(56,189,248,.18);
+        --text-dark:#e8f4ff;
+        --text-light:#94a3b8;
+        --border-color:rgba(56,189,248,0.15);
+        --warning-color:#fbbf24;
+        --warning-glow:rgba(251,191,36,.18);
+        --success-color:#34d399;
+        --danger-color:#f87171;
+        --secondary-color:#94a3b8;
+        --glass-bg:rgba(13,25,41,0.95);
+        --glass-border:rgba(56,189,248,0.15);
+        --gradient-main:linear-gradient(135deg,#1e3a5f 0%,#0e5f7a 50%,#065f46 100%);
+        --gradient-card:linear-gradient(145deg,rgba(13,25,41,1),rgba(6,14,28,0.8));
+    }
+    
+    /* ═══ ASOSIY TUZILMA ═══ */
+    *{box-sizing:border-box;margin:0;padding:0}
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;background:var(--bg-color);color:var(--text-dark);-webkit-font-smoothing:antialiased;transition:background-color var(--transition-fast),color var(--transition-fast);-webkit-tap-highlight-color:transparent;position:relative;background-image:radial-gradient(ellipse at 20% 10%,rgba(0,119,182,0.06) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(5,150,105,0.05) 0%,transparent 50%)}
+    [data-theme=dark] body{background-image:radial-gradient(ellipse at 20% 10%,rgba(56,189,248,0.07) 0%,transparent 50%),radial-gradient(ellipse at 80% 80%,rgba(52,211,153,0.05) 0%,transparent 50%)}
+    
+    /* ═══ GLOBAL IMPROVEMENTS ═══ */
+    /* Scrollbar */
+    ::-webkit-scrollbar{width:6px;height:6px}
+    ::-webkit-scrollbar-track{background:transparent;border-radius:10px}
+    ::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--primary-color),var(--primary-light));border-radius:10px;border:1px solid transparent}
+    ::-webkit-scrollbar-thumb:hover{background:linear-gradient(180deg,var(--primary-light),var(--success-color))}
+    .hidden{display:none!important}.permission-hidden{display:none!important}
+    /* ══ APP SHELL ══ */
+    .app-shell{max-width:1020px;margin:1.5rem auto;padding:1rem 1rem 9rem;display:none;position:relative;z-index:1}
+    /* ══ HEADER ══ */
+    .header{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.8rem;padding:0.75rem 1.2rem;background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-radius:20px;border:1px solid var(--glass-border);box-shadow:var(--shadow-md)}
+    .header h1{display:flex;align-items:center;gap:.8rem;font-size:1.65rem;font-weight:800;color:var(--text-dark);cursor:pointer;letter-spacing:-0.02em}
+    .header h1 i{color:var(--primary-color);filter:drop-shadow(0 0 8px rgba(0,119,182,0.4))}
+    .header h1 .brand-name{background:var(--gradient-main);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .header-actions{display:flex;gap:.5rem}
+    .header-btn{width:46px;height:46px;border-radius:14px;background:var(--surface-color);border:1.5px solid var(--border-color);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all var(--transition-fast);position:relative;overflow:hidden;color:var(--text-light);box-shadow:var(--shadow-sm)}
+    .header-btn:hover{color:var(--primary-color);transform:translateY(-3px) scale(1.06);box-shadow:0 8px 28px rgba(0,119,182,0.25);border-color:var(--primary-color);background:var(--primary-glow)}
+    #notification-bell-container{position:relative;}
+    #notification-count{position:absolute;top:-6px;right:-8px;background:linear-gradient(135deg,#ef4444,#dc2626);color:white;border-radius:50%;width:22px;height:22px;font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface-color);animation:pulse 2s infinite;box-shadow:0 2px 8px rgba(220,38,38,0.4)}
+    /* ══ CARD ══ */
+    .card{background:var(--gradient-card);padding:2rem;border-radius:var(--card-radius);border:1px solid var(--border-color);margin-bottom:1.8rem;box-shadow:var(--shadow-md);position:relative;overflow:hidden;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+    .card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-main);border-radius:var(--card-radius) var(--card-radius) 0 0}
+    .card::after{content:'';position:absolute;top:-60px;right:-60px;width:180px;height:180px;background:radial-gradient(circle,rgba(0,119,182,0.06) 0%,transparent 70%);border-radius:50%;pointer-events:none}
+    /* ══ VIEWS ══ */
+    .view{display:none}.view.active{display:block;animation:slideUpFadeIn .18s ease forwards}
+    @keyframes slideUpFadeIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+    /* ══ SEARCH OPTIONS ══ */
+    .search-options{display:flex;flex-wrap:wrap;border-radius:18px;margin-bottom:1.5rem;overflow:hidden;background:var(--surface-color);padding:0.4rem;border:1.5px solid var(--border-color);position:relative;box-shadow:var(--shadow-sm);gap:0.2rem}
+    .search-option-btn{flex:1;min-width:80px;padding:0.85rem .75rem;border:none;background:transparent;cursor:pointer;font-size:.9rem;font-weight:700;color:var(--text-light);transition:all var(--transition-fast);border-radius:13px;display:flex;align-items:center;justify-content:center;gap:.5rem}
+    .search-option-btn:hover{color:var(--primary-color);background:var(--primary-glow)}
+    .search-option-btn.active{background:linear-gradient(135deg,var(--primary-color),var(--primary-light));color:white;box-shadow:0 4px 16px rgba(0,119,182,0.4)}
+    .search-option-btn.active i{color:white}.search-option-btn i{font-size:1rem}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(1.35)}}
+    .search-panel{display:none;animation:fadeSlideUp 0.12s ease}.search-panel.active{display:block}
+    @keyframes fadeSlideUp{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+    /* ══ INPUTS ══ */
+    input,select,textarea{width:100%;padding:.85rem 1rem;font-size:1rem;border:1.5px solid var(--border-color);border-radius:14px;background:var(--surface-color);color:var(--text-dark);transition:all var(--transition-fast);font-family:inherit}
+    input:focus,select:focus,textarea:focus{outline:none;border-color:var(--primary-color);box-shadow:0 0 0 4px var(--primary-glow);background:var(--surface-color)}
+    label{margin-bottom:.5rem;display:block;font-weight:600;color:var(--text-light);font-size:0.9rem;letter-spacing:0.01em}
+    /* ══ BUTTONS ══ */
+    .btn{display:inline-flex;align-items:center;justify-content:center;width:100%;padding:.9rem 1.5rem;font-size:1rem;font-weight:700;cursor:pointer;text-align:center;border-radius:14px;border:none;color:#fff;transition:all var(--transition-fast);margin-top:1rem;position:relative;overflow:hidden;letter-spacing:0.01em}
+    .btn i{margin-right:.5rem}
+    .btn:disabled{opacity:.5;cursor:not-allowed;filter:grayscale(0.3)}
+    .btn:hover:not(:disabled){transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+    .btn:active:not(:disabled){transform:translateY(0) scale(0.98)}
+    .btn-primary{background:linear-gradient(135deg,#0077b6,#0096c7,#00b4d8);box-shadow:0 6px 24px rgba(0,119,182,0.45);position:relative;overflow:hidden}
+    .btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.2),transparent);transition:left 0.4s ease}
+    .btn-primary:hover::after{left:150%}
+    .btn-success{background:linear-gradient(135deg,#059669,#10b981,#34d399);box-shadow:0 6px 24px rgba(5,150,105,0.45)}
+    .btn-secondary{background:transparent;color:var(--secondary-color);font-weight:600;border:1.5px solid var(--border-color)}
+    .btn-secondary:hover{border-color:var(--primary-color);color:var(--primary-color);background:var(--primary-glow)}
+    .btn-secondary-outline{background:transparent;color:var(--text-light);font-weight:600;border:1.5px solid var(--border-color)}
+    .btn-secondary-outline:hover{border-color:var(--primary-light);color:var(--primary-color);background:var(--primary-glow)}
+    .btn-cancel{background:transparent;color:var(--danger-color);font-weight:700;border:1.5px solid var(--danger-color)}
+    .btn-cancel:hover{background:linear-gradient(135deg,#dc2626,#ef4444);color:#fff;border-color:transparent}
+    /* ══ FAB ══ */
+    .fab-container{position:fixed;bottom:0.8rem;left:50%;transform:translateX(-50%);z-index:2000;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:0.5rem;background:var(--glass-bg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:0.6rem 0.9rem;border-radius:30px;border:1.5px solid var(--glass-border);box-shadow:0 8px 32px rgba(0,0,0,0.18),0 2px 8px rgba(0,0,0,0.1)}
+    .fab{width:52px;height:52px;border-radius:50%;color:#fff;border:none;box-shadow:0 4px 16px rgba(0,0,0,0.25);display:flex;align-items:center;justify-content:center;font-size:1.2rem;cursor:pointer;transition:all var(--transition-fast);position:relative}
+    .fab:hover{transform:translateY(-4px) scale(1.08);filter:brightness(1.1)}
+    .fab:active{transform:scale(0.92)}
+    .fab-add{background:linear-gradient(135deg,#0077b6,#00b4d8);width:58px;height:58px;font-size:1.5rem;box-shadow:0 6px 24px rgba(0,119,182,0.55)}
+    .fab-summary{background:linear-gradient(135deg,#059669,#10b981);box-shadow:0 4px 16px rgba(5,150,105,0.5)}
     .fab-list{background:linear-gradient(135deg,#0d9488,#14b8a6);box-shadow:0 4px 12px rgba(13,148,136,0.5)}
     .fab-objects{background:linear-gradient(135deg,#fbbf24,#f59e0b);box-shadow:0 4px 12px rgba(251,191,36,0.5)}
     .fab-ai{background:linear-gradient(135deg,#ec4899,#f472b6);box-shadow:0 4px 12px rgba(236,72,153,0.5)}
     .fab-analytics{background:linear-gradient(135deg,#3b82f6,#60a5fa);box-shadow:0 4px 12px rgba(59,130,246,0.5)}
-    .result-card{display:flex;gap:1.5rem;align-items:flex-start;background:var(--surface-color);padding:1.5rem;border:1px solid var(--border-color);border-radius:20px;margin-bottom:1.5rem;box-shadow:0 4px 20px rgba(0,119,182,0.08);transition:all 0.2s ease;position:relative;overflow:hidden}
-    .result-card::before{content:'';position:absolute;top:0;left:0;width:4px;height:100%;background:linear-gradient(180deg,#0077b6,#10b981);border-radius:20px 0 0 20px}
-    .result-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,119,182,0.15)}
-    .result-card.archived { opacity: 0.6; background: var(--bg-color); }
-    .result-card.archived .result-header h3 { text-decoration: line-through; }
-    .result-card-avatar { flex-shrink: 0; }
-    .result-card-avatar img, .avatar-placeholder-sm { width: 85px; height: 85px; border-radius: 50%; object-fit: cover; border: 4px solid var(--primary-glow); cursor: pointer; transition: all 0.2s ease; box-shadow: 0 4px 15px rgba(0,119,182,0.2); }
-    .result-card-avatar img:hover, .avatar-placeholder-sm:hover { transform: scale(1.08); box-shadow: 0 8px 25px rgba(0,119,182,0.3); }
-    .avatar-placeholder-sm { display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, var(--bg-color), rgba(0,119,182,0.1)); font-size: 2.5rem; color: var(--primary-color); }
-    .result-card-content { flex-grow: 1; }
-    .result-card.incomplete-data { border-left: 4px solid var(--warning-color); background: var(--warning-glow); }
-    .incomplete-warning { display: flex; align-items: center; gap: .5rem; background-color: var(--warning-glow); color: var(--warning-color); font-weight: 500; font-size: 0.85rem; padding: 0.5rem 0.75rem; border-radius: 8px; margin-bottom: 1rem; }
-    .result-card.main-person-card {border-left: 4px solid var(--primary-color);}.result-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem}.result-header h3{margin:0;font-size:1.25rem;color:var(--primary-color);font-weight:600;}.result-header .badge{background:var(--primary-glow);color:var(--primary-color);padding:4px 12px;border-radius:20px;font-size:.8rem;font-weight:600}.result-header .badge.archived-badge { background: var(--secondary-color); color: #fff; }.result-table{width:100%;border-collapse:collapse;font-size:.95rem}.result-table td{padding:.75rem .25rem;border-bottom:1px solid var(--border-color)}.result-table tr:last-child td{border-bottom:none}.result-table td:first-child{font-weight:500;color:var(--text-light);width:40%;vertical-align:top}.result-table td:last-child{font-weight:600;color:var(--text-dark)}#address-family-suggestions { margin-top: 1rem; padding: 1.5rem; background-color: var(--bg-color); border-radius: var(--radius-lg); display: none; }#address-family-suggestions h6 { margin-bottom: 1rem; color: var(--text-dark); font-weight: 500; font-size: 0.9rem; opacity: 0.8; }.suggestion-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; border-bottom: 1px solid var(--border-color); flex-wrap: wrap; gap: 1rem; }.suggestion-item:last-child { border-bottom: none; padding-bottom: 0;}.suggestion-item .btn { margin-top: 0; padding: 0.6rem 1.2rem; font-size: 0.9rem; flex-shrink: 0; width: 100%;}@media(min-width: 600px){ .suggestion-item .btn { width: auto; } }.suggestion-item-info { display: flex; flex-direction: column; }.suggestion-item-info span { font-weight: 600; color: var(--text-dark); }.suggestion-item-info small { color: var(--text-light); font-size: 0.9rem; }.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-top:1rem}.summary-stat-card{background:linear-gradient(135deg,var(--surface-color),rgba(0,119,182,0.03));border:1px solid rgba(0,119,182,0.1);border-radius:20px;padding:1.5rem 1rem;text-align:center;transition:all 0.2s ease;cursor:pointer;position:relative;overflow:hidden}.summary-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--primary-color),var(--success-color));opacity:0;transition:opacity 0.2s}.summary-stat-card:hover::before{opacity:1}.summary-stat-card .icon{font-size:2.5rem;color:var(--primary-color);margin-bottom:.75rem;transition:transform 0.2s}.summary-stat-card:hover .icon{transform:scale(1.15)}.summary-stat-card .number{font-size:2.2rem;font-weight:800;background:linear-gradient(135deg,var(--primary-color),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.summary-stat-card .label{font-size:.9rem;font-weight:600;color:var(--text-light);margin-top:.25rem}.summary-stat-card:hover{transform:translateY(-8px);box-shadow:0 15px 40px rgba(0,119,182,0.2)}.summary-stat-card[data-category="shubhali"] .icon { color: var(--danger-color); }.summary-stat-card[data-category="shubhali"] .number { background:linear-gradient(135deg,var(--danger-color),#fca5a5);-webkit-background-clip:text;-webkit-text-fill-color:transparent; }.summary-stat-card[data-category="problem"] .icon { color: var(--warning-color); }.summary-stat-card[data-category="problem"] .number { background:linear-gradient(135deg,var(--warning-color),#fcd34d);-webkit-background-clip:text;-webkit-text-fill-color:transparent; }.summary-stat-card[data-category="toifadagilar"] .icon { color: #8b5cf6; }.summary-stat-card[data-category="toifadagilar"] .number { background:linear-gradient(135deg,#8b5cf6,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent; }.summary-stat-card.restricted { opacity: 0.6; cursor: not-allowed; }.modal-overlay{position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);backdrop-filter:blur(12px);display:none;justify-content:center;align-items:center;animation:fadeIn .15s ease}.modal-box{background:var(--surface-color);border:1px solid rgba(0,119,182,0.1);padding:2rem;border-radius:24px;width:90%;max-width:900px;text-align:left;animation:zoomIn .2s cubic-bezier(0.34, 1.56, 0.64, 1);box-shadow:0 25px 80px rgba(0,119,182,0.25);position:relative;max-height:90vh;overflow-y:auto}
+    .result-card{display:flex;gap:1.2rem;align-items:flex-start;background:var(--gradient-card);padding:1.4rem;border:1.5px solid var(--border-color);border-radius:20px;margin-bottom:1.2rem;box-shadow:var(--shadow-sm);transition:all var(--transition-slow);position:relative;overflow:hidden}
+    .result-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-main);opacity:0;transition:opacity var(--transition-fast)}
+    .result-card::after{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:linear-gradient(180deg,var(--primary-color),var(--success-color));border-radius:20px 0 0 20px;opacity:0.5}
+    .result-card:hover{transform:translateY(-4px) scale(1.005);box-shadow:var(--shadow-lg);border-color:rgba(0,119,182,0.25)}
+    .result-card:hover::before{opacity:1}
+    .result-card.archived{opacity:0.55;background:var(--bg-color);filter:saturate(0.6)}
+    .result-card.archived .result-header h3{text-decoration:line-through}
+    .result-card-avatar{flex-shrink:0}
+    .result-card-avatar img,.avatar-placeholder-sm{width:82px;height:82px;border-radius:50%;object-fit:cover;border:3px solid var(--primary-glow);cursor:pointer;transition:all var(--transition-slow);box-shadow:0 4px 16px rgba(0,119,182,0.2)}
+    .result-card-avatar img:hover,.avatar-placeholder-sm:hover{transform:scale(1.1);box-shadow:0 8px 28px rgba(0,119,182,0.35);border-color:var(--primary-color)}
+    .avatar-placeholder-sm{display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--bg-color),rgba(0,119,182,0.12));font-size:2.4rem;color:var(--primary-color)}
+    .result-card-content{flex-grow:1}
+    .result-card.incomplete-data{border-left:4px solid var(--warning-color)}
+    .incomplete-warning{display:flex;align-items:center;gap:.5rem;background:var(--warning-glow);color:var(--warning-color);font-weight:600;font-size:0.85rem;padding:0.5rem 0.75rem;border-radius:10px;margin-bottom:1rem}
+    .result-card.main-person-card{border-left:4px solid var(--primary-color)}
+    .result-card-avatar { width:54px; height:54px; border-radius:14px; overflow:hidden; flex-shrink:0; background:linear-gradient(135deg,#e0f2fe,#d1fae5); display:flex; align-items:center; justify-content:center; }
+    .result-card-avatar img { width:100%; height:100%; object-fit:cover; border-radius:14px; }
+    .avatar-placeholder-sm { font-size:1.4rem; display:flex; align-items:center; justify-content:center; width:100%; height:100%; color:var(--primary-color); }
+    .result-card-content { flex:1; min-width:0; }
+    .result-header { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px; gap:4px; }
+    .result-header h3 { font-size:0.95rem; font-weight:800; color:var(--text-dark); margin:0; line-height:1.3; }
+    .result-header .badge { background:var(--primary-glow); color:var(--primary-color); padding:2px 9px; border-radius:10px; font-size:0.7rem; font-weight:700; white-space:nowrap; flex-shrink:0; }
+    .result-header .badge.archived-badge{background:var(--secondary-color);color:#fff}.result-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:0.85rem}.result-header h3{margin:0;font-size:1.18rem;color:var(--text-dark);font-weight:700;letter-spacing:-0.01em}.result-header .badge{background:var(--primary-glow);color:var(--primary-color);padding:3px 10px;border-radius:20px;font-size:.78rem;font-weight:700}.result-header .badge.archived-badge{background:var(--secondary-color);color:#fff}.result-table{width:100%;border-collapse:collapse;font-size:.93rem}.result-table td{padding:.65rem .25rem;border-bottom:1px solid var(--border-color)}.result-table tr:last-child td{border-bottom:none}.result-table td:first-child{font-weight:500;color:var(--text-light);width:40%;vertical-align:top}.result-table td:last-child{font-weight:700;color:var(--text-dark)}#address-family-suggestions{margin-top:1rem;padding:1.5rem;background:var(--bg-color);border-radius:var(--radius-lg);display:none;border:1.5px solid var(--border-color)}#address-family-suggestions h6{margin-bottom:1rem;color:var(--text-dark);font-weight:600;font-size:0.9rem}.suggestion-item{display:flex;justify-content:space-between;align-items:center;padding:1rem 0;border-bottom:1px solid var(--border-color);flex-wrap:wrap;gap:1rem}.suggestion-item:last-child{border-bottom:none;padding-bottom:0}.suggestion-item .btn{margin-top:0;padding:0.6rem 1.2rem;font-size:0.9rem;flex-shrink:0;width:100%}@media(min-width:600px){.suggestion-item .btn{width:auto}}.suggestion-item-info{display:flex;flex-direction:column}.suggestion-item-info span{font-weight:700;color:var(--text-dark)}.suggestion-item-info small{color:var(--text-light);font-size:0.9rem}.summary-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:1rem;margin-top:1rem}.summary-stat-card{background:var(--gradient-card);border:1.5px solid var(--border-color);border-radius:20px;padding:1.4rem 1rem;text-align:center;transition:all var(--transition-slow);cursor:pointer;position:relative;overflow:hidden;box-shadow:var(--shadow-sm)}.summary-stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--gradient-main);opacity:0;transition:opacity var(--transition-fast)}.summary-stat-card:hover::before{opacity:1}.summary-stat-card .icon{font-size:2.4rem;color:var(--primary-color);margin-bottom:.65rem;transition:transform var(--transition-fast)}.summary-stat-card:hover .icon{transform:scale(1.18) rotate(-3deg)}.summary-stat-card .number{font-size:2.1rem;font-weight:900;background:linear-gradient(135deg,var(--primary-color),var(--primary-light));-webkit-background-clip:text;-webkit-text-fill-color:transparent}.summary-stat-card .label{font-size:.88rem;font-weight:600;color:var(--text-light);margin-top:.2rem}.summary-stat-card:hover{transform:translateY(-8px) scale(1.02);box-shadow:var(--shadow-lg)}.summary-stat-card[data-category="shubhali"] .icon{color:var(--danger-color)}.summary-stat-card[data-category="shubhali"] .number{background:linear-gradient(135deg,var(--danger-color),#fca5a5);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.summary-stat-card[data-category="problem"] .icon{color:var(--warning-color)}.summary-stat-card[data-category="problem"] .number{background:linear-gradient(135deg,var(--warning-color),#fcd34d);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.summary-stat-card[data-category="toifadagilar"] .icon{color:#8b5cf6}.summary-stat-card[data-category="toifadagilar"] .number{background:linear-gradient(135deg,#8b5cf6,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.summary-stat-card.restricted{opacity:0.5;cursor:not-allowed}.modal-overlay{position:fixed;z-index:2000;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.6);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);display:none;justify-content:center;align-items:center;animation:fadeIn .15s ease}.modal-box{background:var(--surface-color);border:1.5px solid var(--border-color);padding:2rem;border-radius:24px;width:90%;max-width:900px;text-align:left;animation:zoomIn .2s cubic-bezier(0.34,1.56,0.64,1);box-shadow:var(--shadow-lg);position:relative;max-height:90vh;overflow-y:auto}@keyframes zoomIn{from{opacity:0;transform:scale(0.92)}to{opacity:1;transform:scale(1)}}@keyframes fadeIn{from{opacity:0}to{opacity:1}}
     #summary-modal .modal-box { padding: 1rem; display: flex; flex-direction: column; max-height: 90vh; overflow-y: auto !important; }
     #summary-modal #summary-content-wrapper { overflow-y: visible !important; }
     #summary-modal #summary-grid-container { overflow-y: visible !important; }
     #family-modal .modal-box { max-width: 95%; width: 1000px; }
     #family-modal-content { max-height: 70vh; overflow-y: auto; padding-right: 1rem; margin-top: 1.5rem; }
     #family-modal-content .result-card { background-color: var(--bg-color); box-shadow: none; border-color: var(--primary-glow); }
-    .modal-close-btn{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;color:var(--text-light);cursor:pointer;transition:all var(--transition-fast)}.modal-close-btn:hover{color:var(--danger-color);transform:rotate(90deg)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(20px)}}@keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}.form-row{display:grid;grid-template-columns:1fr;gap:1rem 1.5rem}@media(min-width:600px){.form-row{grid-template-columns:1fr 1fr}}.full-width{grid-column:1 / -1}.form-group{position:relative;margin-top:1rem}.conditional-field{display:none}.passport-inputs,.metrka-inputs{display:flex;gap:.5rem}.passport-inputs input:first-child{text-transform:uppercase;flex-basis:80px;flex-grow:0}.form-progress{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2.5rem;position:relative}.form-progress-bar{position:absolute;top:12px;left:16.66%;height:2px;width:0;background:var(--primary-color);transform:translateY(0);transition:width var(--transition-slow);z-index:2}.form-progress::after{content:'';position:absolute;top:12px;left:16.66%;right:16.66%;height:2px;background:var(--border-color);z-index:1}.progress-step{display:flex;flex-direction:column;align-items:center;width:33.33%;position:relative;z-index:3;color:var(--text-light);font-weight:500;font-size:.9rem;text-align:center}.progress-step::before{content:'';display:block;width:24px;height:24px;border-radius:50%;background-color:var(--surface-color);border:2px solid var(--border-color);margin-bottom:.5rem;transition:all var(--transition-fast)}.progress-step.active{color:var(--primary-color);font-weight:600}.progress-step.active::before{background-color:var(--primary-color);border-color:var(--primary-color);content:'✓';color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;line-height:1}.form-step{display:none; animation: slideUpFadeIn 0.15s ease-in-out;}.form-step.active{display:block}.app-footer{text-align:center;margin-top:3rem;padding:1.5rem;color:var(--text-light);font-size:.9rem;border-top:1px solid var(--border-color)}.app-footer span{font-weight:600;background:-webkit-linear-gradient(45deg,var(--primary-color),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.4);backdrop-filter:blur(5px);display:none;justify-content:center;align-items:center;z-index:9999}.loader{width:50px;height:50px;border:5px solid var(--border-color);border-top-color:var(--primary-color);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+    .modal-close-btn{position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.5rem;color:var(--text-light);cursor:pointer;transition:all var(--transition-fast)}.modal-close-btn:hover{color:var(--danger-color);transform:rotate(90deg)}@keyframes fadeIn{from{opacity:0}to{opacity:1}}@keyframes fadeOut{from{opacity:1;transform:translateX(0)}to{opacity:0;transform:translateX(20px)}}@keyframes zoomIn{from{transform:scale(.9);opacity:0}to{transform:scale(1);opacity:1}}.form-row{display:grid;grid-template-columns:1fr;gap:1rem 1.5rem}@media(min-width:600px){.form-row{grid-template-columns:1fr 1fr}}.full-width{grid-column:1 / -1}.form-group{position:relative;margin-top:1rem}.conditional-field{display:none}.passport-inputs,.metrka-inputs{display:flex;gap:.5rem}.passport-inputs input:first-child{text-transform:uppercase;flex-basis:80px;flex-grow:0}.form-progress{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:2.5rem;position:relative}.form-progress-bar{position:absolute;top:12px;left:16.66%;height:2px;width:0;background:var(--primary-color);transform:translateY(0);transition:width var(--transition-slow);z-index:2}.form-progress::after{content:'';position:absolute;top:12px;left:16.66%;right:16.66%;height:2px;background:var(--border-color);z-index:1}.progress-step{display:flex;flex-direction:column;align-items:center;width:33.33%;position:relative;z-index:3;color:var(--text-light);font-weight:500;font-size:.9rem;text-align:center}.progress-step::before{content:'';display:block;width:24px;height:24px;border-radius:50%;background-color:var(--surface-color);border:2px solid var(--border-color);margin-bottom:.5rem;transition:all var(--transition-fast)}.progress-step.active{color:var(--primary-color);font-weight:600}.progress-step.active::before{background-color:var(--primary-color);border-color:var(--primary-color);content:'✓';color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;line-height:1}.form-step{display:none; animation: slideUpFadeIn 0.15s ease-in-out;}.form-step.active{display:block}.app-footer{text-align:center;margin-top:2rem;padding:1.5rem 1.5rem 6rem;color:var(--text-light);font-size:.9rem;border-top:1px solid var(--border-color)}.app-footer span{font-weight:600;background:-webkit-linear-gradient(45deg,var(--primary-color),#2dd4bf);-webkit-background-clip:text;-webkit-text-fill-color:transparent}.loader-overlay{position:fixed;top:0;left:0;width:100%;height:100%;background-color:rgba(0,0,0,.4);backdrop-filter:blur(5px);display:none;justify-content:center;align-items:center;z-index:9999}.loader{width:50px;height:50px;border:5px solid var(--border-color);border-top-color:var(--primary-color);border-radius:50%;animation:spin 1s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
     .context-highlight{padding: .6rem .8rem; margin-bottom: 1rem; border-radius: var(--radius-md); font-weight: 600;}.context-highlight.problem{background-color: var(--warning-glow); color: var(--warning-color); border-left: 4px solid var(--warning-color);}.context-highlight.toifadagilar{background-color: var(--primary-glow); color: var(--primary-color); border-left: 4px solid var(--primary-color);}.context-highlight .label{font-weight: 500; opacity: .8; margin-right: .5rem;}
-    #toast-notification { position: fixed; bottom: -100px; left: 50%; transform: translateX(-50%); background-color: var(--success-color); color: white; padding: 12px 24px; border-radius: 8px; box-shadow: var(--shadow-md); z-index: 10001; font-weight: 600; font-size: 0.95rem; transition: bottom 0.5s ease-in-out; display: flex; align-items: center; gap: 10px; }
-    #toast-notification.show { bottom: 20px; }
+    #toast-notification{position:fixed;bottom:-120px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--success-color),#34d399);color:white;padding:14px 28px;border-radius:50px;box-shadow:0 8px 32px rgba(0,0,0,0.25),0 2px 8px rgba(0,0,0,0.15);z-index:10001;font-weight:700;font-size:0.95rem;transition:bottom 0.4s cubic-bezier(0.34,1.56,0.64,1);display:flex;align-items:center;gap:10px;white-space:nowrap;max-width:90vw;border:1px solid rgba(255,255,255,0.3)}
+    #toast-notification.show{bottom:100px}
     #pdf-render-container { display: none; }
     #details-modal-box, #object-details-modal .modal-box, #staff-details-modal .modal-box { background: #1a1a27; color: #f1f5f9; border: 1px solid rgba(51, 65, 85, .6); max-width: 800px; }
     #details-content .profile-header, #object-details-content .profile-header, #staff-details-content .profile-header { text-align: center; margin-bottom: 1.5rem; }
@@ -164,9 +285,9 @@
     #login-screen::before { display: none; }
     /* Floating orbs - soddalashtirilgan */
     .login-orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.4; z-index: 1; }
-    .login-orb-1 { width: 300px; height: 300px; background: rgba(0,119,182,0.3); top: -10%; left: -10%; }
-    .login-orb-2 { width: 250px; height: 250px; background: rgba(16,185,129,0.25); bottom: -10%; right: -10%; }
-    .login-orb-3 { display: none; }
+    .login-orb-1 { width: 350px; height: 350px; background: rgba(29,189,232,0.25); top: -10%; left: -5%; }
+    .login-orb-2 { width: 280px; height: 280px; background: rgba(45,187,60,0.2); bottom: -8%; right: -8%; }
+    .login-orb-3 { width: 200px; height: 200px; background: rgba(255,255,255,0.1); top: 30%; right: 5%; display: block; }
     /* Login Box - mobil uchun optimallashtirilgan */
     .login-box { position: relative; width: 94%; max-width: 500px; background: rgba(2, 6, 23, 0.9); border: 1px solid rgba(0,119,182,0.3); border-radius: 24px; padding: 1.5rem 1.25rem; text-align: center; z-index: 10; margin: 0 auto 100px; }
     .login-box::before, .login-box::after { display: none; }
@@ -401,10 +522,10 @@
     
     /* ===== YANGI YIL BEZAKLARI ===== */
     /* Qor animatsiyasi - Login screen uchun */
-    #snowfall-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 5; overflow: hidden; }
+    #snowfall-container, #global-snowfall, #app-snowfall { display: none !important; }
     /* Global qor animatsiyasi - butun ilova uchun */
     #global-snowfall { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: 9999; overflow: hidden; }
-    .snowflake { position: absolute; color: #fff; font-size: 1rem; text-shadow: 0 0 5px rgba(255,255,255,0.8); animation: snowfall linear infinite; opacity: 0.8; }
+    .snowflake { display: none !important; }
     [data-theme="light"] .snowflake { color: #a5b4fc; text-shadow: 0 0 5px rgba(99,102,241,0.5); }
     @keyframes snowfall {
         0% { transform: translateY(-10vh) translateX(0) rotate(0deg); opacity: 1; }
@@ -875,11 +996,388 @@
     .murojaat-filter-btn { padding: 0.625rem 1rem; border-radius: 10px; border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.05); color: #94a3b8; font-size: 0.8rem; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 0.4rem; font-family: inherit; }
     .murojaat-filter-btn:hover { background: rgba(139, 92, 246, 0.1); border-color: rgba(139, 92, 246, 0.3); color: #fff; }
     .murojaat-filter-btn.active { background: linear-gradient(135deg, #8b5cf6, #7c3aed); border-color: transparent; color: white; box-shadow: 0 4px 15px rgba(139, 92, 246, 0.4); }
+
+    /* ════════════════════════════════════════
+       🌸 BAHOR ZAMONAVIY DIZAYN YANGILANISH
+       ════════════════════════════════════════ */
+    :root {
+      --spring-1: #0077b6;
+      --spring-2: #06d6a0;
+      --spring-3: #ffd166;
+      --spring-4: #ef476f;
+      --spring-5: #118ab2;
+    }
+    /* Floating petals animation */
+    @keyframes petalFloat {
+      0% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+      50% { transform: translateY(-15px) rotate(180deg); }
+      100% { transform: translateY(0) rotate(360deg); opacity: 0.7; }
+    }
+    /* Enhanced card style */
+    .card {
+      background: var(--surface-color);
+      border-radius: 24px !important;
+      border: none !important;
+      box-shadow: 0 4px 30px rgba(0,119,182,0.07), 0 1px 8px rgba(0,0,0,0.03) !important;
+    }
+    .card::before {
+      background: linear-gradient(90deg, #0077b6, #06d6a0, #ffd166, #ef476f) !important;
+      height: 3px !important;
+    }
+    /* Modern inputs */
+    input, select, textarea {
+      border-radius: 14px !important;
+      border: 1.5px solid var(--border-color) !important;
+      transition: all 0.15s ease !important;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--spring-1) !important;
+      box-shadow: 0 0 0 4px rgba(0,119,182,0.1) !important;
+    }
+    /* Buttons */
+    .btn { border-radius: 14px !important; font-weight: 700 !important; letter-spacing: 0.3px; }
+    .btn-primary { background: linear-gradient(135deg, #0077b6 0%, #0096c7 50%, #00b4d8 100%) !important; }
+    .btn-success { background: linear-gradient(135deg, #06d6a0 0%, #10b981 50%, #059669 100%) !important; }
+    /* Year banner */
+    .year-banner-2026 {
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364) !important;
+      border-radius: 18px !important;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.2) !important;
+      overflow: hidden;
+      position: relative;
+    }
+    .year-banner-2026::after {
+      content: '🌸';
+      position: absolute;
+      right: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.4rem;
+    }
+    .year-text {
+      font-weight: 800 !important;
+      letter-spacing: 0.5px;
+    }
+    /* FAB buttons spring style */
+    .fab { 
+      border-radius: 18px !important;
+      box-shadow: 0 8px 25px rgba(0,119,182,0.3) !important;
+    }
+    /* Search options enhanced */
+    .search-option-btn.active {
+      background: linear-gradient(135deg, #0077b6, #0096c7) !important;
+      border-radius: 14px !important;
+    }
+    /* Form step title */
+    .form-step-title {
+      background: linear-gradient(135deg, rgba(0,119,182,0.1), rgba(6,214,160,0.08)) !important;
+      border-radius: 14px !important;
+      border-left: 3px solid var(--primary-color) !important;
+    }
+    /* Add family view header */
+    #add-family-view .form-title-wrapper h3 {
+      font-size: 1.1rem;
+      color: var(--text-dark);
+    }
+    /* Havas blok buttons hover */
+    .havas-blok-btn:hover { transform: scale(1.05); transition: transform 0.1s; }
+    .havas-blok-btn.selected { color: white !important; transform: scale(1.05); }
+    #hblk-14a.selected { background: #0077b6 !important; }
+    #hblk-14b.selected { background: #10b981 !important; }
+    #hblk-14c.selected { background: #8b5cf6 !important; }
+    /* Modern toast */
+    #toast-notification { border-radius: 18px !important; font-weight: 600 !important; }
+    /* Login screen update */
+    .login-title { font-weight: 900 !important; }
+    /* Summary stat card */
+    .summary-stat-card { border-radius: 20px !important; }
+    /* Result card */
+    .result-card { border-radius: 20px !important; border: 1.5px solid rgba(0,119,182,0.1) !important; }
+    /* Modal */
+    .modal-box { border-radius: 28px !important; }
+    /* Family add view modern */
+    #add-family-view { padding: 1.5rem; }
+    #add-family-view .form-title-wrapper {
+      background: linear-gradient(135deg, rgba(0,119,182,0.07), rgba(6,214,160,0.05));
+      border-radius: 16px;
+      padding: 1rem;
+      margin-bottom: 1.2rem;
+    }
   </style>
+<style id="spring-design-2026">
+/* ========== O'ZBEGIM MFY - BAHOR 2026 DIZAYN ========== */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+body, input, select, button, textarea {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+/* === BACKGROUND === */
+[data-theme="light"] body {
+    background: linear-gradient(145deg, #f0fdf9 0%, #e6f4ff 50%, #f0fdf9 100%) !important;
+    min-height: 100vh;
+}
+
+/* === CARDS === */
+.card {
+    border-radius: 24px !important;
+    border: 1.5px solid rgba(16,185,129,0.1) !important;
+    box-shadow: 0 4px 20px rgba(0,119,182,0.06) !important;
+    transition: box-shadow 0.2s ease !important;
+}
+.card::before {
+    background: linear-gradient(90deg, #10b981, #0077b6, #22d3ee) !important;
+    height: 3px !important;
+    border-radius: 24px 24px 0 0 !important;
+}
+
+/* === BUTTONS === */
+.btn { border-radius: 14px !important; font-weight: 700 !important; transition: transform 0.12s ease, box-shadow 0.12s ease !important; }
+.btn:hover:not(:disabled) { transform: translateY(-2px) !important; }
+.btn-primary { background: linear-gradient(135deg, #0077b6, #10b981) !important; box-shadow: 0 5px 18px rgba(0,119,182,0.28) !important; }
+.btn-success { background: linear-gradient(135deg, #10b981, #059669) !important; box-shadow: 0 5px 18px rgba(16,185,129,0.28) !important; }
+
+/* === SEARCH TABS === */
+.search-option-btn.active {
+    background: linear-gradient(135deg, #10b981, #0077b6) !important;
+    box-shadow: 0 4px 15px rgba(16,185,129,0.35) !important;
+}
+.search-options::before {
+    background: linear-gradient(135deg, #10b981, #0077b6, #22d3ee) !important;
+}
+
+/* === INPUTS === */
+input, select, textarea {
+    border-radius: 13px !important;
+    border: 1.5px solid rgba(209,250,229,0.9) !important;
+    transition: border-color 0.12s ease, box-shadow 0.12s ease !important;
+}
+input:focus, select:focus, textarea:focus {
+    border-color: #10b981 !important;
+    box-shadow: 0 0 0 4px rgba(16,185,129,0.12) !important;
+    background: white !important;
+}
+
+/* === HEADER === */
+.header h1 { font-weight: 900 !important; letter-spacing: -0.3px; }
+.header-btn { border-radius: 14px !important; border: 1.5px solid rgba(16,185,129,0.12) !important; }
+
+/* === YEAR BANNER === */
+.year-banner-2026 {
+    background: linear-gradient(135deg, #064e3b 0%, #0077b6 60%, #0891b2 100%) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 24px rgba(16,185,129,0.22) !important;
+    overflow: hidden;
+    position: relative;
+}
+.year-banner-2026::after {
+    content: '🌸';
+    position: absolute; right: 14px; top: 50%; transform: translateY(-50%);
+    font-size: 1.1rem; pointer-events: none;
+}
+
+/* === MODALS === */
+.modal-box { border-radius: 24px !important; }
+
+/* === LOGIN SCREEN === */
+#login-screen {
+    background: 
+        linear-gradient(180deg, 
+            #1DBDE8 0%, #1DBDE8 29%,
+            #ffffff 29%, #ffffff 35%,
+            #2DBB3C 35%, #2DBB3C 100%
+        ) !important;
+    position: relative;
+}
+
+/* Uzbekistan flag overlay - crescent moon and stars decorative */
+#login-screen::before {
+    content: '';
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background:
+        /* Top blue strip layer with transparency */
+        linear-gradient(180deg,
+            rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 29%,
+            rgba(0,0,0,0.15) 29%, rgba(0,0,0,0.15) 35%,
+            rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.5) 100%
+        ) !important;
+    z-index: 1 !important;
+    pointer-events: none;
+}
+
+/* Flag decorative crescent + stars on left */
+#login-screen::after {
+    content: '☽ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';
+    position: fixed;
+    top: 8%;
+    left: 3%;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.85);
+    letter-spacing: 4px;
+    z-index: 2;
+    pointer-events: none;
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    display: block;
+    width: 90%;
+    word-spacing: 8px;
+}
+
+#login-map-bg {
+    background: 
+        radial-gradient(ellipse at 15% 85%, rgba(29,189,232,0.1) 0%, transparent 45%),
+        radial-gradient(ellipse at 85% 15%, rgba(45,187,60,0.1) 0%, transparent 45%) !important;
+    z-index: 2 !important;
+}
+
+/* Uzbekistan flag stripe separator lines */
+.login-flag-stripe {
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 4px;
+    z-index: 3;
+    pointer-events: none;
+}
+
+#login-password-input {
+    background: rgba(255,255,255,0.15) !important;
+    border: 2px solid rgba(255,255,255,0.4) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(10px) !important;
+    color: white !important;
+    letter-spacing: 0.5em;
+}
+#login-submit-btn {
+    background: linear-gradient(135deg, #2DBB3C, #1DBDE8) !important;
+    border-radius: 16px !important;
+    box-shadow: 0 8px 25px rgba(29,189,232,0.5) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+    font-weight: 800 !important;
+}
+#login-submit-btn:hover { transform: translateY(-3px) !important; box-shadow: 0 12px 30px rgba(29,189,232,0.6) !important; }
+
+/* Login box - glass on top of flag */
+.login-box {
+    position: relative;
+    z-index: 10;
+    background: rgba(0,0,0,0.55) !important;
+    backdrop-filter: blur(25px) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5) !important;
+}
+
+/* Login card glass */
+.login-container > div, #login-box {
+    background: rgba(0,0,0,0.55) !important;
+    backdrop-filter: blur(25px) saturate(160%) !important;
+    border: 1px solid rgba(255,255,255,0.2) !important;
+    border-radius: 28px !important;
+    box-shadow: 0 32px 80px rgba(0,0,0,0.5) !important;
+}
+
+/* Login role buttons */
+.role-btn {
+    background: rgba(255,255,255,0.12) !important;
+    border: 1.5px solid rgba(255,255,255,0.22) !important;
+    border-radius: 16px !important;
+    backdrop-filter: blur(8px) !important;
+    transition: all 0.18s ease !important;
+    font-weight: 700 !important;
+}
+.role-btn:hover {
+    background: rgba(29,189,232,0.3) !important;
+    border-color: rgba(29,189,232,0.7) !important;
+    transform: translateY(-3px) !important;
+    box-shadow: 0 10px 28px rgba(29,189,232,0.35) !important;
+}
+.role-btn.selected {
+    background: linear-gradient(135deg, rgba(29,189,232,0.45), rgba(45,187,60,0.35)) !important;
+    border-color: rgba(29,189,232,0.8) !important;
+
+/* === FAB BUTTONS === */
+.fab { border-radius: 18px !important; transition: transform 0.15s ease, box-shadow 0.15s ease !important; }
+.fab:hover { transform: translateY(-3px) scale(1.05) !important; }
+
+/* === SUMMARY STAT CARDS === */
+.summary-stat-card {
+    border-radius: 20px !important;
+    border: 1px solid rgba(16,185,129,0.1) !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+.summary-stat-card:hover {
+    transform: translateY(-8px) !important;
+    box-shadow: 0 16px 40px rgba(16,185,129,0.15) !important;
+}
+
+/* === ADDRESS TOGGLE BUTTONS === */
+#addr-type-kop, #addr-type-hovli, #kop-qavatli-btn, #hovli-btn {
+    border-radius: 13px !important; font-weight: 700 !important; transition: all 0.15s ease !important;
+}
+
+/* === PROGRESS STEPS === */
+.progress-step.active::before {
+    background: linear-gradient(135deg, #10b981, #0077b6) !important;
+    border-color: #10b981 !important;
+}
+
+/* === TOAST === */
+#toast-notification {
+    border-radius: 16px !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
+    font-weight: 700 !important;
+}
+
+/* Performance */
+* { -webkit-font-smoothing: antialiased; }
+
+/* ══ DARK MODE INPUT FIX ══ */
+[data-theme=dark] input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]) {
+    background-color: rgba(255,255,255,0.07) !important;
+    color: var(--text-dark) !important;
+    border-color: rgba(56,189,248,0.2) !important;
+}
+[data-theme=dark] select, [data-theme=dark] textarea {
+    background-color: rgba(255,255,255,0.07) !important;
+    color: var(--text-dark) !important;
+    border-color: rgba(56,189,248,0.2) !important;
+}
+[data-theme=dark] input:focus:not([type="checkbox"]):not([type="radio"]) {
+    background-color: rgba(255,255,255,0.1) !important;
+    border-color: var(--primary-color) !important;
+}
+/* Fix browser autofill white background in dark mode */
+[data-theme=dark] input:-webkit-autofill,
+[data-theme=dark] input:-webkit-autofill:hover,
+[data-theme=dark] input:-webkit-autofill:focus,
+[data-theme=dark] input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--text-dark) !important;
+    -webkit-box-shadow: 0 0 0px 1000px #0d1929 inset !important;
+    caret-color: var(--text-dark) !important;
+    border-color: rgba(56,189,248,0.3) !important;
+}
+/* Placeholder visibility in dark mode */
+[data-theme=dark] input::placeholder,
+[data-theme=dark] textarea::placeholder {
+    color: rgba(148,163,184,0.6) !important;
+}
+/* Select options in dark mode */
+[data-theme=dark] select option {
+    background-color: #0d1929;
+    color: var(--text-dark);
+}
+</style>
+
 </head>
 <body>
   <!-- YANGI KIRISH OYNASI -->
   <div id="login-screen">
+      <!-- O'zbekiston bayrogi striptlari -->
+      <div class="login-flag-stripe" style="top:29%;background:rgba(255,255,255,0.9);"></div>
+      <div class="login-flag-stripe" style="top:calc(29% + 4px);background:rgba(255,255,255,0.9);"></div>
       <!-- Floating orbs -->
       <div class="login-orb login-orb-1"></div>
       <div class="login-orb login-orb-2"></div>
@@ -889,14 +1387,28 @@
       <!-- Mesh gradient animatsiya -->
       <div class="mesh-gradient"></div>
       <!-- Qor animatsiyasi -->
-      <div id="snowfall-container"></div>
+      <div id="snowfall-container" style="display:none"></div>
+      <!-- Spring decorations (static, no animation) -->
+      <div style="position:fixed;bottom:8%;left:4%;font-size:2.5rem;opacity:0.1;pointer-events:none;transform:rotate(-15deg);">🌿</div>
+      <div style="position:fixed;top:12%;right:5%;font-size:2rem;opacity:0.08;pointer-events:none;transform:rotate(20deg);">🌸</div>
+      <div style="position:fixed;top:45%;left:2%;font-size:1.5rem;opacity:0.07;pointer-events:none;">🌺</div>
       
       <div class="login-box">
           <div class="login-box-glass"></div>
+          <!-- O'zbekiston bayrog'i mini -->
+          <div style="display:flex;justify-content:center;margin-bottom:0.75rem;">
+              <div style="border-radius:8px;overflow:hidden;width:64px;height:40px;box-shadow:0 4px 16px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.3);">
+                  <div style="background:#1DBDE8;height:33.33%;display:flex;align-items:center;padding-left:4px;">
+                      <span style="color:white;font-size:0.55rem;letter-spacing:1px;">☽ ✦ ✦</span>
+                  </div>
+                  <div style="background:white;height:8%;"></div>
+                  <div style="background:#2DBB3C;height:58.67%;"></div>
+              </div>
+          </div>
           <!-- Vaqtga qarab salom -->
           <div id="greeting-message" class="greeting-animated"></div>
-          <h2>
-              <svg width="35" height="35" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg">
+          <h2 style="background:linear-gradient(135deg,#1DBDE8,#ffffff,#2DBB3C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">
+              <svg width="35" height="35" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" class="logo-svg" style="-webkit-text-fill-color:initial;color:#1DBDE8;">
                   <circle cx="20" cy="7" r="7" fill="currentColor"></circle>
                   <path d="M20 28C26.0751 28 31 23.0751 31 17H9C9 23.0751 13.9249 28 20 28Z" fill="currentColor"></path>
                   <circle cx="8" cy="9" r="5" fill="currentColor" style="opacity: 0.6;"></circle>
@@ -1253,7 +1765,7 @@
       </div>
   </div>
   <!-- GLOBAL QOR ANIMATSIYASI -->
-  <div id="global-snowfall"></div>
+  <div id="global-snowfall" style="display:none!important"></div>
   <div class="loader-overlay" id="loader-overlay"><div class="loader"></div></div>
   <div id="toast-notification"><i class="fas fa-check-circle"></i><span id="toast-message"></span></div>
   <div id="pdf-render-container"></div> 
@@ -1288,7 +1800,7 @@
     </header>
     
     <!-- 🎄 YANGI YIL QOR ANIMATSIYASI (APP ICHIDA) -->
-    <div id="app-snowfall"></div>
+    <div id="app-snowfall" style="display:none!important"></div>
     
     <main>
       <!-- 2026 YIL SHIORI BANNERI -->
@@ -1320,8 +1832,61 @@
             <button class="btn btn-primary js-search-dob"><i class="fas fa-search"></i> Qidirish</button>
           </div>
           <div id="address-search" class="search-panel">
-            <input type="text" id="searchAddressInput" placeholder="Masalan: Musayev 12">
-            <button class="btn btn-primary js-search-address"><i class="fas fa-search"></i> Qidirish</button>
+            <!-- Tur tanlash -->
+            <div style="display:flex;gap:10px;margin-bottom:1rem;">
+              <button type="button" id="addr-type-kop" onclick="setAddrType('kop')"
+                style="flex:1;padding:11px 8px;border-radius:14px;border:none;background:linear-gradient(135deg,#0077b6,#10b981);color:white;font-weight:800;cursor:pointer;font-size:0.9rem;transition:all 0.18s;box-shadow:0 4px 14px rgba(0,119,182,0.3);">
+                🏢 Ko'p qavatli
+              </button>
+              <button type="button" id="addr-type-hovli" onclick="setAddrType('hovli')"
+                style="flex:1;padding:11px 8px;border-radius:14px;border:1.5px solid var(--border-color);background:var(--surface-color);color:var(--text-light);font-weight:700;cursor:pointer;font-size:0.9rem;transition:all 0.18s;">
+                🏡 Hovli uy
+              </button>
+            </div>
+            <!-- Ko'p qavatli maydonlari -->
+            <div id="addr-kop-fields">
+              <div style="margin-bottom:0.7rem;">
+                <label style="font-size:0.82rem;margin-bottom:0.3rem;display:block;">Ko'cha</label>
+                <select id="searchAddrStreet" style="width:100%;padding:0.8rem;border-radius:10px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-dark);">
+                  <option value="">Ko'chani tanlang...</option>
+                  <option>Musaev</option><option>Lermontov</option><option>Havas</option>
+                  <option>A.Temur</option><option>Mashrab</option><option>Leninizm</option>
+                  <option>Shevchenko</option><option>B.Raximov</option><option>Shoxruxmirzo</option>
+                </select>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:0.7rem;">
+                <div>
+                  <label style="font-size:0.82rem;margin-bottom:0.3rem;display:block;">Dom raqami</label>
+                  <input type="text" id="searchAddrDom" placeholder="14 yoki 14a"
+                    style="width:100%;padding:0.8rem;border-radius:10px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-dark);">
+                </div>
+                <div>
+                  <label style="font-size:0.82rem;margin-bottom:0.3rem;display:block;">Kv (ixtiyoriy)</label>
+                  <input type="number" id="searchAddrKv" placeholder="126" min="1"
+                    style="width:100%;padding:0.8rem;border-radius:10px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-dark);">
+                </div>
+              </div>
+            </div>
+            <!-- Hovli uy maydonlari -->
+            <div id="addr-hovli-fields" style="display:none;">
+              <div style="margin-bottom:0.7rem;">
+                <label style="font-size:0.82rem;margin-bottom:0.3rem;display:block;">Ko'cha</label>
+                <select id="searchAddrHovliStreet" style="width:100%;padding:0.8rem;border-radius:10px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-dark);">
+                  <option value="">Ko'chani tanlang...</option>
+                  <option>Musaev</option><option>Lermontov</option><option>Shevchenko</option>
+                  <option>B.Raximov</option><option>Ustalar</option><option>B.Turon</option>
+                  <option>Muqumiy111</option><option>A.Temur</option>
+                </select>
+              </div>
+              <div style="margin-bottom:0.7rem;">
+                <label style="font-size:0.82rem;margin-bottom:0.3rem;display:block;">Uy raqami (25 yoki 25a)</label>
+                <input type="text" id="searchAddrUy" placeholder="25 yoki 25a"
+                  style="width:100%;padding:0.8rem;border-radius:10px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-dark);">
+              </div>
+            </div>
+            <button class="btn btn-primary js-search-address-new" style="margin-top:0.5rem;">
+              <i class="fas fa-search"></i> Qidirish
+            </button>
           </div>
         </div>
         <div id="search-result"></div>
@@ -1407,7 +1972,16 @@
             <h4 class="form-step-title"><i class="fas fa-map-marker-alt"></i> Yashash manzili</h4>
             <div class="form-group full-width"><label>Xonadon turi</label><select name="xonadon_turi" class="js-xonadon-turi" required><option value="" selected disabled>Tanlang...</option><option value="kop_qavatli">Ko'p qavatli</option><option value="xovli">Hovli</option></select></div>
             <div class="full-width">
-                <div class="form-row full-width conditional-field js-kop-qavatli-fields"><div class="form-group"><label>Ko'chasi</label><select name="kop_qavatli_kochasi" class="js-street-select" data-type="kop_qavatli"></select></div><div class="form-group conditional-field js-other-street-group" data-type="kop_qavatli"><label>Boshqa ko'cha nomi</label><input class="js-other-street-input js-transliterate" data-type="kop_qavatli"></div><div class="form-group"><label>Dom raqami</label><input name="dom_raqami" maxlength="3" inputmode="numeric" class="js-numeric-input"></div><div class="form-group"><label>Kvartira raqami</label><input name="kvartira_raqami" maxlength="3" inputmode="numeric" class="js-numeric-input"></div></div>
+                <div class="form-row full-width conditional-field js-kop-qavatli-fields"><div class="form-group"><label>Ko'chasi</label><select name="kop_qavatli_kochasi" class="js-street-select" data-type="kop_qavatli"></select></div><div class="form-group conditional-field js-other-street-group" data-type="kop_qavatli"><label>Boshqa ko'cha nomi</label><input class="js-other-street-input js-transliterate" data-type="kop_qavatli"></div><div class="form-group"><label>Dom raqami</label><input name="dom_raqami" maxlength="4" inputmode="text" placeholder="14 yoki 14a" class="js-dom-raqami-input" style="text-transform:lowercase;"></div><div class="form-group"><label>Kvartira raqami</label><input name="kvartira_raqami" maxlength="3" inputmode="numeric" class="js-numeric-input"></div></div>
+                <!-- Havas blok tanlash (Havas tanlanganda) -->
+                <div id="havas-blok-selector" style="display:none;margin:-0.5rem 0 0.5rem;padding:10px;background:linear-gradient(135deg,rgba(0,119,182,0.08),rgba(139,92,246,0.06));border-radius:12px;border:1px solid rgba(0,119,182,0.2);">
+                  <div style="font-size:0.8rem;font-weight:600;color:var(--primary-color);margin-bottom:7px;">🏢 Havas 14-dom — Blok tanlang:</div>
+                  <div style="display:flex;gap:8px;">
+                    <button type="button" onclick="selectHavasBlok('14a','1-50')" class="havas-blok-btn" id="hblk-14a" style="flex:1;padding:8px;border-radius:9px;border:2px solid #0077b6;background:transparent;color:#0077b6;font-weight:700;cursor:pointer;font-size:0.82rem;">🔵 A-blok<br><small>kv 1-50</small></button>
+                    <button type="button" onclick="selectHavasBlok('14b','51-100')" class="havas-blok-btn" id="hblk-14b" style="flex:1;padding:8px;border-radius:9px;border:2px solid #10b981;background:transparent;color:#10b981;font-weight:700;cursor:pointer;font-size:0.82rem;">🟢 B-blok<br><small>kv 51-100</small></button>
+                    <button type="button" onclick="selectHavasBlok('14c','101-150')" class="havas-blok-btn" id="hblk-14c" style="flex:1;padding:8px;border-radius:9px;border:2px solid #8b5cf6;background:transparent;color:#8b5cf6;font-weight:700;cursor:pointer;font-size:0.82rem;">🟣 V-blok<br><small>kv 101-150</small></button>
+                  </div>
+                </div>
                 <div class="form-row full-width conditional-field js-xovli-fields"><div class="form-group"><label>Ko'chasi</label><select name="xovli_kochasi" class="js-street-select" data-type="xovli"></select></div><div class="form-group conditional-field js-other-street-group" data-type="xovli"><label>Boshqa ko'cha nomi</label><input class="js-other-street-input js-transliterate" data-type="xovli"></div><div class="form-group"><label>Uy raqami</label><input name="uy_raqami" maxlength="4" inputmode="numeric" class="js-numeric-input"></div></div>
                 <div id="address-family-suggestions"></div>
             </div>
@@ -2237,8 +2811,7 @@
             <!-- QO'SHIMCHA BO'LIMLAR TUGADI -->
 
             <hr style="border:none; border-top:1px solid var(--border-color); margin: 1.5rem 0;">
-            <button type="button" class="btn btn-secondary js-add-signature" data-form-id="add-form"><i class="fas fa-signature"></i> Imzo qo'shish</button>
-            <div class="signature-preview-container" id="add-form-signature-preview"></div>
+            <div class="signature-preview-container" id="add-form-signature-preview" style="display:none;"></div>
           </div>
         </form>
         <div class="form-navigation" style="display:flex;gap:1rem;margin-top:2rem;"><button type="button" class="btn btn-secondary js-prev-step" style="width:auto; flex-grow:1; margin-top:0;"><i class="fas fa-arrow-left"></i> Orqaga</button><button type="button" class="btn btn-primary js-next-step" style="width:auto; flex-grow:1; margin-top:0;">Davom etish <i class="fas fa-arrow-right"></i></button><button type="button" class="btn btn-success js-save-citizen" style="display:none; width:auto; flex-grow:1; margin-top:0;"><i class="fas fa-save"></i> Saqlash</button></div>
@@ -2513,15 +3086,17 @@
           <div class="form-row full-width conditional-field js-migration-details"><div class="form-group"><label>Qaysi davlatda</label><input name="migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Ketgan sanasi</label><input name="migration_duration" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10"></div></div>
           <div class="form-row full-width conditional-field js-returned-migration-details"><div class="form-group"><label>Qaysi davlatdan qaytgan</label><input name="returned_migration_country" class="js-alpha-input js-transliterate"></div><div class="form-group"><label>Qachon qaytgan</label><input name="returned_migration_date" class="js-date-input" placeholder="DD.MM.YYYY" maxlength="10" inputmode="numeric"></div>
           <div class="form-group"><label>Hozirgi holati</label><select name="returned_migration_current_status" class="js-employment-status-sub" data-optional="true"></select></div></div>
-          <div class="form-group full-width"><label>Muammosi</label><textarea name="izoh" data-optional="true" rows="3" class="js-transliterate"></textarea></div></div>
         </form>
-        <button class="btn btn-success js-save-family-member" style="margin-top:2rem;"><i class="fas fa-save"></i> Oila A'zosini Saqlash</button>
-        <button class="btn btn-cancel js-cancel"><i class="fas fa-times"></i> Bekor qilish</button>
+        <div style="display:flex;gap:10px;margin-top:1.5rem;flex-wrap:wrap;">
+          <button class="btn btn-success js-save-family-member" style="flex:2;margin-top:0;background:linear-gradient(135deg,#10b981,#059669);box-shadow:0 6px 20px rgba(16,185,129,0.35);border-radius:14px;padding:0.9rem;font-weight:700;"><i class="fas fa-save"></i> Oila A'zosini Saqlash</button>
+          <button class="btn btn-cancel js-cancel" style="flex:1;margin-top:0;border-radius:14px;"><i class="fas fa-times"></i> Bekor</button>
+        </div>
       </div>
 
     </main>
     <div class="fab-container">
         <button id="fab-birthday-calendar" class="fab" style="background: linear-gradient(135deg, #ec4899, #f472b6);" title="Tug'ilgan kunlar kalendari"><i class="fas fa-birthday-cake"></i></button>
+        <button id="fab-rental-calendar" class="fab" style="background: linear-gradient(135deg, #f59e0b, #fbbf24);" title="Ijara muddatlari" onclick="showRentalCalendar()"><i class="fas fa-key"></i></button>
         <button id="fab-problems-map" class="fab" style="background: linear-gradient(135deg, #ef4444, #f97316);" title="Muammolar xaritasi" onclick="openProblemsMap()"><i class="fas fa-map-marked-alt"></i></button>
         <button id="fab-advanced-filter" class="fab" style="background: linear-gradient(135deg, #8b5cf6, #a78bfa);" title="Murakkab filtrlash"><i class="fas fa-filter"></i></button>
         <button id="fab-show-ai" class="fab fab-list" style="background: linear-gradient(135deg, #0077b6, #00b4d8);" title="O'zbegim AI - Har qanday savol bering!"><i class="fas fa-brain"></i></button>
@@ -3072,7 +3647,7 @@
 
     <!-- AI YORDAMCHI MODAL -->
     <div id="ai-chat-modal" class="modal-overlay">
-      <div class="modal-box" style="max-width: 700px; padding: 0; overflow: hidden; border-radius: 28px; border: none; box-shadow: 0 25px 80px rgba(0,119,182,0.3);">
+      <div class="modal-box" style="max-width: min(900px, 95vw); width: min(900px, 95vw); padding: 0; overflow: hidden; border-radius: 20px; border: none; box-shadow: 0 25px 80px rgba(0,119,182,0.3); max-height: 92vh;">
         <div style="background: linear-gradient(135deg, #0077b6 0%, #00b4d8 30%, #10b981 70%, #34d399 100%); color: white; padding: 1.5rem 1.75rem; display: flex; align-items: center; gap: 1.25rem; position: relative; overflow: hidden;">
           <div style="position: absolute; top: -30px; right: -30px; width: 100px; height: 100px; background: rgba(255,255,255,0.1); border-radius: 50%;"></div>
           <div style="position: absolute; bottom: -20px; left: 30%; width: 60px; height: 60px; background: rgba(255,255,255,0.05); border-radius: 50%;"></div>
@@ -3085,7 +3660,7 @@
           </div>
           <button class="modal-close-btn js-back-to-previous-view" style="position: static; margin-left: auto; color: white; background: rgba(255,255,255,0.15); width: 44px; height: 44px; border-radius: 14px; display: flex; align-items: center; justify-content: center; backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); z-index: 1;"><i class="fas fa-times"></i></button>
         </div>
-        <div id="ai-chat-body" style="height: 450px; overflow-y: auto; padding: 1.5rem; background: linear-gradient(180deg, var(--bg-color), rgba(0,119,182,0.02));">
+        <div id="ai-chat-body" style="height: calc(92vh - 180px); max-height: 70vh; overflow-y: auto; padding: 1.5rem; background: linear-gradient(180deg, var(--bg-color), rgba(0,119,182,0.02));">
           <div class="ai-message" style="display: flex; gap: 1rem; margin-bottom: 1.25rem;">
             <div style="width: 44px; height: 44px; background: linear-gradient(135deg, #0077b6, #10b981); border-radius: 14px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; box-shadow: 0 6px 20px rgba(0,119,182,0.3);">
               <i class="fas fa-robot" style="color: white; font-size: 1.1rem;"></i>
@@ -3245,7 +3820,8 @@
                 <button type="button" class="map-filter-btn" data-filter="migrants" style="background: linear-gradient(135deg, #0284c7, #0ea5e9); color: white; border: none; padding: 0.6rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-plane-departure"></i> Migrantlar</button>
                 <button type="button" class="map-filter-btn" data-filter="disabled" style="background: linear-gradient(135deg, #0891b2, #06b6d4); color: white; border: none; padding: 0.6rem 1rem; border-radius: 10px; font-weight: 600; font-size: 0.85rem; cursor: pointer; display: flex; align-items: center; gap: 0.4rem;"><i class="fas fa-wheelchair"></i> Nogironlar</button>
               </div>
-              <div id="map-container" style="height: 350px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem;"></div>
+              <div id="map-container" style="height: 350px; border-radius: 12px; border: 1px solid var(--border-color); margin-bottom: 1rem; position: relative;"></div>
+              <button onclick="locateOnMap()" style="background:linear-gradient(135deg,#0077b6,#00b4d8);color:white;border:none;padding:0.5rem 1.2rem;border-radius:10px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:0.5rem;margin-bottom:0.5rem;"><i class="fas fa-crosshairs"></i> Joylashuvimni ko'rsatish</button>
               <div id="map-info-container" style="display: none;"></div>
             </div>
         </div>
@@ -3411,11 +3987,26 @@
     </footer>
   </div>
 <script>
+// Safe localStorage (sandbox/privacy mode uchun)
+(function() {
+    try { localStorage.setItem('_t', '1'); localStorage.removeItem('_t'); }
+    catch(e) {
+        var _s = {};
+        window.localStorage = {
+            getItem: function(k) { return _s[k] !== undefined ? _s[k] : null; },
+            setItem: function(k, v) { _s[k] = String(v); },
+            removeItem: function(k) { delete _s[k]; },
+            clear: function() { _s = {}; }
+        };
+    }
+})();
+</script>
+<script>
 // Bu yerdan faqat bitta to'liq script bloki boshlanadi
 /* ================== KONFIG ================== */
 const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxmZO0-KCobTQffba0gMkFlbb68dUAicHLqZ55LsvL3d9hwFCdBONJGVNqSDvA6gUJK8w/exec';
-const KOP_QAVATLI_STREETS=["Musaev","Lermontov","A.Temur","Mashrab","Leninizm","Shevchenko","B.Raximov","Shoxruxmirzo","Boshqa"];
-const HOVLI_STREETS=["Musaev","Lermontov","Shevchenko","B.Raximov","Shoxruxmirzo","Ustalar","B.Turon","Muqumiy111","A.Temur","Boshqa"];
+const KOP_QAVATLI_STREETS = ["Musaev", "Lermontov", "Havas", "A.Temur", "Mashrab", "Leninizm", "Shevchenko", "B.Raximov", "Shoxruxmirzo", "Boshqa"];
+const HOVLI_STREETS = ["Musaev", "Lermontov", "Shevchenko", "B.Raximov", "Ustalar", "B.Turon", "Muqumiy111", "A.Temur", "Boshqa"];
 const METRKA_SERIES_LIST=["I-AN","I-BH","I-FR","I-GZ","I-HR","I-NA","I-NV","I-QD","I-QQ","I-SM","I-SR","I-SU","I-TN","I-TV","II-AN","II-BH","II-FR","II-GZ","II-HR","II-KS","II-NA","II-NV","II-QD","II-QQ","II-SM","II-SR","II-SU","II-TN","II-TS","II-TV","III-AN","III-BH","III-FR","III-GZ","III-HR","III-NA","III-NV","III-QD","III-QQ","III-SM","III-SR","III-SU","III-TN","III-TV","T","TA"];
 const TOIFA_TURI_LIST = {
     "all": ["Janjalkash (Notinch oila)","Og'ir xulq atvor","G'ayriijtimoiy xulq atvor","Ruxiy kasal","Psixotrop","Ichkilikka ruju qo'ygan","Muqaddam sudlangan"],
@@ -3656,6 +4247,23 @@ staffDetailsModal: document.getElementById('staff-details-modal'),
 signatureModal: document.getElementById('signature-modal')
 };
 let citizenDatabase=[], archivedCitizenDatabase = [], socialObjectsDatabase = [], objectStaffDatabase = [], headers=[],currentMainPersonUniqueId=null,currentStep=1, newCitizenData = {}, currentDisplayedList = [], currentListTitle = '', cameraStream = null, currentFacingMode = 'user', notifications = [], currentMeetingData = {}, currentCameraTarget = null, tempStaffList = [], signaturePad = null, currentSignatureFormId = null;
+
+
+// Safe decode personData attribute (supports encodeURIComponent and &apos; formats)
+function safePersonData(el) {
+    if (!el || !el.dataset || !el.dataset.personData) return null;
+    try {
+        const raw = el.dataset.personData;
+        if (raw.startsWith('%7B') || raw.startsWith('%7b') || raw.includes('%22')) {
+            return JSON.parse(decodeURIComponent(raw));
+        }
+        return JSON.parse(raw.replace(/&apos;/g, "'"));
+    } catch(e) { 
+        console.warn('personData decode error:', e.message); 
+        return null; 
+    }
+}
+
 var activeCitizenDatabase = []; // Global qilindi xarita uchun
 window.activeCitizenDatabase = activeCitizenDatabase; // Window ga ham qo'shildi
 let selectedRoleInfo = {};
@@ -3684,7 +4292,7 @@ function toggleExtraSection(btn) {
 
 /* ================== UTIL ================== */
 const showLoader=(v)=>DOM.loader.style.display=v?'flex':'none';
-const showScreen=(id)=>{
+let showScreen=(id)=>{
   document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
   document.querySelectorAll('.modal-overlay:not(#camera-modal)').forEach(m=>m.style.display = 'none');
   const el=document.getElementById(id);
@@ -3739,9 +4347,20 @@ const goBack = () => {
 const showCustomAlert=(message,title='Xabar',showCancel=false)=>{DOM.alertTitle.textContent=title;DOM.alertMessage.innerHTML=message;const okBtn=DOM.alertOverlay.querySelector('.js-alert-ok');const cancelBtn=DOM.alertOverlay.querySelector('.js-alert-cancel');if(showCancel){okBtn.textContent='Ha';cancelBtn.style.display='inline-flex';}else{okBtn.textContent='OK';cancelBtn.style.display='none';}showScreen('alert-modal');};
 const showToast = (message, type = 'success') => {
     DOM.toastMessage.textContent = message;
-    DOM.toast.style.backgroundColor = type === 'error' ? 'var(--danger-color)' : (type === 'info' ? 'var(--secondary-color)' : 'var(--success-color)');
+    const gradients = {
+        success: 'linear-gradient(135deg,#059669,#10b981)',
+        error: 'linear-gradient(135deg,#dc2626,#ef4444)',
+        info: 'linear-gradient(135deg,#0077b6,#00b4d8)',
+        warning: 'linear-gradient(135deg,#d97706,#f59e0b)'
+    };
+    DOM.toast.style.background = gradients[type] || gradients.success;
+    const icon = DOM.toast.querySelector('i');
+    if(icon){
+        const icons = {success:'fa-check-circle',error:'fa-times-circle',info:'fa-info-circle',warning:'fa-exclamation-triangle'};
+        icon.className = `fas ${icons[type]||icons.success}`;
+    }
     DOM.toast.classList.add('show');
-    setTimeout(() => { DOM.toast.classList.remove('show'); }, 3000);
+    setTimeout(() => { DOM.toast.classList.remove('show'); }, 3500);
 };
 const formatDate = (dateStr) => {
     if (!dateStr) return '';
@@ -4016,7 +4635,7 @@ function refreshCurrentView() {
     if (DOM.searchResult.innerHTML.trim() !== '' && DOM.searchView.classList.contains('active')) {
         const currentCards = Array.from(DOM.searchResult.querySelectorAll('.result-card'));
         const uniqueIds = currentCards.map(card => {
-            try { return JSON.parse(card.dataset.personData.replace(/&apos;/g, "'")).unique_id; } catch(e){ return null; }
+            try { return safePersonData(card).unique_id; } catch(e){ return null; }
         }).filter(Boolean);
         const updatedPersons = uniqueIds.map(id => citizenDatabase.find(p => p.unique_id === id)).filter(Boolean);
         displayResults(updatedPersons);
@@ -4030,7 +4649,7 @@ function refreshCurrentView() {
     if (DOM.familyModal.style.display === 'flex') {
         const firstCard = DOM.familyModalContent.querySelector('.result-card');
         if (firstCard && firstCard.dataset.personData) {
-            const familyId = (JSON.parse(firstCard.dataset.personData.replace(/&apos;/g, "'"))).family_id;
+            const familyId = (safePersonData(firstCard)).family_id;
             if (familyId) {
                 const familyMembers = activeCitizenDatabase.filter(p => p.family_id === familyId);
                 const familyHead = familyMembers.find(p => p.qarindoshligi === 'Oila boshi') || familyMembers[0];
@@ -4044,7 +4663,6 @@ function refreshCurrentView() {
 }
 /* ================== RENDER HELPERS ================== */
 function createFullDetailsHTML(p) {
-    const personDataString = JSON.stringify(p).replace(/'/g, "&apos;");
     const render = (label, value) => {
         const val = value ? String(value).trim() : '';
         if (!val || val.toLowerCase() === 'yo\'q') return '';
@@ -4076,12 +4694,30 @@ function createFullDetailsHTML(p) {
         console.error("Uchrashuvlar tarixini o'qishda xatolik:", e);
       }
     }
-    let html = `<div id="details-render-wrapper" data-person-data='${personDataString}'>
+    let html = `<div id="details-render-wrapper" data-person-data="${encodeURIComponent(JSON.stringify(p))}">
         <div class="profile-header">`;
     if (p.rasm_link) {
         html += `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" class="profile-pic js-view-profile-pic" alt="Fuqaro rasmi" onerror="this.onerror=null; this.style.display='none';">`;
     }
     html += `<div class="profile-name">${p.fio || 'F.I.O. Kiritilmagan'}</div>
+        </div>
+        <!-- Colored stat boxes - like Image 1/2 style -->
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:0.5rem;margin:0.6rem 0 1.2rem;">
+          <div style="background:linear-gradient(135deg,${p.jinsi==='Erkak'?'#1e3a5f':'#4a1030'},${p.jinsi==='Erkak'?'#1e3a8a30':'#7e22ce30'});border:1px solid ${p.jinsi==='Erkak'?'#3b82f640':'#ec489940'};border-radius:12px;padding:0.75rem;text-align:center;">
+            <div style="font-size:1.3rem;margin-bottom:0.15rem;">${p.jinsi==='Erkak'?'👨':'👩'}</div>
+            <div style="font-size:0.65rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.04em;">Jinsi</div>
+            <div style="font-size:0.8rem;font-weight:800;color:${p.jinsi==='Erkak'?'#60a5fa':'#f472b6'};margin-top:0.1rem;">${p.jinsi||'—'}</div>
+          </div>
+          <div style="background:${{'Doimiy':'linear-gradient(135deg,#052e16,#14532d30)','Ijara':'linear-gradient(135deg,#422006,#78350f30)','Vaqtinchalik':'linear-gradient(135deg,#431407,#9a3412 30)'}[p.registrationType]||'linear-gradient(135deg,#1e293b,#33415530)'};border:1px solid ${{'Doimiy':'#16a34a40','Ijara':'#d97706 40','Vaqtinchalik':'#ea580c40'}[p.registrationType]||'#47556940'};border-radius:12px;padding:0.75rem;text-align:center;">
+            <div style="font-size:1.3rem;margin-bottom:0.15rem;">🏠</div>
+            <div style="font-size:0.65rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.04em;">Ro'yxat turi</div>
+            <div style="font-size:0.8rem;font-weight:800;color:${{'Doimiy':'#4ade80','Ijara':'#fbbf24','Vaqtinchalik':'#fb923c'}[p.registrationType]||'#94a3b8'};margin-top:0.1rem;">${p.registrationType||'—'}</div>
+          </div>
+          <div style="background:${{'Ishsiz':'linear-gradient(135deg,#450a0a,#ef444430)','Rasmiy band':'linear-gradient(135deg,#052e16,#10b98130)','Norasmiy band':'linear-gradient(135deg,#422006,#f59e0b30)','Tadbirkor':'linear-gradient(135deg,#2e1065,#8b5cf630)','Talaba':'linear-gradient(135deg,#1e3a5f,#3b82f630)','Nafaqada':'linear-gradient(135deg,#3b0764,#a855f730)'}[p.employmentStatus]||'linear-gradient(135deg,#1e293b,#33415530)'};border:1px solid ${{'Ishsiz':'#ef444440','Rasmiy band':'#10b98140','Norasmiy band':'#f59e0b40','Tadbirkor':'#8b5cf640','Talaba':'#3b82f640','Nafaqada':'#a855f740'}[p.employmentStatus]||'#47556940'};border-radius:12px;padding:0.75rem;text-align:center;">
+            <div style="font-size:1.3rem;margin-bottom:0.15rem;">💼</div>
+            <div style="font-size:0.65rem;color:#94a3b8;text-transform:uppercase;letter-spacing:0.04em;">Bandlik</div>
+            <div style="font-size:0.73rem;font-weight:800;color:${{'Ishsiz':'#f87171','Rasmiy band':'#4ade80','Norasmiy band':'#fbbf24','Tadbirkor':'#c084fc','Talaba':'#60a5fa','Nafaqada':'#e879f9'}[p.employmentStatus]||'#94a3b8'};margin-top:0.1rem;">${p.employmentStatus||'—'}</div>
+          </div>
         </div>
         <div class="section-title">Shaxsiy ma'lumotlar</div>
         <div class="data-grid">
@@ -4146,8 +4782,6 @@ function createFullDetailsHTML(p) {
 }
 
 function createPersonCardHTML(p, isMain = false, context = 'search', highlightCategory = null) {
-    const personDataString = JSON.stringify(p).replace(/'/g, "&apos;");
-
     let isIncompleteFamily = false;
     const requiredFamilySize = p.oila_azolari_soni ? parseInt(p.oila_azolari_soni, 10) : 0;
     if (requiredFamilySize > 0 && p.family_id) {
@@ -4162,7 +4796,7 @@ function createPersonCardHTML(p, isMain = false, context = 'search', highlightCa
     if (isIncompleteFamily) cardClasses += ' incomplete-data';
     if (isArchived) cardClasses += ' archived';
 
-    let h = `<div class="${cardClasses}" data-person-data='${personDataString}'>
+    let h = `<div class="${cardClasses}" data-person-data="${encodeURIComponent(JSON.stringify(p))}">
                 <div class="result-card-avatar">`;
     if (p.rasm_link) {
         h += `<img src="https://lh3.googleusercontent.com/d/${p.rasm_link}" alt="${p.fio}" class="js-view-profile-pic" onerror="this.onerror=null; this.parentElement.innerHTML = '<div class=\\'avatar-placeholder-sm\\'><i class=\\'fas fa-user\\'></i></div>';">`;
@@ -4197,12 +4831,23 @@ function createPersonCardHTML(p, isMain = false, context = 'search', highlightCa
         }
     }
     h += highlightHTML;
-    h += `<table class="result-table">
-            <tr><td>Manzil</td><td>${p.street || 'Kiritilmagan'}</td></tr>
-            <tr><td>JSHSHIR</td><td>${p.jshshir || 'Kiritilmagan'}</td></tr>
-            <tr><td>T. sana</td><td>${formatDate(p.dob) || 'Kiritilmagan'}</td></tr>
-          </table>
-          <div style="margin-top:1rem;display:flex;gap:1rem;flex-wrap:wrap;">`;
+    // Colored status badges
+    const _jBg = p.jinsi==='Erkak' ? '#dbeafe' : p.jinsi==='Ayol' ? '#fce7f3' : '#f1f5f9';
+    const _jTx = p.jinsi==='Erkak' ? '#1d4ed8' : p.jinsi==='Ayol' ? '#be185d' : '#475569';
+    const _jIc = p.jinsi==='Erkak' ? '👨' : p.jinsi==='Ayol' ? '👩' : '';
+    const _rClr = {'Doimiy':'#10b981','Ijara':'#f59e0b','Vaqtinchalik':'#f97316'}[p.registrationType]||'#64748b';
+    const _eClr = {'Ishsiz':'#ef4444','Rasmiy band':'#10b981','Norasmiy band':'#f59e0b','Tadbirkor':'#8b5cf6','Talaba':'#3b82f6','Nafaqada':'#a855f7','Uy bekasi':'#ec4899','Migratsiyada':'#f97316','Pensiyada':'#8b5cf6'}[p.employmentStatus]||'#64748b';
+    
+    const _jBadge = p.jinsi ? '<span style="background:'+_jBg+';color:'+_jTx+';padding:2px 8px;border-radius:8px;font-size:0.73rem;font-weight:700;">'+_jIc+' '+p.jinsi+'</span>' : '';
+    const _rBadge = p.registrationType ? '<span style="background:'+_rClr+'18;color:'+_rClr+';border:1px solid '+_rClr+'40;padding:2px 8px;border-radius:8px;font-size:0.73rem;font-weight:700;">\u{1F3E0} '+p.registrationType+'</span>' : '';
+    const _eBadge = p.employmentStatus ? '<span style="background:'+_eClr+'18;color:'+_eClr+';border:1px solid '+_eClr+'40;padding:2px 8px;border-radius:8px;font-size:0.73rem;font-weight:700;">\u{1F4BC} '+p.employmentStatus+'</span>' : '';
+    h += '<div style="margin-bottom:5px;font-size:0.8rem;color:var(--text-light)"><i class="fas fa-map-marker-alt" style="color:#10b981;margin-right:3px;"></i>'+(p.street||'Manzil kiritilmagan')+'</div>'
+       + '<div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:5px;">'+_jBadge+_rBadge+_eBadge+'</div>'
+       + '<div style="font-size:0.78rem;color:var(--text-light);display:flex;gap:14px;flex-wrap:wrap;">'
+       + '<span><i class="fas fa-id-card" style="color:#0077b6;font-size:0.7rem;margin-right:3px;"></i>'+(p.jshshir||'—')+'</span>'
+       + '<span><i class="fas fa-birthday-cake" style="color:#f59e0b;font-size:0.7rem;margin-right:3px;"></i>'+(formatDate(p.dob)||'—')+'</span>'
+       + '</div>';
+    h += '<div style="margin-top:0.8rem;display:flex;gap:0.5rem;flex-wrap:wrap;">';
     const canSeeDetails = CURRENT_USER.access === 'full' || CURRENT_USER.access === 'inspector' || (p.izoh && String(p.izoh).toLowerCase() !== 'yo\'q' && String(p.izoh).trim() !== '') || (p.shubhali_shaxs === 'Ha') || (p.shaxs_toifasi === 'Ha');
     if (canSeeDetails) {
         h += `<button class="btn btn-secondary-outline js-details-btn" style="flex:1;min-width:100px;margin-top:0;"><i class="fas fa-eye"></i> To'liq</button>`;
@@ -4378,12 +5023,15 @@ function formatFIO(fio) {
     }).join(' ');
 }
 
-function buildAddressFromForm(form,data){if(!data.xonadon_turi)return;const type=data.xonadon_turi;let streetSelect=form.querySelector(`select[name="${type}_kochasi"]`);let streetName=streetSelect?streetSelect.value:'';if(streetName==='Boshqa'){const other=form.querySelector(`.js-other-street-input[data-type="${type}"]`);streetName=other?other.value.trim():'';}const dom=data.dom_raqami?.trim()||'';const kv=data.kvartira_raqami?.trim()||'';const uy=data.uy_raqami?.trim()||'';let full='';if(type==='kop_qavatli'&&streetName&&dom&&kv)full=`${streetName} ko., ${dom}-dom, ${kv}-kv.`;if(type==='xovli'&&streetName&&uy)full=`${streetName} ko., ${uy}-uy`;data.street=transliterate(full);}
+function buildAddressFromForm(form,data){if(!data.xonadon_turi)return;const type=data.xonadon_turi;let streetSelect=form.querySelector(`select[name="${type}_kochasi"]`);let streetName=streetSelect?streetSelect.value:'';if(streetName==='Boshqa'){const other=form.querySelector(`.js-other-street-input[data-type="${type}"]`);streetName=other?other.value.trim():'';}const dom=(data.dom_raqami?.trim()||'').toLowerCase();const kv=data.kvartira_raqami?.trim()||'';const uy=data.uy_raqami?.trim()||'';let full='';if(type==='kop_qavatli'&&streetName&&dom&&kv)full=`${streetName} ko., ${dom}-dom, ${kv}-kv.`;if(type==='xovli'&&streetName&&uy)full=`${streetName} ko., ${uy}-uy`;data.street=transliterate(full);}
 async function finalSubmit(data, formElement) {
     showToast("Ma'lumotlar qurilmaga saqlandi!", 'success');
     updateLocalDatabase(data, true);
     checkAndShowNotifications();
     refreshCurrentView();
+
+    const wasMainCitizen = formElement && formElement.id === 'add-form' && !data._isFamily;
+    const savedUniqueId = data.unique_id;
 
     if (formElement && formElement.id === 'add-form') {
         resetFormToCreateMode();
@@ -4392,6 +5040,23 @@ async function finalSubmit(data, formElement) {
     }
     showScreen('search-view');
     DOM.problemModal.style.display = 'none';
+    
+    // Oila a'zosi qo'shish uchun global funksiya (tugmalar orqali ishlatiladi)
+    if (wasMainCitizen && savedUniqueId) {
+        window._addFamilyForSaved = function(uid) {
+            currentMainPersonUniqueId = uid;
+            const person = (activeCitizenDatabase||[]).find(p=>p.unique_id===uid) || (citizenDatabase||[]).find(p=>p.unique_id===uid);
+            if (person) {
+                DOM.addFamilyForm?.reset();
+                document.querySelectorAll('#add-family-view .conditional-field').forEach(f=>f.style.display='none');
+                const fBtn=DOM.addFamilyForm?.querySelector('.js-shubhali-toggle');
+                const fHidden=DOM.addFamilyForm?.querySelector('[name="shubhali_shaxs"]');
+                if(fBtn){fBtn.classList.remove('active');fBtn.style.color='var(--secondary-color)';}
+                if(fHidden)fHidden.value="Yo'q";
+            }
+            showScreen('add-family-view');
+        };
+    }
 
     showToast("Baza bilan sinxronizatsiya qilinmoqda...", 'info');
     try {
@@ -4488,6 +5153,13 @@ async function prepareAndConfirmSubmit(isFamily = false) {
         if (mainPerson) {
             newCitizenData.family_id = mainPerson.family_id || mainPerson.jshshir; 
             newCitizenData.street = mainPerson.street || ''; newCitizenData.mfy = mainPerson.mfy || "O'zbegim"; newCitizenData.registrationType = mainPerson.registrationType || ''; newCitizenData.xonadon_turi = mainPerson.xonadon_turi || ''; 
+            // Ijara bo'lsa, ijara ma'lumotlarini ham olib o'tish
+            if (mainPerson.registrationType === 'Ijara') {
+                newCitizenData.ijara_boshlanish = mainPerson.ijara_boshlanish || '';
+                newCitizenData.ijara_muddati = mainPerson.ijara_muddati || '';
+                newCitizenData.uy_egasi_fio = mainPerson.uy_egasi_fio || '';
+                newCitizenData.uy_egasi_telefon = mainPerson.uy_egasi_telefon || '';
+            }
         } 
     } else {
         buildAddressFromForm(form, newCitizenData);
@@ -5127,6 +5799,7 @@ function initializeSelects(){
         mainEmploymentStatusOptions.forEach(t => { const o = document.createElement('option'); o.value = t; o.textContent = t; s.appendChild(o); });
     });
     const container = document.getElementById('toifa-checkboxes-container');
+    if (!container) return;
     container.innerHTML = '';
     const allToifalar = [...TOIFA_TURI_LIST.all, ...TOIFA_TURI_LIST.inspector];
     allToifalar.forEach(toifa => {
@@ -5139,9 +5812,9 @@ function initializeSelects(){
         label.appendChild(document.createTextNode(` ${toifa}`));
         container.appendChild(label);
     });
-    fill(DOM.addObjectForm.querySelector('select[name="mainCategory"]'), OBJECT_CATEGORIES, true);
-    fill(DOM.addObjectForm.querySelector('select[name="orgType"]'), ORG_TYPES);
-    fill(DOM.addStaffForm.querySelector('select[name="position"]'), STAFF_POSITIONS);
+    if(DOM.addObjectForm) fill(DOM.addObjectForm.querySelector('select[name="mainCategory"]'), OBJECT_CATEGORIES, true);
+    if(DOM.addObjectForm) fill(DOM.addObjectForm.querySelector('select[name="orgType"]'), ORG_TYPES);
+    if(DOM.addStaffForm) fill(DOM.addStaffForm.querySelector('select[name="position"]'), STAFF_POSITIONS);
 
     const viloyatSelect = document.getElementById('kelgan_viloyati_select');
     const tumanSelect = document.getElementById('kelgan_tumani_select');
@@ -5281,7 +5954,7 @@ function generateAndDownloadPdf() {
         return showCustomAlert("PDF yaratish uchun ma'lumot topilmadi.", "Xatolik");
     }
 
-    const p = JSON.parse(detailsWrapper.dataset.personData.replace(/&apos;/g, "'"));
+    const p = safePersonData(detailsWrapper);
     const risk = calculateRiskScore(p);
 
     // Rasm URLini tayyorlash
@@ -5617,7 +6290,7 @@ function setupEventListeners(){
       }
     }
   });
-  DOM.detailsContent.addEventListener('click', (e) => {
+  DOM.detailsContent?.addEventListener('click', (e) => {
     if (e.target.closest('.js-view-meeting-photo')) {
       const btn = e.target.closest('.js-view-meeting-photo');
       const imageId = btn.dataset.imageId;
@@ -5647,7 +6320,7 @@ function setupEventListeners(){
   document.getElementById('js-show-family-tree').addEventListener('click', () => {
     const detailsWrapper = DOM.detailsContent.querySelector('#details-render-wrapper');
     if (detailsWrapper && detailsWrapper.dataset.personData) {
-        const person = JSON.parse(detailsWrapper.dataset.personData.replace(/&apos;/g, "'"));
+        const person = safePersonData(detailsWrapper);
         showFamilyTree(person);
     }
   });
@@ -5656,7 +6329,7 @@ function setupEventListeners(){
   document.getElementById('js-show-on-map').addEventListener('click', () => {
     const detailsWrapper = DOM.detailsContent.querySelector('#details-render-wrapper');
     if (detailsWrapper && detailsWrapper.dataset.personData) {
-        const person = JSON.parse(detailsWrapper.dataset.personData.replace(/&apos;/g, "'"));
+        const person = safePersonData(detailsWrapper);
         if (person.latitude && person.longitude) {
             showPersonOnMap(person);
         } else {
@@ -5691,7 +6364,7 @@ function setupEventListeners(){
     if(t.closest('.js-toggle-family-view')) {
         const card = t.closest('.result-card');
         if(!card || !card.dataset.personData) return;
-        const personData = JSON.parse(card.dataset.personData.replace(/&apos;/g, "'"));
+        const personData = safePersonData(card);
         const person = citizenDatabase.find(p => p.unique_id === personData.unique_id);
         if (!person) return showCustomAlert("Fuqaro ma'lumotlari topilmadi.");
         const familyId = person.family_id || (person.qarindoshligi === 'Oila boshi' ? person.jshshir : null);
@@ -5734,7 +6407,7 @@ function setupEventListeners(){
     else if (t.closest('#fab-show-full-list')) { await dataReadyPromise; displayFullList(false); }
     else if (t.closest('#archive-btn')) { await dataReadyPromise; displayFullList(true); }
     try {
-        if(t.closest('.js-search-name') || t.closest('.js-search-passport') || t.closest('.js-search-dob') || t.closest('.js-search-address')){ 
+        if(t.closest('.js-search-name') || t.closest('.js-search-passport') || t.closest('.js-search-dob') || t.closest('.js-search-address') || t.closest('.js-search-address-new')){ 
           await dataReadyPromise; 
           showLoader(true);
           // ⚡ Optimizatsiya - setTimeout bilan UI ni bloklmaslik
@@ -5744,20 +6417,28 @@ function setupEventListeners(){
                   const q=document.getElementById('searchNameInput').value.trim().toLowerCase();
                   if(q.length<2){showLoader(false);return showCustomAlert("Kamida 2 ta harf kiriting.");} 
                   const tq=transliterate(q);
-                  // ⚡ Tez qidiruv - for loop filter dan tezroq
+                  const isNumeric = /^\d+$/.test(q);
                   for(let i=0; i<citizenDatabase.length; i++){
                       const c = citizenDatabase[i];
-                      if(c.fio && typeof c.fio==='string' && transliterate(c.fio.toLowerCase()).includes(tq)) res.push(c);
+                      const fioMatch = c.fio && typeof c.fio==='string' && transliterate(c.fio.toLowerCase()).includes(tq);
+                      const streetMatch = c.street && typeof c.street==='string' && transliterate(c.street.toLowerCase()).includes(tq);
+                      const phoneMatch = c.telefon && String(c.telefon).includes(q);
+                      const jshshirMatch = isNumeric && c.jshshir && String(c.jshshir).includes(q);
+                      const passportMatch = c.passport && typeof c.passport==='string' && c.passport.replace(/\s/g,'').toUpperCase().includes(q.toUpperCase());
+                      if(fioMatch||streetMatch||phoneMatch||jshshirMatch||passportMatch) res.push(c);
                   }
               }
               else if(t.closest('.js-search-passport')){
                   const s=document.getElementById('searchPassportSeries').value.toUpperCase(); 
                   const n=document.getElementById('searchPassportNumber').value;
                   const q=(s+n).replace(/\s/g,'').toUpperCase(); 
-                  if(!q){showLoader(false); return;} 
+                  if(!q){showLoader(false); return;}
+                  const isJshshir = /^\d{6,14}$/.test(q);
                   for(let i=0; i<citizenDatabase.length; i++){
                       const c = citizenDatabase[i];
-                      if(c.passport && typeof c.passport==='string' && c.passport.replace(/\s/g,'').toUpperCase().includes(q)) res.push(c);
+                      const passportMatch = c.passport && typeof c.passport==='string' && c.passport.replace(/\s/g,'').toUpperCase().includes(q);
+                      const jshshirMatch = isJshshir && c.jshshir && String(c.jshshir).includes(q);
+                      if(passportMatch || jshshirMatch) res.push(c);
                   }
               }
               else if(t.closest('.js-search-dob')){
@@ -5769,7 +6450,7 @@ function setupEventListeners(){
                   }
               }
               else if(t.closest('.js-search-address')){
-                  const q=document.getElementById('searchAddressInput').value.trim().toLowerCase(); 
+                  const q=document.getElementById('searchAddressInput')?.value.trim().toLowerCase()||''; 
                   if(!q){showLoader(false);return;} 
                   const keywords=q.replace(/[\/\-\.,]/g,' ').split(' ').filter(Boolean);
                   for(let i=0; i<citizenDatabase.length; i++){
@@ -5784,6 +6465,49 @@ function setupEventListeners(){
                       }
                   }
               }
+              else if(t.closest('.js-search-address-new')){
+                  // Yangi tuzilmali manzil qidiruvi - ANIQ MOSLIK
+                  const isHovli = document.getElementById('addr-hovli-fields')?.style.display !== 'none';
+                  let streetFilter='', domFilter='', kvFilter='', uyFilter='';
+                  if(isHovli){
+                      streetFilter=(document.getElementById('searchAddrHovliStreet')?.value||'').trim().toLowerCase();
+                      uyFilter=(document.getElementById('searchAddrUy')?.value||'').trim().toLowerCase();
+                  } else {
+                      streetFilter=(document.getElementById('searchAddrStreet')?.value||'').trim().toLowerCase();
+                      domFilter=(document.getElementById('searchAddrDom')?.value||'').trim().toLowerCase();
+                      kvFilter=(document.getElementById('searchAddrKv')?.value||'').trim();
+                  }
+                  if(!streetFilter&&!domFilter&&!kvFilter&&!uyFilter){showLoader(false);return showCustomAlert("Kamida ko'cha yoki raqam kiriting.");}
+                  for(let i=0; i<citizenDatabase.length; i++){
+                      const c = citizenDatabase[i];
+                      if(!c.street || typeof c.street!=='string') continue;
+                      const sl=transliterate(c.street.toLowerCase()).replace(/\s+/g,' ');
+                      // Ko'cha bo'yicha tekshirish
+                      if(streetFilter && !sl.includes(transliterate(streetFilter))) continue;
+                      // Dom raqamini ANIQ tekshirish (8 != 18, 28)
+                      if(domFilter){
+                          const hasLetter=/[a-z]/.test(domFilter);
+                          let domPattern;
+                          if(hasLetter){
+                              domPattern=new RegExp('(^|\\D)'+domFilter.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'(\\D|$)','i');
+                          } else {
+                              domPattern=new RegExp('(^|\\D)'+domFilter+'(?![a-zа-яёА-ЯЁ])(\\D|$)','i');
+                          }
+                          // Faqat "-dom" yoki "-uy" kontekstida tekshirish
+                          const domPart=sl.replace(/(\d+)\s*[-]?\s*(kv|xonadon|xon|квартира)(.*)/i,'').trim();
+                          if(!domPattern.test(domPart)) continue;
+                      }
+                      // Kv raqamini ANIQ tekshirish
+                      if(kvFilter){
+                          const kvN=parseInt(kvFilter);
+                          const kvMatch=sl.match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
+                          if(!kvMatch||parseInt(kvMatch[1])!==kvN) continue;
+                      }
+                      // Hovli uy raqamini tekshirish
+                      if(uyFilter && !sl.includes(transliterate(uyFilter))) continue;
+                      res.push(c);
+                  }
+              }
               displayResults(res);
               showLoader(false);
           }, 10);
@@ -5796,8 +6520,15 @@ function setupEventListeners(){
             }
             const card = btn.closest('.result-card');
             if (!card || !card.dataset.personData) return;
-            const personData = JSON.parse(card.dataset.personData.replace(/&apos;/g, "'"));
-            const p = citizenDatabase.find(citizen => citizen.unique_id === personData.unique_id) || personData;
+            const personData = safePersonData(card);
+            if (!personData || !personData.unique_id) return; // NULL CHECK - xato oldini olish
+            // Bazadan eng yangi ma'lumotni olish (avval activeCitizenDatabase dan)
+            const p = activeCitizenDatabase.find(c => c.unique_id === personData.unique_id)
+                   || citizenDatabase.find(c => c.unique_id === personData.unique_id)
+                   || personData;
+            
+            // Content ni AVVAL tayyorlash, keyin modalni ochish
+            const detailsHTML = createFullDetailsHTML(p);
             
             // Oldingi modallarni saqlash (qaytish uchun)
             window.detailsPreviousModal = null;
@@ -5811,16 +6542,16 @@ function setupEventListeners(){
                 }
             }
             
-            // Details modalini ochish
+            // Content ni o'rnatib, keyin modalni ochish
+            DOM.detailsContent.innerHTML = detailsHTML;
             var detailsModal = document.getElementById('details-modal');
             if (detailsModal) {
                 detailsModal.style.display = 'flex';
             }
-            DOM.detailsContent.innerHTML = createFullDetailsHTML(p);
         }
         else if(t.closest('.js-add-family-member-btn')) { 
             await dataReadyPromise;
-            const uniqueId = t.closest('.result-card').dataset.personData.match(/"unique_id":"([^"]+)"/)[1];
+            const uniqueId = safePersonData(t.closest('.result-card'))?.unique_id;
             const clickedPerson = citizenDatabase.find(p => p.unique_id === uniqueId); 
             if (!clickedPerson) return showCustomAlert("Xatolik: Fuqaro topilmadi.");
             const familyId = clickedPerson.family_id || (clickedPerson.qarindoshligi === 'Oila boshi' ? clickedPerson.jshshir : null);
@@ -5829,7 +6560,29 @@ function setupEventListeners(){
             DOM.addFamilyForm.reset(); 
             document.querySelectorAll('#add-family-view .conditional-field').forEach(f => f.style.display = 'none'); 
             document.querySelector('.js-main-person-fio').textContent = familyHead.fio || ''; 
-            const fBtn=DOM.addFamilyForm.querySelector('.js-shubhali-toggle');const fHidden=DOM.addFamilyForm.querySelector('[name="shubhali_shaxs"]');if(fBtn){fBtn.classList.remove('active');fBtn.style.color='var(--secondary-color)';}if(fHidden)fHidden.value="Yo'q"; 
+            const fBtn=DOM.addFamilyForm.querySelector('.js-shubhali-toggle');const fHidden=DOM.addFamilyForm.querySelector('[name="shubhali_shaxs"]');if(fBtn){fBtn.classList.remove('active');fBtn.style.color='var(--secondary-color)';}if(fHidden)fHidden.value="Yo'q";
+            // Auto-fill xonadon turi, ko'cha, dom, kv, yashash holati from main person
+            (function autoFillFamilyAddress(){
+                const af = DOM.addFamilyForm;
+                if(!af || !familyHead) return;
+                // Xonadon turi
+                const xtSel = af.querySelector('[name="xonadon_turi"]');
+                if(xtSel && familyHead.xonadon_turi){ xtSel.value=familyHead.xonadon_turi; xtSel.dispatchEvent(new Event('change')); }
+                setTimeout(function(){
+                    // Ko'cha
+                    const kochaSel = af.querySelector('select[name="kop_qavatli_kochasi"]') || af.querySelector('select[name="xovli_kochasi"]');
+                    if(kochaSel && (familyHead.kop_qavatli_kochasi||familyHead.xovli_kochasi)) kochaSel.value = familyHead.kop_qavatli_kochasi||familyHead.xovli_kochasi;
+                    // Dom
+                    const domIn = af.querySelector('[name="dom_raqami"]');
+                    if(domIn && familyHead.dom_raqami) domIn.value = familyHead.dom_raqami;
+                    // Kv
+                    const kvIn = af.querySelector('[name="kvartira_raqami"]');
+                    if(kvIn && familyHead.kvartira_raqami) kvIn.value = familyHead.kvartira_raqami;
+                    // Yashash holati
+                    const regIn = af.querySelector('[name="registrationType"]');
+                    if(regIn && familyHead.registrationType) regIn.value = familyHead.registrationType;
+                },120);
+            })();
             showScreen('add-family-view'); 
         }
         else if (t.closest('.js-fill-details-btn')) {
@@ -5837,7 +6590,7 @@ function setupEventListeners(){
             resetFormToCreateMode();
             const card = t.closest('.result-card') || document.getElementById('details-render-wrapper');
             if (!card || !card.dataset.personData) return;
-            const personData = JSON.parse(card.dataset.personData.replace(/&apos;/g, "'"));
+            const personData = safePersonData(card);
             isEditMode = true; 
             document.getElementById('form-title').textContent = `${personData.fio || 'F.I.O. Kiritilmagan'} ma'lumotlarini tahrirlash`;
             DOM.addForm.querySelector('[name="update_unique_id"]').value = personData.unique_id || '';
@@ -5943,7 +6696,7 @@ function setupEventListeners(){
   });
   ['searchNameInput', 'searchPassportSeries', 'searchPassportNumber', 'searchDobInput', 'searchAddressInput'].forEach(id => {
     const input = document.getElementById(id);
-    input.addEventListener('keypress', (e) => {
+    input?.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
             const buttonClass = `.js-search-${id.replace('Input', '').replace('search', '').replace('PassportSeries', 'passport').replace('PassportNumber', 'passport').toLowerCase()}`;
             document.querySelector(buttonClass).click();
@@ -6280,7 +7033,7 @@ function setupEventListeners(){
   
   const addressInputs = '[name="dom_raqami"], [name="kvartira_raqami"], [name="uy_raqami"], .js-other-street-input';
   let addressCheckTimeout;
-  DOM.addForm.addEventListener('input', (e) => {
+  DOM.addForm?.addEventListener('input', (e) => {
     if (e.target.matches(addressInputs)) {
         clearTimeout(addressCheckTimeout);
         addressCheckTimeout = setTimeout(() => {
@@ -6288,7 +7041,7 @@ function setupEventListeners(){
         }, 300);
     }
   });
-  DOM.addForm.addEventListener('change', (e) => {
+  DOM.addForm?.addEventListener('change', (e) => {
     if (e.target.matches('[name="xonadon_turi"], .js-street-select, .js-reg-type')) {
         checkAddressForFamilies();
     }
@@ -6299,7 +7052,7 @@ function setupEventListeners(){
       const form = DOM.addForm; const type = form.querySelector('[name="xonadon_turi"]').value; if (!type) return; 
       let streetSelect = form.querySelector(`select[name="${type}_kochasi"]`); let streetName = streetSelect ? streetSelect.value : ''; 
       if(streetName==='Boshqa'){ const other = form.querySelector(`.js-other-street-input[data-type="${type}"]`); streetName = other ? other.value.trim() : ''; } 
-      const dom = form.querySelector('[name="dom_raqami"]')?.value.trim() || ''; const kv = form.querySelector('[name="kvartira_raqami"]')?.value.trim() || ''; const uy = form.querySelector('[name="uy_raqami"]')?.value.trim() || ''; 
+      const dom = (form.querySelector('[name="dom_raqami"]')?.value.trim() || '').toLowerCase(); const kv = form.querySelector('[name="kvartira_raqami"]')?.value.trim() || ''; const uy = form.querySelector('[name="uy_raqami"]')?.value.trim() || ''; 
       let fullAddress = ''; 
       if(type==='kop_qavatli' && streetName && dom && kv) fullAddress = `${streetName} ko., ${dom}-dom, ${kv}-kv.`; 
       if(type==='xovli' && streetName && uy) fullAddress = `${streetName} ko., ${uy}-uy`; 
@@ -6369,7 +7122,7 @@ function setupEventListeners(){
       let streetName = streetSelect ? streetSelect.value : '';
       if(streetName === 'Boshqa'){ const other = form.querySelector(`.js-other-street-input[data-type="${type}"]`); streetName = other ? other.value.trim() : ''; } 
       
-      const dom = form.querySelector('[name="dom_raqami"]')?.value.trim() || '';
+      const dom = (form.querySelector('[name="dom_raqami"]')?.value.trim() || '').toLowerCase();
       const kv = form.querySelector('[name="kvartira_raqami"]')?.value.trim() || '';
       const uy = form.querySelector('[name="uy_raqami"]')?.value.trim() || ''; 
       
@@ -6403,7 +7156,17 @@ function setupEventListeners(){
     const allBtns = document.querySelectorAll('.suggestion-item .btn'); 
     if (e.target.classList.contains('js-select-family')) { 
       selectedPersonUniqueIdInput.value = e.target.dataset.personUniqueId; 
-      showCustomAlert(`Tanlandi! Yangi fuqaro ${e.target.previousElementSibling.querySelector('span').textContent}ga qo'shiladi.`); 
+      // Auto-fill yashash holati from selected family head
+      const familyHead = citizenDatabase.find(p => p.unique_id === e.target.dataset.personUniqueId) 
+                      || activeCitizenDatabase.find(p => p.unique_id === e.target.dataset.personUniqueId);
+      if (familyHead) {
+          const regTypeInput = DOM.addForm.querySelector('[name="registrationType"]');
+          if (regTypeInput && familyHead.registrationType) {
+              regTypeInput.value = familyHead.registrationType;
+              regTypeInput.dispatchEvent(new Event('change'));
+          }
+      }
+      showCustomAlert(`Tanlandi! Yangi fuqaro ${e.target.previousElementSibling.querySelector('span').textContent}ga qo'shiladi. Yashash holati: ${familyHead?.registrationType || ''}`); 
       allBtns.forEach(b => {b.classList.remove('btn-primary'); b.classList.add('btn-secondary');}); 
       e.target.classList.add('btn-primary'); 
       e.target.classList.remove('btn-secondary'); 
@@ -6598,11 +7361,11 @@ document.getElementById('save-photo-btn').addEventListener('click', async () => 
     }
     currentCameraTarget = null;
 });
-DOM.notificationBell.addEventListener('click', () => {
+DOM.notificationBell?.addEventListener('click', () => {
     renderNotifications();
     showScreen('notification-modal');
 });
-DOM.notificationModal.addEventListener('click', (e) => {
+DOM.notificationModal?.addEventListener('click', (e) => {
     if(e.target.closest('#notification-modal-close')) {
         goBack();
     } else if (e.target.closest('.js-start-meeting')) {
@@ -6647,6 +7410,10 @@ DOM.notificationModal.addEventListener('click', (e) => {
         }
         localStorage.setItem('dismissedBirthdays', JSON.stringify(dismissedBirthdays));
         
+        // notifications massividan ham o'chirish
+        const notifIdx = notifications.findIndex(n => n.citizen && n.citizen.unique_id === uniqueId);
+        if (notifIdx > -1) notifications.splice(notifIdx, 1);
+        
         // Eslatmani ro'yxatdan olib tashlash
         const notificationItem = btn.closest('.notification-item');
         if (notificationItem) {
@@ -6664,7 +7431,7 @@ DOM.notificationModal.addEventListener('click', (e) => {
             }, 300);
         }
         
-        showToast("Tug'ilgan kun eslatmasi yashirildi", "success");
+        showToast("Tushunarli! Eslatma yashirildi ✓", "success");
     } else if (e.target.closest('.js-remind-later')) {
         goBack();
         showToast("Eslatma keyinroq qayta ko'rsatiladi.", "info");
@@ -6750,7 +7517,7 @@ function handleLogin() {
         document.body.classList.toggle('restricted', CURRENT_USER.access === 'restricted');
         
         // 🎄 Yangi yil qor animatsiyasini boshlash
-        setTimeout(initAppSnowfall, 800);
+        // disabled: setTimeout(initAppSnowfall, 800);
         
         // Inspektor roli uchun maxsus ko'rinish
         if (CURRENT_USER.pass === '1983') {
@@ -7048,7 +7815,7 @@ function performFaceIdLogin(passCode, role) {
     if (staffTab) staffTab.classList.toggle('permission-hidden', !canViewStats);
     
     setTimeout(() => initializeApplicationData(), 100);
-    setTimeout(initAppSnowfall, 800);
+    // disabled: setTimeout(initAppSnowfall, 800);
     
     showToast('Face ID orqali muvaffaqiyatli kirdingiz!', 'success');
 }
@@ -7239,7 +8006,7 @@ function updateGreeting() {
 }
 
 // Qor yog'ishi animatsiyasi - OPTIMALLASHTIRILGAN
-function createSnowfall(containerId = 'snowfall-container') {
+function createSnowfall(containerId = 'snowfall-container') { return;
     const container = document.getElementById(containerId);
     if (!container) return;
     
@@ -7263,9 +8030,7 @@ function createSnowfall(containerId = 'snowfall-container') {
 }
 
 // Global qorni yaratish
-function initGlobalSnowfall() {
-    createSnowfall('global-snowfall');
-}
+function initGlobalSnowfall() { return; }
 
 function checkSystemStatus() {
     const statusEl = document.getElementById('system-status');
@@ -7285,7 +8050,7 @@ document.addEventListener('DOMContentLoaded',()=>{
     const roleGrid = document.getElementById('role-selection-grid');
     const roleSelectionView = document.getElementById('role-selection-view');
     const passwordView = document.getElementById('password-view');
-    for (const passKey in ROLES) {
+    if (roleGrid) { for (const passKey in ROLES) {
         const role = ROLES[passKey];
         const btn = document.createElement('button');
         btn.className = 'role-btn';
@@ -7323,6 +8088,7 @@ document.addEventListener('DOMContentLoaded',()=>{
             DOM.loginPasswordInput.focus();
         }
     });
+    } // end if(roleGrid)
     document.getElementById('back-to-role-selection').addEventListener('click', () => {
         passwordView.classList.add('hidden');
         roleSelectionView.classList.remove('hidden');
@@ -7332,27 +8098,27 @@ document.addEventListener('DOMContentLoaded',()=>{
     });
     updateClock();
     updateGreeting();
-    createSnowfall('snowfall-container'); // Login uchun qor
-    initGlobalSnowfall(); // Global qor - butun ilova uchun
+    // // disabled: createSnowfall('snowfall-container'); // Qor o'chirildi - bahor keldi! 🌸
+    // // disabled: initGlobalSnowfall();
     setInterval(updateClock, 1000);
     setInterval(updateGreeting, 60000); // Har daqiqada yangilash
     checkSystemStatus();
     window.addEventListener('online', checkSystemStatus);
     window.addEventListener('offline', checkSystemStatus);
     const quotes = [
-        "🎄 Yangi 2026-yil muborak bo'lsin!",
-        "✨ Yangi yilda barcha orzularingiz amalga oshsin!",
-        "🎅 Oilangizga baxt-saodat tilaymiz!",
-        "❄️ Qishki sovuqda ham dillaringiz iliq bo'lsin!",
-        "🎁 Yangi yil yangi umidlar olib kelsin!"
+        "🌸 Bahor yangi umidlar olib keladi!",
+        "🌺 O'zbegim mahallasi — birgalikda rivojlanamiz!",
+        "🌿 2026-yil — Mahallani rivojlantirish yili!",
+        "☀️ Har bir kün yangi imkoniyat!",
+        "🌱 Birgalikda yashil kelajak yaratamiz!"
     ];
-    document.getElementById('quote-of-the-day').textContent = `"${quotes[Math.floor(Math.random() * quotes.length)]}"`;
+    const _qe=document.getElementById('quote-of-the-day');if(_qe)_qe.textContent=`"${quotes[Math.floor(Math.random()*quotes.length)]}"`;
     const savedTheme=localStorage.getItem('theme')||(window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
     document.documentElement.setAttribute('data-theme',savedTheme);
-    document.querySelector('#theme-switcher').innerHTML=savedTheme==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
-    DOM.loginSubmitBtn.addEventListener('click',handleLogin);
-    DOM.loginPasswordInput.addEventListener('keypress',(e)=>{if(e.key==='Enter')handleLogin();});
-    DOM.loginPasswordInput.addEventListener('input',()=>{DOM.loginPasswordError.style.display='none';if(DOM.loginPasswordInput.value.length===4)handleLogin();});
+    const _ts=document.querySelector('#theme-switcher');if(_ts)_ts.innerHTML=savedTheme==='dark'?'<i class="fas fa-sun"></i>':'<i class="fas fa-moon"></i>';
+    DOM.loginSubmitBtn?.addEventListener('click',handleLogin);
+    DOM.loginPasswordInput?.addEventListener('keypress',(e)=>{if(e.key==='Enter')handleLogin();});
+    DOM.loginPasswordInput?.addEventListener('input',()=>{if(DOM.loginPasswordError)DOM.loginPasswordError.style.display='none';if(DOM.loginPasswordInput&&DOM.loginPasswordInput.value.length===4)handleLogin();});
     document.querySelector('#fab-add-citizen')?.addEventListener('click',()=>{resetFormToCreateMode();showScreen('add-view');});
     
     // Ob'ektlar moduli listenerlarini qo'shish (keyingi scriptdan keyin)
@@ -8159,31 +8925,37 @@ function setupSignaturePad() {
 /* KO'P QAVATLI UYLAR KONFIGURATSIYASI */
 /* ========================================================== */
 
+// Domlar konfiguratsiyasi
+// kvFrom/kvTo — xonadon raqamlari diapazoni (bloklar uchun alohida)
 const APARTMENT_BUILDINGS = {
-    '6': { name: '6-dom', total: 42 },
-    '7': { name: '7-dom', total: 42 },
-    '8': { name: '8-dom', total: 42 },
-    '9': { name: '9-dom', total: 42 },
-    '10': { name: '10-dom', total: 42 },
-    'lermontov10': { name: 'Lermontov 10-dom', total: 15 },
-    '11': { name: '11-dom', total: 42 },
-    '12': { name: '12-dom', total: 42 },
-    '13': { name: '13-dom', total: 42 },
-    '13a': { name: 'A.Temur 13a-dom', total: 50 },
-    '14': { name: 'Lermontov 14-dom', total: 150, blocks: { '14a': [1, 50], '14b': [51, 100], '14c': [101, 150] } },
-    '14a': { name: 'Lermontov 14a-blok', total: 50, parent: '14', range: [1, 50] },
-    '14b': { name: 'Lermontov 14b-blok', total: 50, parent: '14', range: [51, 100] },
-    '14c': { name: 'Lermontov 14c-blok', total: 50, parent: '14', range: [101, 150] },
-    '15': { name: '15-dom', total: 42 },
-    '16': { name: '16-dom', total: 42 },
-    '17': { name: '17-dom', total: 42 },
-    '21': { name: '21-dom', total: 80 },
-    '22': { name: '22-dom', total: 80 },
-    '23': { name: '23-dom', total: 80 },
-    '24': { name: '24-dom', total: 80 },
-    '28': { name: 'Mashrab 28-dom', total: 72 },
-    '30': { name: 'Mashrab 30-dom', total: 72 },
-    '39b': { name: 'Lermontov 39b-dom', total: 34 }
+    // Musaev ko'chasidagi eski domlar (42 xonadonli)
+    '6':  { name: 'Musaev 6-dom',   total: 42, kvFrom: 1,   kvTo: 42  },
+    '7':  { name: 'Musaev 7-dom',   total: 42, kvFrom: 1,   kvTo: 42  },
+    '8':  { name: 'Musaev 8-dom',   total: 42, kvFrom: 1,   kvTo: 42  },
+    '9':  { name: 'Musaev 9-dom',   total: 42, kvFrom: 1,   kvTo: 42  },
+    '10': { name: 'Musaev 10-dom',  total: 42, kvFrom: 1,   kvTo: 42  },
+    '11': { name: 'Musaev 11-dom',  total: 42, kvFrom: 1,   kvTo: 42  },
+    '12': { name: 'Musaev 12-dom',  total: 42, kvFrom: 1,   kvTo: 42  },
+    '13': { name: 'Musaev 13-dom',  total: 42, kvFrom: 1,   kvTo: 42  },
+    '14': { name: 'Musaev 14-dom',  total: 42, kvFrom: 1,   kvTo: 42  },
+
+    // Havas ko'chasi — jami 150 xonadon, 3 blokga bo'lingan (har biri 50 ta)
+    '14a': { name: 'Havas 14a-dom (A-blok)', total: 50, kvFrom: 1,   kvTo: 50,  street: 'Havas' },
+    '14b': { name: 'Havas 14b-dom (B-blok)', total: 50, kvFrom: 51,  kvTo: 100, street: 'Havas' },
+    '14c': { name: 'Havas 14c-dom (V-blok)', total: 50, kvFrom: 101, kvTo: 150, street: 'Havas' },
+
+    // Boshqa ko'chalar
+    '13a': { name: 'A.Temur 13a-dom',   total: 50, kvFrom: 1, kvTo: 50  },
+    '15':  { name: '15-dom',             total: 42, kvFrom: 1, kvTo: 42  },
+    '16':  { name: '16-dom',             total: 42, kvFrom: 1, kvTo: 42  },
+    '17':  { name: '17-dom',             total: 42, kvFrom: 1, kvTo: 42  },
+    '21':  { name: '21-dom',             total: 80, kvFrom: 1, kvTo: 80  },
+    '22':  { name: '22-dom',             total: 80, kvFrom: 1, kvTo: 80  },
+    '23':  { name: '23-dom',             total: 80, kvFrom: 1, kvTo: 80  },
+    '24':  { name: '24-dom',             total: 80, kvFrom: 1, kvTo: 80  },
+    '28':  { name: 'Mashrab 28-dom',     total: 72, kvFrom: 1, kvTo: 72  },
+    '30':  { name: 'Mashrab 30-dom',     total: 72, kvFrom: 1, kvTo: 72  },
+    '39b': { name: 'Lermontov 39b-dom',  total: 34, kvFrom: 1, kvTo: 34  }
 };
 
 function getRegisteredApartments(domNumber) {
@@ -8239,20 +9011,21 @@ function getUnregisteredApartments(domNumber) {
     
     const registered = getRegisteredApartments(domNumber);
     const total = config.total;
+    const kvFrom = config.kvFrom || 1;
+    const kvTo   = config.kvTo   || total;
     const missing = [];
-    const found = Array.from(registered).sort((a, b) => a - b);
+    const found = Array.from(registered).filter(n => n >= kvFrom && n <= kvTo).sort((a, b) => a - b);
     
-    for (let i = 1; i <= total; i++) {
-        if (!registered.has(i)) {
-            missing.push(i);
-        }
+    for (let i = kvFrom; i <= kvTo; i++) {
+        if (!registered.has(i)) missing.push(i);
     }
     
     return {
         name: config.name,
-        registered: registered.size,
+        registered: found.length,
         unregistered: missing.length,
         total: total,
+        kvFrom, kvTo,
         missing: missing,
         found: found
     };
@@ -8404,6 +9177,42 @@ function initializeMap() {
     loadMapMarkers('all');
     setupMapFilterButtons();
 }
+
+// Joylashuvni aniqlash va xaritada ko'rsatish
+function locateOnMap() {
+    if (!mapInstance) {
+        showToast("Xarita hali yuklanmagan", "error");
+        return;
+    }
+    if (!navigator.geolocation) {
+        showToast("Geolokatsiya qo'llab-quvvatlanmaydi", "error");
+        return;
+    }
+    showToast("Joylashuv aniqlanmoqda...", "info");
+    navigator.geolocation.getCurrentPosition(
+        (pos) => {
+            const lat = pos.coords.latitude;
+            const lng = pos.coords.longitude;
+            mapInstance.setView([lat, lng], 16);
+            // Joylashuv markeri
+            const locMarker = L.marker([lat, lng], {
+                icon: L.divIcon({
+                    className: 'custom-marker',
+                    html: '<div style="background: linear-gradient(135deg, #0077b6, #00b4d8); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 18px; box-shadow: 0 4px 15px rgba(0,119,182,0.6); border: 3px solid white; animation: pulse 2s infinite;"><i class="fas fa-street-view"></i></div>',
+                    iconSize: [40, 40]
+                })
+            }).addTo(mapInstance);
+            locMarker.bindPopup('<strong>📍 Siz shu yerdasiz</strong>').openPopup();
+            setTimeout(() => mapInstance.removeLayer(locMarker), 15000);
+            showToast("Joylashuv aniqlandi!", "success");
+        },
+        (err) => {
+            showToast("Joylashuvni aniqlab bo'lmadi. GPS yoqilganini tekshiring.", "error");
+        },
+        { enableHighAccuracy: true, timeout: 10000 }
+    );
+}
+window.locateOnMap = locateOnMap;
 
 // Xarita filtri tugmalari uchun event listener
 function setupMapFilterButtons() {
@@ -10054,7 +10863,41 @@ const OPENAI_API_KEY = 'sk-proj-_tu7kDYcpQa8kF0CjL0nZ8RrCDQd6Mx97f57NNO22Ybot6Bq
 async function getAIResponse(message) {
     const baza = activeCitizenDatabase || [];
     const msg = message.toLowerCase().trim();
-    const total = baza.length;
+    // ════════════════════════════════════════
+    // YANGI FUNKSIYA: Domdan fuqaro topish - KUCHAYTIRILGAN MANTIQ
+    // ════════════════════════════════════════
+    function getDomPeople(domNum, streetName = null) {
+        const num = String(domNum).trim().toLowerCase();
+        
+        return baza.filter(p => {
+            let address = (p.street || '').toLowerCase();
+            // Manzildagi ortiqcha bo'shliqlarni tozalash
+            address = address.replace(/\s+/g, ' '); 
+            
+            // 1. Ko'cha nomi bo'yicha tekshirish (agar so'ralgan bo'lsa)
+            if (streetName && !address.includes(streetName.toLowerCase())) {
+                return false;
+            }
+
+            // 2. Dom raqamini ANIQ tekshirish - raqam chegarasi bo'lishi shart
+            // Masalan: "1-dom" qidirsa, "10-dom", "11-dom" ni TOPMASLIGI kerak
+            // Pattern: oldingi belgi raqam bo'lmasligi, keyingi belgi ham raqam bo'lmasligi
+            const escapedNum = num.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            let pattern;
+            if (/[a-z]$/.test(num)) {
+                // "14a", "14b" uchun: aniq shu raqam-harf kombinatsiyasi
+                pattern = new RegExp(`(^|[^0-9a-z])${escapedNum}([^0-9a-z]|$)`, 'i');
+            } else {
+                // "1", "6", "14" uchun: oldin ham, keyin ham raqam kelmasligi shart
+                pattern = new RegExp(`(^|[^0-9])${escapedNum}([^0-9]|$)`, 'i');
+            }
+            
+            // "-dom" yoki " dom" bo'lishi va raqam aniq mos kelishi kerak
+            const domPattern = new RegExp(`(^|[^0-9])${escapedNum}\\s*[-]?\\s*(dom|uy)([^0-9a-z]|$)`, 'i');
+            
+            return domPattern.test(address);
+        });
+    }
     
     // ════════════════════════════════════════
     // ASOSIY STATISTIKALAR
@@ -10078,7 +10921,7 @@ async function getAIResponse(message) {
     // Band fuqarolar (rasmiy + norasmiy + tadbirkor)
     const bandlar = baza.filter(p => ['Rasmiy band', 'Norasmiy band', 'Tadbirkor'].includes(p.employmentStatus));
     
-    // Yoshlar (18-35 yosh)
+    // Yoshlar (14-30 yosh)
     const yoshlar = baza.filter(p => {
         const yosh = getAge(p.dob);
         return yosh && yosh >= 18 && yosh <= 35;
@@ -10102,14 +10945,14 @@ async function getAIResponse(message) {
         for (const domNum in APARTMENT_BUILDINGS) {
             const config = APARTMENT_BUILDINGS[domNum];
             const num = String(domNum).trim();
+            const escapedNum = num.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
             
-            // Dom bo'yicha qat'iy qidiruv (kvartira raqamiga chalg'imaslik uchun)
+            // Dom bo'yicha ANIQ qidiruv - raqam chegarasi bo'lishi shart
+            // "6-dom" qidirsa "16-dom" topmasligi uchun [^0-9] ishlatamiz
             const domPeople = baza.filter(p => {
                 const street = (p.street || '').toLowerCase();
-                // Faqat "...-dom" yoki "...-uy" ni qidiramiz
-                const pattern1 = new RegExp(`(^|\\D)${num}\\s*[-]?\\s*(dom|uy)(\\D|$)`, 'i');
-                const pattern2 = new RegExp(`(^|\\D)(dom|uy)\\s*[-]?\\s*${num}(\\D|$)`, 'i');
-                return pattern1.test(street) || pattern2.test(street);
+                const pattern = new RegExp(`(^|[^0-9])${escapedNum}\\s*[-]?\\s*(dom|uy)([^0-9a-z]|$)`, 'i');
+                return pattern.test(street);
             });
             
             const apartments = new Set();
@@ -10129,12 +10972,38 @@ async function getAIResponse(message) {
             });
         }
         
-        // Hovli qismi o'zgarishsiz qoladi...
-        const hovliPeople = baza.filter(p => {
-            const street = (p.street || '').toLowerCase();
-            return street.includes('ko.') || street.includes("ko'") || street.includes('uy');
+        // Dynamic: scan baza for buildings not in APARTMENT_BUILDINGS
+        const knownKeys = new Set(Object.keys(APARTMENT_BUILDINGS));
+        const dynMap = new Map();
+        const domPat = /(\w+[\d]+[a-z]?)\s*[-]?\s*(dom|uy)(?:[^a-z]|$)/i;
+        
+        baza.forEach(p => {
+            const addr = (p.street || '').trim();
+            if (!addr) return;
+            const dm = addr.match(domPat);
+            if (!dm) return;
+            const dk = dm[1].toLowerCase();
+            if (knownKeys.has(dk)) return;
+            
+            const stM = addr.match(/^([\w\s'ʼ]+?)\s+\d/);
+            const sName = stM ? stM[1].trim() : 'Noma\'lum';
+            if (!dynMap.has(dk)) dynMap.set(dk, {name: sName+' '+dk+'-dom', people:[], street: sName});
+            dynMap.get(dk).people.push(p);
         });
-        // ... (qolgan qismi eski kodda ketaveradi)
+        
+        for (const [dk, info] of dynMap) {
+            const apts = new Set();
+            info.people.forEach(p => {
+                const m = (p.street||'').match(/(\d+)\s*[-]?\s*(kv|xonadon)/i);
+                if (m) apts.add(parseInt(m[1]));
+            });
+            const total = Math.max(apts.size, info.people.length);
+            stats.push({
+                dom: dk, name: info.name, total, 
+                registered: apts.size, notRegistered: 0,
+                people: info.people.length, percent: 100, isDynamic: true
+            });
+        }
         
         return stats;
     }
@@ -10225,23 +11094,6 @@ async function getAIResponse(message) {
     }
     
     // Domdan fuqaro topish - QAT'IY REJIMDA (TUZATILGAN)
-    function getDomPeople(domNum) {
-        const num = String(domNum).trim();
-        return baza.filter(p => {
-            const street = (p.street || '').toLowerCase();
-            
-            // Mantiq: Raqam (num) keladi, undan keyin tire yoki bo'sh joy, keyin esa "dom" yoki "uy" so'zi kelishi SHART.
-            // "kv", "kvartira", "xonadon" so'zlari qatnashgan joylarni o'qimaydi.
-            
-            // 1-holat: "21-dom", "21 dom", "21-uy"
-            const pattern1 = new RegExp(`(^|\\D)${num}\\s*[-]?\\s*(dom|uy)(\\D|$)`, 'i');
-            
-            // 2-holat: "dom-21", "uy 21" (kamdan-kam bo'lsa ham)
-            const pattern2 = new RegExp(`(^|\\D)(dom|uy)\\s*[-]?\\s*${num}(\\D|$)`, 'i');
-            
-            return pattern1.test(street) || pattern2.test(street);
-        });
-    }
     
     // ════════════════════════════════════════
     // 1. SALOM
@@ -10375,9 +11227,9 @@ async function getAIResponse(message) {
     // ════════════════════════════════════════
     // 5. DOM + ISM KOMBINATSIYASI
     // ════════════════════════════════════════
-    const domIsmMatch = msg.match(/(\d+)\s*[-]?\s*(dom|uy)\s+(.+)/i);
+    const domIsmMatch = msg.match(/(\d+[a-z]?)\s*[-]?\s*(dom|uy)\s+(.+)/i);
     if (domIsmMatch) {
-        const domNum = domIsmMatch[1];
+        const domNum = domIsmMatch[1].toLowerCase();
         const ismQuery = domIsmMatch[3].trim().toLowerCase();
         
         if (ismQuery.length >= 2) {
@@ -10398,10 +11250,24 @@ async function getAIResponse(message) {
     // ════════════════════════════════════════
     // 6. DOM STATISTIKASI (FAQAT STATISTIKA)
     // ════════════════════════════════════════
-    const domMatch = msg.match(/(\d+)\s*[-]?\s*(dom|uy)/i);
+    const domMatch = msg.match(/(\d+[a-z]?)\s*[-]?\s*(dom|uy)/i);
     if (domMatch && !domIsmMatch) {
-        const domNum = domMatch[1];
-        const dom = domStats.find(d => d.dom === domNum);
+        const domNum = domMatch[1].toLowerCase();
+        let dom = domStats.find(d => d.dom === domNum);
+        // If not in APARTMENT_BUILDINGS, check baza directly
+        if (!dom) {
+            const dp = getDomPeople(domNum);
+            if (dp.length > 0) {
+                const firstAddr = dp[0].street || '';
+                const stM = firstAddr.match(/^([^\d,]+?)\s+\d/);
+                const sn = stM ? stM[1].trim() : '';
+                dom = {
+                    dom: domNum, name: (sn ? sn+' ' : '') + domNum + '-dom',
+                    total: dp.length, registered: dp.length, notRegistered: 0,
+                    people: dp.length, percent: 100, isDynamic: true
+                };
+            }
+        }
         
         if (dom) {
             const domPeople = getDomPeople(domNum);
@@ -10498,7 +11364,7 @@ async function getAIResponse(message) {
     // 7. YOSHLAR RO'YXATI
     // ════════════════════════════════════════
     if (msg.includes('yoshlar') || msg === 'yosh') {
-        return showList(yoshlar, 'Yoshlar (18-35 yosh)');
+        return showList(yoshlar, 'Yoshlar (14-30 yosh)');
     }
     
     // ════════════════════════════════════════
@@ -10609,20 +11475,226 @@ async function getAIResponse(message) {
     }
     
     // ════════════════════════════════════════
-    // 13. JSHSHIR BO'YICHA QIDIRISH
+    // 13. JSHSHIR / PASPORT BO'YICHA QIDIRISH
     // ════════════════════════════════════════
+    // JSHSHIR (14 raqam)
     const jshshirMatch = msg.match(/(\d{14})/);
     if (jshshirMatch) {
         const jshshir = jshshirMatch[1];
-        const found = baza.filter(p => (p.jshshir || '').includes(jshshir));
-        
-        if (found.length > 0) {
-            return showList(found, `JSHSHIR ${jshshir}`);
-        } else {
-            return `❌ JSHSHIR <strong>${jshshir}</strong> bo'yicha fuqaro topilmadi.`;
+        const found = baza.filter(p => String(p.jshshir || '').includes(jshshir));
+        if (found.length > 0) return showList(found, `JSHSHIR ${jshshir}`);
+        else return `❌ JSHSHIR <strong>${jshshir}</strong> bo'yicha fuqaro topilmadi.`;
+    }
+    // Pasport seriyasi + raqami (masalan: AA1234567)
+    const passportMatch = msg.match(/^([a-zA-Z]{2})(\d{5,7})$/i);
+    if (passportMatch) {
+        const passport = (passportMatch[1] + passportMatch[2]).toUpperCase();
+        const found = baza.filter(p => (p.passport || '').replace(/\s/g,'').toUpperCase().includes(passport));
+        if (found.length > 0) return showList(found, `Pasport ${passport}`);
+        else return `❌ Pasport <strong>${passport}</strong> bo'yicha fuqaro topilmadi.`;
+    }
+    // Qisman JSHSHIR yoki pasport raqami (6-13 raqam)
+    const partNumMatch = msg.match(/^(\d{6,13})$/);
+    if (partNumMatch) {
+        const num = partNumMatch[1];
+        const found = baza.filter(p => 
+            String(p.jshshir || '').includes(num) || 
+            (p.passport || '').replace(/\s/g,'').includes(num) ||
+            String(p.telefon || '').replace(/\D/g,'').includes(num)
+        );
+        if (found.length > 0) return showList(found, `"${num}" bo'yicha topildi`);
+        else return `❌ <strong>${num}</strong> raqami bo'yicha fuqaro topilmadi.`;
+    }
+
+    // ════════════════════════════════════════
+    // 13a. HAVAS KO'CHASI — 3 BLOK YOKI ALOHIDA DOM STATISTIKASI
+    // ════════════════════════════════════════
+    const isHavasGeneral = (msg === 'havas' || msg === 'xavas' || msg === "havas ko'cha" || msg === "havas ko'chasi");
+    const havasNumQ = msg.match(/^havas\s+(\d+[a-z]?)$/i);
+
+    if (isHavasGeneral) {
+        // 3 blok umumiy ko'rinishi
+        const HB = [
+            { key:'14a', label:'A-blok (14a-dom)', color:'#0077b6', kvFrom:1,   kvTo:50  },
+            { key:'14b', label:'B-blok (14b-dom)', color:'#10b981', kvFrom:51,  kvTo:100 },
+            { key:'14c', label:'V-blok (14c-dom)', color:'#8b5cf6', kvFrom:101, kvTo:150 },
+        ];
+        const blocksData = HB.map(blk => {
+            const people = baza.filter(p => {
+                const addr = (p.street||'').toLowerCase().replace(/\s+/g,' ');
+                const pat = new RegExp(`(^|\\W)${blk.key}(\\W|$)`,'i');
+                return /dom|uy/.test(addr) && pat.test(addr);
+            });
+            const regKv = new Set();
+            people.forEach(p => {
+                const m=(p.street||'').match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
+                if(m){const n=parseInt(m[1]);if(n>=blk.kvFrom&&n<=blk.kvTo)regKv.add(n);}
+            });
+            const total=blk.kvTo-blk.kvFrom+1;
+            const reg=regKv.size;
+            return {...blk, people, total, reg, notReg:total-reg, pct:Math.round(reg/total*100),
+                erkak:people.filter(p=>p.jinsi==='Erkak').length,
+                ayol:people.filter(p=>p.jinsi==='Ayol').length,
+                ishsiz:people.filter(p=>p.employmentStatus==='Ishsiz').length};
+        });
+        const gTotal=150, gReg=blocksData.reduce((s,b)=>s+b.reg,0);
+        const gPpl=blocksData.reduce((s,b)=>s+b.people.length,0);
+        const gPct=Math.round(gReg/gTotal*100);
+
+        let r=`<div style="background:linear-gradient(135deg,#0f2027,#203a43);border-radius:18px;padding:16px;color:white;">`;
+        r+=`<div style="text-align:center;margin-bottom:14px;"><div style="font-size:2.5rem;">🏗️</div>
+            <h2 style="margin:6px 0 2px;font-size:1.3rem;font-weight:800;">Havas Ko'chasi</h2>
+            <div style="opacity:0.7;font-size:0.82rem;">Jami 150 xonadon • 3 blok • har biri 50 ta</div></div>`;
+        r+=`<div style="background:rgba(255,255,255,0.09);border-radius:12px;padding:12px;margin-bottom:12px;">
+            <div style="font-weight:700;text-align:center;margin-bottom:8px;font-size:0.9rem;">📊 UMUMIY HOLAT</div>
+            <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:8px;">
+                <div style="background:rgba(255,255,255,0.07);padding:10px;border-radius:8px;text-align:center;">
+                    <div style="font-size:0.72rem;opacity:0.8;">🏢 Jami xonadonlar</div>
+                    <div style="font-size:1.7rem;font-weight:900;">${gTotal}</div>
+                    <div style="font-size:0.68rem;opacity:0.6;">ta (3×50)</div></div>
+                <div onclick="window.aiHavasReg()" style="background:rgba(16,185,129,0.3);padding:10px;border-radius:8px;text-align:center;cursor:pointer;">
+                    <div style="font-size:0.72rem;">✅ O'tgan</div>
+                    <div style="font-size:1.7rem;font-weight:900;">${gReg}</div>
+                    <div style="font-size:0.68rem;">(${gPct}%) 👆</div></div>
+                <div onclick="window.aiHavasMiss()" style="background:rgba(239,68,68,0.3);padding:10px;border-radius:8px;text-align:center;cursor:pointer;">
+                    <div style="font-size:0.72rem;">❌ O'tmagan</div>
+                    <div style="font-size:1.7rem;font-weight:900;">${gTotal-gReg}</div>
+                    <div style="font-size:0.68rem;">ta 👆</div></div>
+                <div style="background:rgba(59,130,246,0.3);padding:10px;border-radius:8px;text-align:center;">
+                    <div style="font-size:0.72rem;">👥 Fuqarolar</div>
+                    <div style="font-size:1.7rem;font-weight:900;">${gPpl}</div>
+                    <div style="font-size:0.68rem;">kishi</div></div>
+            </div>
+            <div style="margin-top:8px;display:flex;justify-content:space-between;font-size:0.78rem;"><span>Xatlov darajasi</span><span style="font-weight:700;">${gPct}%</span></div>
+            <div style="background:rgba(255,255,255,0.15);border-radius:6px;height:9px;overflow:hidden;margin-top:3px;">
+                <div style="height:100%;width:${gPct}%;background:linear-gradient(90deg,#10b981,#34d399);border-radius:6px;"></div></div></div>`;
+        r+=`<div style="font-weight:700;text-align:center;margin-bottom:8px;font-size:0.9rem;">🏢 BLOKLARI BO'YICHA</div>`;
+        blocksData.forEach(blk=>{
+            r+=`<div style="background:rgba(255,255,255,0.07);border-radius:11px;padding:11px;margin-bottom:9px;border-left:3px solid ${blk.color};">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+                    <span style="font-weight:700;font-size:0.95rem;">🏠 ${blk.label}</span>
+                    <span style="background:${blk.color};padding:2px 9px;border-radius:12px;font-size:0.75rem;">${blk.pct}%</span></div>
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:7px;">
+                    <div style="background:rgba(255,255,255,0.07);padding:7px;border-radius:7px;text-align:center;">
+                        <div style="font-size:0.65rem;opacity:0.7;">Jami</div><div style="font-size:1.2rem;font-weight:800;">${blk.total}</div></div>
+                    <div onclick="window.aiShowRegisteredApartments('${blk.key}')" style="background:rgba(16,185,129,0.28);padding:7px;border-radius:7px;text-align:center;cursor:pointer;">
+                        <div style="font-size:0.65rem;">✅ O'tgan</div><div style="font-size:1.2rem;font-weight:800;">${blk.reg}</div></div>
+                    <div onclick="window.aiShowMissingApartments('${blk.key}')" style="background:rgba(239,68,68,0.28);padding:7px;border-radius:7px;text-align:center;cursor:pointer;">
+                        <div style="font-size:0.65rem;">❌ O'tmagan</div><div style="font-size:1.2rem;font-weight:800;">${blk.notReg}</div></div>
+                </div>
+                <div style="background:rgba(255,255,255,0.1);border-radius:5px;height:6px;overflow:hidden;margin-bottom:7px;">
+                    <div style="height:100%;width:${blk.pct}%;background:${blk.color};border-radius:5px;"></div></div>
+                <div style="display:flex;gap:5px;flex-wrap:wrap;font-size:0.72rem;">
+                    ${blk.people.length>0?`<span style="background:rgba(59,130,246,0.35);padding:2px 7px;border-radius:9px;">👤 ${blk.people.length}</span>
+                    <span style="background:rgba(59,130,246,0.2);padding:2px 7px;border-radius:9px;">👨${blk.erkak}</span>
+                    <span style="background:rgba(236,72,153,0.2);padding:2px 7px;border-radius:9px;">👩${blk.ayol}</span>
+                    ${blk.ishsiz?`<span onclick="window.aiShowFiltered('${blk.key}','bandlik','Ishsiz')" style="cursor:pointer;background:rgba(239,68,68,0.28);padding:2px 7px;border-radius:9px;">❌${blk.ishsiz}</span>`:''}`:
+                    '<span style="opacity:0.55;font-style:italic;">Hali fuqaro kiritilmagan</span>'}
+                </div></div>`;
+        });
+        r+=`<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">
+            <button onclick="window.aiHavasAll()" style="flex:1;background:rgba(255,255,255,0.13);border:1px solid rgba(255,255,255,0.25);color:white;padding:8px;border-radius:9px;cursor:pointer;font-size:0.8rem;font-weight:600;">👥 Barcha fuqarolar</button>
+            <button onclick="window.aiQ('14a dom')" style="flex:1;background:rgba(0,119,182,0.45);border:none;color:white;padding:8px;border-radius:9px;cursor:pointer;font-size:0.8rem;">🔵 A-blok</button>
+            <button onclick="window.aiQ('14b dom')" style="flex:1;background:rgba(16,185,129,0.45);border:none;color:white;padding:8px;border-radius:9px;cursor:pointer;font-size:0.8rem;">🟢 B-blok</button>
+            <button onclick="window.aiQ('14c dom')" style="flex:1;background:rgba(139,92,246,0.45);border:none;color:white;padding:8px;border-radius:9px;cursor:pointer;font-size:0.8rem;">🟣 V-blok</button>
+        </div></div>`;
+
+        // Helper funksiyalar (window ga bir marta)
+        window._havasBlkPpl = blocksData;
+        window.aiHavasReg  = ()=>window.aiShowRegisteredApartments('14a');
+        window.aiHavasMiss = ()=>window.aiShowMissingApartments('14a');
+        window.aiHavasAll  = ()=>{ const all=window._havasBlkPpl.flatMap(b=>b.people); if(typeof displayResults==='function')displayResults(all); const m=document.getElementById('ai-chat-modal');if(m)m.style.display='none'; };
+        window.aiQ = txt=>{ const inp=document.getElementById('ai-chat-input');if(inp){inp.value=txt;const btn=document.getElementById('ai-send-btn');if(btn)btn.click();} };
+        return r;
+    }
+
+    if (havasNumQ) {
+        // "havas 15" → "15 dom" kabi qayta ishlatish
+        return getAIResponse(havasNumQ[1] + ' dom');
+    }
+
+    // ════════════════════════════════════════
+    // 13b. KV RAQAMI BO'YICHA QIDIRISH ("28 kv", "kv 45")
+    // ════════════════════════════════════════
+        const kvOnlyM = msg.match(/^(\d+)\s*(kv\.?|kvartira|xonadon)$|^(kv\.?|kvartira|xonadon)\s*(\d+)$/i);
+    if (kvOnlyM) {
+        const kvNum = parseInt(kvOnlyM[1]||kvOnlyM[4]);
+        const allKv = baza.filter(p=>{
+            const s=(p.street||'').toLowerCase();
+            const m=s.match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
+            return m && parseInt(m[1])===kvNum;
+        });
+        if(allKv.length===0) return `❌ <strong>${kvNum}-xonadon</strong> bo'yicha fuqaro topilmadi.`;
+
+        // Ko'cha bo'yicha guruhlash
+        const byStr={};
+        allKv.forEach(p=>{const s=p.street||"Noma'lum";if(!byStr[s])byStr[s]=[];byStr[s].push(p);});
+        const streets=Object.keys(byStr);
+        if(streets.length===1) return showList(allKv, `${kvNum}-xonadon fuqarolari`);
+
+        // Bir nechta ko'cha → tanlov ko'rsatish
+        let r=`<div style="background:var(--surface-color);border-radius:14px;padding:14px;">`;
+        r+=`<div style="font-weight:700;font-size:0.95rem;margin-bottom:10px;">🏠 <strong>${kvNum}-xonadon</strong> qaysi ko'chada?</div>`;
+        streets.forEach(str=>{
+            const pp=byStr[str];
+            const safeStr=str.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
+            r+=`<div onclick="window.aiKvStr('${kvNum}','${safeStr}')" style="background:var(--bg-color);border:1px solid var(--border-color);border-radius:10px;padding:11px;margin-bottom:7px;cursor:pointer;transition:border-color 0.15s;" onmouseover="this.style.borderColor='var(--primary-color)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                <div style="font-weight:600;">📍 ${str}</div>
+                <div style="font-size:0.82rem;opacity:0.65;margin-top:2px;">${pp.length} ta fuqaro</div></div>`;
+        });
+        r+=`</div>`;
+        window._kvAllPeople = allKv;
+        window.aiKvStr=(kv,str)=>{
+            const list=window._kvAllPeople.filter(p=>p.street===str);
+            if(typeof displayResults==='function')displayResults(list);
+            const m=document.getElementById('ai-chat-modal');if(m)m.style.display='none';
+        };
+        return r;
+    }
+    
+    // ════════════════════════════════════════
+    // 13c. KO'CHA + DOM YOKI KV QIDIRISH ("musaev 8", "havas 14a", "musaev 8 23kv")
+    // ════════════════════════════════════════
+    const streetDomMatch = msg.match(/^([a-zA-ZА-ЯЁа-яёʻʼ\']+(?:\.?\s*[a-zA-ZА-ЯЁа-яёʻʼ]+)*)\s+(\d+[a-z]?)(?:\s+(\d+)\s*(?:kv|kvartira|xonadon)?)?$/i);
+    if (streetDomMatch) {
+        const streetQ = transliterate(streetDomMatch[1].toLowerCase().trim());
+        const domQ = streetDomMatch[2].toLowerCase().trim();
+        const kvQ = streetDomMatch[3] ? parseInt(streetDomMatch[3]) : null;
+        const hasLetter = /[a-z]$/.test(domQ);
+        const domPat = hasLetter 
+            ? new RegExp('(^|\\D)' + domQ + '(\\D|$)', 'i')
+            : new RegExp('(^|\\D)' + domQ + '(?![a-zа-я])(\\D|$)', 'i');
+        const streetMatched = baza.filter(p => {
+            const addr = transliterate((p.street || '').toLowerCase()).replace(/\\s+/g, ' ');
+            if (!addr.includes(streetQ)) return false;
+            if (!(/dom|uy/.test(addr) && domPat.test(addr))) return false;
+            if (kvQ !== null) {
+                const kvM = addr.match(/(\\d+)\\s*[-]?\\s*(kv|xonadon|xon)/i);
+                if (!kvM || parseInt(kvM[1]) !== kvQ) return false;
+            }
+            return true;
+        });
+        if (streetMatched.length > 0) {
+            const label = kvQ ? (streetDomMatch[1] + ' ko., ' + domQ + '-dom, ' + kvQ + '-kv') : (streetDomMatch[1] + ' ko., ' + domQ + '-dom');
+            if(streetMatched.length > 0) return showList(streetMatched, label);
         }
     }
     
+    // KO'CHA + KV: "musaev 23kv" yoki "havas 8 kv"
+    const streetKvMatch = msg.match(/^([a-zA-ZА-ЯЁа-яёʻʼ]+(?:\.?\s*[a-zA-ZА-ЯЁа-яёʻʼ]+)*)\s+(\d+)\s*(kv\.?|kvartira|xonadon)$/i);
+    if (streetKvMatch) {
+        const streetQ = transliterate(streetKvMatch[1].toLowerCase().trim());
+        const kvQ = parseInt(streetKvMatch[2]);
+        const kvMatched = baza.filter(p => {
+            const addr = transliterate((p.street || '').toLowerCase());
+            if (!addr.includes(streetQ)) return false;
+            const kvM = addr.match(/(\\d+)\\s*[-]?\\s*(kv|xonadon|xon)/i);
+            return kvM && parseInt(kvM[1]) === kvQ;
+        });
+        if (kvMatched.length > 0) return showList(kvMatched, streetKvMatch[1] + ' ko., ' + kvQ + '-kv');
+        return '❌ ' + streetKvMatch[1] + ' ko\'chasida <strong>' + kvQ + '-kv</strong> topilmadi.';
+    }
+
     // ════════════════════════════════════════
     // 14. ISM/FAMILIYA BO'YICHA QIDIRISH
     // ════════════════════════════════════════
@@ -10633,26 +11705,27 @@ async function getAIResponse(message) {
         
         const found = baza.filter(p => {
             // Barcha maydonlardan qidirish
+            const fioT = transliterate((p.fio || '').toLowerCase());
+            const streetT = transliterate((p.street || '').toLowerCase());
             const searchFields = [
-                p.fio || '',
-                p.street || '',
-                p.telefon || '',
-                p.jshshir || '',
-                p.passport_series || '',
-                p.passport_number || '',
-                p.employmentStatus || '',
-                p.socialStatus || '',
-                p.familyRole || '',
-                p.registrationType || '',
-                p.workplace || '',
-                p.ijara_boshlanish || '',
-                p.ijara_tugash || ''
-            ].join(' ').toLowerCase();
+                fioT,
+                streetT,
+                (p.telefon || '').toLowerCase(),
+                (p.jshshir || '').toString(),
+                ((p.passport_series || '') + (p.passport_number || '')).toLowerCase(),
+                (p.employmentStatus || '').toLowerCase(),
+                (p.socialStatus || '').toLowerCase(),
+                (p.familyRole || '').toLowerCase(),
+                (p.registrationType || '').toLowerCase(),
+                (p.workplace || '').toLowerCase()
+            ].join(' ');
             
+            // Barcha so'zlar mos kelishi kerak (AND logikasi)
             for (const word of words) {
-                if (searchFields.includes(word)) return true;
+                const tWord = transliterate(word);
+                if (!searchFields.includes(tWord)) return false;
             }
-            return false;
+            return true;
         });
         
         if (found.length > 0) {
@@ -10661,7 +11734,7 @@ async function getAIResponse(message) {
             return `❌ <strong>"${cleanQuery}"</strong> bo'yicha fuqaro topilmadi.<br><br>
                 <strong>Quyidagilarni sinab ko'ring:</strong><br>
                 • "band" - band fuqarolar<br>
-                • "yoshlar" - 18-35 yoshlilar<br>
+                • "yoshlar" - 14-30 yoshlilar<br>
                 • "statistika" - umumiy holat`;
         }
     }
@@ -10675,7 +11748,7 @@ async function getAIResponse(message) {
         • <strong>"band"</strong> - band fuqarolar ro'yxati<br>
         • <strong>"ijarachilar"</strong> - ijarachilar (oilalar bo'yicha)<br>
         • <strong>"ishsizlar"</strong> - ishsizlar ro'yxati<br>
-        • <strong>"yoshlar"</strong> - 18-35 yoshlilar<br>
+        • <strong>"yoshlar"</strong> - 14-30 yoshlilar<br>
         • <strong>"27 yosh"</strong> - aniq yoshdagilar<br>
         • <strong>"10 dom"</strong> - dom statistikasi<br>
         • <strong>"statistika"</strong> - umumiy holat<br>
@@ -11620,11 +12693,32 @@ function showRentalExpirationAlert() {
 }
 
 function showRentalCalendar() {
-    const data = checkRentalExpirations();
-    if (!data) {
-        showToast("Ijara ma'lumotlari topilmadi", "info");
+    // Force-check regardless of "already shown today" cache
+    if (!activeCitizenDatabase || activeCitizenDatabase.length === 0) {
+        showToast("Ma'lumotlar bazasi bo'sh", "info");
         return;
     }
+    
+    const now = new Date();
+    const expiringRentals = [];
+    const expiredRentals = [];
+    
+    activeCitizenDatabase.forEach(p => {
+        if (p.registrationType !== 'Ijara' || !p.ijara_boshlanish || !p.ijara_muddati) return;
+        const parts = p.ijara_boshlanish.split('.');
+        if (parts.length !== 3) return;
+        const startDate = new Date(parts[2], parts[1] - 1, parts[0]);
+        const endDate = new Date(startDate);
+        endDate.setMonth(endDate.getMonth() + parseInt(p.ijara_muddati));
+        const daysLeft = Math.ceil((endDate - now) / (1000 * 60 * 60 * 24));
+        if (daysLeft < 0) {
+            expiredRentals.push({ person: p, daysOverdue: Math.abs(daysLeft), endDate });
+        } else if (daysLeft <= 15) {
+            expiringRentals.push({ person: p, daysLeft, endDate });
+        }
+    });
+    
+    const data = { expiring: expiringRentals, expired: expiredRentals };
     
     const { expiring, expired } = data;
     const allRenters = activeCitizenDatabase.filter(p => p.registrationType === 'Ijara');
@@ -11944,7 +13038,7 @@ window.applyAdvancedFilter = applyAdvancedFilter;
 // ═══════════════════════════════════════════════════════════════════════════
 // ═══════════════ YENGIL QOR ANIMATSIYASI (OPTIMALLASHTIRILGAN) ═══════════════
 // ═══════════════════════════════════════════════════════════════════════════
-function initAppSnowfall() {
+function initAppSnowfall() { return;
     const container = document.getElementById('app-snowfall');
     if (!container) return;
     
@@ -11985,7 +13079,7 @@ window.showMainApp = function() {
         originalShowMainApp();
     }
     // Qor animatsiyasini boshlash
-    setTimeout(initAppSnowfall, 500);
+    // disabled: setTimeout(initAppSnowfall, 500);
 };
 
 // Sahifa yuklanganda ham tekshirish (agar allaqachon login bo'lgan bo'lsa)
@@ -11993,7 +13087,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Agar app-shell ko'rinayotgan bo'lsa, qorni boshlash
     const appShell = document.querySelector('.app-shell');
     if (appShell && appShell.style.display !== 'none') {
-        setTimeout(initAppSnowfall, 1000);
+        // disabled: setTimeout(initAppSnowfall, 1000);
     }
     
     // Platforma haqida modal
@@ -14574,156 +15668,228 @@ window.aiOpenPersonDetails = function(uniqueId) {
 // ═══════════════════════════════════════════════════════════════
 // XATLOVDAN O'TGAN (MAVJUD) KVARTIRALARNI KO'RSATISH
 // ═══════════════════════════════════════════════════════════════
-window.aiShowRegisteredApartments = function(domNum) {
-    if (typeof APARTMENT_BUILDINGS === 'undefined' || !APARTMENT_BUILDINGS[domNum]) {
-        showToast('Bu dom bo\'yicha ma\'lumot yo\'q', 'error');
-        return;
-    }
+// ════════════════════════════════════════════════════════════
+// XONADONLAR GRID KO'RINISHI (O'TGAN + O'TMAGAN)
+// ════════════════════════════════════════════════════════════
 
-    const num = String(domNum).trim();
-    
-    // Bazadan shu domdagi mavjud kvartiralarni aniqlash
-    const bazaData = (typeof activeCitizenDatabase !== 'undefined' ? activeCitizenDatabase : []);
-    const registeredFlatsSet = new Set();
-
-    bazaData.forEach(p => {
-        const street = (p.street || '').toLowerCase();
-        
-        // Domni tekshirish (qat'iy rejim)
-        const pattern1 = new RegExp(`(^|\\D)${num}\\s*[-]?\\s*(dom|uy)(\\D|$)`, 'i');
-        const pattern2 = new RegExp(`(^|\\D)(dom|uy)\\s*[-]?\\s*${num}(\\D|$)`, 'i');
-        
-        if (pattern1.test(street) || pattern2.test(street)) {
-            // Kvartira raqamini ajratib olish
-            const kvMatch = street.match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
-            if (kvMatch) {
-                registeredFlatsSet.add(parseInt(kvMatch[1]));
-            }
-        }
-    });
-
-    // Tartiblash (1, 2, 3...)
-    const foundFlats = Array.from(registeredFlatsSet).sort((a, b) => a - b);
-
-    // Modal oynada ko'rsatish (Yashil mavzuda)
-    const existingModal = document.getElementById('ai-filtered-citizens-modal');
-    if (existingModal) existingModal.remove();
-
-    let html = '<div id="ai-filtered-citizens-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:20000;display:flex;align-items:center;justify-content:center;padding:1rem;animation:fadeIn 0.3s;">';
-    html += '<div style="background:white;border-radius:20px;max-width:500px;width:100%;max-height:85vh;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,0.3);">';
-    
-    // Header (Yashil)
-    html += '<div style="background:linear-gradient(135deg,#10b981,#059669);color:white;padding:1.25rem;display:flex;justify-content:space-between;align-items:center;">';
-    html += '<div>';
-    html += '<h3 style="margin:0;font-size:1.15rem;font-weight:700;">' + domNum + '-dom: O\'tganlar</h3>';
-    html += '<p style="margin:0.25rem 0 0;font-size:0.85rem;opacity:0.9;">' + foundFlats.length + ' ta xonadon mavjud</p>';
-    html += '</div>';
-    html += '<button onclick="document.getElementById(\'ai-filtered-citizens-modal\').remove()" style="background:rgba(255,255,255,0.2);border:none;color:white;width:40px;height:40px;border-radius:50%;font-size:1.3rem;cursor:pointer;">×</button>';
-    html += '</div>';
-    
-    // Grid body
-    html += '<div style="padding:1.5rem;max-height:60vh;overflow-y:auto;">';
-    
-    if (foundFlats.length > 0) {
-        html += '<p style="color:#64748b;font-size:0.9rem;margin-bottom:1rem;text-align:center;">Quyidagi kvartiralar ro\'yxatdan o\'tgan:</p>';
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(60px, 1fr));gap:10px;">';
-        foundFlats.forEach(flatNum => {
-            html += `<div style="
-                background: #f0fdf4; 
-                border: 1px solid #86efac; 
-                color: #15803d; 
-                padding: 10px; 
-                border-radius: 8px; 
-                text-align: center; 
-                font-weight: bold;
-                font-family: 'Fira Code', monospace;
-            ">${flatNum}</div>`;
-        });
-        html += '</div>';
-    } else {
-        html += '<div style="text-align:center;padding:2rem;color:#ef4444;">';
-        html += '<i class="fas fa-times-circle" style="font-size:3rem;margin-bottom:1rem;"></i>';
-        html += '<p style="font-weight:bold;font-size:1.1rem;">Afsuski!</p>';
-        html += '<p>Hali hech qaysi xonadon ro\'yxatdan o\'tmagan.</p>';
-        html += '</div>';
-    }
-    
-    html += '</div></div></div>';
-    document.body.insertAdjacentHTML('beforeend', html);
-};
-
-console.log('✅ O\'zbegim AI filter funksiyalari yuklandi!');
-// ═══════════════════════════════════════════════════════════════
-// XATLOVDAN O'TMAGAN KVARTIRALARNI KO'RSATISH (Qo'shimcha)
-// ═══════════════════════════════════════════════════════════════
-window.aiShowMissingApartments = function(domNum) {
-    if (typeof APARTMENT_BUILDINGS === 'undefined' || !APARTMENT_BUILDINGS[domNum]) {
-        showToast('Bu dom bo\'yicha ma\'lumot yo\'q', 'error');
-        return;
-    }
-
+function _getKvSet(domNum) {
     const config = APARTMENT_BUILDINGS[domNum];
-    const totalFlats = config.total || 0;
+    if (!config) return { reg: new Set(), kvFrom: 1, kvTo: config ? config.total : 1 };
     const num = String(domNum).trim();
-    
-    // Bazadan shu domdagi mavjud kvartiralarni aniqlash
-    const bazaData = (typeof activeCitizenDatabase !== 'undefined' ? activeCitizenDatabase : []);
-    const registeredFlats = new Set();
-
+    const kvFrom = config.kvFrom || 1;
+    const kvTo   = config.kvTo   || config.total;
+    const bazaData = typeof activeCitizenDatabase !== 'undefined' ? activeCitizenDatabase : [];
+    const reg = new Set();
     bazaData.forEach(p => {
-        const street = (p.street || '').toLowerCase();
-        // Domni tekshirish
-        const pattern1 = new RegExp(`(^|\\D)${num}\\s*[-]?\\s*(dom|uy)(\\D|$)`, 'i');
-        const pattern2 = new RegExp(`(^|\\D)(dom|uy)\\s*[-]?\\s*${num}(\\D|$)`, 'i');
-        
-        if (pattern1.test(street) || pattern2.test(street)) {
-            // Kvartira raqamini ajratib olish
-            const kvMatch = street.match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
-            if (kvMatch) {
-                registeredFlats.add(parseInt(kvMatch[1]));
-            }
+        const s = (p.street || '').toLowerCase();
+        const p1 = new RegExp(`(^|\\D)${num}\\s*[-]?\\s*(dom|uy)(\\D|$)`, 'i');
+        const p2 = new RegExp(`(^|\\D)(dom|uy)\\s*[-]?\\s*${num}(\\D|$)`, 'i');
+        if (p1.test(s) || p2.test(s)) {
+            const m = s.match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
+            if (m) { const n = parseInt(m[1]); if (n >= kvFrom && n <= kvTo) reg.add(n); }
         }
     });
+    return { reg, kvFrom, kvTo };
+}
 
-    // Yo'q kvartiralarni ro'yxatini tuzish
-    const missingFlats = [];
-    for (let i = 1; i <= totalFlats; i++) {
-        if (!registeredFlats.has(i)) {
-            missingFlats.push(i);
-        }
-    }
+function _buildKvGrid(domNum, showMissing) {
+    const config = APARTMENT_BUILDINGS[domNum];
+    if (!config) { showToast("Bu dom bo'yicha ma'lumot yo'q", 'error'); return; }
+    const { reg, kvFrom, kvTo } = _getKvSet(domNum);
+    const regCnt  = reg.size;
+    const missCnt = (kvTo - kvFrom + 1) - regCnt;
 
-    // Modal oynada ko'rsatish
     const existingModal = document.getElementById('ai-filtered-citizens-modal');
     if (existingModal) existingModal.remove();
 
-    let html = '<div id="ai-filtered-citizens-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.85);z-index:20000;display:flex;align-items:center;justify-content:center;padding:1rem;animation:fadeIn 0.3s;">';
-    html += '<div style="background:white;border-radius:20px;max-width:500px;width:100%;max-height:85vh;overflow:hidden;box-shadow:0 25px 50px rgba(0,0,0,0.3);">';
-    
-    html += '<div style="background:linear-gradient(135deg,#ef4444,#f97316);color:white;padding:1.25rem;display:flex;justify-content:space-between;align-items:center;">';
-    html += '<div>';
-    html += '<h3 style="margin:0;font-size:1.15rem;font-weight:700;">' + domNum + '-dom: O\'tmaganlar</h3>';
-    html += '<p style="margin:0.25rem 0 0;font-size:0.85rem;opacity:0.9;">' + missingFlats.length + ' ta xonadon topilmadi</p>';
-    html += '</div>';
-    html += '<button onclick="document.getElementById(\'ai-filtered-citizens-modal\').remove()" style="background:rgba(255,255,255,0.2);border:none;color:white;width:40px;height:40px;border-radius:50%;font-size:1.3rem;cursor:pointer;">×</button>';
-    html += '</div>';
-    
-    html += '<div style="padding:1.5rem;max-height:60vh;overflow-y:auto;">';
-    
-    if (missingFlats.length > 0) {
-        html += '<p style="color:#64748b;font-size:0.9rem;margin-bottom:1rem;text-align:center;">Quyidagi kvartiralar ro\'yxatdan o\'tmagan:</p>';
-        html += '<div style="display:grid;grid-template-columns:repeat(auto-fill, minmax(60px, 1fr));gap:10px;">';
-        missingFlats.forEach(flatNum => {
-            html += `<div style="background: #fef2f2; border: 1px solid #fca5a5; color: #dc2626; padding: 10px; border-radius: 8px; text-align: center; font-weight: bold; font-family: 'Fira Code', monospace;">${flatNum}</div>`;
-        });
-        html += '</div>';
-    } else {
-        html += '<div style="text-align:center;padding:2rem;color:#10b981;"><i class="fas fa-check-circle" style="font-size:3rem;margin-bottom:1rem;"></i><p style="font-weight:bold;">Barcha xonadonlar ro\'yxatdan o\'tgan!</p></div>';
+    const hdrBg = showMissing
+        ? 'background:linear-gradient(135deg,#ef4444,#f97316)'
+        : 'background:linear-gradient(135deg,#10b981,#059669)';
+    const title = showMissing
+        ? `❌ ${config.name} — O'tmaganlar`
+        : `✅ ${config.name} — O'tganlar`;
+    const sub = showMissing
+        ? `${missCnt} ta o'tmagan | ${regCnt} ta o'tgan`
+        : `${regCnt} ta o'tgan xonadon (kv ${kvFrom}–${kvTo})`;
+
+    let html = `<div id="ai-filtered-citizens-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.87);z-index:20000;display:flex;align-items:center;justify-content:center;padding:0.75rem;">`;
+    html += `<div style="background:white;border-radius:18px;max-width:560px;width:100%;max-height:90vh;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.4);display:flex;flex-direction:column;">`;
+
+    // Header
+    html += `<div style="${hdrBg};color:white;padding:1rem 1.1rem;display:flex;justify-content:space-between;align-items:center;flex-shrink:0;">`;
+    html += `<div><div style="font-weight:700;font-size:1rem;">${title}</div>`;
+    html += `<div style="font-size:0.78rem;opacity:0.88;margin-top:2px;">${sub}</div></div>`;
+    html += `<button onclick="document.getElementById('ai-filtered-citizens-modal').remove()" style="background:rgba(255,255,255,0.2);border:none;color:white;width:36px;height:36px;border-radius:50%;font-size:1.3rem;cursor:pointer;line-height:1;flex-shrink:0;">×</button>`;
+    html += `</div>`;
+
+    // Legend
+    html += `<div style="padding:0.6rem 1rem;background:#f8fafc;border-bottom:1px solid #e2e8f0;display:flex;gap:14px;font-size:0.77rem;flex-shrink:0;">`;
+    html += `<span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;background:#f0fdf4;border:2px solid #86efac;border-radius:3px;display:inline-block;"></span>O'tgan ✓</span>`;
+    html += `<span style="display:flex;align-items:center;gap:5px;"><span style="width:13px;height:13px;background:#fef2f2;border:2px solid #fca5a5;border-radius:3px;display:inline-block;"></span>O'tmagan</span>`;
+    html += `</div>`;
+
+    // Grid
+    html += `<div style="padding:1rem;overflow-y:auto;flex:1;">`;
+    html += `<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(50px,1fr));gap:6px;">`;
+    for (let i = kvFrom; i <= kvTo; i++) {
+        const isReg = reg.has(i);
+        const cursor = isReg ? 'pointer' : 'default';
+        const bg     = isReg ? '#f0fdf4' : '#fef2f2';
+        const border = isReg ? '#86efac' : '#fca5a5';
+        const color  = isReg ? '#15803d' : '#dc2626';
+        const hover  = isReg ? `onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'"` : '';
+        const click  = isReg ? `onclick="window.aiKvClick('${domNum}',${i})"` : '';
+        html += `<div ${click} ${hover} style="background:${bg};border:2px solid ${border};color:${color};padding:7px 3px;border-radius:7px;text-align:center;font-weight:bold;font-size:0.8rem;cursor:${cursor};transition:transform 0.1s;font-family:'Fira Code',monospace;">`;
+        html += `${i}${isReg ? '<div style="font-size:0.55rem;margin-top:1px;">✓</div>' : ''}`;
+        html += `</div>`;
     }
-    
-    html += '</div></div></div>';
+    html += `</div></div></div></div>`;
     document.body.insertAdjacentHTML('beforeend', html);
+}
+
+window.aiShowRegisteredApartments = domNum => _buildKvGrid(domNum, false);
+window.aiShowMissingApartments    = domNum => _buildKvGrid(domNum, true);
+
+window.aiKvClick = function(domNum, kvNum) {
+    const bazaData = typeof activeCitizenDatabase !== 'undefined' ? activeCitizenDatabase : [];
+    const num = String(domNum).trim();
+    const people = bazaData.filter(p => {
+        const s = (p.street||'').toLowerCase();
+        const p1 = new RegExp(`(^|\\D)${num}\\s*[-]?\\s*(dom|uy)(\\D|$)`,'i');
+        const p2 = new RegExp(`(^|\\D)(dom|uy)\\s*[-]?\\s*${num}(\\D|$)`,'i');
+        if (!p1.test(s) && !p2.test(s)) return false;
+        const m = s.match(/(\d+)\s*[-]?\s*(kv|xonadon|xon)/i);
+        return m && parseInt(m[1]) === kvNum;
+    });
+    if (people.length === 0) { showToast("Bu xonadon bo'yicha fuqaro topilmadi", 'info'); return; }
+    const em = document.getElementById('ai-filtered-citizens-modal');
+    if (em) em.remove();
+    if (typeof displayResults === 'function') displayResults(people);
+    const am = document.getElementById('ai-chat-modal');
+    if (am) am.style.display = 'none';
 };
+
+// ════════════════════════════════════════════════════════════
+// MANZIL QIDIRUVI — TUR TANLASH TUGMALARI
+// ════════════════════════════════════════════════════════════
+function setAddrType(type) {
+    const kBtn = document.getElementById('addr-type-kop');
+    const hBtn = document.getElementById('addr-type-hovli');
+    const kFld = document.getElementById('addr-kop-fields');
+    const hFld = document.getElementById('addr-hovli-fields');
+    if (!kBtn) return;
+    if (type === 'kop') {
+        kBtn.style.cssText += ';background:var(--primary-color);color:white;border-color:var(--primary-color);';
+        hBtn.style.cssText += ';background:transparent;color:var(--text-light);border-color:var(--border-color);';
+        kFld.style.display = 'block';
+        hFld.style.display = 'none';
+    } else {
+        hBtn.style.cssText += ';background:var(--primary-color);color:white;border-color:var(--primary-color);';
+        kBtn.style.cssText += ';background:transparent;color:var(--text-light);border-color:var(--border-color);';
+        kFld.style.display = 'none';
+        hFld.style.display = 'block';
+    }
+}
+
+// ════════════════════════════════════════════════════════════
+// OILA A'ZOSI QO'SHISH — SAQLANGANDAN KEYIN TUGMA
+// ════════════════════════════════════════════════════════════
+(function addFamilyBtnAfterSave() {
+    /* oila popup disabled */
+})();
+
+// ════════════════════════════════════════════════════════════
+// OILA A'ZOSI — IJARA MA'LUMOTLARINI AVTOMATIK NUSXALASH
+// ════════════════════════════════════════════════════════════
+(function watchAddFamilyViewForIjara() {
+    const observer = new MutationObserver(() => {
+        const fv = document.getElementById('add-family-view');
+        if (!fv || !fv.classList.contains('active') || fv.dataset._ijaraFilled === '1') return;
+        if (!currentMainPersonUniqueId) return;
+        const mainP = citizenDatabase.find(p => String(p.unique_id||'').trim() === String(currentMainPersonUniqueId||'').trim());
+        if (!mainP || mainP.registrationType !== 'Ijara') return;
+        const form = DOM.addFamilyForm;
+        if (!form) return;
+
+        // ro'yxat turi selectini topib 'Ijara' qiyat berish
+        const rtSel = form.querySelector('select[name="registrationType"], select[name="reg_type"]');
+        if (rtSel) { rtSel.value = 'Ijara'; rtSel.dispatchEvent(new Event('change', { bubbles: true })); }
+
+        // Ijara maydonlarini nusxalash
+        ['ijara_muddati','ijara_boshlanish','uy_egasi_fio','uy_egasi_telefon','uy_egasi_dob'].forEach(f => {
+            const inp = form.querySelector(`[name="${f}"]`);
+            if (inp && mainP[f]) inp.value = f.includes('san') || f.includes('dob') || f === 'ijara_boshlanish' ? formatDate(mainP[f]) : mainP[f];
+        });
+        fv.dataset._ijaraFilled = '1';
+    });
+    observer.observe(document.body, { attributes: true, subtree: true, attributeFilter: ['class'] });
+})();
+// ════════════════════════════════════════════════════════════
+// HAVAS BLOK TANLASH
+// ════════════════════════════════════════════════════════════
+function selectHavasBlok(blok, kvRange) {
+    const domInput = document.querySelector('[name="dom_raqami"]');
+    if (domInput) { domInput.value = blok; }
+    // Button highlight
+    document.querySelectorAll('.havas-blok-btn').forEach(b => b.classList.remove('selected'));
+    const btn = document.getElementById('hblk-' + blok);
+    if (btn) btn.classList.add('selected');
+}
+
+// Havas ko'cha tanlanganda blok selectorini ko'rsatish
+document.addEventListener('change', function(e) {
+    if (e.target && e.target.matches('select[name="kop_qavatli_kochasi"]')) {
+        const sel = document.getElementById('havas-blok-selector');
+        if (!sel) return;
+        if (e.target.value === 'Havas') {
+            sel.style.display = 'block';
+        } else {
+            sel.style.display = 'none';
+            document.querySelectorAll('.havas-blok-btn').forEach(b => b.classList.remove('selected'));
+        }
+    }
+});
+
+// Dom input manual kirish - havas ni hide qilish
+document.addEventListener('input', function(e) {
+    if (e.target && e.target.matches('[name="dom_raqami"]')) {
+        const street = document.querySelector('select[name="kop_qavatli_kochasi"]')?.value;
+        if (street === 'Havas') {
+            const val = e.target.value.toLowerCase();
+            document.querySelectorAll('.havas-blok-btn').forEach(b => b.classList.remove('selected'));
+            const btn = document.getElementById('hblk-' + val);
+            if (btn) btn.classList.add('selected');
+        }
+    }
+});
+
+// ════════════════════════════════════════════════════════════
+// OILA A'ZOSI QO'SHISH TUGMASI — SAQLANGANDAN KEYIN
+// ════════════════════════════════════════════════════════════
+/* patchFinalSubmitForFamilyFloatBtn removed */
+
+// ════════════════════════════════════════════════════════════
+// MANZIL QIDIRUVI TUR TUGMALARI
+// ════════════════════════════════════════════════════════════
+function setAddrType(type) {
+    const kBtn = document.getElementById('addr-type-kop');
+    const hBtn = document.getElementById('addr-type-hovli');
+    const kFld = document.getElementById('addr-kop-fields');
+    const hFld = document.getElementById('addr-hovli-fields');
+    if (!kBtn) return;
+    if (type === 'kop') {
+        kBtn.style.background = 'var(--primary-color)'; kBtn.style.color = 'white'; kBtn.style.borderColor = 'var(--primary-color)';
+        hBtn.style.background = 'transparent'; hBtn.style.color = 'var(--text-light)'; hBtn.style.borderColor = 'var(--border-color)';
+        if (kFld) kFld.style.display = 'block';
+        if (hFld) hFld.style.display = 'none';
+    } else {
+        hBtn.style.background = 'var(--primary-color)'; hBtn.style.color = 'white'; hBtn.style.borderColor = 'var(--primary-color)';
+        kBtn.style.background = 'transparent'; kBtn.style.color = 'var(--text-light)'; kBtn.style.borderColor = 'var(--border-color)';
+        if (kFld) kFld.style.display = 'none';
+        if (hFld) hFld.style.display = 'block';
+    }
+}
+
 </script>
 
 </body>
