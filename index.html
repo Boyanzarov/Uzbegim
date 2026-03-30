@@ -17,6 +17,8 @@
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏘️</text></svg>">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700;800;900&family=Space+Mono:wght@400;700&family=Bebas+Neue&display=swap" rel="stylesheet">
   <!-- Chart.js -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api@1.7.12/dist/face-api.min.js"></script>
@@ -277,21 +279,13 @@
     #full-list-modal .summary-stat-card { background: rgba(0, 255, 255, 0.07); border-color: rgba(0, 255, 255, 0.1); }
     #full-list-modal .summary-stat-card .number { color: #e0e0e0; }
     #full-list-modal .summary-stat-card .label { color: #a0a0a0; }
-    #login-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 10000; display: flex; justify-content: center; align-items: flex-start; padding-top: 2vh; color: #fff; background: linear-gradient(135deg, #020617 0%, #0c1929 50%, #082f49 100%); transition: opacity .5s ease; overflow-y: auto; overflow-x: hidden; }
-    /* Animated particles background */
-    #login-map-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(ellipse at 20% 80%, rgba(0,119,182,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 20%, rgba(16,185,129,0.12) 0%, transparent 50%); z-index: 0; }
-    /* Mesh Gradient - soddalashtirilgan */
-    .mesh-gradient { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(45deg, rgba(0, 119, 182, 0.2) 0%, transparent 40%), linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, transparent 40%); z-index: 1; }
+    #login-screen { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: 10000; display: flex; justify-content: center; align-items: flex-start; padding-top: 2vh; color: #fff; transition: opacity .5s ease; overflow-y: auto; overflow-x: hidden; }
+    /* Mesh Gradient - eski */
+    .mesh-gradient { display: none; }
     #login-screen::before { display: none; }
-    /* Floating orbs - soddalashtirilgan */
-    .login-orb { position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.4; z-index: 1; }
-    .login-orb-1 { width: 350px; height: 350px; background: rgba(29,189,232,0.25); top: -10%; left: -5%; }
-    .login-orb-2 { width: 280px; height: 280px; background: rgba(45,187,60,0.2); bottom: -8%; right: -8%; }
-    .login-orb-3 { width: 200px; height: 200px; background: rgba(255,255,255,0.1); top: 30%; right: 5%; display: block; }
-    /* Login Box - mobil uchun optimallashtirilgan */
-    .login-box { position: relative; width: 94%; max-width: 500px; background: rgba(2, 6, 23, 0.9); border: 1px solid rgba(0,119,182,0.3); border-radius: 24px; padding: 1.5rem 1.25rem; text-align: center; z-index: 10; margin: 0 auto 100px; }
-    .login-box::before, .login-box::after { display: none; }
-    .login-box-glass { display: none; }
+    #login-screen::after { display: none; }
+    /* Login Box - mobil uchun */
+    .login-box { position: relative; width: 94%; max-width: 500px; border-radius: 28px; padding: 1.5rem 1.25rem; text-align: center; z-index: 10; margin: 0 auto 100px; }
     /* Greeting */
     .greeting-animated { font-size: 0.9rem; color: rgba(255,255,255,0.95); margin-bottom: 1.25rem; padding: 0.6rem 1rem; background: linear-gradient(135deg, rgba(0,119,182,0.25), rgba(16,185,129,0.15)); border-radius: 50px; display: inline-flex; align-items: center; gap: 0.4rem; border: 1px solid rgba(0,119,182,0.25); }
     .login-box h2 { font-size: 1.8rem; margin-bottom: 0.4rem; color: #fff; display: flex; align-items: center; justify-content: center; gap: 0.6rem; font-family: 'Montserrat', sans-serif; font-weight: 800; }
@@ -302,9 +296,7 @@
     .about-platform-btn i { animation: none; }
     #role-selection-view, #password-view { animation: none; }
     #role-selection-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; }
-    .role-btn { background: rgba(0, 119, 182, 0.1); border: 1px solid rgba(0, 119, 182, 0.25); color: #fff; padding: 0.9rem 0.6rem; font-size: 0.82rem; font-weight: 600; border-radius: 12px; cursor: pointer; transition: all .15s ease; }
     .role-btn::before { display: none; }
-    .role-btn:hover, .role-btn:active { background: rgba(0, 119, 182, 0.2); border-color: #38bdf8; }
     #password-view { text-align: left; animation: fadeInUp 0.3s ease; }
     #password-view #selected-role-display { 
         background: linear-gradient(135deg, rgba(14,165,201,0.25), rgba(22,163,74,0.15)); 
@@ -315,26 +307,19 @@
         box-shadow: 0 4px 16px rgba(14,165,201,0.15);
     }
     #password-view label { color: rgba(255, 255, 255, 0.75); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.03em; }
-    #login-password-input { background: rgba(0,0,0,0.4); border: 2px solid rgba(0, 119, 182, 0.3); color: #fff; text-align: center; font-size: 1.6rem; letter-spacing: .5em; padding: 0.9rem; border-radius: 12px; }
-    #login-password-input:focus { border-color: #38bdf8; box-shadow: 0 0 0 3px rgba(0, 119, 182, 0.2); }
-    #login-submit-btn { background: linear-gradient(135deg, #0077b6, #00b4d8); border: none; font-size: 1rem; padding: 0.9rem; border-radius: 12px; font-weight: 700; }
-    /* Face ID Button */
     #face-id-login-btn { transition: all 0.15s ease; }
-    /* Footer */
     .login-footer-info { position: fixed; bottom: 10px; left: 10px; right: 10px; display: flex; justify-content: space-between; align-items: flex-end; font-size: 0.75rem; color: rgba(255, 255, 255, 0.5); z-index: 11; }
     #clock-display .time { font-size: 1.2rem; font-weight: 700; color: rgba(255, 255, 255, 0.9); background: linear-gradient(135deg, #38bdf8, #10b981); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     #clock-display .date { color: rgba(255, 255, 255, 0.5); margin-top: 2px; font-size: 0.7rem; }
     #system-status { display: flex; align-items: center; gap: 0.4rem; padding: 0.4rem 0.8rem; background: rgba(0,0,0,0.3); border-radius: 20px; border: 1px solid rgba(255,255,255,0.1); font-size: 0.7rem; }
     #system-status.online { color: #10b981; border-color: rgba(16, 185, 129, 0.3); }
     #quote-of-the-day { display: none; }
-    /* Face ID View */
     #face-id-view { padding: 1rem !important; }
     #faceid-camera-container { width: 220px !important; height: 220px !important; margin: 1rem auto !important; }
     #faceid-video { width: 200px !important; height: 200px !important; }
     #faceid-status { font-size: 0.85rem !important; margin: 0.75rem 0 !important; }
     #faceid-capture-btn { padding: 0.7rem 1.5rem !important; font-size: 0.9rem !important; }
     #faceid-register-section { margin-top: 1rem !important; padding-top: 1rem !important; }
-    /* Desktop uchun */
     @media (min-width: 768px) {
         #login-screen { align-items: center; padding-top: 0; }
         .login-box { padding: 2rem; max-width: 540px; margin-bottom: 0; }
@@ -1250,228 +1235,255 @@ input:focus, select:focus, textarea:focus {
 /* ═══════════════════════════════════════════════════════════
    ZAMONAVIY LOGIN SAHIFASI — GLASSMORPHISM + UZ BAYROG'I
    ═══════════════════════════════════════════════════════════ */
+/* ══════════════════════════════════════
+   ZAMONAVIY LOGIN DIZAYN — KREATIV
+══════════════════════════════════════ */
 #login-screen {
-    background: 
-        linear-gradient(180deg, 
-            #0ea5c9 0%, #0ea5c9 29%,
-            rgba(255,255,255,0.95) 29%, rgba(255,255,255,0.95) 32%,
-            #16a34a 32%, #16a34a 100%
-        ) !important;
+    background: linear-gradient(135deg,
+        #020c18 0%,
+        #041428 30%,
+        #071e38 60%,
+        #030f1f 100%
+    ) !important;
     position: relative;
     overflow: hidden;
 }
 
-/* Animatsiya keyframes */
-@keyframes loginGlow { 0%,100%{box-shadow:0 0 30px rgba(14,165,201,0.25),0 0 60px rgba(22,163,74,0.1),0 30px 80px rgba(0,0,0,0.35)} 50%{box-shadow:0 0 45px rgba(14,165,201,0.4),0 0 80px rgba(22,163,74,0.2),0 30px 80px rgba(0,0,0,0.35)} }
-@keyframes loginFloat { 0%,100%{transform:translateY(0) rotate(-2deg)} 50%{transform:translateY(-5px) rotate(2deg)} }
-@keyframes loginBadgePulse { 0%,100%{transform:scale(1);box-shadow:0 0 0 0 rgba(251,191,36,0.4)} 50%{transform:scale(1.04);box-shadow:0 0 0 6px rgba(251,191,36,0)} }
-@keyframes loginShimmer { 0%{transform:translateX(-100%) skewX(-15deg)} 100%{transform:translateX(300%) skewX(-15deg)} }
-@keyframes loginOrb1 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(30px,-20px) scale(1.1)} 66%{transform:translate(-20px,15px) scale(0.9)} }
-@keyframes loginOrb2 { 0%,100%{transform:translate(0,0) scale(1)} 33%{transform:translate(-25px,20px) scale(0.95)} 66%{transform:translate(15px,-25px) scale(1.05)} }
-@keyframes loginStarTwinkle { 0%,100%{opacity:0.6;transform:scale(1)} 50%{opacity:1;transform:scale(1.3)} }
-@keyframes fadeInUp { from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)} }
-@keyframes gradBg { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-
-/* Login background animated orbs */
-#login-screen::before {
-    content: '';
-    position: fixed; top: -10%; left: -10%; width: 50%; height: 50%;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(56,189,248,0.18) 0%, transparent 70%);
-    animation: loginOrb1 8s ease-in-out infinite;
-    z-index: 1; pointer-events: none;
+/* Animated mesh */
+#login-screen .login-mesh {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background:
+        radial-gradient(ellipse 80% 50% at 20% 10%, rgba(14,165,201,0.18) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 80%, rgba(22,163,74,0.14) 0%, transparent 55%),
+        radial-gradient(ellipse 50% 60% at 50% 50%, rgba(56,189,248,0.06) 0%, transparent 70%);
+    animation: meshPulse 8s ease-in-out infinite;
 }
-#login-screen::after {
-    content: '☽  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦  ✦';
-    position: fixed; top: 6%; left: 3%;
-    font-size: 1.3rem; color: rgba(255,255,255,0.82);
-    letter-spacing: 3px; z-index: 2; pointer-events: none;
-    text-shadow: 0 0 15px rgba(255,255,255,0.6);
-    width: 95%; word-spacing: 5px;
-    animation: loginStarTwinkle 3s ease-in-out infinite;
+@keyframes meshPulse {
+    0%,100% { opacity: 1; }
+    50% { opacity: 0.7; }
 }
 
-/* Login box — ultra modern glass */
+/* Grid lines */
+#login-screen .login-grid {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+    background-image:
+        linear-gradient(rgba(14,165,201,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,165,201,0.04) 1px, transparent 1px);
+    background-size: 50px 50px;
+    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
+}
+
+/* Floating particles */
+#login-screen .login-particle {
+    position: fixed; border-radius: 50%; pointer-events: none; z-index: 1;
+    background: radial-gradient(circle, rgba(56,189,248,0.7) 0%, transparent 70%);
+}
+#login-screen .login-particle:nth-child(1) { width:3px;height:3px;top:15%;left:12%;animation:floatP1 7s ease-in-out infinite; }
+#login-screen .login-particle:nth-child(2) { width:5px;height:5px;top:25%;left:85%;animation:floatP2 9s ease-in-out infinite; background:radial-gradient(circle,rgba(74,222,128,0.7) 0%,transparent 70%); }
+#login-screen .login-particle:nth-child(3) { width:4px;height:4px;top:70%;left:8%;animation:floatP3 11s ease-in-out infinite; }
+#login-screen .login-particle:nth-child(4) { width:6px;height:6px;top:80%;left:75%;animation:floatP4 8s ease-in-out infinite; background:radial-gradient(circle,rgba(251,191,36,0.5) 0%,transparent 70%); }
+#login-screen .login-particle:nth-child(5) { width:3px;height:3px;top:45%;left:92%;animation:floatP5 10s ease-in-out infinite; }
+@keyframes floatP1{0%,100%{transform:translate(0,0);opacity:0.6}33%{transform:translate(8px,-15px);opacity:1}66%{transform:translate(-5px,8px);opacity:0.4}}
+@keyframes floatP2{0%,100%{transform:translate(0,0);opacity:0.4}50%{transform:translate(-12px,10px);opacity:0.9}}
+@keyframes floatP3{0%,100%{transform:translate(0,0) scale(1);opacity:0.5}40%{transform:translate(10px,-12px) scale(1.4);opacity:1}70%{transform:translate(-3px,6px) scale(0.8);opacity:0.3}}
+@keyframes floatP4{0%,100%{transform:translate(0,0);opacity:0.3}50%{transform:translate(-8px,-18px);opacity:0.8}}
+@keyframes floatP5{0%,100%{transform:translate(0,0);opacity:0.5}60%{transform:translate(-10px,8px);opacity:1}}
+
+/* O'zbek bayrog'i stripes */
+.login-flag-stripe { position: fixed; left:0; right:0; height:3px; z-index:3; pointer-events:none; }
+
+/* ORBs */
+.login-orb { position:fixed; border-radius:50%; filter:blur(70px); opacity:0.35; z-index:1; pointer-events:none; }
+.login-orb-1 { width:400px;height:400px;background:rgba(14,165,201,0.3);top:-15%;left:-8%;animation:orbFloat1 12s ease-in-out infinite; }
+.login-orb-2 { width:350px;height:350px;background:rgba(22,163,74,0.25);bottom:-10%;right:-8%;animation:orbFloat2 15s ease-in-out infinite; }
+.login-orb-3 { width:250px;height:250px;background:rgba(139,92,246,0.15);top:40%;right:-5%;animation:orbFloat3 10s ease-in-out infinite; }
+@keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.1)}66%{transform:translate(-20px,20px) scale(0.95)}}
+@keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,-20px) scale(1.05)}}
+@keyframes orbFloat3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(-15px,25px) scale(1.12)}70%{transform:translate(10px,-10px) scale(0.9)}}
+@keyframes loginMapBg{}
+#login-map-bg { display:none !important; }
+
+/* Kirish — yangi kreativ */
 .login-box {
     position: relative; z-index: 10;
-    background: linear-gradient(145deg, rgba(5,20,40,0.88) 0%, rgba(2,30,20,0.82) 100%) !important;
-    backdrop-filter: blur(40px) saturate(180%) brightness(1.1) !important;
-    -webkit-backdrop-filter: blur(40px) saturate(180%) !important;
-    border: 1px solid rgba(255,255,255,0.18) !important;
+    background: linear-gradient(145deg,
+        rgba(4,20,45,0.92) 0%,
+        rgba(6,28,38,0.88) 100%
+    ) !important;
+    backdrop-filter: blur(40px) saturate(200%) !important;
+    -webkit-backdrop-filter: blur(40px) saturate(200%) !important;
+    border: 1px solid rgba(56,189,248,0.2) !important;
     border-radius: 28px !important;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,255,255,0.05), inset 0 1px 0 rgba(255,255,255,0.12) !important;
-    animation: loginGlow 4s ease-in-out infinite;
+    box-shadow:
+        0 0 0 1px rgba(56,189,248,0.08),
+        0 4px 24px rgba(0,0,0,0.4),
+        0 24px 80px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.08),
+        inset 0 -1px 0 rgba(0,0,0,0.2) !important;
+    animation: loginBoxGlow 5s ease-in-out infinite;
     overflow: hidden;
 }
 .login-box::before {
     content: '';
-    position: absolute; top: 0; left: -50%; width: 200%; height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(14,165,201,0.8), rgba(22,163,74,0.6), transparent);
-    border-radius: 2px;
+    position: absolute; top: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%, rgba(14,165,201,0.9) 30%,
+        rgba(56,189,248,1) 50%,
+        rgba(22,163,74,0.8) 70%, transparent 100%
+    );
+    border-radius: 2px; z-index: 1;
+}
+.login-box::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%, rgba(14,165,201,0.3) 50%, transparent 100%
+    );
+}
+@keyframes loginBoxGlow {
+    0%,100% { box-shadow: 0 0 0 1px rgba(56,189,248,0.08), 0 4px 24px rgba(0,0,0,0.4), 0 24px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08); }
+    50% { box-shadow: 0 0 0 1px rgba(56,189,248,0.2), 0 4px 24px rgba(0,0,0,0.4), 0 24px 80px rgba(0,0,0,0.6), 0 0 60px rgba(14,165,201,0.12), inset 0 1px 0 rgba(255,255,255,0.1); }
 }
 
-/* Login flag floating */
-.login-flag-img {
-    animation: loginFloat 4s ease-in-out infinite;
-    filter: drop-shadow(0 8px 20px rgba(0,0,0,0.4));
+/* Top shine shimmer */
+.login-box-glass {
+    display: block !important;
+    position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
+    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.04) 50%, transparent);
+    transform: skewX(-15deg); pointer-events: none;
+    animation: boxShimmer 6s ease-in-out infinite;
+    z-index: 0;
+}
+@keyframes boxShimmer {
+    0% { left: -100%; }
+    40%,100% { left: 150%; }
 }
 
-/* Platform about button */
+/* Kirish sarlavhasi */
+.login-title {
+    background: linear-gradient(135deg, #38e8ff 0%, #ffffff 45%, #4ade80 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+
+/* Greeting */
+.greeting-animated {
+    background: linear-gradient(135deg, rgba(14,165,201,0.2), rgba(22,163,74,0.15)) !important;
+    border: 1px solid rgba(56,189,248,0.25) !important;
+    border-radius: 50px !important;
+    padding: 0.5rem 1.2rem !important;
+    font-size: 0.88rem !important;
+    animation: greetPop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+@keyframes greetPop { from{opacity:0;transform:scale(0.85) translateY(-10px)} to{opacity:1;transform:scale(1) translateY(0)} }
+
+/* About platform btn */
 .about-platform-btn {
-    background: linear-gradient(135deg, rgba(251,191,36,0.18), rgba(245,158,11,0.08)) !important;
-    border: 1.5px solid rgba(251,191,36,0.55) !important;
-    color: #fbbf24 !important;
-    animation: loginBadgePulse 2.8s ease-in-out infinite;
+    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.08)) !important;
+    border: 1.5px solid rgba(251,191,36,0.4) !important;
+    color: #fcd34d !important;
+    border-radius: 50px !important;
     font-weight: 700 !important;
-    letter-spacing: 0.03em;
-    backdrop-filter: blur(8px);
+    letter-spacing: 0.02em;
+    backdrop-filter: blur(8px) !important;
+    animation: badgePulse 3s ease-in-out infinite;
+}
+@keyframes badgePulse {
+    0%,100% { box-shadow: 0 0 0 0 rgba(251,191,36,0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(251,191,36,0); }
 }
 
-/* Role buttons — modern card style */
+/* Role tugmalari */
 .role-btn {
-    position: relative;
-    overflow: hidden;
-    background: rgba(255,255,255,0.1) !important;
-    border: 1px solid rgba(255,255,255,0.18) !important;
+    position: relative; overflow: hidden;
+    background: rgba(255,255,255,0.06) !important;
+    border: 1px solid rgba(56,189,248,0.18) !important;
     border-radius: 16px !important;
     backdrop-filter: blur(10px) !important;
-    transition: all 0.2s cubic-bezier(0.4,0,0.2,1) !important;
+    transition: all 0.18s cubic-bezier(0.4,0,0.2,1) !important;
     font-weight: 700 !important;
-    font-size: 0.85rem !important;
-    letter-spacing: 0.01em;
-    color: rgba(255,255,255,0.95) !important;
+    color: rgba(255,255,255,0.9) !important;
 }
-.role-btn::before {
+.role-btn::after {
     content: '';
-    position: absolute; top: -50%; left: -60%;
-    width: 45%; height: 200%;
-    background: linear-gradient(105deg, transparent 20%, rgba(255,255,255,0.18) 50%, transparent 80%);
-    transform: skewX(-15deg);
-    animation: loginShimmer 4s infinite;
-    animation-delay: var(--sd, 0s);
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(74,222,128,0.1));
+    opacity: 0; border-radius: inherit;
+    transition: opacity 0.18s ease;
 }
-.role-btn:nth-child(1){--sd:0s}.role-btn:nth-child(2){--sd:.35s}.role-btn:nth-child(3){--sd:.7s}.role-btn:nth-child(4){--sd:1.05s}.role-btn:nth-child(5){--sd:1.4s}.role-btn:nth-child(6){--sd:1.75s}.role-btn:nth-child(7){--sd:2.1s}.role-btn:nth-child(8){--sd:2.45s}.role-btn:nth-child(9){--sd:2.8s}.role-btn:nth-child(10){--sd:3.15s}
 .role-btn:hover {
-    background: rgba(14,165,201,0.28) !important;
-    border-color: rgba(56,189,248,0.6) !important;
-    transform: translateY(-3px) scale(1.02) !important;
-    box-shadow: 0 8px 24px rgba(14,165,201,0.3) !important;
+    background: rgba(14,165,201,0.18) !important;
+    border-color: rgba(56,189,248,0.55) !important;
+    transform: translateY(-4px) scale(1.03) !important;
+    box-shadow: 0 8px 30px rgba(14,165,201,0.3), 0 0 0 1px rgba(56,189,248,0.3) !important;
 }
-.role-btn:active {
-    transform: scale(0.96) !important;
-}
+.role-btn:hover::after { opacity: 1; }
+.role-btn:active { transform: scale(0.96) !important; }
 .role-btn.selected {
-    background: linear-gradient(135deg, rgba(14,165,201,0.45), rgba(22,163,74,0.35)) !important;
-    border-color: rgba(56,189,248,0.8) !important;
-    box-shadow: 0 0 0 3px rgba(14,165,201,0.25), 0 8px 24px rgba(14,165,201,0.3) !important;
+    background: linear-gradient(135deg, rgba(14,165,201,0.35), rgba(22,163,74,0.25)) !important;
+    border-color: rgba(56,189,248,0.7) !important;
+    box-shadow: 0 0 0 3px rgba(14,165,201,0.2), 0 8px 28px rgba(14,165,201,0.25) !important;
 }
 
-/* Uzbekistan flag overlay - crescent moon and stars decorative */
-#login-screen::before {
-    content: '';
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background:
-        /* Top blue strip layer with transparency */
-        linear-gradient(180deg,
-            rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.45) 29%,
-            rgba(0,0,0,0.15) 29%, rgba(0,0,0,0.15) 35%,
-            rgba(0,0,0,0.5) 35%, rgba(0,0,0,0.5) 100%
-        ) !important;
-    z-index: 1 !important;
-    pointer-events: none;
-}
-
-/* Flag decorative crescent + stars on left */
-#login-screen::after {
-    content: '☽ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦ ✦';
-    position: fixed;
-    top: 8%;
-    left: 3%;
-    font-size: 1.4rem;
-    color: rgba(255,255,255,0.85);
-    letter-spacing: 4px;
-    z-index: 2;
-    pointer-events: none;
-    text-shadow: 0 0 20px rgba(255,255,255,0.5);
-    display: block;
-    width: 90%;
-    word-spacing: 8px;
-}
-
-#login-map-bg {
-    background: 
-        radial-gradient(ellipse at 15% 85%, rgba(29,189,232,0.1) 0%, transparent 45%),
-        radial-gradient(ellipse at 85% 15%, rgba(45,187,60,0.1) 0%, transparent 45%) !important;
-    z-index: 2 !important;
-}
-
-/* Uzbekistan flag stripe separator lines */
-.login-flag-stripe {
-    position: fixed;
-    left: 0;
-    right: 0;
-    height: 4px;
-    z-index: 3;
-    pointer-events: none;
-}
-
+/* Parol input */
 #login-password-input {
-    background: rgba(255,255,255,0.15) !important;
-    border: 2px solid rgba(255,255,255,0.4) !important;
+    background: rgba(255,255,255,0.07) !important;
+    border: 1.5px solid rgba(56,189,248,0.3) !important;
     border-radius: 16px !important;
     backdrop-filter: blur(10px) !important;
     color: white !important;
     letter-spacing: 0.5em;
+    font-size: 1.6rem !important;
+    text-align: center !important;
+    transition: all 0.2s ease !important;
 }
+#login-password-input:focus {
+    border-color: rgba(56,189,248,0.8) !important;
+    background: rgba(255,255,255,0.1) !important;
+    box-shadow: 0 0 0 4px rgba(14,165,201,0.15), 0 0 20px rgba(56,189,248,0.2) !important;
+}
+
+/* Kirish tugmasi */
 #login-submit-btn {
-    background: linear-gradient(135deg, #2DBB3C, #1DBDE8) !important;
+    background: linear-gradient(135deg, #0ea5c9 0%, #22c55e 100%) !important;
+    border: none !important;
     border-radius: 16px !important;
-    box-shadow: 0 8px 25px rgba(29,189,232,0.5) !important;
-    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+    box-shadow: 0 8px 30px rgba(14,165,201,0.4), 0 0 0 1px rgba(255,255,255,0.1) !important;
     font-weight: 800 !important;
-}
-#login-submit-btn:hover { transform: translateY(-3px) !important; box-shadow: 0 12px 30px rgba(29,189,232,0.6) !important; }
-
-/* Login box - glass on top of flag */
-.login-box {
-    position: relative;
-    z-index: 10;
-    background: rgba(0,0,0,0.55) !important;
-    backdrop-filter: blur(25px) saturate(160%) !important;
-    -webkit-backdrop-filter: blur(25px) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 28px !important;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5) !important;
-}
-
-/* Login card glass */
-.login-container > div, #login-box {
-    background: rgba(0,0,0,0.55) !important;
-    backdrop-filter: blur(25px) saturate(160%) !important;
-    border: 1px solid rgba(255,255,255,0.2) !important;
-    border-radius: 28px !important;
-    box-shadow: 0 32px 80px rgba(0,0,0,0.5) !important;
-}
-
-/* Login role buttons */
-.role-btn {
-    background: rgba(255,255,255,0.12) !important;
-    border: 1.5px solid rgba(255,255,255,0.22) !important;
-    border-radius: 16px !important;
-    backdrop-filter: blur(8px) !important;
+    font-size: 1rem !important;
+    letter-spacing: 0.03em;
     transition: all 0.18s ease !important;
+    position: relative; overflow: hidden;
+}
+#login-submit-btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+    border-radius: inherit;
+}
+#login-submit-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 14px 40px rgba(14,165,201,0.55), 0 0 0 1px rgba(255,255,255,0.15) !important;
+}
+#login-submit-btn:active { transform: scale(0.98) !important; }
+
+/* Face ID */
+#face-id-login-btn {
+    background: linear-gradient(135deg, #7c3aed, #a78bfa) !important;
+    border-radius: 16px !important;
     font-weight: 700 !important;
 }
-.role-btn:hover {
-    background: rgba(29,189,232,0.3) !important;
-    border-color: rgba(29,189,232,0.7) !important;
-    transform: translateY(-3px) !important;
-    box-shadow: 0 10px 28px rgba(29,189,232,0.35) !important;
+
+/* Footer clock */
+.login-footer-info {
+    backdrop-filter: blur(10px);
+    background: rgba(0,0,0,0.3);
+    border-radius: 16px;
+    padding: 0.5rem 1rem;
 }
-.role-btn.selected {
-    background: linear-gradient(135deg, rgba(29,189,232,0.45), rgba(45,187,60,0.35)) !important;
-    border-color: rgba(29,189,232,0.8) !important;
+
+/* OLD DUPLICATE BLOCKS REMOVED — new styles above */
 
 /* === FAB BUTTONS === */
 .fab { border-radius: 18px !important; transition: transform 0.15s ease, box-shadow 0.15s ease !important; }
@@ -1550,23 +1562,24 @@ input:focus, select:focus, textarea:focus {
 <body>
   <!-- YANGI KIRISH OYNASI -->
   <div id="login-screen">
-      <!-- O'zbekiston bayrogi striptlari -->
-      <div class="login-flag-stripe" style="top:29%;background:rgba(255,255,255,0.9);"></div>
-      <div class="login-flag-stripe" style="top:calc(29% + 4px);background:rgba(255,255,255,0.9);"></div>
+      <!-- Background layers -->
+      <div class="login-mesh"></div>
+      <div class="login-grid"></div>
+      <!-- Particles -->
+      <div class="login-particle"></div>
+      <div class="login-particle"></div>
+      <div class="login-particle"></div>
+      <div class="login-particle"></div>
+      <div class="login-particle"></div>
       <!-- Floating orbs -->
       <div class="login-orb login-orb-1"></div>
       <div class="login-orb login-orb-2"></div>
       <div class="login-orb login-orb-3"></div>
-      <!-- Animated background -->
-      <div id="login-map-bg"></div>
-      <!-- Mesh gradient animatsiya -->
-      <div class="mesh-gradient"></div>
-      <!-- Qor animatsiyasi -->
+      <!-- O'zbekiston bayrog'i stripes -->
+      <div class="login-flag-stripe" style="top:29%;background:rgba(255,255,255,0.9);"></div>
+      <div class="login-flag-stripe" style="top:calc(29% + 4px);background:rgba(255,255,255,0.9);"></div>
+      <!-- Snowfall -->
       <div id="snowfall-container" style="display:none"></div>
-      <!-- Spring decorations (static, no animation) -->
-      <div style="position:fixed;bottom:8%;left:4%;font-size:2.5rem;opacity:0.1;pointer-events:none;transform:rotate(-15deg);">🌿</div>
-      <div style="position:fixed;top:12%;right:5%;font-size:2rem;opacity:0.08;pointer-events:none;transform:rotate(20deg);">🌸</div>
-      <div style="position:fixed;top:45%;left:2%;font-size:1.5rem;opacity:0.07;pointer-events:none;">🌺</div>
       
       <div class="login-box">
           <div class="login-box-glass"></div>
@@ -3454,6 +3467,1124 @@ input:focus, select:focus, textarea:focus {
     #v2-bottom-nav { padding-bottom: calc(0.6rem + env(safe-area-inset-bottom)); }
     .app-shell { padding-bottom: calc(90px + env(safe-area-inset-bottom)) !important; }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   ██████╗ ██████╗ ███████╗███╗   ███╗██╗██╗   ██╗███╗   ███╗
+   ██╔══██╗██╔══██╗██╔════╝████╗ ████║██║██║   ██║████╗ ████║
+   ██████╔╝██████╔╝█████╗  ██╔████╔██║██║██║   ██║██╔████╔██║
+   ██╔═══╝ ██╔══██╗██╔══╝  ██║╚██╔╝██║██║██║   ██║██║╚██╔╝██║
+   ██║     ██║  ██║███████╗██║ ╚═╝ ██║██║╚██████╔╝██║ ╚═╝ ██║
+   GLOBAL REDESIGN — O'ZBEGIM MFY EXECUTIVE EDITION
+═══════════════════════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+/* ═══ YANGI DESIGN TIZIMI — OQ FON ═══ */
+:root {
+    /* Core palette — LIGHT WHITE THEME */
+    --x-bg:           #F0F4FF;
+    --x-surface:      #FFFFFF;
+    --x-surface-2:    #F5F8FF;
+    --x-surface-3:    #EBF0FA;
+    --x-border:       rgba(0,119,182,0.15);
+    --x-border-hover: rgba(0,119,182,0.4);
+
+    /* Brand colors */
+    --x-blue:         #0077B6;
+    --x-blue-dim:     rgba(0,119,182,0.10);
+    --x-blue-glow:    rgba(0,119,182,0.20);
+    --x-gold:         #D97706;
+    --x-gold-dim:     rgba(217,119,6,0.12);
+    --x-gold-glow:    rgba(217,119,6,0.25);
+    --x-green:        #059669;
+    --x-green-dim:    rgba(5,150,105,0.12);
+    --x-red:          #DC2626;
+    --x-red-dim:      rgba(220,38,38,0.10);
+    --x-purple:       #7C3AED;
+
+    /* Text — DARK ON WHITE */
+    --x-text:         #0A1628;
+    --x-text-2:       #374151;
+    --x-text-3:       #6B7280;
+
+    /* Shadows */
+    --x-shadow-sm:    0 2px 12px rgba(0,119,182,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    --x-shadow-md:    0 8px 32px rgba(0,119,182,0.12), 0 4px 12px rgba(0,0,0,0.06);
+    --x-shadow-lg:    0 20px 60px rgba(0,119,182,0.16), 0 8px 24px rgba(0,0,0,0.08);
+    --x-shadow-glow:  0 0 30px rgba(0,119,182,0.15);
+
+    /* Radius */
+    --x-r-sm:  8px;
+    --x-r-md:  14px;
+    --x-r-lg:  20px;
+    --x-r-xl:  28px;
+
+    /* Transitions */
+    --x-ease:  cubic-bezier(0.4, 0, 0.2, 1);
+    --x-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Override global vars */
+[data-theme=light], :root {
+    --bg-color:      var(--x-bg) !important;
+    --surface-color: var(--x-surface) !important;
+    --text-dark:     var(--x-text) !important;
+    --text-light:    var(--x-text-2) !important;
+    --border-color:  var(--x-border) !important;
+    --primary-color: var(--x-blue) !important;
+    --primary-light: #0096C7 !important;
+    --primary-glow:  var(--x-blue-dim) !important;
+    --success-color: var(--x-green) !important;
+    --danger-color:  var(--x-red) !important;
+    --warning-color: var(--x-gold) !important;
+}
+
+/* ═══ GLOBAL BODY & TYPOGRAPHY — LIGHT THEME ═══ */
+body {
+    font-family: 'DM Sans', -apple-system, sans-serif !important;
+    background: var(--x-bg) !important;
+    background-image:
+        radial-gradient(ellipse 60% 40% at 10% 0%, rgba(0,119,182,0.05) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 30% at 90% 100%, rgba(5,150,105,0.04) 0%, transparent 60%) !important;
+    color: var(--x-text) !important;
+    min-height: 100vh;
+}
+body::after { display: none !important; }
+
+/* ═══ APP HEADER — LIGHT ═══ */
+.header {
+    background: linear-gradient(135deg, #ffffff, #f0f7ff) !important;
+    border: 1.5px solid rgba(0,119,182,0.15) !important;
+    border-radius: var(--x-r-lg) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: 0 4px 20px rgba(0,119,182,0.1), 0 1px 4px rgba(0,0,0,0.05) !important;
+    padding: 0.9rem 1.2rem !important;
+    position: relative;
+    overflow: hidden;
+}
+.header::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, #0077b6 0%, #00b4d8 50%, #059669 100%);
+    opacity: 1;
+}
+.header h1 .brand-name {
+    background: linear-gradient(135deg, #0077b6 0%, #00b4d8 50%, #059669 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+}
+
+/* ═══ HEADER BUTTONS — LIGHT ═══ */
+.header-btn {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.2) !important;
+    border-radius: var(--x-r-md) !important;
+    color: #374151 !important;
+    width: 44px !important;
+    height: 44px !important;
+    transition: all 0.2s var(--x-ease) !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+.header-btn:hover {
+    background: #e0f2fe !important;
+    border-color: #0077b6 !important;
+    color: #0077b6 !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 4px 16px rgba(0,119,182,0.2) !important;
+}
+
+/* ═══ CARDS — LIGHT ═══ */
+.card {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.12) !important;
+    border-radius: var(--x-r-xl) !important;
+    box-shadow: 0 4px 20px rgba(0,119,182,0.08), 0 1px 4px rgba(0,0,0,0.04) !important;
+    backdrop-filter: none !important;
+    position: relative;
+    overflow: hidden;
+}
+.card::before {
+    background: linear-gradient(90deg, #0077b6, #00b4d8, #059669) !important;
+    height: 3px !important;
+    opacity: 1;
+}
+.card::after {
+    background: radial-gradient(circle at 80% 20%, rgba(0,119,182,0.04) 0%, transparent 60%) !important;
+}
+
+/* ═══ BUTTONS — LIGHT VISIBLE ═══ */
+.btn {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.01em;
+    border-radius: var(--x-r-md) !important;
+    transition: all 0.18s var(--x-spring) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    padding: 0.75rem 1.4rem !important;
+}
+.btn::after {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+    border-radius: inherit;
+    pointer-events: none;
+}
+.btn:hover { transform: translateY(-2px) !important; }
+.btn:active { transform: scale(0.97) !important; }
+
+.btn-primary {
+    background: linear-gradient(135deg, #0077B6, #0096C7) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(0,119,182,0.35) !important;
+}
+.btn-primary:hover {
+    box-shadow: 0 8px 30px rgba(0,119,182,0.5) !important;
+    background: linear-gradient(135deg, #0096C7, #00b4d8) !important;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #059669, #10b981) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(5,150,105,0.3) !important;
+}
+.btn-success:hover {
+    box-shadow: 0 8px 28px rgba(5,150,105,0.45) !important;
+}
+
+.btn-secondary, .btn-cancel {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.25) !important;
+    color: #374151 !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06) !important;
+}
+.btn-secondary:hover, .btn-cancel:hover {
+    background: #e0f2fe !important;
+    border-color: #0077b6 !important;
+    color: #0077b6 !important;
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #DC2626, #ef4444) !important;
+    border: none !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 20px rgba(220,38,38,0.3) !important;
+}
+
+/* ═══ INPUTS & SELECTS — LIGHT ═══ */
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]):not(#login-password-input),
+select, textarea {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.2) !important;
+    border-radius: var(--x-r-md) !important;
+    color: #0A1628 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 500 !important;
+    transition: all 0.18s var(--x-ease) !important;
+}
+input:not([type=checkbox]):not([type=radio]):not([type=range]):not([type=file]):focus,
+select:focus, textarea:focus {
+    background: #ffffff !important;
+    border-color: #0077b6 !important;
+    box-shadow: 0 0 0 3px rgba(0,119,182,0.12), 0 0 20px rgba(0,119,182,0.06) !important;
+}
+input::placeholder, textarea::placeholder {
+    color: #9CA3AF !important;
+}
+select option {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+
+label {
+    color: #374151 !important;
+    font-weight: 600 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+}
+
+/* ═══ SEARCH OPTIONS — LIGHT ═══ */
+.search-options {
+    background: #F0F4FF !important;
+    border: 1.5px solid rgba(0,119,182,0.15) !important;
+    border-radius: var(--x-r-lg) !important;
+    padding: 0.3rem !important;
+}
+.search-option-btn {
+    border-radius: var(--x-r-md) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    color: #374151 !important;
+    font-size: 0.82rem !important;
+    letter-spacing: 0.02em !important;
+    padding: 0.7rem 0.6rem !important;
+}
+.search-option-btn:hover {
+    color: #0077b6 !important;
+    background: rgba(0,119,182,0.1) !important;
+}
+.search-option-btn.active {
+    background: linear-gradient(135deg, #0077b6, #0096c7) !important;
+    color: white !important;
+    box-shadow: 0 3px 14px rgba(0,119,182,0.35) !important;
+}
+
+/* ═══ STAT CARDS — LIGHT ═══ */
+.summary-stat-card {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.12) !important;
+    border-radius: var(--x-r-lg) !important;
+    box-shadow: 0 2px 12px rgba(0,119,182,0.08) !important;
+    transition: all 0.2s var(--x-spring) !important;
+    position: relative;
+    overflow: hidden;
+}
+.summary-stat-card::before {
+    content: '' !important;
+    position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 3px !important;
+    background: linear-gradient(90deg, #0077b6, #059669) !important;
+    opacity: 0;
+    transition: opacity 0.2s ease !important;
+}
+.summary-stat-card:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    box-shadow: 0 12px 36px rgba(0,119,182,0.18) !important;
+    border-color: rgba(0,119,182,0.3) !important;
+}
+.summary-stat-card:hover::before { opacity: 1 !important; }
+.summary-stat-card .number {
+    background: linear-gradient(135deg, #0077b6, #0096c7) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    font-family: 'Space Mono', monospace !important;
+}
+.summary-stat-card .icon { color: #0077b6 !important; }
+.summary-stat-card .label { color: #374151 !important; font-weight: 600 !important; }
+.summary-stat-card[data-category=shubhali] .number {
+    background: linear-gradient(135deg, #DC2626, #ef4444) !important;
+    -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important;
+}
+.summary-stat-card[data-category=problem] .number {
+    background: linear-gradient(135deg, #D97706, #f59e0b) !important;
+    -webkit-background-clip: text !important; -webkit-text-fill-color: transparent !important;
+}
+
+/* ═══ MODALS — LIGHT ═══ */
+.modal-overlay {
+    background: rgba(10,22,40,0.6) !important;
+    backdrop-filter: blur(8px) !important;
+}
+.modal-box {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.15) !important;
+    border-radius: var(--x-r-xl) !important;
+    box-shadow: 0 20px 60px rgba(0,119,182,0.18), 0 8px 24px rgba(0,0,0,0.1) !important;
+    color: #0A1628 !important;
+}
+.modal-box h3, .modal-box h2 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 800 !important;
+    color: #0A1628 !important;
+    letter-spacing: -0.02em !important;
+}
+.modal-close-btn {
+    background: #F0F4FF !important;
+    border: 1.5px solid rgba(0,119,182,0.2) !important;
+    border-radius: var(--x-r-md) !important;
+    color: #374151 !important;
+    width: 40px !important; height: 40px !important;
+    display: flex !important; align-items: center !important; justify-content: center !important;
+    font-size: 1rem !important;
+    transition: all 0.15s ease !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    position: absolute !important;
+    pointer-events: all !important;
+}
+.modal-close-btn:hover {
+    background: #fee2e2 !important;
+    border-color: #DC2626 !important;
+    color: #DC2626 !important;
+    transform: rotate(90deg) !important;
+}
+
+/* ═══ BOTTOM NAV — LIGHT ═══ */
+#v2-bottom-nav {
+    background: rgba(255,255,255,0.97) !important;
+    backdrop-filter: blur(20px) !important;
+    border-top: 1.5px solid rgba(0,119,182,0.12) !important;
+    box-shadow: 0 -4px 20px rgba(0,119,182,0.08) !important;
+}
+.v2-nav-item {
+    transition: all 0.18s var(--x-spring) !important;
+    border-radius: var(--x-r-md) !important;
+    color: #374151 !important;
+}
+.v2-nav-item.active, .v2-nav-item[data-active=true] {
+    color: #0077b6 !important;
+}
+.v2-nav-item .v2-nav-icon {
+    transition: transform 0.18s var(--x-spring) !important;
+}
+.v2-nav-item.active .v2-nav-icon, .v2-nav-item:hover .v2-nav-icon {
+    transform: translateY(-3px) scale(1.15) !important;
+    color: #0077b6 !important;
+}
+
+/* ═══ RESULT CARDS — LIGHT ═══ */
+.result-card {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.12) !important;
+    border-radius: var(--x-r-lg) !important;
+    box-shadow: 0 2px 12px rgba(0,119,182,0.08) !important;
+    transition: all 0.2s var(--x-ease) !important;
+}
+.result-card:hover {
+    border-color: rgba(0,119,182,0.35) !important;
+    box-shadow: 0 8px 28px rgba(0,119,182,0.15) !important;
+    transform: translateY(-2px) !important;
+}
+.result-header h3 { color: #0A1628 !important; font-weight: 700 !important; }
+.result-header .badge {
+    background: rgba(0,119,182,0.1) !important;
+    color: #0077b6 !important;
+    border-radius: 6px !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 0.7rem !important;
+}
+
+/* ═══ NOTIFICATION COUNT ═══ */
+#notification-count {
+    background: linear-gradient(135deg, #DC2626, #ef4444) !important;
+    box-shadow: 0 2px 10px rgba(220,38,38,0.4) !important;
+    font-family: 'Space Mono', monospace !important;
+}
+
+/* ═══ TOAST — LIGHT ═══ */
+#toast-notification {
+    background: #ffffff !important;
+    border: 1.5px solid rgba(0,119,182,0.2) !important;
+    border-radius: var(--x-r-lg) !important;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15) !important;
+    color: #0A1628 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 600 !important;
+}
+
+/* ═══ FORM PROGRESS — LIGHT ═══ */
+.progress-step.active::before {
+    background: linear-gradient(135deg, #0077b6, #059669) !important;
+    border-color: #0077b6 !important;
+}
+.form-progress::after { background: rgba(0,119,182,0.15) !important; }
+.form-progress-bar { background: linear-gradient(90deg, #0077b6, #059669) !important; }
+
+/* ═══ TABLES — LIGHT ═══ */
+.result-table td { border-bottom-color: rgba(0,119,182,0.1) !important; }
+.result-table td:first-child { color: #374151 !important; font-weight: 500 !important; }
+.result-table td:last-child { color: #0A1628 !important; font-weight: 600 !important; }
+
+/* ═══ SCROLLBAR — LIGHT ═══ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: #F0F4FF; border-radius: 10px; }
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, #0077b6, #059669);
+    border-radius: 10px;
+}
+
+/* ═════════════════════════════════════════════════
+   LOGIN SCREEN — CINEMATIC EXECUTIVE REDESIGN
+═════════════════════════════════════════════════ */
+#login-screen {
+    background:
+        radial-gradient(ellipse 80% 60% at 50% 0%,   rgba(29,184,232,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 0% 100%,  rgba(0,200,122,0.06) 0%, transparent 50%),
+        radial-gradient(ellipse 50% 50% at 100% 50%, rgba(139,107,245,0.05) 0%, transparent 50%),
+        linear-gradient(170deg, #020509 0%, #040B16 40%, #06101E 100%) !important;
+    position: fixed !important;
+}
+
+/* Animated scan line */
+#login-screen::before {
+    content: '' !important;
+    position: fixed !important;
+    top: -5% !important; left: 0 !important; right: 0 !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, var(--x-blue), var(--x-green), transparent) !important;
+    opacity: 0.5 !important;
+    z-index: 3 !important;
+    pointer-events: none !important;
+    border-radius: 0 !important;
+    width: 100% !important;
+    animation: scanLine 6s ease-in-out infinite !important;
+    filter: blur(1px) !important;
+    display: block !important;
+}
+#login-screen::after {
+    content: '' !important;
+    position: fixed !important; inset: 0 !important;
+    z-index: 1 !important; pointer-events: none !important;
+    background-image:
+        linear-gradient(rgba(29,184,232,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(29,184,232,0.025) 1px, transparent 1px) !important;
+    background-size: 60px 60px !important;
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 20%, transparent 80%) !important;
+    display: block !important;
+    text-shadow: none !important;
+    font-size: 0 !important;
+    color: transparent !important;
+    letter-spacing: 0 !important;
+    width: auto !important; height: auto !important;
+    word-spacing: 0 !important;
+}
+
+@keyframes scanLine {
+    0%   { top: -5%; opacity: 0; }
+    10%  { opacity: 0.6; }
+    90%  { opacity: 0.4; }
+    100% { top: 105%; opacity: 0; }
+}
+
+/* Login orbs — new positions & colors */
+.login-orb-1 {
+    width: 500px !important; height: 500px !important;
+    background: radial-gradient(circle, rgba(29,184,232,0.12) 0%, transparent 70%) !important;
+    top: -20% !important; left: -10% !important;
+    filter: blur(60px) !important;
+    opacity: 0.8 !important;
+    animation: xOrb1 14s ease-in-out infinite !important;
+}
+.login-orb-2 {
+    width: 400px !important; height: 400px !important;
+    background: radial-gradient(circle, rgba(0,200,122,0.1) 0%, transparent 70%) !important;
+    bottom: -10% !important; right: -5% !important;
+    filter: blur(60px) !important;
+    opacity: 0.7 !important;
+    animation: xOrb2 18s ease-in-out infinite !important;
+}
+.login-orb-3 {
+    width: 300px !important; height: 300px !important;
+    background: radial-gradient(circle, rgba(139,107,245,0.08) 0%, transparent 70%) !important;
+    top: 40% !important; right: 5% !important;
+    filter: blur(50px) !important;
+    opacity: 0.6 !important;
+    animation: xOrb3 12s ease-in-out infinite !important;
+}
+@keyframes xOrb1 {0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.08)}66%{transform:translate(-20px,20px) scale(0.94)}}
+@keyframes xOrb2 {0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,-25px) scale(1.06)}}
+@keyframes xOrb3 {0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(-18px,28px) scale(1.1)}70%{transform:translate(12px,-15px) scale(0.92)}}
+
+/* Particles */
+.login-particle {
+    background: none !important;
+    position: fixed !important; z-index: 2 !important; pointer-events: none !important;
+    border-radius: 50% !important;
+}
+.login-particle:nth-child(1) {
+    width: 4px !important; height: 4px !important;
+    background: var(--x-blue) !important;
+    box-shadow: 0 0 8px var(--x-blue) !important;
+    top: 18% !important; left: 14% !important;
+    opacity: 0.7 !important;
+    animation: xPart1 8s ease-in-out infinite !important;
+}
+.login-particle:nth-child(2) {
+    width: 3px !important; height: 3px !important;
+    background: var(--x-green) !important;
+    box-shadow: 0 0 6px var(--x-green) !important;
+    top: 30% !important; left: 82% !important;
+    opacity: 0.6 !important;
+    animation: xPart2 11s ease-in-out infinite !important;
+}
+.login-particle:nth-child(3) {
+    width: 5px !important; height: 5px !important;
+    background: var(--x-blue) !important;
+    box-shadow: 0 0 10px var(--x-blue) !important;
+    top: 65% !important; left: 7% !important;
+    opacity: 0.5 !important;
+    animation: xPart3 9s ease-in-out infinite !important;
+}
+.login-particle:nth-child(4) {
+    width: 3px !important; height: 3px !important;
+    background: var(--x-gold) !important;
+    box-shadow: 0 0 8px var(--x-gold) !important;
+    top: 78% !important; left: 72% !important;
+    opacity: 0.5 !important;
+    animation: xPart4 13s ease-in-out infinite !important;
+}
+.login-particle:nth-child(5) {
+    width: 4px !important; height: 4px !important;
+    background: var(--x-purple) !important;
+    box-shadow: 0 0 8px var(--x-purple) !important;
+    top: 50% !important; left: 92% !important;
+    opacity: 0.45 !important;
+    animation: xPart5 10s ease-in-out infinite !important;
+}
+@keyframes xPart1{0%,100%{transform:translate(0,0);opacity:.7}50%{transform:translate(12px,-18px);opacity:1}}
+@keyframes xPart2{0%,100%{transform:translate(0,0);opacity:.6}40%{transform:translate(-10px,14px);opacity:.9}}
+@keyframes xPart3{0%,100%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(15px,-10px) scale(1.3);opacity:.9}}
+@keyframes xPart4{0%,100%{transform:translate(0,0);opacity:.5}60%{transform:translate(-12px,-20px);opacity:.8}}
+@keyframes xPart5{0%,100%{transform:translate(0,0);opacity:.45}50%{transform:translate(-8px,12px);opacity:.7}}
+
+/* ═══ LOGIN BOX ═══ */
+.login-box {
+    position: relative !important;
+    z-index: 10 !important;
+    width: 94% !important;
+    max-width: 480px !important;
+    background: linear-gradient(145deg,
+        rgba(6,14,28,0.97) 0%,
+        rgba(8,18,35,0.95) 100%
+    ) !important;
+    backdrop-filter: blur(40px) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(40px) !important;
+    border: 1px solid rgba(29,184,232,0.18) !important;
+    border-radius: 24px !important;
+    padding: 2rem 1.75rem !important;
+    text-align: center !important;
+    margin: 0 auto 80px !important;
+    box-shadow:
+        0 0 0 1px rgba(29,184,232,0.06),
+        0 8px 40px rgba(0,0,0,0.5),
+        0 32px 80px rgba(0,0,0,0.6),
+        inset 0 1px 0 rgba(255,255,255,0.06) !important;
+    animation: loginBoxPulse 6s ease-in-out infinite !important;
+    overflow: hidden !important;
+}
+@keyframes loginBoxPulse {
+    0%,100% { box-shadow: 0 0 0 1px rgba(29,184,232,0.06), 0 8px 40px rgba(0,0,0,0.5), 0 32px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.06); }
+    50% { box-shadow: 0 0 0 1px rgba(29,184,232,0.18), 0 8px 40px rgba(0,0,0,0.5), 0 32px 80px rgba(0,0,0,0.6), 0 0 60px rgba(29,184,232,0.08), inset 0 1px 0 rgba(255,255,255,0.08); }
+}
+
+/* Top shimmer line */
+.login-box::before {
+    content: '' !important;
+    position: absolute !important;
+    top: 0 !important; left: 0 !important; right: 0 !important;
+    height: 1px !important; z-index: 1 !important;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(29,184,232,0.8) 25%,
+        rgba(255,255,255,0.5) 50%,
+        rgba(0,200,122,0.7) 75%,
+        transparent 100%
+    ) !important;
+    width: 100% !important; border-radius: 0 !important;
+}
+.login-box::after { display: none !important; }
+
+/* Box glass shimmer */
+.login-box-glass {
+    display: block !important;
+    position: absolute !important;
+    top: 0 !important; left: -120% !important;
+    width: 70% !important; height: 100% !important;
+    background: linear-gradient(105deg,
+        transparent 20%,
+        rgba(255,255,255,0.03) 45%,
+        rgba(255,255,255,0.05) 50%,
+        rgba(255,255,255,0.03) 55%,
+        transparent 80%
+    ) !important;
+    transform: skewX(-15deg) !important;
+    pointer-events: none !important;
+    animation: xBoxShimmer 8s ease-in-out infinite !important;
+    z-index: 0 !important;
+}
+@keyframes xBoxShimmer { 0%{left:-120%} 35%,100%{left:150%} }
+
+/* Login box flag */
+.login-box > div:first-child { z-index: 1 !important; position: relative !important; }
+
+/* Greeting */
+.greeting-animated {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em !important;
+    text-transform: uppercase !important;
+    color: var(--x-blue) !important;
+    background: linear-gradient(135deg, rgba(29,184,232,0.15), rgba(0,200,122,0.08)) !important;
+    border: 1px solid rgba(29,184,232,0.2) !important;
+    border-radius: 8px !important;
+    padding: 0.45rem 1rem !important;
+    margin-bottom: 1.2rem !important;
+    display: inline-flex !important;
+    gap: 0.5rem !important;
+    align-items: center !important;
+    animation: xGreet 0.6s var(--x-spring) both !important;
+}
+@keyframes xGreet { from{opacity:0;transform:translateY(-12px) scale(0.9)} to{opacity:1;transform:translateY(0) scale(1)} }
+
+/* Login title */
+.login-box h2 {
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 2rem !important;
+    font-weight: 900 !important;
+    letter-spacing: -0.04em !important;
+    background: linear-gradient(135deg, var(--x-blue) 0%, #FFFFFF 45%, var(--x-green) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+    margin-bottom: 0.3rem !important;
+    line-height: 1.1 !important;
+    animation: xTitle 0.7s var(--x-spring) 0.1s both !important;
+}
+@keyframes xTitle { from{opacity:0;transform:translateY(10px)} to{opacity:1;transform:translateY(0)} }
+
+.login-box h2 .logo-svg {
+    -webkit-text-fill-color: initial !important;
+    color: var(--x-blue) !important;
+    filter: drop-shadow(0 0 12px rgba(29,184,232,0.6)) !important;
+}
+
+.login-box > p {
+    color: var(--x-text-3) !important;
+    font-size: 0.82rem !important;
+    font-weight: 500 !important;
+    letter-spacing: 0.02em !important;
+    margin-bottom: 1.2rem !important;
+    animation: xSub 0.6s var(--x-ease) 0.2s both !important;
+}
+@keyframes xSub { from{opacity:0} to{opacity:1} }
+
+/* About platform btn */
+.about-platform-btn {
+    background: transparent !important;
+    border: 1px solid rgba(232,162,29,0.3) !important;
+    color: var(--x-gold) !important;
+    border-radius: 8px !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.04em !important;
+    text-transform: uppercase !important;
+    padding: 0.45rem 1rem !important;
+    margin-bottom: 1.5rem !important;
+    display: inline-flex !important;
+    gap: 0.4rem !important;
+    align-items: center !important;
+    cursor: pointer !important;
+    transition: all 0.18s ease !important;
+    animation: xGoldPulse 3s ease-in-out infinite !important;
+}
+.about-platform-btn:hover {
+    background: var(--x-gold-dim) !important;
+    border-color: var(--x-gold) !important;
+    box-shadow: 0 0 20px var(--x-gold-glow) !important;
+}
+@keyframes xGoldPulse {
+    0%,100%{box-shadow:0 0 0 0 transparent}
+    50%{box-shadow:0 0 0 4px rgba(232,162,29,0.1)}
+}
+
+/* ═══ ROLE SELECTION ═══ */
+#role-selection-grid {
+    gap: 0.6rem !important;
+}
+.role-btn {
+    background: rgba(255,255,255,0.04) !important;
+    border: 1px solid rgba(29,184,232,0.15) !important;
+    border-radius: var(--x-r-md) !important;
+    color: var(--x-text-2) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    padding: 0.85rem 0.6rem !important;
+    backdrop-filter: blur(8px) !important;
+    transition: all 0.18s var(--x-spring) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+.role-btn::before, .role-btn::after { display: none !important; }
+.role-btn:hover {
+    background: rgba(29,184,232,0.1) !important;
+    border-color: rgba(29,184,232,0.45) !important;
+    color: var(--x-text) !important;
+    transform: translateY(-3px) scale(1.03) !important;
+    box-shadow: 0 6px 24px rgba(29,184,232,0.2) !important;
+}
+.role-btn:active { transform: scale(0.96) !important; }
+.role-btn.selected {
+    background: linear-gradient(135deg, rgba(29,184,232,0.2), rgba(0,200,122,0.12)) !important;
+    border-color: rgba(29,184,232,0.6) !important;
+    color: var(--x-text) !important;
+    box-shadow: 0 4px 20px rgba(29,184,232,0.2), 0 0 0 2px rgba(29,184,232,0.15) !important;
+}
+
+/* ═══ PASSWORD VIEW ═══ */
+#selected-role-display {
+    background: linear-gradient(135deg, rgba(29,184,232,0.15), rgba(0,200,122,0.08)) !important;
+    border: 1px solid rgba(29,184,232,0.3) !important;
+    border-radius: var(--x-r-md) !important;
+    color: var(--x-blue) !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-weight: 700 !important;
+    font-size: 0.9rem !important;
+    padding: 0.8rem 1rem !important;
+    margin-bottom: 1.2rem !important;
+    text-align: center !important;
+}
+
+#login-password-input {
+    background: rgba(255,255,255,0.05) !important;
+    border: 1.5px solid rgba(29,184,232,0.25) !important;
+    border-radius: var(--x-r-md) !important;
+    color: var(--x-text) !important;
+    font-family: 'Space Mono', monospace !important;
+    font-size: 1.8rem !important;
+    letter-spacing: 0.6em !important;
+    text-align: center !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    transition: all 0.18s ease !important;
+}
+#login-password-input:focus {
+    background: rgba(29,184,232,0.06) !important;
+    border-color: var(--x-blue) !important;
+    box-shadow: 0 0 0 3px rgba(29,184,232,0.12), 0 0 30px rgba(29,184,232,0.1) !important;
+    color: var(--x-blue) !important;
+}
+#login-password-input::placeholder {
+    color: rgba(136,153,187,0.4) !important;
+    letter-spacing: 0.3em !important;
+    font-size: 1rem !important;
+}
+
+#password-view label {
+    color: var(--x-text-2) !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.1em !important;
+    text-transform: uppercase !important;
+}
+
+#login-submit-btn {
+    background: linear-gradient(135deg, #0E9FC4 0%, var(--x-blue) 50%, #00A86B 100%) !important;
+    background-size: 200% 100% !important;
+    border: none !important;
+    border-radius: var(--x-r-md) !important;
+    color: white !important;
+    font-family: 'DM Sans', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    padding: 1rem !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 24px rgba(29,184,232,0.35), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+}
+#login-submit-btn::before {
+    content: '' !important;
+    position: absolute !important; inset: 0 !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 60%) !important;
+    border-radius: inherit !important; pointer-events: none !important;
+}
+#login-submit-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 36px rgba(29,184,232,0.5), inset 0 1px 0 rgba(255,255,255,0.2) !important;
+    background-position: right center !important;
+}
+#login-submit-btn:active { transform: scale(0.97) !important; }
+
+/* Face ID button */
+#face-id-login-btn {
+    background: linear-gradient(135deg, rgba(139,107,245,0.8), rgba(167,139,250,0.6)) !important;
+    border: 1px solid rgba(139,107,245,0.4) !important;
+    border-radius: var(--x-r-md) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-family: 'DM Sans', sans-serif !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 4px 20px rgba(139,107,245,0.25) !important;
+    transition: all 0.18s ease !important;
+}
+#face-id-login-btn:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 28px rgba(139,107,245,0.4) !important;
+}
+
+/* Back to role button */
+#back-to-role-selection {
+    background: var(--x-surface-3) !important;
+    border: 1px solid var(--x-border) !important;
+    color: var(--x-text-2) !important;
+    border-radius: var(--x-r-md) !important;
+}
+
+/* Flag styling */
+.login-flag-stripe {
+    position: fixed !important;
+    left: 0 !important; right: 0 !important;
+    height: 2px !important;
+    z-index: 5 !important;
+    pointer-events: none !important;
+    opacity: 0.3 !important;
+}
+
+/* Footer clock */
+.login-footer-info {
+    position: fixed !important;
+    bottom: 14px !important; left: 14px !important; right: 14px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+    z-index: 11 !important;
+    font-size: 0.72rem !important;
+}
+#clock-display {
+    background: rgba(5,8,15,0.7) !important;
+    border: 1px solid rgba(29,184,232,0.15) !important;
+    border-radius: var(--x-r-md) !important;
+    padding: 0.5rem 0.9rem !important;
+    backdrop-filter: blur(10px) !important;
+}
+#clock-display .time {
+    font-family: 'Space Mono', monospace !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    background: linear-gradient(135deg, var(--x-blue), var(--x-green)) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
+}
+#clock-display .date {
+    color: var(--x-text-3) !important;
+    font-size: 0.65rem !important;
+    font-family: 'DM Sans', sans-serif !important;
+    margin-top: 1px !important;
+}
+#system-status {
+    background: rgba(5,8,15,0.7) !important;
+    border: 1px solid rgba(29,184,232,0.12) !important;
+    border-radius: var(--x-r-md) !important;
+    padding: 0.4rem 0.8rem !important;
+    backdrop-filter: blur(10px) !important;
+    color: var(--x-text-3) !important;
+    font-size: 0.68rem !important;
+}
+#system-status.online {
+    color: var(--x-green) !important;
+    border-color: rgba(0,200,122,0.25) !important;
+}
+
+/* Password error */
+#login-password-error {
+    color: var(--x-red) !important;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+}
+
+/* ═══ DESKTOP LOGIN ═══ */
+@media (min-width: 768px) {
+    #login-screen { align-items: center !important; padding-top: 0 !important; }
+    .login-box {
+        padding: 2.5rem 2.2rem !important;
+        max-width: 500px !important;
+        margin-bottom: 0 !important;
+    }
+    .login-box h2 { font-size: 2.4rem !important; }
+    #login-password-input { font-size: 2rem !important; }
+    #login-submit-btn { font-size: 1rem !important; }
+    .login-footer-info { bottom: 24px !important; left: 24px !important; right: 24px !important; }
+}
+
+/* ═══════════════════════════════════════════════
+   GLOBAL LIGHT THEME FIX — BARCHA ELEMENTLAR
+═══════════════════════════════════════════════ */
+
+/* Barcha matnlar ko'rinadigan qilib */
+p, span, div, h1, h2, h3, h4, h5, h6, li, td, th, strong, b, i, small {
+    color: inherit;
+}
+
+/* Qidiruv natijalari matnlari */
+.result-card * { color: #0A1628; }
+.result-header h3 { color: #0A1628 !important; font-size: 1.05rem !important; font-weight: 800 !important; }
+.result-table td:first-child { color: #374151 !important; }
+.result-table td:last-child { color: #0A1628 !important; }
+
+/* Modal matnlari */
+.modal-box, .modal-box * { color: #0A1628; }
+.modal-box label { color: #374151 !important; }
+
+/* Barcha inline style matnlarini override */
+[style*="color:var(--text-dark)"] { color: #0A1628 !important; }
+[style*="color:var(--text-light)"] { color: #374151 !important; }
+[style*="color:var(--x-text)"] { color: #0A1628 !important; }
+[style*="color:var(--x-text-2)"] { color: #374151 !important; }
+[style*="background:var(--bg-color)"] { background: #F0F4FF !important; }
+[style*="background:var(--surface-color)"] { background: #ffffff !important; }
+[style*="background:var(--x-surface)"] { background: #ffffff !important; }
+[style*="background:var(--x-surface-2)"] { background: #F5F8FF !important; }
+[style*="background:var(--x-surface-3)"] { background: #EBF0FA !important; }
+
+/* Card va surface elementlar */
+.card, .modal-box, .result-card, .summary-stat-card {
+    background: #ffffff !important;
+}
+
+/* FAB (Pastki navigatsiya) tugmalari */
+.fab-container {
+    background: rgba(255,255,255,0.97) !important;
+    border: 1.5px solid rgba(0,119,182,0.15) !important;
+    box-shadow: 0 8px 32px rgba(0,119,182,0.12) !important;
+}
+
+/* Year banner */
+.year-banner-2026 {
+    background: linear-gradient(135deg, #0077b6, #00b4d8, #059669) !important;
+    color: #ffffff !important;
+}
+.year-banner-2026 * { color: #ffffff !important; }
+
+/* Hacker modal va maxsus modal boxes uchun override */
+.hacker-modal-box {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+    border: 1.5px solid rgba(0,119,182,0.2) !important;
+}
+.hacker-modal-box * { color: #0A1628 !important; }
+.hacker-modal-box h3 { color: #0077b6 !important; }
+
+/* Object cards */
+.object-result-card {
+    background: #F5F8FF !important;
+    border: 1.5px solid rgba(0,119,182,0.15) !important;
+}
+.object-result-card .card-content h4 { color: #0A1628 !important; }
+.object-result-card .card-content p { color: #374151 !important; }
+
+/* Survey items */
+[onclick*="recordSurvey"] { 
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+[onclick*="recordSurvey"] span { color: #0A1628 !important; }
+
+/* Summary modal header */
+#summary-modal .modal-box { background: #ffffff !important; }
+
+/* Analytics modal */
+#analytics-modal .modal-box { background: #ffffff !important; }
+#analytics-modal * { color: #0A1628 !important; }
+#analytics-modal canvas { background: transparent !important; }
+
+/* X va Qaytish tugmalari — KO'RINADIGAN ═══ */
+.modal-close-btn {
+    background: #F0F4FF !important;
+    border: 1.5px solid rgba(0,119,182,0.25) !important;
+    color: #374151 !important;
+    width: 40px !important;
+    height: 40px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    cursor: pointer !important;
+    z-index: 100 !important;
+    pointer-events: all !important;
+    font-size: 1rem !important;
+    transition: all 0.15s ease !important;
+}
+.modal-close-btn:hover {
+    background: #fee2e2 !important;
+    border-color: #DC2626 !important;
+    color: #DC2626 !important;
+    transform: rotate(90deg) scale(1.1) !important;
+}
+.modal-close-btn i { pointer-events: none !important; }
+
+/* Qaytish tugmasi */
+#details-modal-back-btn {
+    background: #F0F4FF !important;
+    border: 1.5px solid rgba(0,119,182,0.25) !important;
+    color: #0077b6 !important;
+    font-weight: 700 !important;
+}
+#details-modal-back-btn:hover {
+    background: #e0f2fe !important;
+    border-color: #0077b6 !important;
+    color: #005f99 !important;
+}
+
+/* Statistics modal close buttons */
+#summary-modal-close,
+#analytics-modal-close,
+#full-list-modal-close {
+    background: #F0F4FF !important;
+    border: 1.5px solid rgba(0,119,182,0.2) !important;
+    color: #374151 !important;
+    pointer-events: all !important;
+    z-index: 100 !important;
+}
+
+/* Inline dark backgrounds override */
+[style*="background:#0"] { 
+    /* Only if not intentionally colored */ 
+}
+[style*="background:rgba(0,0,0"] {
+    background: rgba(10,22,40,0.6) !important;
+}
+
+/* Full list modal */
+#full-list-modal .modal-box {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+
+/* AI modal */
+#ai-assistant-modal .modal-box {
+    background: #ffffff !important;
+}
+#ai-assistant-modal * { color: #0A1628 !important; }
+
+/* Problem modal */
+#problem-modal .modal-box {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+
+/* Solve problem modal */
+#solve-problem-modal .modal-box {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+
+/* Notification modal */
+#notification-modal .modal-box {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+
+/* Details modal */
+#details-modal-box {
+    background: #ffffff !important;
+    color: #0A1628 !important;
+}
+#details-modal-box * { color: #0A1628; }
+#details-modal-box .badge { background: rgba(0,119,182,0.1) !important; color: #0077b6 !important; }
+
+/* App shell background */
+.app-shell { background: transparent; }
+
+/* Header title */
+.header-main-title { color: #0A1628 !important; font-weight: 800 !important; }
+.header-sub-title { color: #374151 !important; font-size: 0.75rem !important; }
 </style>
 
 <script>
@@ -5783,7 +6914,7 @@ async function prepareAndConfirmSubmit(isFamily = false) {
     if (hujjatTuri === 'Metrka' && !newCitizenData.update_unique_id) {
       const metrkaNum = ((newCitizenData.metrka_series || '') + ' ' + (newCitizenData.metrka_number || '')).trim();
       if (metrkaNum) {
-        const isDupMetrka = citizenDatabase.find(p => p.passport && p.passport.trim() === metrkaNum);
+        const isDupMetrka = citizenDatabase.find(p => p.passport && String(p.passport).trim() === metrkaNum);
         if (isDupMetrka) return showCustomAlert(`⚠️ Bu guvohnoma raqami (${metrkaNum}) bazada allaqachon mavjud!\n\nFuqaro: ${isDupMetrka.fio || 'Nomaʼlum'}\nTug'ilgan sana: ${formatDate(isDupMetrka.dob) || '—'}`, "Takroriy ma'lumot");
       }
     } 
@@ -13003,7 +14134,7 @@ function setupSmartDataEntry() {
             const combined = (series + ' ' + num).trim();
             const currentEditId = document.querySelector('input[name="update_unique_id"]')?.value;
             const db = window.activeCitizenDatabase || window.citizenDatabase || [];
-            const found = db.find(p => p.unique_id !== currentEditId && p.passport && p.passport.trim() === combined);
+            const found = db.find(p => p.unique_id !== currentEditId && p.passport && String(p.passport).trim() === combined);
             if (found) {
                 alertDiv.className = 'smart-alert danger metrka-dup-alert';
                 alertDiv.innerHTML = `<span class="smart-alert-icon">⚠️</span><span class="smart-alert-text"><strong>Diqqat!</strong> Bu guvohnoma bazada mavjud: <span class="smart-alert-link" onclick="showCitizenDetails((window.activeCitizenDatabase||window.citizenDatabase||[]).find(p=>p.passport==='${combined.replace(/'/g,"\\'")}'))">${found.fio || "Noma'lum"}</span> (${found.dob || '—'})</span>`;
@@ -15027,16 +16158,39 @@ function openProblemsMap() {
     }
     
     modal.style.display = 'flex';
-    setTimeout(() => initProblemsMap(), 100);
+    setTimeout(() => {
+        initProblemsMap();
+        // ✅ FIX: Interval faqat modal ochiq bo'lganda ishlaydi
+        if (!_syncInterval) {
+            _syncInterval = setInterval(() => {
+                const m = document.getElementById('problems-map-modal');
+                if (m && m.style.display !== 'none' && document.visibilityState === 'visible') {
+                    syncFromGoogleSheets(false);
+                }
+            }, 60000); // 30s o'rniga 60s — kamroq yuklama
+        }
+    }, 100);
 }
 
 function closeProblemsMap() {
-    document.getElementById('problems-map-modal').style.display = 'none';
+    // ✅ FIX: Interval ni to'xtatish
+    if (_syncInterval) {
+        clearInterval(_syncInterval);
+        _syncInterval = null;
+    }
+    // Muammo qo'shish rejimini bekor qilish
+    if (addingProblem && problemsMap) {
+        try { cancelProblem(); } catch(e) {}
+    }
+    const modal = document.getElementById('problems-map-modal');
+    if (modal) modal.style.display = 'none';
 }
 
 function initProblemsMap() {
     if (problemsMap) {
+        // ✅ FIX: Modal qayta ochilganda ham ma'lumotlarni yangilash
         problemsMap.invalidateSize();
+        syncFromGoogleSheets(true); // Yangi ma'lumotlarni yuklash
         return;
     }
     
@@ -15291,10 +16445,25 @@ async function saveProblem() {
         time: timeStr,
         status: 'yangi',
         reporter: reporterFull,
-        images: compressedImages
+        images: compressedImages, // mahalliy ko'rinish uchun
+        _pending: true            // ✅ hali Sheets ga yetmagan belgisi
+    };
+
+    // ✅ Apps Script rasm1/rasm2/rasm3/rasm4 formatida kutadi, va mijoz ID sini ishlatadi
+    const sheetsPayload = {
+        id: problem.id,
+        turi: type,
+        tavsif: desc,
+        lat: lat,
+        lng: lng,
+        xabarchi: reporterFull,
+        rasm1: compressedImages[0] || '',
+        rasm2: compressedImages[1] || '',
+        rasm3: compressedImages[2] || '',
+        rasm4: compressedImages[3] || ''
     };
     
-    // Avval localStorage ga saqlash
+    // Avval localStorage ga saqlash (optimistik)
     problemsData.push(problem);
     localStorage.setItem('problemsData', JSON.stringify(problemsData));
     addProblemMarker(problem);
@@ -15303,24 +16472,38 @@ async function saveProblem() {
     
     // Google Sheets ga saqlash (fonda)
     showToast('Saqlanmoqda...', 'info');
-    console.log('Muammo yuborilmoqda:', problem.type, 'Xodim:', reporterFull);
     
     try {
-        const response = await fetch(SCRIPT_URL, {
+        await fetch(SCRIPT_URL, {
             method: 'POST',
-            mode: 'no-cors', // CORS muammosini hal qilish
+            mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 action: 'saveMuammo',
-                payload: problem
+                payload: sheetsPayload
             })
         });
+        showToast('✅ Muammo ' + imgCount + ' ta rasm bilan saqlandi!', 'success');
         
-        console.log('Server javobi:', response);
-        showToast('Muammo ' + imgCount + ' ta rasm bilan saqlandi! ✓', 'success');
+        // ✅ FIX DUPLIKAT: 7 soniyadan keyin lokal "pending" yozuvni o'chirib, 
+        //    Sheets dan haqiqiy ma'lumotni yuklash
+        setTimeout(() => {
+            // Faqat _pending bo'lganlarni olib tashlash
+            problemsData = problemsData.filter(p => !p._pending);
+            localStorage.setItem('problemsData', JSON.stringify(problemsData));
+            // Sheets dan yangilash — haqiqiy ID bilan keladi
+            syncFromGoogleSheets(false);
+        }, 7000);
+        
     } catch (error) {
         console.error('Google Sheets xatosi:', error);
-        showToast('Mahalliy saqlandi (' + error.message + ')', 'warning');
+        // Xatolikda _pending belgisini olib tashlash (lokal saqlanib qoladi)
+        const idx = problemsData.findIndex(p => p.id === problem.id);
+        if (idx !== -1) {
+            problemsData[idx]._pending = false;
+            localStorage.setItem('problemsData', JSON.stringify(problemsData));
+        }
+        showToast('Mahalliy saqlandi', 'warning');
     }
 }
 
@@ -15930,11 +17113,23 @@ function loadProblems() {
 
 // Duplikatlarni olib tashlash
 function removeDuplicateProblems(data) {
-    const seen = new Set();
+    const seenIds = new Set();
+    const seenContent = new Set();
     return data.filter(p => {
+        // ID bo'yicha tekshirish
         const key = p.id || p.muammo_id;
-        if (!key || seen.has(key)) return false;
-        seen.add(key);
+        if (key) {
+            if (seenIds.has(key)) return false;
+            seenIds.add(key);
+        }
+        // Kontent bo'yicha tekshirish (bir xil tur + sana + foydalanuvchi = dublikat)
+        const contentKey = [
+            (p.type || p.tur || '').toLowerCase().trim(),
+            (p.sana || p.created_at || p.date || '').toString().substring(0, 16),
+            (p.user || p.username || p.kim || '').toLowerCase().trim()
+        ].join('|');
+        if (contentKey !== '||' && seenContent.has(contentKey)) return false;
+        if (contentKey !== '||') seenContent.add(contentKey);
         return true;
     });
 }
@@ -15957,22 +17152,25 @@ function renderProblemMarkers() {
     updateProblemsStats();
 }
 
+// ✅ FIX: Duplikat sinxronizatsiyani oldini olish uchun lock
+let _syncLock = false;
+let _syncInterval = null;
+
 // Google Sheets dan sinxronizatsiya - ASOSIY MANBA
 function syncFromGoogleSheets(isInitialLoad = false) {
-    console.log('Google Sheets dan sinxronizatsiya...');
-    
-    // Loading ko'rsatish
-    if (isInitialLoad) {
-        showToast('Ma\'lumotlar yuklanmoqda...', 'info');
+    // ✅ FIX: Agar sinxronizatsiya allaqachon ketayotgan bo'lsa, qaytish
+    if (_syncLock) {
+        console.log('Sync allaqachon ketmoqda, o\'tkazib yuborildi');
+        return;
     }
+    _syncLock = true;
     
     fetch(SCRIPT_URL + '?action=getMuammolar&t=' + Date.now())
         .then(response => response.json())
         .then(result => {
-            console.log('Google Sheets javobi:', result);
+            _syncLock = false;
             
             if (result.status === 'success') {
-                // Google Sheets dan kelgan ma'lumotlarni ASOSIY qilish
                 const sheetsData = [];
                 
                 if (result.data && result.data.length > 0) {
@@ -16001,14 +17199,16 @@ function syncFromGoogleSheets(isInitialLoad = false) {
                     });
                 }
                 
-                // LocalStorage dagi FAQAT yangi (hali sync bo'lmagan) ma'lumotlarni qo'shish
+                // ✅ FIX DUPLIKAT: Faqat hali Sheets ga yetmagan lokal ma'lumotlarni qo'shish
+                // _pending=true bo'lganlar 7 soniyada tozalanadi, ularni bu yerda qo'shmaymiz
                 try {
                     const localSaved = localStorage.getItem('problemsData');
                     if (localSaved) {
                         const localData = JSON.parse(localSaved);
                         localData.forEach(lp => {
-                            // Faqat rasmli va Google Sheets da yo'q bo'lganlarni qo'shish
-                            if (lp.images && lp.images.length > 0) {
+                            // Faqat: rasmli, Sheets ga yuborilmagan (_pending=false), 
+                            // va Sheets da yo'q bo'lgan lokal ma'lumotlar
+                            if (lp.images && lp.images.length > 0 && !lp.fromSheets && !lp._pending) {
                                 const existsInSheets = sheetsData.some(sp => 
                                     sp.id === lp.id || sp.muammo_id === lp.id
                                 );
@@ -16018,53 +17218,47 @@ function syncFromGoogleSheets(isInitialLoad = false) {
                             }
                         });
                     }
-                } catch(e) {
-                    console.log('LocalStorage o\'qish xatosi:', e);
-                }
+                } catch(e) {}
                 
-                // Yangi ma'lumotlarni o'rnatish
                 problemsData = removeDuplicateProblems(sheetsData);
-                
-                // LocalStorage ni Google Sheets bilan sinxronlashtirish
                 localStorage.setItem('problemsData', JSON.stringify(problemsData));
                 
-                // Render
-                renderProblemMarkers();
+                // ✅ FIX: Faqat modal ochiq bo'lsa markerlarni yangilash
+                const mapModal = document.getElementById('problems-map-modal');
+                if (mapModal && mapModal.style.display !== 'none') {
+                    renderProblemMarkers();
+                }
                 
-                console.log('✅ Sinxronizatsiya tugadi:', problemsData.length, 'ta muammo');
-                if (isInitialLoad && problemsData.length > 0) {
-                    showToast(problemsData.length + ' ta muammo yuklandi', 'success');
-                } else if (isInitialLoad && problemsData.length === 0) {
-                    showToast('Hozircha muammo yo\'q', 'info');
+                if (isInitialLoad) {
+                    if (problemsData.length > 0) {
+                        showToast(problemsData.length + ' ta muammo yuklandi', 'success');
+                    } else {
+                        showToast('Hozircha muammo yo\'q', 'info');
+                    }
                 }
             }
         })
         .catch(err => {
+            _syncLock = false;
             console.log('Sinxronizatsiya xatosi:', err.message);
             
-            // Xatolik bo'lsa - localStorage dan yuklash
             if (isInitialLoad) {
                 try {
                     const saved = localStorage.getItem('problemsData');
                     if (saved) {
-                        problemsData = JSON.parse(saved);
-                        problemsData = removeDuplicateProblems(problemsData);
-                        renderProblemMarkers();
+                        problemsData = removeDuplicateProblems(JSON.parse(saved));
+                        const mapModal = document.getElementById('problems-map-modal');
+                        if (mapModal && mapModal.style.display !== 'none') {
+                            renderProblemMarkers();
+                        }
                         showToast('Oflayn rejimda yuklandi', 'warning');
                     }
-                } catch(e) {
-                    problemsData = [];
-                }
+                } catch(e) { problemsData = []; }
             }
         });
 }
 
-// Har 30 sekundda avtomatik sinxronizatsiya
-setInterval(() => {
-    if (document.visibilityState === 'visible') {
-        syncFromGoogleSheets(false);
-    }
-}, 30000);
+// ✅ FIX: Global interval o'chirildi — faqat modal ochiq bo'lganda ishlaydi (openProblemsMap ichida)
 
 function addProblemMarker(problem) {
     if (!problemsMap) return;
@@ -16147,22 +17341,27 @@ function addProblemMarker(problem) {
         imagesHtml = '<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">';
         problem.images.forEach((img) => {
             if (img && img.startsWith('data:image')) {
-                const safeImg = img.replace(/'/g, "\\'");
-                imagesHtml += '<img src="' + img + '" style="width:50px;height:50px;border-radius:8px;object-fit:cover;border:2px solid #e5e7eb;cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'" onclick="openImageViewer(\'' + safeImg + '\')">';
+                imagesHtml += '<img src="' + img + '" style="width:55px;height:55px;border-radius:8px;object-fit:cover;border:2px solid #10b981;cursor:pointer;" onclick="openImageViewer(\'' + img.replace(/'/g, "\\'") + '\')">';
             }
         });
         imagesHtml += '</div>';
     }
     
-    // Drive rasmlar (ID bilan)
+    // ✅ FIX: Drive rasmlar - getImageBase64 endpoint orqali CORS muammosiz yuklash
     let driveImagesHtml = '';
-    const driveIds = [problem.driveRasm1, problem.driveRasm2, problem.driveRasm3, problem.driveRasm4].filter(id => id);
+    const driveIds = [problem.driveRasm1, problem.driveRasm2, problem.driveRasm3, problem.driveRasm4].filter(id => id && id.length > 10);
     if (driveIds.length > 0) {
-        driveImagesHtml = '<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;">';
-        driveIds.forEach((id) => {
-            const imgUrl = 'https://drive.google.com/thumbnail?id=' + id + '&sz=w200';
+        driveImagesHtml = '<div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap;" id="drive-imgs-' + problemId + '">';
+        driveIds.forEach((id, idx) => {
+            // thumbnail URL - ko'pchilik uchun ishlaydi
+            const thumbUrl = 'https://lh3.googleusercontent.com/d/' + id + '=w200';
+            const fallbackUrl = 'https://drive.google.com/thumbnail?id=' + id + '&sz=w200';
             const fullUrl = 'https://drive.google.com/file/d/' + id + '/view';
-            driveImagesHtml += '<img src="' + imgUrl + '" style="width:50px;height:50px;border-radius:8px;object-fit:cover;border:2px solid #e5e7eb;cursor:pointer;transition:transform 0.2s;" onmouseover="this.style.transform=\'scale(1.1)\'" onmouseout="this.style.transform=\'scale(1)\'" onclick="window.open(\'' + fullUrl + '\')" onerror="this.style.display=\'none\'">';
+            driveImagesHtml += '<img src="' + thumbUrl + '" '
+                + 'onerror="this.src=\'' + fallbackUrl + '\';this.onerror=function(){this.style.display=\'none\'}" '
+                + 'style="width:55px;height:55px;border-radius:8px;object-fit:cover;border:2px solid #0077b6;cursor:pointer;" '
+                + 'onclick="window.open(\'' + fullUrl + '\',\'_blank\')" '
+                + 'title="Rasmni ko\'rish">';
         });
         driveImagesHtml += '</div>';
     }
@@ -16215,12 +17414,15 @@ function addProblemMarker(problem) {
 function markProblemSolved(id) {
     // Rasm yuklash uchun modal ochish
     const modalHtml = `
-        <div id="solve-problem-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:20000;display:flex;align-items:center;justify-content:center;padding:1rem;">
-            <div style="background:white;border-radius:16px;max-width:400px;width:100%;padding:1.5rem;">
-                <h3 style="margin:0 0 1rem;color:#10b981;display:flex;align-items:center;gap:0.5rem;">
-                    <i class="fas fa-check-circle"></i> Muammoni hal qilish
-                </h3>
-                <p style="color:#64748b;margin-bottom:1rem;font-size:0.9rem;">
+        <div id="map-solve-modal" style="position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.7);z-index:20000;display:flex;align-items:center;justify-content:center;padding:1rem;">
+            <div style="background:var(--surface-color);border-radius:16px;max-width:400px;width:100%;padding:1.5rem;max-height:90vh;overflow-y:auto;">
+                <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem;">
+                    <h3 style="margin:0;color:#10b981;display:flex;align-items:center;gap:0.5rem;">
+                        <i class="fas fa-check-circle"></i> Muammoni hal qilish
+                    </h3>
+                    <button onclick="closeSolveModal()" style="background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--text-light);line-height:1;">×</button>
+                </div>
+                <p style="color:var(--text-light);margin-bottom:1rem;font-size:0.9rem;">
                     Hal qilingan muammo rasmini yuklang
                 </p>
                 
@@ -16232,23 +17434,27 @@ function markProblemSolved(id) {
                     </div>
                     <div id="solve-upload-text">
                         <i class="fas fa-camera" style="font-size:2rem;color:#10b981;"></i>
-                        <p style="margin:0.5rem 0 0;color:#10b981;font-weight:600;">Rasm yuklash</p>
+                        <p style="margin:0.5rem 0 0;color:#10b981;font-weight:600;">Rasm yuklash (ixtiyoriy)</p>
                     </div>
                 </div>
                 
                 <!-- Izoh -->
-                <textarea id="solve-comment" placeholder="Izoh (ixtiyoriy)" style="width:100%;padding:0.75rem;border-radius:10px;border:1px solid #e5e7eb;font-size:0.9rem;resize:none;height:60px;margin-bottom:1rem;"></textarea>
+                <textarea id="solve-comment" placeholder="Izoh (ixtiyoriy)" style="width:100%;padding:0.75rem;border-radius:10px;border:1.5px solid var(--border-color);font-size:0.9rem;resize:none;height:70px;margin-bottom:1rem;background:var(--surface-color);color:var(--text-dark);font-family:inherit;"></textarea>
                 
                 <!-- Tugmalar -->
                 <div style="display:flex;gap:0.75rem;">
-                    <button onclick="closeSolveModal()" style="flex:1;padding:0.75rem;border-radius:10px;border:1px solid #e5e7eb;background:white;color:#64748b;cursor:pointer;font-weight:600;">Bekor qilish</button>
-                    <button onclick="confirmSolveProblem('${id}')" style="flex:1;padding:0.75rem;border-radius:10px;border:none;background:#10b981;color:white;cursor:pointer;font-weight:600;">
+                    <button onclick="closeSolveModal()" style="flex:1;padding:0.75rem;border-radius:10px;border:1.5px solid var(--border-color);background:var(--surface-color);color:var(--text-light);cursor:pointer;font-weight:600;">Bekor qilish</button>
+                    <button onclick="confirmSolveProblem('${id}')" style="flex:1;padding:0.75rem;border-radius:10px;border:none;background:linear-gradient(135deg,#10b981,#059669);color:white;cursor:pointer;font-weight:600;">
                         <i class="fas fa-check"></i> Tasdiqlash
                     </button>
                 </div>
             </div>
         </div>
     `;
+    
+    // Eski modalni tozalash
+    const existing = document.getElementById('map-solve-modal');
+    if (existing) existing.remove();
     
     document.body.insertAdjacentHTML('beforeend', modalHtml);
 }
@@ -16270,31 +17476,30 @@ function previewSolveImage(input) {
 }
 
 function closeSolveModal() {
-    const modal = document.getElementById('solve-problem-modal');
+    // ✅ FIX: to'g'ri ID ishlatish
+    const modal = document.getElementById('map-solve-modal');
     if (modal) modal.remove();
     solveImageBase64 = null;
 }
 
 async function confirmSolveProblem(id) {
-    if (!solveImageBase64) {
-        showToast('Iltimos, rasm yuklang!', 'error');
-        return;
-    }
-    
+    // ✅ FIX: Rasm ixtiyoriy — rasimsiz ham saqlash mumkin
     const comment = document.getElementById('solve-comment')?.value || '';
     
-    // Rasmni compress qilish
     showToast('Saqlanmoqda...', 'info');
-    const compressedImage = await compressImage(solveImageBase64, 600, 0.5);
+    
+    let compressedImage = null;
+    if (solveImageBase64) {
+        compressedImage = await compressImage(solveImageBase64, 600, 0.5);
+    }
     
     // LocalStorage ni yangilash
     const idx = problemsData.findIndex(p => (p.id === id || p.muammo_id === id));
     if (idx !== -1) {
         problemsData[idx].status = 'hal_qilindi';
-        problemsData[idx].hal_qilindi_rasm = compressedImage;
+        if (compressedImage) problemsData[idx].hal_qilindi_rasm = compressedImage;
         problemsData[idx].hal_qilindi_izoh = comment;
         
-        // Hal qilingan sanani qo'shish
         const now = new Date();
         problemsData[idx].hal_qilingan_sana = String(now.getDate()).padStart(2, '0') + '.' + 
             String(now.getMonth() + 1).padStart(2, '0') + '.' + 
@@ -16305,19 +17510,13 @@ async function confirmSolveProblem(id) {
         localStorage.setItem('problemsData', JSON.stringify(problemsData));
     }
     
-    // Modalni yopish
     closeSolveModal();
-    
-    // Muammolar ro'yxati modalini yopish
-    const listModal = document.querySelector('div[style*="z-index:10000"]');
-    if (listModal) listModal.remove();
-    
-    // Qayta yuklash
-    loadProblems();
+    renderProblemMarkers();
+    updateProblemsStats();
     
     // Google Sheets ga saqlash
     try {
-        const response = await fetch(SCRIPT_URL, {
+        await fetch(SCRIPT_URL, {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
@@ -16326,13 +17525,12 @@ async function confirmSolveProblem(id) {
                 payload: { 
                     id: id, 
                     status: 'hal_qilindi',
-                    hal_qilindi_rasm: compressedImage,
+                    hal_qilindi_rasm: compressedImage || '',
                     hal_qilindi_izoh: comment
                 }
             })
         });
-        
-        showToast('Muammo hal qilindi! ✓', 'success');
+        showToast('✅ Muammo hal qilindi!', 'success');
     } catch (err) {
         console.error('Google Sheets xatosi:', err);
         showToast('Mahalliy saqlandi', 'warning');
@@ -16534,11 +17732,12 @@ function showProblemsList(filter) {
         }
         
         // Drive rasmlar
-        const driveIds = [p.driveRasm1, p.driveRasm2, p.driveRasm3, p.driveRasm4].filter(id => id);
+        const driveIds = [p.driveRasm1, p.driveRasm2, p.driveRasm3, p.driveRasm4].filter(id => id && id.length > 10);
         driveIds.forEach(id => {
             allImages.push({ 
                 type: 'drive', 
-                thumb: 'https://drive.google.com/thumbnail?id=' + id + '&sz=w200',
+                thumb: 'https://lh3.googleusercontent.com/d/' + id + '=w200',
+                fallback: 'https://drive.google.com/thumbnail?id=' + id + '&sz=w200',
                 full: 'https://drive.google.com/file/d/' + id + '/view'
             });
         });
@@ -16550,7 +17749,7 @@ function showProblemsList(filter) {
                     const safeImg = img.src.replace(/'/g, "\\'");
                     imagesHtml += '<img src="' + img.src + '" style="width:70px;height:70px;border-radius:12px;object-fit:cover;cursor:pointer;border:3px solid #e5e7eb;flex-shrink:0;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform=\'scale(1.1)\';this.style.borderColor=\'#3b82f6\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor=\'#e5e7eb\'" onclick="openImageViewer(\'' + safeImg + '\')">';
                 } else {
-                    imagesHtml += '<img src="' + img.thumb + '" style="width:70px;height:70px;border-radius:12px;object-fit:cover;cursor:pointer;border:3px solid #e5e7eb;flex-shrink:0;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform=\'scale(1.1)\';this.style.borderColor=\'#3b82f6\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor=\'#e5e7eb\'" onclick="window.open(\'' + img.full + '\')" onerror="this.style.display=\'none\'">';
+                    imagesHtml += '<img src="' + img.thumb + '" onerror="this.src=\'' + (img.fallback||'') + '\';this.onerror=function(){this.style.display=\'none\'}" style="width:70px;height:70px;border-radius:12px;object-fit:cover;cursor:pointer;border:3px solid #e5e7eb;flex-shrink:0;transition:all 0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.1);" onmouseover="this.style.transform=\'scale(1.1)\';this.style.borderColor=\'#3b82f6\'" onmouseout="this.style.transform=\'scale(1)\';this.style.borderColor=\'#e5e7eb\'" onclick="window.open(\'' + img.full + '\')">';
                 }
             });
             imagesHtml += '</div>';
@@ -16594,7 +17793,7 @@ function showProblemsList(filter) {
                 </button>
                 
                 ${p.status !== 'hal_qilindi' ? `
-                    <button onclick="markProblemSolved('${problemId}');this.closest('div[style*=fixed]').remove();" style="width:100%;margin-top:0.5rem;padding:0.75rem;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;border-radius:12px;font-size:0.9rem;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(16,185,129,0.3);">✓ Hal qilindi deb belgilash</button>
+                    <button onclick="(function(el){markProblemSolved('${problemId}');setTimeout(()=>{const listModal=el.closest('div[style*=\"z-index:10000\"]');if(listModal)listModal.remove();},200);})(this)" style="width:100%;margin-top:0.5rem;padding:0.75rem;background:linear-gradient(135deg,#10b981,#059669);color:white;border:none;border-radius:12px;font-size:0.9rem;cursor:pointer;font-weight:600;display:flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 3px 10px rgba(16,185,129,0.3);">✓ Hal qilindi deb belgilash</button>
                 ` : ''}
             </div>
         `;
