@@ -1235,289 +1235,133 @@ input:focus, select:focus, textarea:focus {
    ZAMONAVIY LOGIN DIZAYN — KREATIV
 ══════════════════════════════════════ */
 #login-screen {
-    background: 
-        linear-gradient(180deg,
-            #011526 0%,
-            #012540 25%,
-            #01305a 50%,
-            #012540 75%,
-            #011526 100%
-        ) !important;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, #dce8f8 0%, #e8eeff 30%, #c8d8f0 60%, #d0dff5 100%) !important;
+    position: fixed; top:0; left:0; width:100vw; height:100vh;
+    display:flex; justify-content:center; align-items:center;
+    z-index:10000; overflow:hidden;
 }
-
-/* Animated mesh */
-#login-screen .login-mesh {
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background:
-        radial-gradient(ellipse 70% 40% at 50% 0%, rgba(0,119,182,0.22) 0%, transparent 60%),
-        radial-gradient(ellipse 50% 35% at 15% 60%, rgba(14,165,201,0.12) 0%, transparent 55%),
-        radial-gradient(ellipse 40% 30% at 85% 70%, rgba(22,163,74,0.10) 0%, transparent 50%);
-    animation: meshPulse 10s ease-in-out infinite;
+/* Subtle dot pattern */
+#login-screen::before {
+    content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
+    background-image: radial-gradient(circle, rgba(100,130,200,0.12) 1px, transparent 1px);
+    background-size: 28px 28px;
+    display:block !important;
 }
-@keyframes meshPulse {
-    0%,100% { opacity: 1; }
-    50% { opacity: 0.7; }
-}
+#login-screen::after { display:none !important; }
+#login-screen .login-mesh,
+#login-screen .login-grid,
+#login-screen .login-particle,
+.login-orb, .login-flag-stripe, .login-box-glass { display:none !important; }
 
-/* Grid lines */
-#login-screen .login-grid {
-    position: fixed; inset: 0; z-index: 0; pointer-events: none;
-    background-image:
-        linear-gradient(rgba(14,165,201,0.04) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(14,165,201,0.04) 1px, transparent 1px);
-    background-size: 50px 50px;
-    mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 20%, transparent 80%);
-}
-
-/* Floating particles */
-#login-screen .login-particle {
-    position: fixed; border-radius: 50%; pointer-events: none; z-index: 1;
-    background: radial-gradient(circle, rgba(56,189,248,0.7) 0%, transparent 70%);
-}
-#login-screen .login-particle:nth-child(1) { width:3px;height:3px;top:15%;left:12%;animation:floatP1 7s ease-in-out infinite; }
-#login-screen .login-particle:nth-child(2) { width:5px;height:5px;top:25%;left:85%;animation:floatP2 9s ease-in-out infinite; background:radial-gradient(circle,rgba(74,222,128,0.7) 0%,transparent 70%); }
-#login-screen .login-particle:nth-child(3) { width:4px;height:4px;top:70%;left:8%;animation:floatP3 11s ease-in-out infinite; }
-#login-screen .login-particle:nth-child(4) { width:6px;height:6px;top:80%;left:75%;animation:floatP4 8s ease-in-out infinite; background:radial-gradient(circle,rgba(251,191,36,0.5) 0%,transparent 70%); }
-#login-screen .login-particle:nth-child(5) { width:3px;height:3px;top:45%;left:92%;animation:floatP5 10s ease-in-out infinite; }
-@keyframes floatP1{0%,100%{transform:translate(0,0);opacity:0.6}33%{transform:translate(8px,-15px);opacity:1}66%{transform:translate(-5px,8px);opacity:0.4}}
-@keyframes floatP2{0%,100%{transform:translate(0,0);opacity:0.4}50%{transform:translate(-12px,10px);opacity:0.9}}
-@keyframes floatP3{0%,100%{transform:translate(0,0) scale(1);opacity:0.5}40%{transform:translate(10px,-12px) scale(1.4);opacity:1}70%{transform:translate(-3px,6px) scale(0.8);opacity:0.3}}
-@keyframes floatP4{0%,100%{transform:translate(0,0);opacity:0.3}50%{transform:translate(-8px,-18px);opacity:0.8}}
-@keyframes floatP5{0%,100%{transform:translate(0,0);opacity:0.5}60%{transform:translate(-10px,8px);opacity:1}}
-
-/* O'zbek bayrog'i stripes */
-.login-flag-stripe { position: fixed; left:0; right:0; height:3px; z-index:3; pointer-events:none; }
-
-/* ORBs */
-.login-orb { position:fixed; border-radius:50%; filter:blur(70px); opacity:0.35; z-index:1; pointer-events:none; }
-.login-orb-1 { width:400px;height:400px;background:rgba(14,165,201,0.3);top:-15%;left:-8%;animation:orbFloat1 12s ease-in-out infinite; }
-.login-orb-2 { width:350px;height:350px;background:rgba(22,163,74,0.25);bottom:-10%;right:-8%;animation:orbFloat2 15s ease-in-out infinite; }
-.login-orb-3 { width:250px;height:250px;background:rgba(139,92,246,0.15);top:40%;right:-5%;animation:orbFloat3 10s ease-in-out infinite; }
-@keyframes orbFloat1{0%,100%{transform:translate(0,0) scale(1)}33%{transform:translate(40px,-30px) scale(1.1)}66%{transform:translate(-20px,20px) scale(0.95)}}
-@keyframes orbFloat2{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-30px,-20px) scale(1.05)}}
-@keyframes orbFloat3{0%,100%{transform:translate(0,0) scale(1)}40%{transform:translate(-15px,25px) scale(1.12)}70%{transform:translate(10px,-10px) scale(0.9)}}
-@keyframes loginMapBg{}
-#login-map-bg { display:none !important; }
-
-/* Kirish — yangi kreativ */
+/* LOGIN BOX — oq karta */
 .login-box {
-    position: relative; z-index: 10;
-    background: linear-gradient(145deg,
-        rgba(4,20,45,0.92) 0%,
-        rgba(6,28,38,0.88) 100%
-    ) !important;
-    backdrop-filter: blur(40px) saturate(200%) !important;
-    -webkit-backdrop-filter: blur(40px) saturate(200%) !important;
-    border: 1px solid rgba(56,189,248,0.2) !important;
-    border-radius: 28px !important;
-    box-shadow:
-        0 0 0 1px rgba(56,189,248,0.08),
-        0 4px 24px rgba(0,0,0,0.4),
-        0 24px 80px rgba(0,0,0,0.6),
-        inset 0 1px 0 rgba(255,255,255,0.08),
-        inset 0 -1px 0 rgba(0,0,0,0.2) !important;
-    animation: loginBoxGlow 5s ease-in-out infinite;
-    overflow: hidden;
+    position:relative !important; z-index:10 !important;
+    width:92% !important; max-width:440px !important;
+    background:#ffffff !important;
+    border-radius:20px !important;
+    border:none !important;
+    box-shadow: 0 8px 40px rgba(80,100,180,0.13), 0 2px 12px rgba(0,0,0,0.06) !important;
+    padding:2.5rem 2.2rem !important;
+    text-align:center !important;
+    animation:none !important;
+    margin:0 auto !important;
+    color:#1a2340 !important;
 }
-.login-box::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg,
-        transparent 0%, rgba(14,165,201,0.9) 30%,
-        rgba(56,189,248,1) 50%,
-        rgba(22,163,74,0.8) 70%, transparent 100%
-    );
-    border-radius: 2px; z-index: 1;
-}
-.login-box::after {
-    content: '';
-    position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
-    background: linear-gradient(90deg,
-        transparent 0%, rgba(14,165,201,0.3) 50%, transparent 100%
-    );
-}
-@keyframes loginBoxGlow {
-    0%,100% { box-shadow: 0 0 0 1px rgba(56,189,248,0.08), 0 4px 24px rgba(0,0,0,0.4), 0 24px 80px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.08); }
-    50% { box-shadow: 0 0 0 1px rgba(56,189,248,0.2), 0 4px 24px rgba(0,0,0,0.4), 0 24px 80px rgba(0,0,0,0.6), 0 0 60px rgba(14,165,201,0.12), inset 0 1px 0 rgba(255,255,255,0.1); }
-}
+.login-box::before, .login-box::after { display:none !important; }
 
-/* Top shine shimmer */
-.login-box-glass {
-    display: block !important;
-    position: absolute; top: 0; left: -100%; width: 60%; height: 100%;
-    background: linear-gradient(105deg, transparent, rgba(255,255,255,0.04) 50%, transparent);
-    transform: skewX(-15deg); pointer-events: none;
-    animation: boxShimmer 6s ease-in-out infinite;
-    z-index: 0;
-}
-@keyframes boxShimmer {
-    0% { left: -100%; }
-    40%,100% { left: 150%; }
-}
-
-/* Kirish sarlavhasi */
-.login-title {
-    background: linear-gradient(135deg, #38e8ff 0%, #ffffff 45%, #4ade80 100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    background-clip: text !important;
-}
-
-/* Greeting */
-.greeting-animated {
-    background: linear-gradient(135deg, rgba(14,165,201,0.2), rgba(22,163,74,0.15)) !important;
-    border: 1px solid rgba(56,189,248,0.25) !important;
-    border-radius: 50px !important;
-    padding: 0.5rem 1.2rem !important;
-    font-size: 0.88rem !important;
-    animation: greetPop 0.5s cubic-bezier(0.34,1.56,0.64,1) both;
-}
-@keyframes greetPop { from{opacity:0;transform:scale(0.85) translateY(-10px)} to{opacity:1;transform:scale(1) translateY(0)} }
-
-/* About platform btn */
-.about-platform-btn {
-    background: linear-gradient(135deg, rgba(251,191,36,0.15), rgba(245,158,11,0.08)) !important;
-    border: 1.5px solid rgba(251,191,36,0.4) !important;
-    color: #fcd34d !important;
-    border-radius: 50px !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.02em;
-    backdrop-filter: blur(8px) !important;
-    animation: badgePulse 3s ease-in-out infinite;
-}
-@keyframes badgePulse {
-    0%,100% { box-shadow: 0 0 0 0 rgba(251,191,36,0.3); }
-    50% { box-shadow: 0 0 0 6px rgba(251,191,36,0); }
-}
-
-/* Role tugmalari */
-.role-btn {
-    position: relative; overflow: hidden;
-    background: rgba(255,255,255,0.06) !important;
-    border: 1px solid rgba(56,189,248,0.18) !important;
-    border-radius: 16px !important;
-    backdrop-filter: blur(10px) !important;
-    transition: all 0.18s cubic-bezier(0.4,0,0.2,1) !important;
-    font-weight: 700 !important;
-    color: rgba(255,255,255,0.9) !important;
-}
-.role-btn::after {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(56,189,248,0.15), rgba(74,222,128,0.1));
-    opacity: 0; border-radius: inherit;
-    transition: opacity 0.18s ease;
-}
-.role-btn:hover {
-    background: rgba(14,165,201,0.18) !important;
-    border-color: rgba(56,189,248,0.55) !important;
-    transform: translateY(-4px) scale(1.03) !important;
-    box-shadow: 0 8px 30px rgba(14,165,201,0.3), 0 0 0 1px rgba(56,189,248,0.3) !important;
-}
-.role-btn:hover::after { opacity: 1; }
-.role-btn:active { transform: scale(0.96) !important; }
-.role-btn.selected {
-    background: linear-gradient(135deg, rgba(14,165,201,0.35), rgba(22,163,74,0.25)) !important;
-    border-color: rgba(56,189,248,0.7) !important;
-    box-shadow: 0 0 0 3px rgba(14,165,201,0.2), 0 8px 28px rgba(14,165,201,0.25) !important;
-}
-
-/* Parol input */
-#login-password-input {
-    background: rgba(255,255,255,0.07) !important;
-    border: 1.5px solid rgba(56,189,248,0.3) !important;
-    border-radius: 16px !important;
-    backdrop-filter: blur(10px) !important;
-    color: white !important;
-    letter-spacing: 0.5em;
-    font-size: 1.6rem !important;
-    text-align: center !important;
-    transition: all 0.2s ease !important;
-}
-#login-password-input:focus {
-    border-color: rgba(56,189,248,0.8) !important;
-    background: rgba(255,255,255,0.1) !important;
-    box-shadow: 0 0 0 4px rgba(14,165,201,0.15), 0 0 20px rgba(56,189,248,0.2) !important;
-}
-
-/* Kirish tugmasi */
-#login-submit-btn {
-    background: linear-gradient(135deg, #0ea5c9 0%, #22c55e 100%) !important;
-    border: none !important;
-    border-radius: 16px !important;
-    box-shadow: 0 8px 30px rgba(14,165,201,0.4), 0 0 0 1px rgba(255,255,255,0.1) !important;
-    font-weight: 800 !important;
-    font-size: 1rem !important;
-    letter-spacing: 0.03em;
-    transition: all 0.18s ease !important;
-    position: relative; overflow: hidden;
-}
-#login-submit-btn::before {
-    content: '';
-    position: absolute; inset: 0;
-    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
-    border-radius: inherit;
-}
-#login-submit-btn:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 14px 40px rgba(14,165,201,0.55), 0 0 0 1px rgba(255,255,255,0.15) !important;
-}
-#login-submit-btn:active { transform: scale(0.98) !important; }
-
-/* Face ID */
-#face-id-login-btn {
-    background: linear-gradient(135deg, #7c3aed, #a78bfa) !important;
-    border-radius: 16px !important;
-    font-weight: 700 !important;
-}
-
-/* Footer clock */
+/* FOOTER */
 .login-footer-info {
-    backdrop-filter: blur(10px);
-    background: rgba(0,0,0,0.3);
-    border-radius: 16px;
-    padding: 0.5rem 1rem;
+    position:fixed; bottom:12px; left:16px; right:16px;
+    display:flex; justify-content:space-between; align-items:flex-end;
+    font-size:0.7rem; color:rgba(60,80,130,0.5); z-index:11;
 }
+.login-footer-info .time { font-size:0.9rem; font-weight:700; color:rgba(60,80,130,0.6); }
+.login-footer-info .date { font-size:0.62rem; color:rgba(60,80,130,0.45); }
+#system-status { font-size:0.65rem; color:rgba(60,80,130,0.45); }
+#system-status.online { color:rgba(16,185,129,0.8); }
+#system-status.offline { color:rgba(239,68,68,0.7); }
 
 /* Old duplicate blocks removed — new styles above */
 
-/* ═══ DAVLAT TASHKILOTI USLUBI — LOGIN ═══ */
-#login-screen::before {
-    content: '';
-    position: fixed; top: 0; left: 0; right: 0; height: 4px;
-    background: linear-gradient(90deg, #1DBDE8 0%, #ffffff 33%, #1DBDE8 50%, #2DBB3C 67%, #1DBDE8 100%);
-    z-index: 100; pointer-events: none;
+/* ═══ LOGIN CARD ELEMENTS ═══ */
+/* Logo */
+.lc-logo-wrap { display:flex; align-items:center; justify-content:center; gap:0.65rem; margin-bottom:1.5rem; }
+.lc-logo-icon {
+    width:44px; height:44px; border-radius:12px; flex-shrink:0;
+    background:linear-gradient(135deg,#0077b6,#00b4d8);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow: 0 4px 14px rgba(0,119,182,0.3);
 }
-#login-screen::after {
-    content: '';
-    position: fixed; bottom: 0; left: 0; right: 0; height: 3px;
-    background: linear-gradient(90deg, #2DBB3C, #1DBDE8, #2DBB3C);
-    z-index: 100; pointer-events: none;
+.lc-logo-icon svg { color:#fff; }
+.lc-logo-text { text-align:left; }
+.lc-logo-title { font-size:1.25rem; font-weight:900; color:#1a2340; font-family:'Montserrat',sans-serif; line-height:1; margin:0; }
+.lc-logo-title span { color:#0077b6; }
+.lc-logo-sub { font-size:0.62rem; color:#6b7fa3; font-weight:600; letter-spacing:0.06em; text-transform:uppercase; margin-top:2px; display:block; }
+
+/* Heading */
+.lc-heading { font-size:1.55rem; font-weight:800; color:#1a2340; line-height:1.2; margin:0 0 0.5rem; font-family:'Montserrat',sans-serif; }
+.lc-heading span { color:#3d6fd4; }
+.lc-subtext { font-size:0.82rem; color:#6b7fa3; font-weight:500; line-height:1.5; margin:0 0 1.6rem; }
+
+/* About btn */
+.lc-about-btn {
+    display:inline-flex; align-items:center; gap:0.4rem;
+    background:transparent; border:1px solid rgba(0,119,182,0.2); color:#0077b6;
+    padding:0.38rem 0.9rem; border-radius:6px; font-size:0.72rem; font-weight:700;
+    cursor:pointer; letter-spacing:0.04em; text-transform:uppercase;
+    transition:all 0.15s; margin-bottom:1.4rem;
 }
-.login-box {
-    border-radius: 20px !important;
-    border: 1px solid rgba(29,189,232,0.18) !important;
-    background: linear-gradient(160deg, rgba(1,37,64,0.97) 0%, rgba(1,24,42,0.98) 100%) !important;
-    box-shadow:
-        0 0 0 1px rgba(29,189,232,0.1),
-        0 4px 32px rgba(0,0,0,0.6),
-        0 32px 80px rgba(0,0,0,0.5),
-        inset 0 1px 0 rgba(255,255,255,0.07) !important;
-    animation: none !important;
-    padding: 2rem 1.75rem !important;
+.lc-about-btn:hover { background:rgba(0,119,182,0.06); border-color:rgba(0,119,182,0.4); }
+
+/* Divider */
+.lc-divider { height:1px; background:linear-gradient(90deg,transparent,#e2e8f0,transparent); margin-bottom:1.4rem; }
+
+/* Step 1 — Kirish tugmasi */
+#lc-step-1 button.lc-main-btn {
+    display:flex; align-items:center; justify-content:center; gap:0.6rem;
+    width:100%; padding:0.9rem 1.2rem;
+    background:linear-gradient(135deg,#3d6fd4 0%,#5b8dee 100%);
+    border:none; border-radius:10px; color:#fff;
+    font-size:0.95rem; font-weight:700; letter-spacing:0.02em;
+    cursor:pointer; transition:all 0.15s;
+    box-shadow:0 4px 16px rgba(61,111,212,0.35);
 }
-/* Vertikal chiziqlar (davlat portal uslubi) */
-.login-box::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(29,189,232,0.7) 30%, rgba(45,187,60,0.6) 70%, transparent);
-    border-radius: 20px 20px 0 0; z-index: 1;
+#lc-step-1 button.lc-main-btn:hover { transform:translateY(-2px); box-shadow:0 7px 22px rgba(61,111,212,0.45); }
+#lc-step-1 button.lc-main-btn:active { transform:scale(0.98); }
+
+/* Step 2 — Parol kiritish */
+#lc-step-2 { display:none; }
+#lc-step-2.active { display:block; animation:lcFadeIn 0.2s ease; }
+@keyframes lcFadeIn { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+.lc-back-link {
+    display:inline-flex; align-items:center; gap:0.3rem;
+    color:#6b7fa3; font-size:0.78rem; font-weight:600; cursor:pointer;
+    border:none; background:none; margin-bottom:1rem; padding:0;
+    transition:color 0.12s;
 }
-.login-box::after {
-    display: none;
+.lc-back-link:hover { color:#3d6fd4; }
+.lc-pass-label { display:block; font-size:0.72rem; font-weight:700; color:#6b7fa3; letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.45rem; text-align:left; }
+#login-password-input {
+    width:100% !important; padding:0.85rem 1rem !important;
+    font-size:1.8rem !important; text-align:center !important; letter-spacing:0.5em !important;
+    background:#f7f9fc !important; border:1.5px solid #dde4f0 !important;
+    border-radius:10px !important; color:#1a2340 !important;
+    transition:all 0.15s !important; outline:none !important;
 }
+#login-password-input::placeholder { font-size:1rem !important; letter-spacing:0.2em; color:#b0bcd4 !important; }
+#login-password-input:focus { border-color:#3d6fd4 !important; background:#fff !important; box-shadow:0 0 0 3px rgba(61,111,212,0.1) !important; }
+#login-password-error { display:none; color:#ef4444; font-size:0.8rem; font-weight:600; text-align:center; margin-top:0.45rem; }
+#login-submit-btn {
+    display:flex !important; align-items:center !important; justify-content:center !important; gap:0.5rem !important;
+    width:100% !important; margin-top:0.9rem !important; padding:0.88rem !important;
+    background:linear-gradient(135deg,#3d6fd4,#5b8dee) !important;
+    border:none !important; border-radius:10px !important; color:#fff !important;
+    font-size:0.92rem !important; font-weight:700 !important; letter-spacing:0.04em !important;
+    cursor:pointer !important; transition:all 0.15s !important;
+    box-shadow:0 4px 16px rgba(61,111,212,0.3) !important;
+}
+#login-submit-btn:hover { transform:translateY(-2px) !important; box-shadow:0 7px 22px rgba(61,111,212,0.42) !important; }
+#login-submit-btn:active { transform:scale(0.98) !important; }
 
 
 /* === FAB BUTTONS === */
@@ -1595,123 +1439,89 @@ input:focus, select:focus, textarea:focus {
 
 </head>
 <body>
-  <!-- YANGI KIRISH OYNASI -->
+  <!-- KIRISH OYNASI -->
   <div id="login-screen">
-      <!-- Background layers -->
-      <div class="login-mesh"></div>
-      <div class="login-grid"></div>
-      <!-- Particles -->
-      <div class="login-particle"></div>
-      <div class="login-particle"></div>
-      <div class="login-particle"></div>
-      <div class="login-particle"></div>
-      <div class="login-particle"></div>
-      <!-- Floating orbs -->
-      <div class="login-orb login-orb-1"></div>
-      <div class="login-orb login-orb-2"></div>
-      <div class="login-orb login-orb-3"></div>
-      <!-- O'zbekiston bayrog'i stripes -->
-      <div class="login-flag-stripe" style="top:29%;background:rgba(255,255,255,0.9);"></div>
-      <div class="login-flag-stripe" style="top:calc(29% + 4px);background:rgba(255,255,255,0.9);"></div>
-      <!-- Snowfall -->
+
       <div id="snowfall-container" style="display:none"></div>
-      
+
       <div class="login-box">
-          <div class="login-box-glass"></div>
 
-          <!-- Davlat gerbi / Logo bloki -->
-          <div style="display:flex;flex-direction:column;align-items:center;gap:0.5rem;margin-bottom:1rem;">
-              <!-- O'zbekiston bayrog'i -->
-              <div style="border-radius:6px;overflow:hidden;width:56px;height:35px;box-shadow:0 4px 16px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.25);">
-                  <div style="background:#1DBDE8;height:33.33%;display:flex;align-items:center;padding-left:4px;">
-                      <span style="color:white;font-size:0.45rem;letter-spacing:1px;">☽ ✦ ✦</span>
-                  </div>
-                  <div style="background:white;height:8%;"></div>
-                  <div style="background:#2DBB3C;height:58.67%;"></div>
-              </div>
-              <!-- Muassasa nomi -->
-              <div style="font-size:0.65rem;font-weight:700;color:rgba(255,255,255,0.45);letter-spacing:0.15em;text-transform:uppercase;text-align:center;">O'ZBEKISTON RESPUBLIKASI</div>
-          </div>
-
-          <!-- Ajratuvchi chiziq -->
-          <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(29,184,232,0.5),rgba(45,187,60,0.4),transparent);margin-bottom:1.2rem;"></div>
-
-          <!-- Tizim sarlavhasi -->
-          <div style="text-align:center;margin-bottom:1.5rem;">
-              <h2 style="background:linear-gradient(135deg,#38e8ff 0%,#ffffff 45%,#4ade80 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;font-size:1.9rem;font-weight:900;letter-spacing:-0.02em;margin:0 0 0.3rem;display:flex;align-items:center;justify-content:center;gap:0.5rem;">
-                  <svg width="30" height="30" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg" style="-webkit-text-fill-color:initial;color:#1DBDE8;flex-shrink:0;">
-                      <circle cx="20" cy="7" r="7" fill="currentColor"></circle>
-                      <path d="M20 28C26.0751 28 31 23.0751 31 17H9C9 23.0751 13.9249 28 20 28Z" fill="currentColor"></path>
-                      <circle cx="8" cy="9" r="5" fill="currentColor" opacity="0.6"></circle>
-                      <path d="M8 23C12.4183 23 16 19.4183 16 15H0C0 19.4183 3.58172 23 8 23Z" fill="currentColor" opacity="0.6"></path>
-                      <circle cx="32" cy="9" r="5" fill="currentColor" opacity="0.6"></circle>
-                      <path d="M32 23C36.4183 23 40 19.4183 40 15H24C24 19.4183 27.5817 23 32 23Z" fill="currentColor" opacity="0.6"></path>
+          <!-- Logo -->
+          <div class="lc-logo-wrap">
+              <div class="lc-logo-icon">
+                  <svg width="24" height="18" viewBox="0 0 40 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="20" cy="7" r="7" fill="white"/>
+                      <path d="M20 28C26.0751 28 31 23.0751 31 17H9C9 23.0751 13.9249 28 20 28Z" fill="white"/>
+                      <circle cx="8" cy="9" r="5" fill="white" opacity="0.65"/>
+                      <path d="M8 23C12.4183 23 16 19.4183 16 15H0C0 19.4183 3.58172 23 8 23Z" fill="white" opacity="0.65"/>
+                      <circle cx="32" cy="9" r="5" fill="white" opacity="0.65"/>
+                      <path d="M32 23C36.4183 23 40 19.4183 40 15H24C24 19.4183 27.5817 23 32 23Z" fill="white" opacity="0.65"/>
                   </svg>
-                  O'zbegim MFY
-              </h2>
-              <p style="color:rgba(255,255,255,0.45);font-size:0.8rem;font-weight:500;letter-spacing:0.02em;margin:0;">Aholi va tadbirkorlik sub'ektlarini ro'yxatga olish tizimi</p>
+              </div>
+              <div class="lc-logo-text">
+                  <p class="lc-logo-title">O'zbegim <span>MFY</span></p>
+                  <span class="lc-logo-sub">Mahalla fuqarolar yig'ini</span>
+              </div>
           </div>
 
-          <!-- Platforma haqida tugma -->
-          <div style="display:flex;justify-content:center;margin-bottom:1.5rem;">
-              <button class="about-platform-btn" id="about-platform-btn" type="button"
-                  onclick="(function(e){e.stopPropagation();e.preventDefault();var m=document.getElementById('about-platform-modal');if(m){m.style.display='flex';m.style.zIndex='10002';}})(event)">
-                  <i class="fas fa-info-circle"></i>
-                  Platforma haqida batafsil
+          <!-- Heading -->
+          <h2 class="lc-heading"><span>Mahalla</span> boshqaruv<br>tizimiga kirish</h2>
+          <p class="lc-subtext">Tizimdan foydalanish uchun tizim parolini kiriting</p>
+
+          <!-- About platform -->
+          <button class="lc-about-btn" id="about-platform-btn" type="button">
+              <i class="fas fa-info-circle"></i> Platforma haqida
+          </button>
+
+          <div class="lc-divider"></div>
+
+          <!-- Step 1: Kirish tugmasi -->
+          <div id="lc-step-1">
+              <button class="lc-main-btn" id="lc-goto-password" type="button">
+                  <i class="fas fa-sign-in-alt"></i>
+                  Tizimga kirish
               </button>
           </div>
 
-          <!-- Ajratuvchi -->
-          <div style="height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,0.1),transparent);margin-bottom:1.5rem;"></div>
-
-          <!-- Kirish sarlavhasi -->
-          <div style="text-align:center;margin-bottom:1.2rem;">
-              <div style="display:inline-flex;align-items:center;gap:0.5rem;background:rgba(29,184,232,0.1);border:1px solid rgba(29,184,232,0.2);border-radius:8px;padding:0.4rem 1rem;">
-                  <i class="fas fa-lock" style="color:#38bdf8;font-size:0.85rem;"></i>
-                  <span style="color:rgba(255,255,255,0.7);font-size:0.82rem;font-weight:600;letter-spacing:0.05em;">XAVFSIZ KIRISH</span>
-              </div>
+          <!-- Step 2: Parol kiritish -->
+          <div id="lc-step-2">
+              <button class="lc-back-link" id="lc-back-btn" type="button">
+                  <i class="fas fa-arrow-left"></i> Orqaga
+              </button>
+              <label class="lc-pass-label" for="login-password-input">
+                  <i class="fas fa-lock" style="margin-right:0.3rem;"></i>Tizim paroli
+              </label>
+              <input type="password" id="login-password-input"
+                     placeholder="• • • •"
+                     inputmode="numeric"
+                     autocomplete="current-password">
+              <p id="login-password-error">
+                  <i class="fas fa-times-circle"></i> Parol noto'g'ri!
+              </p>
+              <button id="login-submit-btn" type="button">
+                  <i class="fas fa-unlock-alt"></i> KIRISH
+              </button>
           </div>
-
-          <!-- Parol kiritish -->
-          <div class="form-group" style="margin-top:0;">
-              <label for="login-password-input" style="color:rgba(255,255,255,0.6);font-size:0.82rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.6rem;display:block;">Tizim paroli</label>
-              <input type="password" id="login-password-input" placeholder="• • • •" inputmode="numeric" autocomplete="current-password" style="text-align:center;letter-spacing:0.5em;font-size:1.8rem;padding:1rem;">
-              <p id="login-password-error" style="display:none;color:#f87171;margin-top:0.6rem;font-size:0.9rem;text-align:center;font-weight:600;"><i class="fas fa-exclamation-circle"></i> Parol noto'g'ri!</p>
-          </div>
-
-          <button class="btn btn-primary" id="login-submit-btn" style="width:100%;margin-top:1rem;font-size:1rem;padding:1rem;font-weight:800;letter-spacing:0.05em;">
-              <i class="fas fa-sign-in-alt" style="margin-right:0.5rem;"></i>KIRISH
-          </button>
 
           <!-- Hidden fields for compatibility -->
           <div id="role-selection-view" style="display:none;"></div>
           <div id="role-selection-grid" style="display:none;"></div>
-          <div id="password-view" style="display:none;">
-              <div id="selected-role-display"></div>
-          </div>
+          <div id="password-view" style="display:none;"><div id="selected-role-display"></div></div>
       </div>
-      <!-- FACE ID — yashirin, agar kerak bo'lsa JS orqali ochiladi -->
-      <div id="face-id-view" class="hidden" style="display:none;">
-          <div id="faceid-camera-container" style="display:none;">
-              <video id="faceid-video" autoplay muted playsinline style="display:none;"></video>
-              <canvas id="faceid-canvas" style="display:none;"></canvas>
-              <div id="faceid-scanning" style="display:none;"></div>
-          </div>
+
+      <!-- Face ID — yashirin -->
+      <div id="face-id-view" style="display:none;">
+          <div id="faceid-camera-container" style="display:none;"><video id="faceid-video" autoplay muted playsinline style="display:none;"></video><canvas id="faceid-canvas" style="display:none;"></canvas><div id="faceid-scanning" style="display:none;"></div></div>
           <div id="faceid-status" style="display:none;"></div>
           <button id="faceid-capture-btn" style="display:none;" disabled></button>
-          <div id="faceid-register-section" style="display:none;">
-              <button id="faceid-register-btn" style="display:none;"></button>
-          </div>
+          <div id="faceid-register-section" style="display:none;"><button id="faceid-register-btn" style="display:none;"></button></div>
       </div>
+
+      <!-- Footer -->
       <div class="login-footer-info">
-          <div id="clock-display">
-              <div class="time">00:00:00</div>
-              <div class="date">01.01.2026</div>
-          </div>
+          <div id="clock-display"><div class="time">00:00:00</div><div class="date">01.01.2026</div></div>
           <div id="quote-of-the-day"></div>
-          <div id="system-status">
-              <i class="fas fa-circle-notch fa-spin"></i> Tekshirilmoqda...
-          </div>
+          <div id="system-status"><i class="fas fa-circle-notch fa-spin"></i> Tekshirilmoqda...</div>
       </div>
   </div>
   
@@ -19429,6 +19239,37 @@ setInterval(() => {
   } else {
     applyTheme();
   }
+})();
+</script>
+
+<!-- ████ 2-BOSQICHLI KIRISH TIZIMI ████ -->
+<script>
+(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var step1 = document.getElementById('lc-step-1');
+    var step2 = document.getElementById('lc-step-2');
+    var gotoBtn = document.getElementById('lc-goto-password');
+    var backBtn = document.getElementById('lc-back-btn');
+    var inp = document.getElementById('login-password-input');
+
+    if (gotoBtn) {
+      gotoBtn.addEventListener('click', function(){
+        if (step1) step1.style.display = 'none';
+        if (step2) { step2.style.display = 'block'; step2.classList.add('active'); }
+        setTimeout(function(){ if(inp) inp.focus(); }, 100);
+      });
+    }
+
+    if (backBtn) {
+      backBtn.addEventListener('click', function(){
+        if (step2) { step2.style.display = 'none'; step2.classList.remove('active'); }
+        if (step1) step1.style.display = 'block';
+        if (inp) { inp.value = ''; }
+        var err = document.getElementById('login-password-error');
+        if (err) err.style.display = 'none';
+      });
+    }
+  });
 })();
 </script>
 
